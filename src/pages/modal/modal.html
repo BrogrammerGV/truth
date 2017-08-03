@@ -1,0 +1,36 @@
+<!--
+  Generated template for the ModalPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   <ion-navbar>
+    <ion-title>Let's Get Started</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <h3>
+    We're so sorry for your loss. Before we move forward, please provide the name of your deceased loved one.
+    </h3>
+
+<ion-item>
+ <ion-label stacked>First Name</ion-label>
+<ion-input [(ngModel)]="first"></ion-input>
+</ion-item>
+ 
+
+<ion-item>
+ <ion-label stacked>Last Name</ion-label>
+<ion-input [(ngModel)]="last"></ion-input>
+</ion-item>
+
+
+<button ion-button block (click)="closeModal()">Next</button>
+
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>PostScript Data Collection</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="outer-content speaker-list">
+   <div class="about-header headerTitle">
+    <!--><img src="assets/img/shirley.png" alt="ionic logo">-->
+    <h3> Begin Data Collection Below </h3>
+  </div>
+  
+
+
+
+<ion-grid>
+  <ion-row justify-content-start>
+    <ion-col col-6>
+   <button (click)="goToMainData()" ion-button full class="square"><span><br /><br /> About Section</span> </button>
+    </ion-col>
+    <ion-col col-6>
+     <button (click)="openModal()" ion-button full class="square"><span> <br /><br /> Services & <br />Memorials </span></button>
+    </ion-col>
+  </ion-row>
+   <ion-row justify-content-start>
+    <ion-col col-6>
+   <button (click)="openModal()" ion-button full class="square"><br /><br />Culture & Life </button>
+    </ion-col>
+    <ion-col col-6>
+     <button (click)="goDirectToFH()" ion-button full class="square"><span class="btext"><br /><br />FH Info</span></button>
+    
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>
