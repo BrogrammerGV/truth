@@ -39,12 +39,12 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
-    <name>Ionic Conference</name>
+    <name>PostScript Data</name>
     <description>
-        An Ionic Framework application for the Ionic Conference.
+       Research and Development Prototype
   </description>
-    <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+    <author email="cmcfarland@homesteaderslife.com" href="http://homesteaderslife.com">
+      HomesteaderLife Company
   </author>
     <content src="index.html" />
     <access origin="*" />
