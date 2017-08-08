@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Collection</ion-title>
+    <ion-title>About</ion-title>
      <ion-buttons end>
       <button ion-button icon-only (click)="closeModal()">
         <ion-icon ios="ios-apps" md="md-options"></ion-icon>
@@ -34,18 +34,11 @@
       Submit
     </button></ion-item>
 -->
-<h2 ion-text class="orange">Please tell us more about {{NameToUse}}</h2>
-<button ion-item (click)="showPrompt()">Change decedant name</button>
-
-<ion-item>
-  <ion-label  stacked> What is {{NameToUse}}'s lega name?</ion-label>
-  <ion-input placeholder="First name, Last name" [(ngModel)]="fullname"></ion-input>
-</ion-item>
+<h2 ion-text class="orange">Please tell us more about {{NameToUse}}...</h2>
 
 
-<ion-grid>
-<ion-row>
-  <ion-col>
+
+
 <ion-list>
   <ion-item>
     <ion-label>Confirm {{NameToUse}}'s Gender</ion-label>
@@ -55,28 +48,21 @@
     </ion-select>
   </ion-item>
 </ion-list>
-  </ion-col>
-</ion-row>
-<ion-row>
-  <ion-col>
+
 
 <ion-item>
  <ion-label stackedv>When was {{NameToUse}} born?</ion-label>
 <ion-datetime [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YY"></ion-datetime>
 </ion-item>
-  </ion-col>
 
-</ion-row>
-<ion-row>
-  <ion-col>
+
+
     <ion-item>
-  <ion-label  stacked><span >Which County was {{NameToUse}} Born?</span></ion-label>
-  <ion-input placeholder="ex..Dallas" [(ngModel)]="birthcounty"></ion-input>
+  <ion-label  stacked><span> {{NameToUse}} was born in...? (county)</span></ion-label>
+  <ion-input [(ngModel)]="birthCountry"></ion-input>
 </ion-item>
-  </ion-col>
-</ion-row>
-<ion-row>
-  <ion-col>
+ 
+
     <ion-list>
 <ion-item>
   <ion-label stacked>{{NameToUse}} was born in.</ion-label>
@@ -135,46 +121,33 @@
   </ion-select>
 </ion-item>
     </ion-list>
-  </ion-col>
-</ion-row>
 
 
 
 
-<!--Next Row -->
-<ion-row>
 
 
-</ion-row>
-<ion-label  stacked><span class="orange">{{NameToUse}}'s Certificate Info</span></ion-label>
 
 
-<ion-row>
-
-  <ion-col>
 
 <ion-item>
- <ion-label stacked>When Did {{NameToUse}} die?</ion-label>
-<ion-datetime  (ngModel)="dateOfDeath" displayFormat="MM DD, YY"></ion-datetime>
+ <ion-label stacked>When did {{NameToUse}} die?</ion-label>
+<ion-datetime  [(ngModel)]="whenDie"  displayFormat="MMMM DD, YY"></ion-datetime>
 </ion-item>
-  </ion-col>
-</ion-row>
-<ion-row>
-<ion-col> 
+ 
+
 <ion-item>
   <ion-label stacked>Where did {{NameToUse}} die?</ion-label>
-  <ion-input type="Website Test" (ngModel)="countyOfDeath"></ion-input>
+  <ion-input [(ngModel)]="whereDie"></ion-input>
 </ion-item>
-</ion-col>
 
-</ion-row>
 
-<ion-row>
-  <ion-col>
+
+
   <ion-list>
-  <ion-item>
+  <ion-item *ngIf="whereDie != null">
     <ion-label stacked>Specifics?</ion-label>
-    <ion-select [(ngModel)]="POD">
+    <ion-select [(ngModel)]="whereDieSpec">
       <ion-option value="inhos">Inpatient-Hospital</ion-option>
       <ion-option value="doa">Dead On Arrival</ion-option>
         <ion-option value="decendants">Decendant's Home</ion-option>
@@ -184,119 +157,15 @@
     </ion-select>
   </ion-item>
 </ion-list>
-</ion-col>
-</ion-row>
 
-
-<ion-row> 
-<ion-col> 
 
   <ion-item>
   <ion-label  stacked>Address of Death</ion-label>
   <ion-input placeholder="ex.. 123 HospitalPlace" [(ngModel)]="deathaddr"></ion-input>
 </ion-item>
-</ion-col>
-
-</ion-row>
 
 
-
-<ion-row>
-  <ion-col>
-<ion-list>
-  <ion-item>
-    <ion-label stacked>What was {{NameToUse}}'s education Level</ion-label>
-    <ion-select [(ngModel)]="edu" multiple="true">
-      <ion-option value="eightn">8th Grade of Less</ion-option>
-      <ion-option value="high">Some Highschool</ion-option>
-        <ion-option value="decendants">Highschool Grad/GED</ion-option>
-      <ion-option value="emerg">Some College</ion-option>
-        <ion-option value="hospice">Associate Degree</ion-option>
-      <ion-option value="longterm">Bachelors Degree</ion-option>
-         <ion-option value="hospice">Master Degree</ion-option>
-      <ion-option value="longterm">Doctoroate Degree</ion-option>
-          <ion-option value="longterm">Unknown</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
-  </ion-col>
-</ion-row>
-
-
-<ion-row>
-  <ion-col>
-<ion-list>
-  <ion-item>
-    <ion-label stacked>Hispanic Origin</ion-label>
-    <ion-select [(ngModel)]="hispanic">
-      <ion-option value="eightn">No</ion-option>
-      <ion-option value="high">Yes, Mexican American Chicano</ion-option>
-        <ion-option value="decendants">Yes, Puerto Rican</ion-option>
-      <ion-option value="emerg">Yes, Cuban</ion-option>
-        <ion-option value="hospice">Yes, Other</ion-option>
-      <ion-option value="longterm">Unknown</ion-option>
-  
-    </ion-select>
-  </ion-item>
-</ion-list>
-  </ion-col>
-</ion-row>
-
-
-
-
-<ion-row>
-  <ion-col>
-<ion-list>
-  <ion-item>
-    <ion-label class="labelOver" stacked>Race Origin</ion-label>
-<ion-select [(ngModel)]="race">
-    <ion-option>Mixed Race</ion-option>
-    <ion-option>Arctic (Siberian, Eskimo)</ion-option>
-    <ion-option>Caucasian (European)</ion-option>
-    <ion-option>Caucasian (Indian)</ion-option>
-    <ion-option>Caucasian (Middle East)</ion-option>
-    <ion-option>Caucasian (North African, Other)</ion-option>
-    <ion-option>Indigenous Australian</ion-option>
-    <ion-option>Native American</ion-option>
-    <ion-option>North East Asian (Mongol, Tibetan, Korean Japanese, etc)</ion-option>
-    <ion-option>Pacific (Polynesian, Micronesian, etc)</ion-option>
-    <ion-option>South East Asian (Chinese, Thai, Malay, Filipino, etc)</ion-option>
-    <ion-option>West African, Bushmen, Ethiopian</ion-option>
-    <ion-option>Other Race</ion-option>
-</ion-select>
-
-  </ion-item>
-</ion-list>
-  </ion-col>
-</ion-row>
-
-
-
-</ion-grid>
-
-
-
-
-
-<ion-item>
-  <ion-label>Born in the US?</ion-label>
-  <ion-checkbox></ion-checkbox>
-</ion-item> 
-<ion-item>
-  <ion-label>United States Armed Forces?</ion-label>
-  <ion-checkbox></ion-checkbox>
-</ion-item>
-
-
-
-<h2 ion-text color="primary">Funeral Home Info:</h2>
-
-
-<!--iframe [src]='sanitizer.bypassSecurityTrustResourceUrl(speaker?.about)' width="100%" height="360" frameborder="0">
-    </iframe>-->
-
-    <button ion-item (click)="gotToNextDataPage()">Go to Funeral Home Information</button>
+    <button ion-button block (click)="closeModal()">Continue</button>
 </ion-content>
 
 

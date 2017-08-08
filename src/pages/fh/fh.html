@@ -7,88 +7,128 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>FH Data Collection</ion-title>
+    <ion-title>Education & Work History</ion-title>
+     <ion-buttons start>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon ios="ios-apps" md="md-options"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-<h2 ion-text class="orange">Final Collection Piece</h2>
+<h4>Thank you for the information you’ve provided so far. In this section, we’ll be
+gathering details about {{NameToUse}}’s military service, education and
+work history.</h4>
 
-<ion-row>
-  <ion-col>
+
+<ion-item>
+  <ion-label>United States Armed Forces?</ion-label>
+  <ion-checkbox [(ngModel)]="military" value="y"></ion-checkbox>
+</ion-item>
+
+
+<div *ngIf="military"> 
+   <p> Please tell us more about {{NameToUse}}'s military service.</p>
+  <ion-item >
+
+  <ion-input [(ngModel)]="militaryServ"></ion-input>
+</ion-item>
+</div>
+
+<div *ngIf="military">
+  <p> Are you interested in more
+information about military honors and burial rights?</p>
+<ion-item>
+  <ion-checkbox [(ngModel)]="militaryMore" value="y"></ion-checkbox>
+</ion-item>
+</div>
+
+<div *ngIf="militaryMore">
+   <p>Wonderful. Our funeral home staff will set aside time during your
+arrangement conference to talk about this.</p>
+<ion-item *ngIf="militaryMore">
+</ion-item>
+</div>
+
 <ion-list>
   <ion-item>
-    <ion-label stacked>Method of Disposition</ion-label>
-<ion-select (ngModel)="dispositioni" class="purp">
-    <ion-option [value]="Burial">Burial</ion-option>
-    <ion-option [value]="Burial">Cremation</ion-option>
-    <ion-option [value]="Burial">Cremation and Burial</ion-option>
-    <ion-option [value]="Burial">Cremation and Entomb</ion-option>
-    <ion-option [value]="Burial">Cremation and Removed From State</ion-option>
-    <ion-option [value]="Burial">Donation</ion-option>
-    <ion-option [value]="Burial">Donation and Burial</ion-option>
-    <ion-option [value]="Burial">Entombment</ion-option>
-    <ion-option [value]="Burial">Private Burial</ion-option>
-    <ion-option [value]="Burial">Private Cremation</ion-option>
-    <ion-option [value]="Burial">Removal From State</ion-option>
-    <ion-option [value]="Burial">Unknown</ion-option>
-    <ion-option [value]="Burial">Other</ion-option>
+    <ion-label stacked>What was {{NameToUse}}'s education level</ion-label>
+    <ion-select [(ngModel)]="edu" multiple="true">
+      <ion-option value="1">8th Grade or Less</ion-option>
+      <ion-option value="2">Some Highschool</ion-option>
+        <ion-option value="3">Highschool Grad/GED</ion-option>
+      <ion-option value="4">Some College</ion-option>
+        <ion-option value="5">Associate Degree</ion-option>
+      <ion-option value="6">Bachelors Degree</ion-option>
+         <ion-option value="7">Master Degree</ion-option>
+      <ion-option value="8">Doctorate Degree</ion-option>
+          <ion-option value="9">Unknown</ion-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+ <p>What was {{NameToUse}}'s ocupation?</p>
+  <ion-item>
+
+  <ion-input [(ngModel)]="ocupation"> </ion-input>
+</ion-item>
+ <p>What industry was  {{NameToUse}} in?</p>
+  <ion-item>
+
+  <ion-input [(ngModel)]="industry"> </ion-input>
+</ion-item>
+
+
+ <p>Is {{NameToUse}} of Hispanic Origin?</p>
+  <ion-item>
+    <ion-select [(ngModel)]="hispanic">
+      <ion-option value="1">No</ion-option>
+      <ion-option value="2">Yes, Mexican American Chicano</ion-option>
+        <ion-option value="3">Yes, Puerto Rican</ion-option>
+      <ion-option value="4">Yes, Cuban</ion-option>
+        <ion-option value="5">Yes, Other</ion-option>
+      <ion-option value="6">Unknown</ion-option>
+  
+    </ion-select>
+  </ion-item>
+
+ 
+
+
+
+
+ <p>What is {{NameToUse}}'s' Origin?</p>
+  <ion-item>
+    <ion-label stacked>Race Origin</ion-label>
+<ion-select [(ngModel)]="race">
+    <ion-option value="1">Mixed Race</ion-option>
+    <ion-option value="2">Arctic (Siberian, Eskimo)</ion-option>
+    <ion-option value="3">Caucasian (European)</ion-option>
+    <ion-option value="4">Caucasian (Indian)</ion-option>
+    <ion-option value="5">Caucasian (Middle East)</ion-option>
+    <ion-option value="6">Caucasian (North African, Other)</ion-option>
+    <ion-option value="7">Indigenous Australian</ion-option>
+    <ion-option value="8">Native American</ion-option>
+    <ion-option value="9">North East Asian (Mongol, Tibetan, Korean Japanese, etc)</ion-option>
+    <ion-option value="10">Pacific (Polynesian, Micronesian, etc)</ion-option>
+    <ion-option value="11">South East Asian (Chinese, Thai, Malay, Filipino, etc)</ion-option>
+    <ion-option value="12">West African, Bushmen, Ethiopian</ion-option>
+    <ion-option value="13">Other Race</ion-option>
 </ion-select>
 
   </ion-item>
-</ion-list>
-  </ion-col>
-</ion-row>
-
-
-<ion-row> 
-<ion-col> 
-
-  <ion-item>
-  <ion-label  stacked>Crematory</ion-label>
-  <ion-input class="purp" placeholder="ex.. Dave's Cremation" [(ngModel)]="crematory"></ion-input>
-</ion-item>
-</ion-col>
-
-</ion-row>
 
 
 
-<ion-row> 
-<ion-col> 
 
-  <ion-item>
-  <ion-label  stacked>Cemetery or Final Disposition</ion-label>
-  <ion-input class="purp" placeholder="ex.. Dave's Cemetery" [(ngModel)]="disposition"></ion-input>
-</ion-item>
-</ion-col>
 
-</ion-row>
 
-<ion-row> 
-<ion-col> 
 
-  <ion-item>
-  <ion-label  stacked>Funeral Home Director</ion-label>
-  <ion-input class="purp" placeholder="ex.. Dave McDonald" [(ngModel)]="fhdirector"></ion-input>
-</ion-item>
-</ion-col>
 
-</ion-row>
+    <button ion-button block (click)="closeModal()">Continue</button>
 
-<ion-row> 
-<ion-col> 
 
-  <ion-item>
-  <ion-label  stacked>Certifying Physician's Name</ion-label>
-  <ion-input class="purp" placeholder="ex.. Dr. Dave McDonald" [(ngModel)]="physicianName"></ion-input>
-</ion-item>
-</ion-col>
-
-</ion-row>
- <button ion-item (click)="insertRecord()">Submit Information</button>
-  <button ion-item (click)="getRecord()">Get Test</button>
-<button ion-item (click)="loadFinal()">Load Final</button>
 </ion-content>
+
