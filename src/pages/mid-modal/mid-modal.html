@@ -9,15 +9,13 @@
   <ion-navbar>
 
 
-
-    <ion-title>Services/Memorials</ion-title>
-        <ion-buttons end>
+    <ion-title>Services & Memorials</ion-title>
+  <ion-buttons start>
       <button ion-button icon-only (click)="closeModal()">
         <ion-icon ios="ios-apps" md="md-options"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
-
 </ion-header>
 
 
@@ -25,18 +23,18 @@
 <ion-content padding><h4>
   Thank you for the information you’ve provided so far. In this section, we’ll try
 to get a better sense of how our staff can help you honor and remember
-{{name}}.
+{{namePull}}.
 </h4>
 
 <br />
 
-<p> How would you prefer to care for {{name}}'s physical remains</p>
+<p> How would you prefer to care for {{namePull}}'s physical remains</p>
  
 
 
 <ion-item class="orange">
   <ion-label stacked></ion-label>
-    <ion-select [(ngModel)]="truth" >
+    <ion-select [(ngModel)]="disp" >
       <ion-option value="burial">Burial</ion-option>
       <ion-option value="cremation">Cremation</ion-option>
       <ion-option value="other">Other</ion-option>
@@ -44,69 +42,84 @@ to get a better sense of how our staff can help you honor and remember
     </ion-select>
 </ion-item>
 
-<p> Have you purchased a cemetery plot or columbarium niche for {{name}}?</p>
+<p> Have you purchased a cemetery plot or columbarium niche for {{namePull}}?</p>
 <ion-item class="orange">
   <ion-label stacked></ion-label>
-    <ion-select [(ngModel)]="qPlot">
+    <ion-select [(ngModel)]="plotYN">
       <ion-option value="y">Yes</ion-option>
       <ion-option value="n">No</ion-option>
     </ion-select>
 </ion-item>
  
-<ion-item class="orange" *ngIf="qPlot == 'y'">
+<ion-item class="orange" *ngIf="plotYN == 'y'">
   <ion-label  stacked><span >Which cemetery helped with these arrangements?</span></ion-label>
   <ion-input  [(ngModel)]="cemeteryName"></ion-input>
 </ion-item>
 
-<p>How many people will want to come and honor {{name}}’s life?</p>
+<p>Who will want to come and honor {{namePull}}’s life?</p>
 <ion-item class="orange"><ion-label stacked></ion-label>
-    <ion-select [(ngModel)]="qPOD">
+    <ion-select [(ngModel)]="attendies">
       <ion-option value="inhos">Immediate Family only</ion-option>
       <ion-option value="doa">Immediate and Extended Family</ion-option>
         <ion-option value="decendants">Family and Friends</ion-option>
-      <ion-option value="longterm">Family, Friends and Other Community Members</ion-option>
+      <ion-option value="all">Family, Friends and Other Community Members</ion-option>
     </ion-select>
   </ion-item>
 
 <br />
   <p> Our funeral home can plan and organize meaningful events to help celebrate and remember
-{{name}}’s life. Please check which of the following you are interested in
+{{namePull}}’s life. Please check which of the following you are interested in
 learning about:</p>
 
 <ion-item>
  <ion-label>Family Viewing</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="famView" color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Public/Private Visitation</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="pubPrivVis"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Funeral/Memorial Service</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="funMemServ"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Celebration of Life Service</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="celeLife"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Processional to Cemetery</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="processional"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Graveside Service</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="gravServ"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
 
 <ion-item>
  <ion-label>Luncheon/Reception</ion-label>
-  <ion-checkbox color="dark" checked="true"></ion-checkbox>
+  <ion-checkbox [(ngModel)]="lunch"  color="dark" checked="true"></ion-checkbox>
 </ion-item>
+
+
+
+
+  <ion-item>
+  <ion-label  stacked>Funeral Home Director</ion-label>
+  <ion-input  [(ngModel)]="fhdirector"></ion-input>
+</ion-item>
+
+
+  <ion-item>
+  <ion-label  stacked>Certifying Physician's Name</ion-label>
+  <ion-input [(ngModel)]="physicianName"></ion-input>
+</ion-item>
+
 
 <button ion-button block (click)="closeModal()">Next</button>
 </ion-content>

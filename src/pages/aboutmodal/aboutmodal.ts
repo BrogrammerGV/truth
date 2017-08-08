@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController, ViewController } from 'ionic-angular';
-
 import { ConferenceData } from '../../providers/conference-data';
 
 import { AlertController } from 'ionic-angular';
@@ -11,6 +10,7 @@ import {Storage} from '@ionic/storage';
 @IonicPage({
   segment: 'speaker/:speakerId'
 })
+
 @Component({
   selector: 'page-speaker-detail',
   templateUrl: 'aboutmodal.html'
@@ -19,110 +19,96 @@ import {Storage} from '@ionic/storage';
 
 
 export class AboutModal {
-  speaker: any;
+  
   gender: any;
-  fullname: any;
   dateOfBirth: any;
   birthCountry: any;
   stateofbirth: any;
-  dateOfDeath: any;
-  countryOfDeath: any;
+  whenDie: any;
+  whereDie: any;
+  whereDieSpec: any;
   deathaddr: any;
-  edu: any;
-  hispanic: any;
-  race: any;
   NameToUse: string;
 
-
-  constructor(public dataProvider: ConferenceData, public navCtrl: NavController,
-   public navParams: NavParams,public alertCtrl: AlertController, private storage: Storage, public viewCtrl: ViewController) {
+  constructor(
+  public dataProvider: ConferenceData, 
+  public navCtrl: NavController,
+   public navParams: NavParams,
+   public alertCtrl: AlertController, 
+   private storage: Storage, 
+   public viewCtrl: ViewController) {
  }
 
-gotToNextDataPage()
+
+  ionViewWillEnter() {
+    
+    this.storage.get('firstName').then((val1) => {
+      if(val1)
+           this.NameToUse = val1;
+    });
+
+  }
+
+ionViewDidLoad(){
+    this.NameToUse = this.navParams.get('nameToUse');
+ this.prePopulate();
+ 
+}
+
+
+    closeModal()
 {
 
   //Data Builder to Send to Submission Page
   let data = 
   {
-    fullname: this.fullname,
     gender: this.gender,
     dateOfBirth: this.dateOfBirth,
     birthCountry: this.birthCountry,
     stateofbirth: this.stateofbirth,
-    dateOfDeath: this.dateOfDeath,
-    countryOfDeath: this.countryOfDeath,
+    whenDie: this.whenDie,
+    whereDie: this.whereDie,
+    whereDieSpec: this.whereDieSpec,
     deathaddr: this.deathaddr,
-    edu: this.edu,
-    hispanic: this.hispanic,
-    race: this.race
-  }
- 
- this.navCtrl.push(FhPage, data)
+    
+  };
+  
+  this.viewCtrl.dismiss(data);
 
 }
 
-  ionViewWillEnter() {
-    
-    this.storage.get('firstName').then((val1) => {
-      console.log("VAL: " + val1);
-      if(val1)
-        {
-           this.NameToUse = val1;
-        }
-     
-  });
 
-  }
-
-  goToSessionDetail(session: any) {
-    this.navCtrl.push('SessionDetailPage', { sessionId: session.id });
-  }
-
-
-
-showPrompt() {
-this.storage.clear();
-
-    let prompt = this.alertCtrl.create({
-      title: 'Change Name',
-      message: "Enter the name of your loved one who has passed",
-      inputs: [
-        {
-          name: 'firstName',
-          placeholder: 'First Name'
-        },
-        {
-          name: 'lastName',
-          placeholder: 'Last Name'
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          handler: data => {
-            console.log('Cancel clicked');
-          }
-        },
-        {
-          text: 'Save',
-          handler: data => {
-            this.storage.set('firstName', data.firstName);
-            this.storage.set('lastName', data.lastName);
-          }
-        }
-      ]
-    });
-    prompt.present();
-  }
-
-  closeModal()
-    {
-    //Dismiss this
-      this.viewCtrl.dismiss();
-
-    }
+prePopulate()
+{
+          this.storage.get('gender').then((val) => {
+                      this.gender = val;
+                    });
+          this.storage.get('dateOfBirth').then((val) => {
+                    this.dateOfBirth = val;
+                    });
+          this.storage.get('birthCountry').then((val) => {
+                      this.birthCountry = val;
+                    });
+          this.storage.get('stateofbirth').then((val) => {
+                    this.stateofbirth = val;
+                      });                        
+          this.storage.get('whenDie').then((val) => {
+                 this.whenDie = val;
+                      });
+          this.storage.get('whereDie').then((val) => {
+                    this.whereDie = val;
+                      });
+          this.storage.get('whereDieSpec').then((val) => {
+                     this.whereDieSpec = val;
+                      });
+          this.storage.get('deathaddr').then((val) => {
+                     this.deathaddr = val;
+                      });
 
 
+}
+
+ 
 }
 
 

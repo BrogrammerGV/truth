@@ -26,6 +26,7 @@ import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { ModalPage } from '../pages/modal/modal';
 import { MidModalPage } from '../pages/mid-modal/mid-modal';
+import { CulturePage } from '../pages/culture/culture';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { MidModalPage } from '../pages/mid-modal/mid-modal';
     SupportPage,
     FhPage,
     ModalPage,
-    MidModalPage
+    MidModalPage,
+    CulturePage
   ],
   imports: [
     BrowserModule,
@@ -64,7 +66,8 @@ import { MidModalPage } from '../pages/mid-modal/mid-modal';
         { component: SignupPage, name: 'SignupPage', segment: 'signup' },
         { component: FhPage, name: 'FhPage', segment: 'fh' },
         { component: ModalPage, name: 'ModalPage', segment: 'modal' },
-     { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' }
+        { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' },
+        { component: CulturePage, name: 'CulturePage', segment: 'culture' }
       ]
     }),BrowserModule, 
     
@@ -87,7 +90,8 @@ import { MidModalPage } from '../pages/mid-modal/mid-modal';
     SupportPage,
     FhPage,
     ModalPage,
-    MidModalPage
+    MidModalPage,
+    CulturePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

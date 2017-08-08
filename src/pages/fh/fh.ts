@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController, ViewController, ModalController } from 'ionic-angular';
 import { SelectPage } from "../select/select"
+import {Storage} from '@ionic/storage';
 
-/**
- * Generated class for the FhPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
 
 declare let callLambda: any;
 declare let dataJson: any;
@@ -21,16 +16,25 @@ declare let dataJson: any;
 })
 export class FhPage {
   /** ngModelVariables  for Data Submission */
-dispositioni: any
-crematory: any
-disposition: any
-fhdirector: any
-physicianName: any
-jsonObject: any
+military: any
+militaryServ: any
+militaryMore: any
+edu: any
+ocupation: any
+industry: any
+race: any
+hispanic: any
+NameToUse: any
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) 
+  constructor(
+    public navCtrl: NavController,
+   public navParams: NavParams,
+   public loadingCtrl: LoadingController,
+   private storage: Storage, 
+   public viewCtrl: ViewController
+   ) 
   
   {
      
@@ -40,73 +44,79 @@ jsonObject: any
 
 ionViewCanEnter()
 {
-  callLambda("GET");
+  //callLambda("GET");
 }
 
   ionViewDidLoad() 
   {
-   //callLambda("GET");
      console.log('FH Data Loaded: ');
-
-     if(dataJson != null)
-     {
-
-       console.log(dataJson);
-          this.getRecord();
-     }
+    this.NameToUse = this.navParams.get('nameToUse');
+ this.prePopulate();
      
   }
 
-makeDataJSON()
+
+
+
+closeModal()
+          {
+
+            //Data Builder to Send to Submission Page
+            let data = 
+            {
+              military: this.military,
+              militaryServ: this.militaryServ,
+              militaryMore: this.militaryMore,
+              edu: this.edu,
+              ocupation: this.ocupation,
+              industry: this.industry,
+              race: this.race,
+              hispanic: this.hispanic,
+            };
+            
+            this.viewCtrl.dismiss(data);
+
+          }
+
+
+
+
+prePopulate()
 {
-  console.log(this.disposition + ' ' + this.crematory + this.fhdirector + ' ' + this.physicianName);
+          this.storage.get('military').then((val) => {
+                      this.military = val;
+                    });
+          this.storage.get('militaryServ').then((val) => {
+                    this.militaryServ = val;
+                    });
+          this.storage.get('militaryMore').then((val) => {
+                      this.militaryMore = val;
+                    });
+          this.storage.get('edu').then((val) => {
+                    this.edu = val;
+                      });                        
+          this.storage.get('ocupation').then((val) => {
+                 this.ocupation = val;
+                      });
+
+          this.storage.get('industry').then((val) => {
+                    this.industry = val;
+                      });
+          this.storage.get('race').then((val) => {
+                     this.race = val;
+                      });
+
+          this.storage.get('hispanic').then((val) => {
+                this.hispanic = val;
+                      });
 }
 
 
 
-insertRecord()
-{
-  //Inserting Record into AWS S3
-  var jsonBuilder = 
-  {
-   
-   "dispositioni": this.dispositioni,
-    "disposition": this.disposition, 
-    "crematory": this.crematory, 
-    "fhdirector": this.fhdirector, 
-    "physicianName": this.physicianName,
-    "fullname": this.navParams.get('fullname'),
-    "gender": this.navParams.get('gender')
 
-  }
-  
-  callLambda("POST", jsonBuilder);
-  this.navCtrl.push(SelectPage);
-}
 
-getRecord()
-{
-  console.log("getRecordStarted**")
-    this.disposition = dataJson.disposition;
-    this.crematory=dataJson.crematory;
-    this.fhdirector=dataJson.fhdirector;
-    this.physicianName=dataJson.physicianName;
-}
 
-loadFinal()
-{
-  console.log("FinalCheck:" + dataJson);
-}
 
- presentLoading() {
-    let loader = this.loadingCtrl.create({
-      content: "Please wait...",
-      duration: 3000
-    });
-
-    console.log("PresetStarted**");
-    loader.present();
-  }
 
 
 

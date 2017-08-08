@@ -51,21 +51,15 @@ export class EntryPage {
   }
 
 
-    ionViewCanLeave()
+  /*  ionViewCanLeave()
     {
-    
         this.storage.get('loggedIn').then((val) => {
         if(val == "Yes")
             {  
-             this.navCtrl.setRoot(SelectPage);
+            
             }
-     
-
       });
-
-
-
-    }
+    }**/
 
       openIntroModal()
       {
@@ -86,7 +80,7 @@ export class EntryPage {
           if(this.code == "memories")
           {
             this.storage.set('loggedIn', 'Yes');
-            this.navCtrl.push(SelectPage);
+             this.navCtrl.setRoot(SelectPage);
             this.storage.get('loggedIn').then((val) => {
             console.log('Are You Logged In?:', val);
           });
