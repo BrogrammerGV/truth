@@ -23,7 +23,7 @@ export class SupportPage {
 
   ionViewDidEnter() {
     let toast = this.toastCtrl.create({
-      message: 'This does not actually send a support request.',
+      message: 'Please Allow 1 Business Day For Response',
       duration: 3000
     });
     toast.present();

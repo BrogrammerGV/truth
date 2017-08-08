@@ -21,6 +21,7 @@ import { MidModalPage } from '../mid-modal/mid-modal';
 import { CulturePage } from '../culture/culture';
 import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
+import { ConfirmPage } from '../confirm/confirm';
 
 //AWS Declarations
 declare let callLambda: any;
@@ -115,9 +116,8 @@ submit = "Submit Complete";
 
     callLambda("GET"); 
     this.grabFromLocalStorage();
-    this.getSubmit();
     this.checkForFinal();
-         this.getSubmit(); 
+    this.getSubmit(); 
   }
 
 
@@ -334,7 +334,7 @@ insertRecord()
               this.getSubmit()
               //Call to AWS Lambda
               callLambda("POST", jsonBuilder);
-              this.navCtrl.push(AboutPage);
+              this.goToConfirm();
 
 }
 
@@ -554,9 +554,6 @@ modalDataCheck(color:any, modalData: any)
                       }
       }
 
-
-
-
                   else {
                     switch(color) {
                           case "acolor":
@@ -600,6 +597,13 @@ getSubmit()
               this.namePass = val
             });
 }
+
+
+goToConfirm()
+{
+  this.navCtrl.push(ConfirmPage);
+}
+
 
 }
 
