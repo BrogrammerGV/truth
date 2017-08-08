@@ -115,9 +115,8 @@ submit = "Submit Complete";
 
     callLambda("GET"); 
     this.grabFromLocalStorage();
-    this.getSubmit();
     this.checkForFinal();
-         this.getSubmit(); 
+    this.getSubmit(); 
   }
 
 
