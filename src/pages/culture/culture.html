@@ -19,6 +19,8 @@
 
 
 <ion-content padding>
+
+  <div class="bgCard">
 <h4>
 Thank you for the information you’ve provided so far. In this section, we’ll be
 gathering details about  {{NameToUse}}’s family life and cultural
@@ -126,9 +128,13 @@ the time of his/her death.</ion-label>
 </ion-item>
 
 
-    <button ion-button block (click)="closeModal()">Continue</button>
+    </div>
 </ion-content>
   
+  
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>  
   
 
       

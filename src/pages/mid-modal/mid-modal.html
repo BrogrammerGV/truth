@@ -20,7 +20,9 @@
 
 
 
-<ion-content padding><h4>
+<ion-content padding>
+  <div class="bgCard">
+  <h4>
   Thank you for the information you’ve provided so far. In this section, we’ll try
 to get a better sense of how our staff can help you honor and remember
 {{namePull}}.
@@ -121,5 +123,10 @@ learning about:</p>
 </ion-item>
 
 
-<button ion-button block (click)="closeModal()">Next</button>
+</div>
 </ion-content>
+
+
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>

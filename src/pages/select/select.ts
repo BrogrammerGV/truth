@@ -268,6 +268,7 @@ openIntroModal()
                     this.storage.set('firstName', data.first);
                     this.storage.set('lastName', data.last);
                     this.storage.set('middleName', data.middle);
+                    this.namePass = data.first;
           });
       }
 

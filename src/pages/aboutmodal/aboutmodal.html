@@ -34,6 +34,7 @@
       Submit
     </button></ion-item>
 -->
+<div class="bgCard">
 <h2 ion-text class="orange">Please tell us more about {{NameToUse}}...</h2>
 
 
@@ -41,7 +42,7 @@
 
 <ion-list>
   <ion-item>
-    <ion-label>Confirm {{NameToUse}}'s Gender</ion-label>
+    <ion-label stacked>Confirm {{NameToUse}}'s Gender</ion-label>
     <ion-select [(ngModel)]="gender" interface="popover">
       <ion-option value="m">Male</ion-option>
       <ion-option value="f">Female</ion-option>
@@ -51,7 +52,7 @@
 
 
 <ion-item>
- <ion-label stackedv>When was {{NameToUse}} born?</ion-label>
+ <ion-label stacked>When was {{NameToUse}} born?</ion-label>
 <ion-datetime [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YY"></ion-datetime>
 </ion-item>
 
@@ -165,7 +166,10 @@
 </ion-item>
 
 
-    <button ion-button block (click)="closeModal()">Continue</button>
+  </div>
 </ion-content>
 
 
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>

@@ -1,13 +1,69 @@
 page-fh {
 
-ion-list
-{
-    .purp
-    {
-background: #D3D3D3	;
+
+.fixed-content{
+          opacity: 0.22 !important;
+background-image: linear-gradient(-180deg, #B3D6F3 0%, #7CADE4 100%) !important;
     }
+
+  
+
+  
+ 
+
+
+
+    }
+
+
+
+/* StatusBar: */
+
+
+
+
+    
+ion-content {
+    
+
+.litteBox{
+width: 100px;
+height: 15px;
+    /* Rectangle 19: */
+background: #33475C;
+border-radius: 2px;
+}
+
+/* Rectangle 19: */
+.bigBox{
+    background: #7CADE4;
+border-radius: 2px 0 0 2px;
 }
 
 
 
+
+
 }
+
+
+
+
+
+.badButton{
+/* Rectangle 28: */
+background: #E6785A;
+
+/* Primary: */
+font-family: 'Roboto', sans-serif;
+font-size: 15.16px;
+color: #FFFFFF;
+}
+       .bgCard{
+     background: #ffffff;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 7px;
+padding-left: 10px;
+padding-right: 10px;
+
+       }
