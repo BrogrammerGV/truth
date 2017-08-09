@@ -35,39 +35,47 @@
     </button></ion-item>
 -->
 <div class="bgCard">
-<h2 ion-text class="orange">Please tell us more about {{NameToUse}}...</h2>
+<h3 ion-text class="orange">Please tell us more about {{NameToUse}}...</h3>
 
 
 
 
-<ion-list>
+<div class="inputContainer">
   <ion-item>
     <ion-label stacked>Confirm {{NameToUse}}'s Gender</ion-label>
-    <ion-select [(ngModel)]="gender" interface="popover">
+    <ion-select class="textField" [(ngModel)]="gender" interface="popover">
       <ion-option value="m">Male</ion-option>
       <ion-option value="f">Female</ion-option>
     </ion-select>
   </ion-item>
-</ion-list>
+  </div>
 
 
+
+<div class="inputContainer">
 <ion-item>
  <ion-label stacked>When was {{NameToUse}} born?</ion-label>
-<ion-datetime [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YY"></ion-datetime>
-</ion-item>
+<ion-datetime class="textField" [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YY"></ion-datetime></ion-item>
+</div>
 
 
 
-    <ion-item>
-  <ion-label  stacked><span> {{NameToUse}} was born in...? (county)</span></ion-label>
-  <ion-input [(ngModel)]="birthCountry"></ion-input>
-</ion-item>
+
+
  
-
-    <ion-list>
+<div class="inputContainer">
+  <ion-item>
+  <ion-label  stacked><span> {{NameToUse}} was born in...? (county)</span></ion-label>
+  <ion-input class="textField" [(ngModel)]="birthCountry"></ion-input>
+  </ion-item>
+</div>
+ 
+ 
+<div class="inputContainer">
+    
 <ion-item>
   <ion-label stacked>{{NameToUse}} was born in.</ion-label>
-  <ion-select [(ngModel)]="stateofbirth" >
+  <ion-select class="textField" [(ngModel)]="stateofbirth" >
    <ion-option value="AL">Alabama</ion-option>
 	<ion-option value="AK">Alaska</ion-option>
 	<ion-option value="AZ">Arizona</ion-option>
@@ -121,34 +129,37 @@
 	<ion-option value="WY">Wyoming</ion-option>
   </ion-select>
 </ion-item>
-    </ion-list>
+  
+
+</div>
 
 
 
 
 
-
-
-
+ 
+<div class="inputContainer">
 
 <ion-item>
  <ion-label stacked>When did {{NameToUse}} die?</ion-label>
-<ion-datetime  [(ngModel)]="whenDie"  displayFormat="MMMM DD, YY"></ion-datetime>
+<ion-datetime class="textField" [(ngModel)]="whenDie"  displayFormat="MMMM DD, YY"></ion-datetime>
 </ion-item>
- 
+ </div>
 
+ 
+<div class="inputContainer">
 <ion-item>
   <ion-label stacked>Where did {{NameToUse}} die?</ion-label>
-  <ion-input [(ngModel)]="whereDie"></ion-input>
+  <ion-input class="textField" [(ngModel)]="whereDie"></ion-input>
 </ion-item>
 
+ </div>
 
-
-
-  <ion-list>
+<div class="inputContainer">
+ 
   <ion-item *ngIf="whereDie != null">
     <ion-label stacked>Specifics?</ion-label>
-    <ion-select [(ngModel)]="whereDieSpec">
+    <ion-select class="textField"  [(ngModel)]="whereDieSpec">
       <ion-option value="inhos">Inpatient-Hospital</ion-option>
       <ion-option value="doa">Dead On Arrival</ion-option>
         <ion-option value="decendants">Decendant's Home</ion-option>
@@ -157,16 +168,21 @@
       <ion-option value="longterm">Nursing Home/Long Term Care</ion-option>
     </ion-select>
   </ion-item>
-</ion-list>
+
+ </div>
 
 
+
+<div class="inputContainer">
   <ion-item>
   <ion-label  stacked>Address of Death</ion-label>
-  <ion-input placeholder="ex.. 123 HospitalPlace" [(ngModel)]="deathaddr"></ion-input>
+  <ion-input class="textField" placeholder="ex.. 123 HospitalPlace" [(ngModel)]="deathaddr"></ion-input>
 </ion-item>
 
-
+ <br />
   </div>
+</div>
+
 </ion-content>
 
 

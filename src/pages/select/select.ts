@@ -110,7 +110,22 @@ submit = "Submit Complete";
 
   ){}
 
+  ionViewCanEnter()
+  {
+  this.storage.get('loggedIn').then((val) => {
+    
+            console.log('Are You Logged In?:', val)
 
+            if(val != "Yes")
+              {
+                this.navCtrl.push(EntryPage);
+                return true;
+              }
+              else return false;
+          });
+
+
+  }
 
   ionViewDidLoad() {
 
