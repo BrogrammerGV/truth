@@ -34,11 +34,14 @@
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
     <h1>
-      Welcome To Our Beta
+      We are sorry to hear about your loss
     </h1>
+    <p>
+      Our goal is to help you make this hard time a little bit easier by simplifying the process to give you more time with your family. To start, please enter the code provided to you.
+    </p>
     <ion-item>
     <ion-label>Enter Code</ion-label>
-    <ion-input (click)="clearFix()" [(ngModel)]="code" type="text"></ion-input>
+    <ion-input footer (click)="clearFix()" [(ngModel)]="code" type="text"></ion-input>
   </ion-item>
 <button (click)="goToCollector()" ion-button full> Submit Code </button>
  
