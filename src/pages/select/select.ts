@@ -110,7 +110,22 @@ submit = "Submit Complete";
 
   ){}
 
+  ionViewCanEnter()
+  {
+  this.storage.get('loggedIn').then((val) => {
+    
+            console.log('Are You Logged In?:', val)
 
+            if(val != "Yes")
+              {
+                this.navCtrl.push(EntryPage);
+                return true;
+              }
+              else return false;
+          });
+
+
+  }
 
   ionViewDidLoad() {
 
@@ -268,6 +283,7 @@ openIntroModal()
                     this.storage.set('firstName', data.first);
                     this.storage.set('lastName', data.last);
                     this.storage.set('middleName', data.middle);
+                    this.namePass = data.first;
           });
       }
 

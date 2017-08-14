@@ -14,9 +14,9 @@
 
 
 <ion-content padding>
-
+<div class="bgCard">
   <h3>
-    We're so sorry for your loss. Before we move forward, please provide the name of your deceased loved one.
+    We're so sorry for your loss. Before we move forward, please provide the name of your loved one.
     </h3>
 
 <ion-item>
@@ -30,7 +30,9 @@
 <ion-input [(ngModel)]="last"></ion-input>
 </ion-item>
 
-
-<button ion-button block (click)="closeModal()">Next</button>
-
+</div>
 </ion-content>
+
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>

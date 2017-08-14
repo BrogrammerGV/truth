@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon  name="menu"></ion-icon>
     </button>
     <ion-title>InfoMemories</ion-title>
   </ion-navbar>
@@ -9,12 +9,13 @@
 
 <ion-content class="outer-content speaker-list">
    <div class="about-header headerTitle">
-  <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">
-    <h3 class="slide-in-top"> Begin Data Collection Below </h3>
-  </div>
   
+      <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4>
+     <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
+  </div>
 
 
+<div class="truth">
 <ion-grid class="slide-in-left"> 
   <ion-row class="bounce"  justify-content-start>
     <ion-col  col-5>
@@ -35,13 +36,15 @@
     </ion-col>
   </ion-row>
   </ion-grid>
-
-  <ion-row class="slide-in-right">
-  <ion-col *ngIf="isenabled">
-   <button  class="button-pad"  [disabled]="isenabledinc" ion-button block (click)="insertRecord()">Submit - Incomplete</button></ion-col>
- <ion-col><button class="button-pad " [disabled]="isenabled" ion-button block (click)="insertRecord()">{{submit}}</button></ion-col>
-</ion-row>
+</div>
 
 
 
 </ion-content>
+
+<ion-footer>
+  <ion-row class="slide-in-right">
+   <button  class="badButton" ion-button block  [disabled]="isenabledinc" ion-button block (click)="insertRecord()">Submit - Incomplete</button>
+ <button  class="badButton" ion-button block [disabled]="isenabled" ion-button block (click)="insertRecord()">{{submit}}</button>
+</ion-row>
+</ion-footer>

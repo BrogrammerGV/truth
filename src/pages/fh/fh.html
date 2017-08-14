@@ -17,8 +17,11 @@
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+
+
+  <div class="bgCard">
 <h4>Thank you for the information you’ve provided so far. In this section, we’ll be
 gathering details about {{NameToUse}}’s military service, education and
 work history.</h4>
@@ -124,11 +127,13 @@ arrangement conference to talk about this.</p>
 
 
 
-
-
-
-    <button ion-button block (click)="closeModal()">Continue</button>
-
-
+    
+</div><br />
 </ion-content>
+
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>
+
+
 

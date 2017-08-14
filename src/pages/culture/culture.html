@@ -8,7 +8,7 @@
 
   <ion-navbar>
     <ion-title>Culture & Life</ion-title>
-     <ion-buttons start>
+    <ion-buttons start>
       <button ion-button icon-only (click)="closeModal()">
         <ion-icon ios="ios-apps" md="md-options"></ion-icon>
       </button>
@@ -19,116 +19,114 @@
 
 
 <ion-content padding>
-<h4>
-Thank you for the information you’ve provided so far. In this section, we’ll be
-gathering details about  {{NameToUse}}’s family life and cultural
-background.</h4>
 
-<p>Was {{NameToUse}} married? </p>
+  <div class="bgCard">
+    <h4>
+      Thank you for the information you’ve provided so far. In this section, we’ll be gathering details about {{NameToUse}}’s family
+      life and cultural background.
+    </h4>
 
-<ion-item class="orange">
-  <ion-label stacked></ion-label>
-    <ion-select [(ngModel)]="married">
-      <ion-option value="y">Yes</ion-option>
-      <ion-option value="n">No</ion-option>
-    </ion-select>
-</ion-item>
+    <div class="inputContainer">
+      <ion-label stacked>Was {{NameToUse}} married? </ion-label>
+      <ion-item>
+        <ion-select class="textField" [(ngModel)]="married">
+          <ion-option value="y">Yes</ion-option>
+          <ion-option value="n">No</ion-option>
+        </ion-select>
+      </ion-item>
 
+      <ion-list *ngIf="married == 'y'">
+        <ion-label stacked>Select the option that best describes {{NameToUse}}'s marital status at the time of his/her death.</ion-label>
+        <ion-item>
+          <ion-select class="textField" [(ngModel)]="marStatus" multiple="false">
+            <ion-option value="1">Married</ion-option>
+            <ion-option value="2">Widowed</ion-option>
+            <ion-option value="3">Divorced</ion-option>
+            <ion-option value="4">Married but Seperated</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
 
-<ion-list *ngIf="married == 'y'">
-  <ion-item>
-    <ion-label stacked>Select the option that best describes {{NameToUse}}'s marital status at
-the time of his/her death.</ion-label>
-    <ion-select [(ngModel)]="marStatus" multiple="false">
-      <ion-option value="1">Married</ion-option>
-      <ion-option value="2">Widowed</ion-option>
-        <ion-option value="3">Divorced</ion-option>
-      <ion-option value="4">Married but Seperated</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+      <ion-list *ngIf="(marStatus == 1) || (marStatus == 4)">
+        <ion-label >What was {{NameToUse}}'s spouse's name? </ion-label>
+        <ion-item>
+          <ion-input class="textField" [(ngModel)]="spouseFirst"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-input class="textField" [(ngModel)]="spouseMiddle"></ion-input>
+        </ion-item>
 
+        <ion-item>
+          <ion-input class="textField" [(ngModel)]="spouseLast"></ion-input>
+        </ion-item>
 
-<p> What was {{NameToUse}}'s spouse's name? </p>
+        <ion-item>
+          <ion-label stacked>Is {{spouseFirst}} still living?</ion-label>
+          <ion-select class="textField" [(ngModel)]="spouseLiving">
+            <ion-option value="y">Yes</ion-option>
+            <ion-option value="n">No</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
 
+      <ion-label >What was {{NameToUse}}'s mother's name?</ion-label>
+      <ion-item>
+        <ion-input placeholder="First Name" class="textField" [(ngModel)]="motherFirst"></ion-input>
+      </ion-item>
 
-<ion-list *ngIf="(marStatus == 1) || (marStatus == 4)">
-      <ion-item class="orange">
-  <ion-label stacked> first name</ion-label>
-  <ion-input  [(ngModel)]="spouseFirst"></ion-input>
-</ion-item>
+      <ion-item>
+        <ion-input placeholder="Middle Nameddle Name" class="textField" [(ngModel)]="fatherMiddle"></ion-input>
+      </ion-item>
 
-<ion-item class="orange">
-  <ion-label stacked> middle name</ion-label>
-    <ion-input  [(ngModel)]="spouseMiddle"></ion-input>
-</ion-item>
+      <ion-item>
+        <ion-input placeholder="Last Name" class="textField" [(ngModel)]="fatherLast"></ion-input>
+      </ion-item>
+" class="textField" [(ngModel)]="motherMiddle"></io
+      </ion-list>
 
-<ion-item class="orange">
-    <ion-label stacked>last name</ion-label>
-      <ion-input  [(ngModel)]="spouseLast"></ion-input>
-</ion-item>
+      <ion-label >What was {{NameToUse}}'s mother's n-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Last Nameddle Name" class="textField" [(ngModel)]="fatherMiddle"></ion-input>
+      </ion-item>
 
-</ion-list>
+      <ion-item>
+        <ion-input placeholder="Last Name" class="textField" [(ngModel)]="fatherLast"></ion-input>
+      </ion-item>
+" class="textField" [(ngModel)]="motherLast"></ion-input>
+      </ion-item>
 
+      <ion-label >What was {{NameToUse}}'s fat
+        <ion-input placeholder="Last Name" class="textField" [(ngModel)]="fatherLast"></ion-input>
+      </ion-item>her's name?</ion-label>
+      <ion-item>
+        <ion-input placeholder="Firddle Name" class="textField" [(ngModel)]="fatherMiddle"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Last Name" class="textField" [(ngModel)]="fatherLast"></ion-input>
+      </ion-item>
+st Name" class="textField" [(ngModel)]="fatherFirst"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Middle Name" class="textField" [(ngModel)]="fatherMiddle"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Last Name" class="textField" [(ngModel)]="fatherLast"></ion-input>
+      </ion-item>
 
-<ion-item class="orange">
-  <ion-label stacked>Is {{spouseFirst}} still living?</ion-label>
-    <ion-select [(ngModel)]="spouseLiving">
-      <ion-option value="y">Yes</ion-option>
-      <ion-option value="n">No</ion-option>
-    </ion-select>
-</ion-item>
- 
-
-
-
-<h2> What were {{NameToUse}}'s parent's names? </h2>
-
-<h4> Mother </h4>
-
-
-<ion-item class="orange">
-  <ion-label stacked> first name</ion-label>
-  <ion-input  [(ngModel)]="motherFirst"></ion-input>
-</ion-item>
-
-<ion-item class="orange">
-  <ion-label stacked> middle name</ion-label>
-    <ion-input  [(ngModel)]="motherMiddle"></ion-input>
-</ion-item>
-
-<ion-item class="orange">
-    <ion-label stacked>last name</ion-label>
-      <ion-input  [(ngModel)]="motherLast"></ion-input>
-</ion-item>
-
-
-<h4> Father </h4>
-
-<ion-item class="orange">
-  <ion-label stacked>first name</ion-label>
-  <ion-input  [(ngModel)]="fatherFirst"></ion-input>
-</ion-item>
-
-<ion-item class="orange">
-  <ion-label stacked>middle name</ion-label>
-    <ion-input  [(ngModel)]="fatherMiddle"></ion-input>
-</ion-item>
-
-<ion-item class="orange">
-    <ion-label stacked>First Name</ion-label>
-      <ion-input  [(ngModel)]="fatherLast"></ion-input>
-</ion-item>
-
-
-    <button ion-button block (click)="closeModal()">Continue</button>
+    </div>
+  </div>
 </ion-content>
-  
-  
 
-      
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>

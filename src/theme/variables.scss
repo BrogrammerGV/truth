@@ -34,8 +34,8 @@ $headings-font-weight: 300;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
+  primary:    #7CADE4,
+  secondary:  #33475C,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
@@ -43,8 +43,10 @@ $colors: (
   twitter:    #1da1f4,
   google:     #dc4a38,
   vimeo:      #23b6ea,
-  facebook:   #3b5998
+  header: #979797
 );
+
+
 
 
 // App iOS Variables
@@ -59,10 +61,14 @@ $colors: (
 
 // Use the primary color as the background for the toolbar-md-background
 $toolbar-md-background:                   color($colors, primary);
-
+$toolbar-md-border:  color($colors, header);
 // Change the color of the segment button text
 $toolbar-md-active-color:                 #fff;
 
+$item-ios-padding-left: 25px ;
+$item-ios-padding-right: 25px ;
+$datetime-ios-padding-right: 25px;
+$datetime-ios-padding-left: 25px;
 
 // App Windows Variables
 // --------------------------------------------------

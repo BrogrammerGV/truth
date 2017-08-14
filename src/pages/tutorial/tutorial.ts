@@ -5,6 +5,7 @@ import { MenuController, NavController, Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
 import { TabsPage } from '../tabs/tabs';
+import { EntryPage} from '../entry/entry';
 
 @Component({
   selector: 'page-tutorial',
@@ -26,6 +27,18 @@ export class TutorialPage {
     this.navCtrl.push(TabsPage).then(() => {
       this.storage.set('hasSeenTutorial', 'true');
     })
+
+
+this.storage.get('loggedIn')
+            .then((loggedIn) => {
+        if (loggedIn = 'Yes') {
+          console.log("Logged In: " + loggedIn);
+          console.log("Has Seen Tutorial: " + loggedIn);
+        } else {
+        this.navCtrl.push(EntryPage);
+        }
+      
+            })
   }
 
   onSlideChangeStart(slider: Slides) {

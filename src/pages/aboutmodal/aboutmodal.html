@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-title>About</ion-title>
-     <ion-buttons end>
+    <ion-buttons end>
       <button ion-button icon-only (click)="closeModal()">
         <ion-icon ios="ios-apps" md="md-options"></ion-icon>
       </button>
@@ -10,9 +10,9 @@
 </ion-header>
 
 <ion-content padding class="speaker-detail">
-  
-  
-  
+
+
+
   <!--div text-center *ngIf="speaker">
     <img [src]="speaker.profilePic" [alt]="speaker.name"><br>
 
@@ -34,138 +34,118 @@
       Submit
     </button></ion-item>
 -->
-<h2 ion-text class="orange">Please tell us more about {{NameToUse}}...</h2>
+  <div class="bgCard">
+    <h3 ion-text class="orange">Please tell us more about {{NameToUse}}...</h3>
 
 
 
 
-<ion-list>
-  <ion-item>
-    <ion-label>Confirm {{NameToUse}}'s Gender</ion-label>
-    <ion-select [(ngModel)]="gender" interface="popover">
-      <ion-option value="m">Male</ion-option>
-      <ion-option value="f">Female</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
+    <div class="inputContainer">
+
+      <ion-label>Tell us about {{NameToUse}}'s birth.</ion-label>
+      <ion-item>
+        <ion-select placeholder="Gender" class="textField" [(ngModel)]="gender" interface="popover">
+          <ion-option value="m">Male</ion-option>
+          <ion-option value="f">Female</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-datetime placeholder="Birthdate" class="textField" [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YYYY"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Country" class="textField" [(ngModel)]="birthCountry"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="State" class="textField" [(ngModel)]="stateofbirth">
+          <ion-option value="AL">Alabama</ion-option>
+          <ion-option value="AK">Alaska</ion-option>
+          <ion-option value="AZ">Arizona</ion-option>
+          <ion-option value="AR">Arkansas</ion-option>
+          <ion-option value="CA">California</ion-option>
+          <ion-option value="CO">Colorado</ion-option>
+          <ion-option value="CT">Connecticut</ion-option>
+          <ion-option value="DE">Delaware</ion-option>
+          <ion-option value="DC">District Of Columbia</ion-option>
+          <ion-option value="FL">Florida</ion-option>
+          <ion-option value="GA">Georgia</ion-option>
+          <ion-option value="HI">Hawaii</ion-option>
+          <ion-option value="ID">Idaho</ion-option>
+          <ion-option value="IL">Illinois</ion-option>
+          <ion-option value="IN">Indiana</ion-option>
+          <ion-option value="IA">Iowa</ion-option>
+          <ion-option value="KS">Kansas</ion-option>
+          <ion-option value="KY">Kentucky</ion-option>
+          <ion-option value="LA">Louisiana</ion-option>
+          <ion-option value="ME">Maine</ion-option>
+          <ion-option value="MD">Maryland</ion-option>
+          <ion-option value="MA">Massachusetts</ion-option>
+          <ion-option value="MI">Michigan</ion-option>
+          <ion-option value="MN">Minnesota</ion-option>
+          <ion-option value="MS">Mississippi</ion-option>
+          <ion-option value="MO">Missouri</ion-option>
+          <ion-option value="MT">Montana</ion-option>
+          <ion-option value="NE">Nebraska</ion-option>
+          <ion-option value="NV">Nevada</ion-option>
+          <ion-option value="NH">New Hampshire</ion-option>
+          <ion-option value="NJ">New Jersey</ion-option>
+          <ion-option value="NM">New Mexico</ion-option>
+          <ion-option value="NY">New York</ion-option>
+          <ion-option value="NC">North Carolina</ion-option>
+          <ion-option value="ND">North Dakota</ion-option>
+          <ion-option value="OH">Ohio</ion-option>
+          <ion-option value="OK">Oklahoma</ion-option>
+          <ion-option value="OR">Oregon</ion-option>
+          <ion-option value="PA">Pennsylvania</ion-option>
+          <ion-option value="RI">Rhode Island</ion-option>
+          <ion-option value="SC">South Carolina</ion-option>
+          <ion-option value="SD">South Dakota</ion-option>
+          <ion-option value="TN">Tennessee</ion-option>
+          <ion-option value="TX">Texas</ion-option>
+          <ion-option value="UT">Utah</ion-option>
+          <ion-option value="VT">Vermont</ion-option>
+          <ion-option value="VA">Virginia</ion-option>
+          <ion-option value="WA">Washington</ion-option>
+          <ion-option value="WV">West Virginia</ion-option>
+          <ion-option value="WI">Wisconsin</ion-option>
+          <ion-option value="WY">Wyoming</ion-option>
+        </ion-select>
+      </ion-item>
+
+        <ion-label>Tell us about {{NameToUse}}'s passing.</ion-label>
+      <ion-item>
+        <ion-datetime placeholder="Date of passing" class="textField" [(ngModel)]="whenDie" displayFormat="MMMM DD, YY"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Location of passing" class="textField" [(ngModel)]="whereDie"></ion-input>
+      </ion-item>
 
 
-<ion-item>
- <ion-label stackedv>When was {{NameToUse}} born?</ion-label>
-<ion-datetime [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YY"></ion-datetime>
-</ion-item>
+      <ion-item *ngIf="whereDie != null">
+        <ion-select placeholder="Type of location" class="textField" [(ngModel)]="whereDieSpec">
+          <ion-option value="inhos">Inpatient-Hospital</ion-option>
+          <ion-option value="doa">Dead On Arrival</ion-option>
+          <ion-option value="decendants">Decendant's Home</ion-option>
+          <ion-option value="emerg">Emergency Room/Outpatient</ion-option>
+          <ion-option value="hospice">Hospice Facility</ion-option>
+          <ion-option value="longterm">Nursing Home/Long Term Care</ion-option>
+        </ion-select>
+      </ion-item>
 
+      <ion-item>
+        <ion-input placeholder="Address" class="textField" [(ngModel)]="deathaddr"></ion-input>
+      </ion-item>
 
+      <br />
+    </div>
+  </div>
 
-    <ion-item>
-  <ion-label  stacked><span> {{NameToUse}} was born in...? (county)</span></ion-label>
-  <ion-input [(ngModel)]="birthCountry"></ion-input>
-</ion-item>
- 
-
-    <ion-list>
-<ion-item>
-  <ion-label stacked>{{NameToUse}} was born in.</ion-label>
-  <ion-select [(ngModel)]="stateofbirth" >
-   <ion-option value="AL">Alabama</ion-option>
-	<ion-option value="AK">Alaska</ion-option>
-	<ion-option value="AZ">Arizona</ion-option>
-	<ion-option value="AR">Arkansas</ion-option>
-	<ion-option value="CA">California</ion-option>
-	<ion-option value="CO">Colorado</ion-option>
-	<ion-option value="CT">Connecticut</ion-option>
-	<ion-option value="DE">Delaware</ion-option>
-	<ion-option value="DC">District Of Columbia</ion-option>
-	<ion-option value="FL">Florida</ion-option>
-	<ion-option value="GA">Georgia</ion-option>
-	<ion-option value="HI">Hawaii</ion-option>
-	<ion-option value="ID">Idaho</ion-option>
-	<ion-option value="IL">Illinois</ion-option>
-	<ion-option value="IN">Indiana</ion-option>
-	<ion-option value="IA">Iowa</ion-option>
-	<ion-option value="KS">Kansas</ion-option>
-	<ion-option value="KY">Kentucky</ion-option>
-	<ion-option value="LA">Louisiana</ion-option>
-	<ion-option value="ME">Maine</ion-option>
-	<ion-option value="MD">Maryland</ion-option>
-	<ion-option value="MA">Massachusetts</ion-option>
-	<ion-option value="MI">Michigan</ion-option>
-	<ion-option value="MN">Minnesota</ion-option>
-	<ion-option value="MS">Mississippi</ion-option>
-	<ion-option value="MO">Missouri</ion-option>
-	<ion-option value="MT">Montana</ion-option>
-	<ion-option value="NE">Nebraska</ion-option>
-	<ion-option value="NV">Nevada</ion-option>
-	<ion-option value="NH">New Hampshire</ion-option>
-	<ion-option value="NJ">New Jersey</ion-option>
-	<ion-option value="NM">New Mexico</ion-option>
-	<ion-option value="NY">New York</ion-option>
-	<ion-option value="NC">North Carolina</ion-option>
-	<ion-option value="ND">North Dakota</ion-option>
-	<ion-option value="OH">Ohio</ion-option>
-	<ion-option value="OK">Oklahoma</ion-option>
-	<ion-option value="OR">Oregon</ion-option>
-	<ion-option value="PA">Pennsylvania</ion-option>
-	<ion-option value="RI">Rhode Island</ion-option>
-	<ion-option value="SC">South Carolina</ion-option>
-	<ion-option value="SD">South Dakota</ion-option>
-	<ion-option value="TN">Tennessee</ion-option>
-	<ion-option value="TX">Texas</ion-option>
-	<ion-option value="UT">Utah</ion-option>
-	<ion-option value="VT">Vermont</ion-option>
-	<ion-option value="VA">Virginia</ion-option>
-	<ion-option value="WA">Washington</ion-option>
-	<ion-option value="WV">West Virginia</ion-option>
-	<ion-option value="WI">Wisconsin</ion-option>
-	<ion-option value="WY">Wyoming</ion-option>
-  </ion-select>
-</ion-item>
-    </ion-list>
-
-
-
-
-
-
-
-
-
-<ion-item>
- <ion-label stacked>When did {{NameToUse}} die?</ion-label>
-<ion-datetime  [(ngModel)]="whenDie"  displayFormat="MMMM DD, YY"></ion-datetime>
-</ion-item>
- 
-
-<ion-item>
-  <ion-label stacked>Where did {{NameToUse}} die?</ion-label>
-  <ion-input [(ngModel)]="whereDie"></ion-input>
-</ion-item>
-
-
-
-
-  <ion-list>
-  <ion-item *ngIf="whereDie != null">
-    <ion-label stacked>Specifics?</ion-label>
-    <ion-select [(ngModel)]="whereDieSpec">
-      <ion-option value="inhos">Inpatient-Hospital</ion-option>
-      <ion-option value="doa">Dead On Arrival</ion-option>
-        <ion-option value="decendants">Decendant's Home</ion-option>
-      <ion-option value="emerg">Emergency Room/Outpatient</ion-option>
-        <ion-option value="hospice">Hospice Facility</ion-option>
-      <ion-option value="longterm">Nursing Home/Long Term Care</ion-option>
-    </ion-select>
-  </ion-item>
-</ion-list>
-
-
-  <ion-item>
-  <ion-label  stacked>Address of Death</ion-label>
-  <ion-input placeholder="ex.. 123 HospitalPlace" [(ngModel)]="deathaddr"></ion-input>
-</ion-item>
-
-
-    <button ion-button block (click)="closeModal()">Continue</button>
 </ion-content>
 
 
+<ion-footer>
+  <button class="badButton" ion-button block (click)="closeModal()">Continue</button>
+</ion-footer>
