@@ -39742,10 +39742,6 @@ page-mid-modal .orange {
   margin: 0 auto;
 }
 
-.bounce {
-  padding-left: 15%;
-}
-
 .slightBounce {
   padding-left: 15%;
   padding-right: 15%;
@@ -40028,6 +40024,10 @@ page-mid-modal .orange {
   position: relative;
   top: -25px;
   left: -3px;
+}
+
+.centAlign {
+  margin-left: 15%;
 }
 
 .tabbar {

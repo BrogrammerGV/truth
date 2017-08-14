@@ -16,12 +16,14 @@
 
 <br />
 <div class="bgCard">
-  <ion-grid> 
-    <ion-row class="slightBounce">
+  <ion-grid > 
+    <ion-row>
     <h2> <b>Tell us about your loved one</b> </h2>
   <p> The following screens will help you collect important information about your loved one. We will use these details to cooridinate your event and file the necessary paperwork.</p>
     </ion-row>
-  <ion-row class="bounce"  justify-content-start>
+
+    <div class="centAlign">
+  <ion-row >
     <ion-col  col-5>
    <button (click)="goToAbout()" ion-button full class="tileOne"><span class="tileTextAbout">About</span> </button>
     </ion-col>
@@ -30,7 +32,7 @@
     </button>
     </ion-col>
   </ion-row>
-   <ion-row class="bounce"  justify-content-start>
+   <ion-row >
     <ion-col col-5>
    <button   (click)="goToCulture()" ion-button full class="tileThree"><span class="tileText"> Culture  And <br /> Life </span> </button>
     </ion-col>
@@ -39,6 +41,7 @@
 
     </ion-col>
   </ion-row>
+  </div>
   </ion-grid>
 <br />
 </div>
