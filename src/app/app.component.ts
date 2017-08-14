@@ -70,7 +70,7 @@ export class ConferenceApp {
       this.storage.get('loggedIn')
             .then((loggedIn) => {
         if (loggedIn = 'Yes') {
-          this.rootPage = TabsPage;
+          this.rootPage = EntryPage;
           console.log("Logged In: " + loggedIn);
           console.log("Has Seen Tutorial: " + loggedIn);
         } else {

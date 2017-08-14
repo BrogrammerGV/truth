@@ -1,41 +1,46 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar hide-tabs>
     <button ion-button menuToggle>
       <ion-icon  name="menu"></ion-icon>
     </button>
-    <ion-title>InfoMemories</ion-title>
+    <ion-title>Information Gathering</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content class="outer-content speaker-list">
-   <div class="about-header headerTitle">
+   <!-- <div class="about-header headerTitle"> -->
   
-      <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4>
+      <!-- <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4> -->
      <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
-  </div>
+  <!-- </div> -->
 
-
-<div class="truth">
-<ion-grid class="slide-in-left"> 
+<br />
+<div class="bgCard">
+  <ion-grid> 
+    <ion-row class="slightBounce">
+    <h2> Understanding your loved one </h2>
+  <p> We are going to collect information that will allow the proper filing of the death certificate as well help us better understand your loved one to best serve you and your event.</p>
+    </ion-row>
   <ion-row class="bounce"  justify-content-start>
     <ion-col  col-5>
-   <button [style.background]="acolor" (click)="goToAbout()" ion-button full class="square"><span><br /><br /> About</span> </button>
+   <button (click)="goToAbout()" ion-button  class="tileOne"><span class="tileText"> About</span> </button>
     </ion-col>
     <ion-col col-5>
-     <button [style.background]="bcolor"  (click)="goToEdu()" ion-button full class="square"><br /><br />Education & <br />Work History
+     <button  (click)="goToEdu()" ion-button  class="tileTwo"><span class="tileText">Education & <br />Work History </span>
     </button>
     </ion-col>
   </ion-row>
    <ion-row class="bounce"  justify-content-start>
     <ion-col col-5>
-   <button [style.background]="ccolor"  (click)="goToCulture()" ion-button full class="square"><br /><br />Culture & Life </button>
+   <button   (click)="goToCulture()" ion-button  class="tileThree"><span class="tileText"> Culture & Life </span> </button>
     </ion-col>
     <ion-col col-5>
-     <button [style.background]="dcolor"  (click)="gotToServ()" ion-button full class="square"> <br /><br /> Services & <br />Memorials </button>
+     <button   (click)="gotToServ()" ion-button  class="tileFour"><span class="tileText">Services & <br />Memorials </span></button>
 
     </ion-col>
   </ion-row>
   </ion-grid>
+<br />
 </div>
 
 
@@ -43,8 +48,13 @@
 </ion-content>
 
 <ion-footer>
-  <ion-row class="slide-in-right">
-   <button  class="badButton" ion-button block  [disabled]="isenabledinc" ion-button block (click)="insertRecord()">Submit - Incomplete</button>
- <button  class="badButton" ion-button block [disabled]="isenabled" ion-button block (click)="insertRecord()">{{submit}}</button>
+  <ion-row>
+    <ion-col>
+         <button  class="whiteButton" ion-button block  (click)="insertRecord()">Skip For Now</button>
+    </ion-col>
+<ion-col>
+ <button  class="badButton" ion-button block  (click)="insertRecord()">I'm Ready</button>
+</ion-col>
+
 </ion-row>
 </ion-footer>

@@ -39515,10 +39515,6 @@ ion-item {
   background-clip: padding-box;
 }
 
-ion-footer {
-  background: #E6785A;
-}
-
 page-account img {
   max-width: 140px;
   border-radius: 50%;
@@ -39727,45 +39723,6 @@ page-mid-modal .orange {
   color: #FFFFFF;
 }
 
-page-speaker-list .scroll-content {
-  background: #EDEDED;
-}
-
-page-speaker-list .speaker-card {
-  height: 100%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
-page-speaker-list .speaker-card ion-card-content {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1 1 auto;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
-}
-
-@media (min-width: 769px) {
-  page-speaker-list .speaker-card {
-    height: 100%;
-  }
-}
-
-page-speaker-list .speaker-card ion-card-header .item {
-  padding: 0px 16px;
-}
-
-page-speaker-list .speaker-card ion-card-content {
-  padding-left: 0;
-  padding-right: 0;
-}
-
 .checkmark {
   font-size: 100px;
   display: table;
@@ -39780,13 +39737,6 @@ page-speaker-list .speaker-card ion-card-content {
   text-align: center;
 }
 
-.square {
-  width: 100%;
-  height: 0 !important;
-  padding: 30px 0 60% 0 !important;
-  margin: auto;
-}
-
 .btext {
   padding: 25px;
   margin: 0 auto;
@@ -39794,6 +39744,11 @@ page-speaker-list .speaker-card ion-card-content {
 
 .bounce {
   padding-left: 15%;
+}
+
+.slightBounce {
+  padding-left: 12%;
+  padding-right: 12%;
 }
 
 @-webkit-keyframes slideIn {
@@ -40008,13 +39963,59 @@ page-speaker-list .speaker-card ion-card-content {
   background-image: linear-gradient(-180deg, #B3D6F3 0%, #7CADE4 100%) !important;
 }
 
-.truth {
+.bgCard {
   background: #ffffff;
-  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
   border-radius: 7px;
-  margin-top: 5px;
-  margin-bottom: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.whiteButton {
+  /* Rectangle 28: */
+  background: #FFFFFF;
+  border: 4px solid #33475C;
+  border-radius: 2px;
+  color: #4A4A4A;
+}
+
+.tileOne {
+  width: 100%;
+  height: 0 !important;
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("/assets/img/info/Tile.png") 60% 80% no-repeat;
+}
+
+.tileTwo {
+  width: 100%;
+  height: 0 !important;
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("/assets/img/info/tileTwo.png") 40% 50% no-repeat;
+}
+
+.tileThree {
+  width: 100%;
+  height: 0 !important;
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("/assets/img/info/tileThree.png") 50% 60% no-repeat;
+}
+
+.tileFour {
+  width: 100%;
+  height: 0 !important;
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("/assets/img/info/tileFour.png") 60% 80% no-repeat;
+}
+
+.tileText {
+  position: relative;
+  top: -35px;
+  left: -10px;
 }
 
 .tabbar {
