@@ -40015,7 +40015,19 @@ page-mid-modal .orange {
 .tileText {
   position: relative;
   top: -30px;
-  left: -5vpx;
+  left: -5px;
+}
+
+.tileTextAbout {
+  position: relative;
+  top: -40px;
+  left: -20px;
+}
+
+.tileTextWork {
+  position: relative;
+  top: -25px;
+  left: -3px;
 }
 
 .tabbar {

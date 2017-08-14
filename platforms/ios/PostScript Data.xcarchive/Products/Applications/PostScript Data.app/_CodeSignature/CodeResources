@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		VyE0ZNI/2IijGcWp9kP4sP8lUH0=
+		VGEnIKiWvIhc07/iG9/Cd34h1ko=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		Fg2RnTN1ZDcoaIJkjHo8JwP8VF4=
+		QUdzndGRmtcHRJSnjgsAs6q6HAY=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		lLjEVsWA/wrbiH1c2Hc+MOaF04M=
+		H6P5idhGclDArwo6I8bMW+Sm7iY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -312,6 +312,10 @@
 		<data>
 		0AHkFLTwsiIVMDpy6r26ZI3EhVU=
 		</data>
+		<key>www/assets/img/info/tile2.png</key>
+		<data>
+		T9kFzTDPKKc/x7fsGvyXaypVeio=
+		</data>
 		<key>www/assets/img/info/tileFour.png</key>
 		<data>
 		ij9d4CTUjvXfuVEAi/JXxMthCZg=
@@ -418,7 +422,7 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		t/RxboXRFwD3PMovPcmIt93zHEc=
+		lM5hU0mOuD66GJInz9qaX/RDH/o=
 		</data>
 		<key>www/build/main.css.map</key>
 		<data>
@@ -426,11 +430,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		fJOAwFfP+S4ZCesSgMIy3GmwRSE=
+		k5N53gisvEcmAoDTX0KbPh2b4y8=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		SvBobp95OyvBmYTvRRnqyUdXMFM=
+		hQvwby/uEacC8JSWMuUisxJpU8c=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -731,11 +735,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			VyE0ZNI/2IijGcWp9kP4sP8lUH0=
+			VGEnIKiWvIhc07/iG9/Cd34h1ko=
 			</data>
 			<key>hash2</key>
 			<data>
-			h6fCIwSf2xCHudBSbVMlIRj7lsSVQuv/Lwyjk/FtFao=
+			RXyaYjlqQQPXdJeOcaq9CTU3OaXq2GC3Z5x1wXYI2xo=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -753,11 +757,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Fg2RnTN1ZDcoaIJkjHo8JwP8VF4=
+			QUdzndGRmtcHRJSnjgsAs6q6HAY=
 			</data>
 			<key>hash2</key>
 			<data>
-			jFGwyJtDeWZ2ZkGqCKZOEmA6h69GsoDMCZIxQZF2+Mc=
+			rp6kJ4I9nA0iKViSwoZj5g0sJsC+xzDEJVVAdkxS814=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -918,11 +922,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			lLjEVsWA/wrbiH1c2Hc+MOaF04M=
+			H6P5idhGclDArwo6I8bMW+Sm7iY=
 			</data>
 			<key>hash2</key>
 			<data>
-			aur8cOayI0O4e2jIM8KFCgkRJO26KCnbzQS0eb0Peew=
+			lfkF+Dsm+cHrYQPRf8Av42NcBiQoExtjdwJShgO03KM=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -1332,6 +1336,17 @@
 			M6tZdbw2oZcI5qGZvIC4HGlgVChMhD6FKcCswp7U6E4=
 			</data>
 		</dict>
+		<key>www/assets/img/info/tile2.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			T9kFzTDPKKc/x7fsGvyXaypVeio=
+			</data>
+			<key>hash2</key>
+			<data>
+			vEevMzLeJkUfQraXyEzBqNxfeXT11ntS0y7hgDsK1SU=
+			</data>
+		</dict>
 		<key>www/assets/img/info/tileFour.png</key>
 		<dict>
 			<key>hash</key>
@@ -1622,11 +1637,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			t/RxboXRFwD3PMovPcmIt93zHEc=
+			lM5hU0mOuD66GJInz9qaX/RDH/o=
 			</data>
 			<key>hash2</key>
 			<data>
-			m2z19w8xAhKlnCTTjniQtJcRbE+FAzPUgymwZJxS8zw=
+			umHwMirxdXjcu5FOuEYq41sT0pwMQwOUQ9AO0mQkA+k=
 			</data>
 		</dict>
 		<key>www/build/main.css.map</key>
@@ -1644,22 +1659,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			fJOAwFfP+S4ZCesSgMIy3GmwRSE=
+			k5N53gisvEcmAoDTX0KbPh2b4y8=
 			</data>
 			<key>hash2</key>
 			<data>
-			4ldEnCb6FVUR4eoOv0OCAYG75Lj17IYn4v4iKCq97Ks=
+			3k0ZbetbQYy8XnBkgllhlC/cVhlUi3CbqdkyGCFF89o=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			SvBobp95OyvBmYTvRRnqyUdXMFM=
+			hQvwby/uEacC8JSWMuUisxJpU8c=
 			</data>
 			<key>hash2</key>
 			<data>
-			coJSiuKbsGUAp0fsEd+b1ubPm39Brwzhei9mAA9ivvk=
+			elRe+oa7BsI7z0U8uXeVBa71OnF/Z2Z9rzxtPQGZUkU=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
