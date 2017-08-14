@@ -39742,11 +39742,6 @@ page-mid-modal .orange {
   margin: 0 auto;
 }
 
-.slightBounce {
-  padding-left: 15%;
-  padding-right: 15%;
-}
-
 @-webkit-keyframes slideIn {
   0% {
     left: -100%;
@@ -40010,24 +40005,30 @@ page-mid-modal .orange {
 
 .tileText {
   position: relative;
-  top: -30px;
+  top: -40px;
   left: -5px;
+  text-align: left;
 }
 
 .tileTextAbout {
   position: relative;
-  top: -40px;
-  left: -20px;
+  top: -50px;
+  left: -35px;
+  text-align: left;
 }
 
 .tileTextWork {
   position: relative;
   top: -25px;
-  left: -3px;
+  left: -5px;
+  text-align: left;
 }
 
-.centAlign {
-  margin-left: 15%;
+.tileTextLife {
+  position: relative;
+  top: -40px;
+  left: -35px;
+  text-align: left;
 }
 
 .tabbar {
