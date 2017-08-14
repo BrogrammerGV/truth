@@ -37,12 +37,14 @@
   </ion-row>
   </ion-grid>
 </div>
-  <ion-row class="slide-in-right">
-  <ion-col *ngIf="isenabled">
-   <button  class="button-pad"  [disabled]="isenabledinc" ion-button block (click)="insertRecord()">Submit - Incomplete</button></ion-col>
- <ion-col><button class="button-pad " [disabled]="isenabled" ion-button block (click)="insertRecord()">{{submit}}</button></ion-col>
-</ion-row>
 
 
 
 </ion-content>
+
+<ion-footer>
+  <ion-row class="slide-in-right">
+   <button  class="badButton" ion-button block  [disabled]="isenabledinc" ion-button block (click)="insertRecord()">Submit - Incomplete</button>
+ <button  class="badButton" ion-button block [disabled]="isenabled" ion-button block (click)="insertRecord()">{{submit}}</button>
+</ion-row>
+</ion-footer>

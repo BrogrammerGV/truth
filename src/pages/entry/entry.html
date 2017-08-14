@@ -41,9 +41,8 @@
     </p>
     <ion-item>
     <ion-label>Enter Code</ion-label>
-    <ion-input footer (click)="clearFix()" [(ngModel)]="code" type="text"></ion-input>
+    <ion-input class="footer" (click)="clearFix()" [(ngModel)]="code" type="text"></ion-input>
   </ion-item>
-<button (click)="goToCollector()" ion-button full> Submit Code </button>
  
  <!-- <ion-list #scheduleList [hidden]="shownSessions === 0">
 
@@ -99,3 +98,7 @@
 
 
 </ion-content>
+
+<ion-footer>
+  <button class="badButton" ion-button block (click)="goToCollector()" ion-button full> Submit Code </button>
+</ion-footer>
