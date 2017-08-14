@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
 		0EE718E91C244E49A4725622 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 93AA9A8D9B3B43D8B76B5C2D /* CDVLogger.m */; };
@@ -337,7 +336,7 @@
 				LastUpgradeCheck = 510;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = NYS7V8JV26;
+						DevelopmentTeam = AHYJBSC9Y6;
 					};
 				};
 			};
@@ -468,6 +467,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				DEVELOPMENT_TEAM = AHYJBSC9Y6;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -477,7 +477,7 @@
 				INFOPLIST_FILE = "PostScript Data/PostScript Data-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HomesteadersLife.InfoMemories;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.HomesteadersLife;
 				PRODUCT_NAME = "PostScript Data";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,6 +496,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				DEVELOPMENT_TEAM = AHYJBSC9Y6;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "PostScript Data/PostScript Data-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
@@ -503,7 +504,7 @@
 				INFOPLIST_FILE = "PostScript Data/PostScript Data-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.HomesteadersLife.InfoMemories;
+				PRODUCT_BUNDLE_IDENTIFIER = .com.HomesteadersLife;
 				PRODUCT_NAME = "PostScript Data";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";

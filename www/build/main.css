@@ -39747,8 +39747,8 @@ page-mid-modal .orange {
 }
 
 .slightBounce {
-  padding-left: 12%;
-  padding-right: 12%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 @-webkit-keyframes slideIn {
@@ -39985,15 +39985,15 @@ page-mid-modal .orange {
   height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
-  background: url("/assets/img/info/Tile.png") 60% 80% no-repeat;
+  background: url("../assets/img/info/Tile.png") 60% 80% no-repeat;
 }
 
-.tileTwo {
+.tile2 {
   width: 100%;
   height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
-  background: url("/assets/img/info/tileTwo.png") 40% 50% no-repeat;
+  background: url("../assets/img/info/tile2.png") 50% 60% no-repeat;
 }
 
 .tileThree {
@@ -40001,7 +40001,7 @@ page-mid-modal .orange {
   height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
-  background: url("/assets/img/info/tileThree.png") 50% 60% no-repeat;
+  background: url("../assets/img/info/tileThree.png") 50% 60% no-repeat;
 }
 
 .tileFour {
@@ -40009,13 +40009,13 @@ page-mid-modal .orange {
   height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
-  background: url("/assets/img/info/tileFour.png") 60% 80% no-repeat;
+  background: url("../assets/img/info/tileFour.png") 60% 80% no-repeat;
 }
 
 .tileText {
   position: relative;
-  top: -35px;
-  left: -10px;
+  top: -30px;
+  left: -5vpx;
 }
 
 .tabbar {
