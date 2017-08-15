@@ -511,10 +511,14 @@ grabFromLocalStorage(){
 
 checkForFinal()
     { 
-       var perc: number = 0;
+       
+      
+      var perc: number = 0;
          
        this.storage.forEach( (value, key, index) => {
-              if(value == null|| value == '')
+            
+        
+        if(value == null|| value == '')
                 {
 
                 }
