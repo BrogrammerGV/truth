@@ -39727,12 +39727,70 @@ page-info-birth .inputLabelText {
 }
 
 page-info-birth .whyModal {
-  margin: 15%;
+  margin: 75%;
   color: #7CADE4;
   font-size: 9px;
 }
 
 page-info-birth ion-content div ion-select {
+  max-width: 100%;
+}
+
+page-info-death .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-info-death .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-death .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-death ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-death :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-death ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-death :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-death .inputLabelText {
+  color: #33475C;
+}
+
+page-info-death .whyModal {
+  margin: 15%;
+  color: #7CADE4;
+  font-size: 9px;
+}
+
+page-info-death ion-content div ion-select {
   max-width: 100%;
 }
 
@@ -39782,6 +39840,21 @@ page-info-name :-ms-input-placeholder {
 
 page-info-name .inputLabelText {
   color: #33475C;
+}
+
+page-info-ssn-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+page-info-ssn-modal ion-content {
+  height: 30%;
+  margin-top: 50%;
+  background: url("../assets/img//why.png") 50% 50% no-repeat;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+page-info-ssn-modal ion-content h4 {
+  font-size: 15px;
 }
 
 page-user .logo {

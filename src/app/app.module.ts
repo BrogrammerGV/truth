@@ -30,7 +30,8 @@ import { CulturePage } from '../pages/culture/culture';
 import { ConfirmPage } from '../pages/confirm/confirm';
 import { InfoNamePage } from '../pages/info/info-name/info-name';
 import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
-
+import { InfoSsnModalPage } from '../pages/info/info-ssn-modal/info-ssn-modal';
+import { InfoDeathPage } from '../pages/info/info-death/info-death';
 
 
 @NgModule({
@@ -54,7 +55,9 @@ import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
     CulturePage, 
     ConfirmPage,
     InfoNamePage, 
-    InfoBirthPage
+    InfoBirthPage, 
+    InfoSsnModalPage, 
+    InfoDeathPage
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,9 @@ import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
         { component: CulturePage, name: 'CulturePage', segment: 'culture' },
         { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' },
         { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' },
-         { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' }
+         { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' },
+              { component: InfoSsnModalPage, name: 'InfoSSNModalPage', segment: 'infoSSNModal' },
+              { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' }
         
       ]
     }),BrowserModule, 
@@ -106,7 +111,9 @@ import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
     CulturePage, 
     ConfirmPage,
     InfoNamePage, 
-    InfoBirthPage
+    InfoBirthPage, 
+    InfoSsnModalPage, 
+    InfoDeathPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

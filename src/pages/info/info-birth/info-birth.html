@@ -25,35 +25,38 @@
     <h2>  <b>Tell us more about <span class="friendlyName">{{friendlyName}}'s</span> birth:</b> </h2>
    </ion-row>
 
-<div class="centAlign">
-  
-    
+
+  <ion-list no-lines>
+     <ion-item>
         
 
          <ion-label stacked class="inputLabelText"> Date of Birth</ion-label>
     <ion-datetime placeholder="00/00/0000" class="inputField" [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YYYY"></ion-datetime>
-  
- 
+  </ion-item>
+ <ion-item>
         <ion-label stacked class="inputLabelText"> Place of Birth</ion-label>
           <ion-input placeholder="City, State" class="inputField" [(ngModel)]="locOfBirth"></ion-input>
-        
-
+        </ion-item>
+      
+      <ion-item>
      
         <ion-label stacked class="inputLabelText"> Gender</ion-label>
         <ion-select placeholder="Gender" class="inputField" [(ngModel)]="gender">
           <ion-option value="m">Male</ion-option>
           <ion-option value="f">Female</ion-option>
         </ion-select>
-         
-        <ion-label stacked class="inputLabelText"> Social Security Number <span class="whyModal">Why do we need this? </span></ion-label>
+         </ion-item>
+      
+         <ion-item>
+        <ion-label stacked class="inputLabelText"> Social Security Number </ion-label>
           <ion-input placeholder="000-00-0000" class="inputField" [(ngModel)]="decSSN"></ion-input>
+          </ion-item>
+<span (click)="openSSNModal()" class="whyModal" >Why do we need this? </span>
 
-   
-  </div>
 
 <br />
 <br />
-
+</ion-list>
 </div>
 
 
