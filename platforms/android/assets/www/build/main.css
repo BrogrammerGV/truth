@@ -3854,6 +3854,11 @@ ion-icon::before {
   border-bottom: 0;
 }
 
+.text-input-ios {
+  margin: 0;
+  height: 100%;
+}
+
 ion-action-sheet {
   left: 0;
   top: 0;
@@ -15946,9 +15951,9 @@ input.text-input:-webkit-autofill {
 }
 
 .text-input-ios {
-  margin: 11px 12.5px 11px 0;
+  margin: 0;
   padding: 0;
-  width: calc(100% - 12.5px);
+  width: calc(100% - 0);
 }
 
 .input-ios .inset-input {
@@ -15961,7 +15966,7 @@ input.text-input:-webkit-autofill {
   margin-left: 0;
   margin-top: 8px;
   margin-bottom: 8px;
-  width: calc(100% - 12.5px);
+  width: calc(100% - 0);
 }
 
 .item-ios.item-label-stacked .label-ios + .input + .cloned-input,
@@ -39683,7 +39688,6 @@ page-info-birth .inputField {
   border: 2px solid #33475C;
   border-radius: 1.5px;
   height: 50px;
-  text-align: start;
 }
 
 page-info-birth .centAlign {
@@ -39727,7 +39731,7 @@ page-info-birth .inputLabelText {
 }
 
 page-info-birth .whyModal {
-  margin: 75%;
+  margin: 60%;
   color: #7CADE4;
   font-size: 9px;
 }
@@ -39741,7 +39745,6 @@ page-info-death .inputField {
   border: 2px solid #33475C;
   border-radius: 1.5px;
   height: 50px;
-  text-align: start;
 }
 
 page-info-death .centAlign {
@@ -39848,9 +39851,14 @@ page-info-ssn-modal {
 
 page-info-ssn-modal ion-content {
   height: 30%;
-  margin-top: 50%;
-  background: url("../assets/img//why.png") 50% 50% no-repeat;
-  background-color: rgba(0, 0, 0, 0.9);
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 70%;
+  margin-bottom: 50%;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border: 4px solid #7CADE4;
+  border-radius: 3px;
 }
 
 page-info-ssn-modal ion-content h4 {

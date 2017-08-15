@@ -69,6 +69,12 @@ $item-ios-padding-left: 25px ;
 $item-ios-padding-right: 25px ;
 $datetime-ios-padding-right: 25px;
 $datetime-ios-padding-left: 25px;
+$text-input-ios-margin-top: 0;
+$text-input-ios-margin-bottom: 0;
+$text-input-ios-margin-left: 0;
+$text-input-ios-margin-right: 0;
+
+
 
 // App Windows Variables
 // --------------------------------------------------
@@ -147,3 +153,11 @@ $datetime-ios-padding-left: 25px;
   
     border-bottom: 0;
   }
+
+
+
+  .text-input-ios{
+    margin: 0;
+    height: 100%;
+}
+
