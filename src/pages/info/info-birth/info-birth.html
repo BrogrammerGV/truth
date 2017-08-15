@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar hide-tabs>
+    <button ion-button menuToggle>
+      <ion-icon  name="menu"></ion-icon>
+    </button>
+    <ion-title>Information Gathering</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content class="outer-content">
+   <!-- <div class="about-header headerTitle"> -->
+  
+      <!-- <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4> -->
+     <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
+  <!-- </div> -->
+<p style="text-align:center;"> Understanding your loved one </p>
+<br />
+<div class="bgCard">
+<br />
+    <ion-row >
+    <h2>  <b>Tell us more about <span class="friendlyName">{{friendlyName}}'s</span> birth:</b> </h2>
+   </ion-row>
+
+<div class="centAlign">
+  
+    
+        
+
+         <ion-label stacked class="inputLabelText"> Date of Birth</ion-label>
+    <ion-datetime placeholder="00/00/0000" class="inputField" [(ngModel)]="dateOfBirth" displayFormat="MMMM DD, YYYY"></ion-datetime>
+  
+ 
+        <ion-label stacked class="inputLabelText"> Place of Birth</ion-label>
+          <ion-input placeholder="City, State" class="inputField" [(ngModel)]="locOfBirth"></ion-input>
+        
+
+     
+        <ion-label stacked class="inputLabelText"> Gender</ion-label>
+        <ion-select placeholder="Gender" class="inputField" [(ngModel)]="gender">
+          <ion-option value="m">Male</ion-option>
+          <ion-option value="f">Female</ion-option>
+        </ion-select>
+         
+        <ion-label stacked class="inputLabelText"> Social Security Number <span class="whyModal">Why do we need this? </span></ion-label>
+          <ion-input placeholder="000-00-0000" class="inputField" [(ngModel)]="decSSN"></ion-input>
+
+   
+  </div>
+
+<br />
+<br />
+
+</div>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+         <button  class="footerButtonWhite"  (click)="goBack()">Back</button>
+    </ion-col>
+<ion-col>
+ <button  class="footerButton"  (click)="goNext()">Next</button>
+</ion-col>
+
+</ion-row>
+</ion-footer>

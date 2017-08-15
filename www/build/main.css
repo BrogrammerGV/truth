@@ -3815,6 +3815,10 @@ ion-icon::before {
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+.friendlyName {
+  color: #7CADE4;
+}
+
 .footerButton {
   /* Rectangle 28: */
   background: #E6785A;
@@ -39672,6 +39676,64 @@ ion-content .bigBox {
   border-radius: 7px;
   margin-left: 10px;
   margin-right: 10px;
+}
+
+page-info-birth .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-info-birth .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-birth .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-birth ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-birth :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-birth ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-birth :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-birth .inputLabelText {
+  color: #33475C;
+}
+
+page-info-birth .whyModal {
+  margin: 15%;
+  color: #7CADE4;
+  font-size: 9px;
+}
+
+page-info-birth ion-content div ion-select {
+  max-width: 100%;
 }
 
 page-info-name .inputField {

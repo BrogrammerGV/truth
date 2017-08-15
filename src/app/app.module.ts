@@ -29,6 +29,7 @@ import { MidModalPage } from '../pages/mid-modal/mid-modal';
 import { CulturePage } from '../pages/culture/culture';
 import { ConfirmPage } from '../pages/confirm/confirm';
 import { InfoNamePage } from '../pages/info/info-name/info-name';
+import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
 
 
 
@@ -52,7 +53,8 @@ import { InfoNamePage } from '../pages/info/info-name/info-name';
     MidModalPage,
     CulturePage, 
     ConfirmPage,
-    InfoNamePage
+    InfoNamePage, 
+    InfoBirthPage
   ],
   imports: [
     BrowserModule,
@@ -75,7 +77,8 @@ import { InfoNamePage } from '../pages/info/info-name/info-name';
         { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' },
         { component: CulturePage, name: 'CulturePage', segment: 'culture' },
         { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' },
-        { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' }
+        { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' },
+         { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' }
         
       ]
     }),BrowserModule, 
@@ -102,7 +105,8 @@ import { InfoNamePage } from '../pages/info/info-name/info-name';
     MidModalPage,
     CulturePage, 
     ConfirmPage,
-    InfoNamePage
+    InfoNamePage, 
+    InfoBirthPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
