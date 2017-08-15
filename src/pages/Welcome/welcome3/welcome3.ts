@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-import { EntryPage } from '../../../pages/entry/entry';
+import { Storage } from '@ionic/storage';
+import { Home1Page } from '../../../pages/Home/home1/home1';
 /**
  * Generated class for the Welcome3Page page.
  *
@@ -14,8 +15,12 @@ import { EntryPage } from '../../../pages/entry/entry';
   templateUrl: 'welcome3.html',
 })
 export class Welcome3Page {
+    
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -23,7 +28,8 @@ export class Welcome3Page {
   }
 
   nextPage(){
-    this.navCtrl.push(EntryPage);
+    this.storage.set('hasSeenTutorial', 'true');
+    this.navCtrl.push(Home1Page);
   }
 
 }

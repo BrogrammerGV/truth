@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { Storage } from '@ionic/storage';
 import { Welcome3Page } from '../welcome3/welcome3';
-import { EntryPage } from '../../../pages/entry/entry';
+import { Home1Page } from '../../../pages/Home/home1/home1';
 /**
  * Generated class for the Welcome2Page page.
  *
@@ -16,7 +17,10 @@ import { EntryPage } from '../../../pages/entry/entry';
 })
 export class Welcome2Page {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams, 
+    public storage: Storage) {
   }
 
   nextPage(){
@@ -24,7 +28,7 @@ export class Welcome2Page {
   }
 
   skipPage(){
-    this.navCtrl.push(EntryPage);
+    this.storage.set('hasSeenTutorial', 'true');
+    this.navCtrl.push(Home1Page);
   }
-
 }

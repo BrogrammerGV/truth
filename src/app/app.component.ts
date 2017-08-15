@@ -13,6 +13,7 @@ import { SelectPage } from '../pages/select/select';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { Welcome1Page } from '../pages/Welcome/welcome1/welcome1';
+import { Home1Page } from '../pages/Home/home1/home1';
 
 export interface PageInterface {
   title: string;
@@ -71,11 +72,11 @@ export class ConferenceApp {
           this.storage.get('loggedIn')
             .then((loggedIn) => {
               if (loggedIn = 'Yes') {
-                this.rootPage = TabsPage;
+                this.rootPage = Welcome1Page;
                 console.log("Logged In: " + loggedIn);
                 console.log("Has Seen Tutorial: " + loggedIn);
               } else {
-                this.rootPage = EntryPage;
+                this.rootPage = Welcome1Page;
               }
 
             });

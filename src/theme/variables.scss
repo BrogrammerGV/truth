@@ -114,6 +114,34 @@ $datetime-ios-padding-left: 25px;
   align-items: center;
 }
 
+.ios{
+    .headerBarBump{
+        height: 20px;
+        background-color: #7cade4;
+    }
+}
+
+.customHeaderClass{
+    background-color: #7cade4;
+    border-bottom: solid 0.5px #979797;
+    font-family: Roboto;
+	font-size: 1.5em;
+	font-weight: bold;
+    text-align: center;
+    vertical-align: center;
+    color: #ffffff;
+    height: 2.8em;
+    line-height: 2.8em;
+    position: relative;
+}
+
+.menuIcon{
+    height: 50%;
+    position: absolute;
+    right: 20px;
+    top: 25%;
+}
+
 .welcomeSkipText{
     position: fixed; 
     top: 10px; 
@@ -122,11 +150,11 @@ $datetime-ios-padding-left: 25px;
 }
 
 .welcomeCenter{
-    position: fixed;
+    position: relative;
     top: 33%;
     left: 50%;
     transform: translate(-50%, 0%);
-    width:80%;
+    width:100%;
     display: block;
     margin: auto;
 }
@@ -148,10 +176,77 @@ $datetime-ios-padding-left: 25px;
     color: #ffffff;
     padding-top: 15px;
 }
+
+.welcomeImage{
+    height: 5em;
+    display: block;
+    margin: auto;
+}
+
 .ios{
   .welcomeSkipText{
       position: fixed; 
       top: 30px; 
       right: 10px;
   }
+}
+
+.cardStyle{
+    background: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 7px;
+    text-align: center;
+    height: 100%;
+    padding: 0px 20px 0px 20px;
+}
+
+.whiteButton
+{
+    /* Rectangle 28: */
+    background: #FFFFFF;
+	border-radius: 3px;
+	border: solid 3px #33475c;
+    text-align: center;
+    height: 2.5em;
+    width: 48%;
+
+    font-size: 1.3em;
+	font-family: Roboto;
+	font-weight: bold;
+	text-align: center;
+	color: #33475c;
+}
+
+.orangeButton
+{
+    /* Rectangle 28: */
+    background: #E6785A;
+	border-radius: 3px;
+    text-align: center;
+    height: 2.5em;
+    width: 48%;
+
+    font-size: 1.3em;
+	font-family: Roboto;
+	font-weight: bold;
+	text-align: center;
+    color: #FFFFFF;
+}
+
+.horizontalBreak{
+    width: 4em;
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.container{
+    height: 100%; 
+    padding: 20px 10px 20px 10px;
+}
+
+.mainFont{	
+    font-family: Roboto;
+	font-size: 1.6em;
+	font-weight: bold;
+    color: #4a4a4a;
 }
