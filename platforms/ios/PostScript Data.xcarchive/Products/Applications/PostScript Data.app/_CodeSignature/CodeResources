@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		v5AJL3PokSgrHy0SPWrdyb8y19I=
+		oeBbDoXKn4XnxBKMu/nHy8fHIPk=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		ZPwta4VqWdEJzHrTy4PeM/OygIc=
+		1JOB0pPAu924/EG2HHVoMNJrUFM=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		2ygvfoaNJz/ARDcqf1T2e39mCcU=
+		2/lQbhGDQj4Rqx8OWvwwm9/u6nA=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		ILTOxbvpRP0G5f87BXHSILWxJrU=
+		duYmGguWefWyK3DbNJTK9BL942Q=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -174,7 +174,7 @@
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
-		46KAVJ69p6z5/4Faxk1UcWaNdwc=
+		XbBz1tWcDeBq4yTxFiLgPkxyZpI=
 		</data>
 		<key>www/assets/data/data.json</key>
 		<data>
@@ -422,7 +422,7 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		WvZ8a2FBziBYIJ/uZLzKew7wRdw=
+		8UzDd8kcYlK94VwpreuuxP/Cc/c=
 		</data>
 		<key>www/build/main.css.map</key>
 		<data>
@@ -430,11 +430,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		Bgg9hV/ec+3GP/LQTkucbcSn+lM=
+		rLwG/pUZNylIYcuOFPwW3L4FCcQ=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		PJdWlwkzMF8pB80b98ZhbmgH96U=
+		v3oetfrkWKYchM59Jr5qIuJR658=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -735,11 +735,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			v5AJL3PokSgrHy0SPWrdyb8y19I=
+			oeBbDoXKn4XnxBKMu/nHy8fHIPk=
 			</data>
 			<key>hash2</key>
 			<data>
-			NfSGTcKCOjdZKvy0RM1gCHe0y7ABXlMM0K+qFBFR4wU=
+			4F1WaPEAMfLZJRV3Uhu/R+c3n+EFrUaagxPwoe3MNj0=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -757,11 +757,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ZPwta4VqWdEJzHrTy4PeM/OygIc=
+			1JOB0pPAu924/EG2HHVoMNJrUFM=
 			</data>
 			<key>hash2</key>
 			<data>
-			icV4UxO5+mEwKcX6SZx9lTmYiKXLWSrKIdrERi+fQEw=
+			zz+k4zYew0vyGmoAkBAdgCLIPyDUCx9wlL+csysWAFc=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -922,11 +922,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ILTOxbvpRP0G5f87BXHSILWxJrU=
+			duYmGguWefWyK3DbNJTK9BL942Q=
 			</data>
 			<key>hash2</key>
 			<data>
-			lzobKcyxnC1c/mJ2Ipl+r72Gd5ngTZISR78mORqlqRU=
+			3FK02rnkWVptIIj3g2q5aK7gBR57iqpQaCXaTwecJmM=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -955,11 +955,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			46KAVJ69p6z5/4Faxk1UcWaNdwc=
+			XbBz1tWcDeBq4yTxFiLgPkxyZpI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Zl/iod1jVl4nq3lrxzywQrpSohZHgjaGV/FMs6e4IkE=
+			uFl5FyTkKVsQSsTzMnYkw56PdmFYSyRv0Bb7plXhzJE=
 			</data>
 		</dict>
 		<key>www/assets/data/data.json</key>
@@ -1637,11 +1637,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			WvZ8a2FBziBYIJ/uZLzKew7wRdw=
+			8UzDd8kcYlK94VwpreuuxP/Cc/c=
 			</data>
 			<key>hash2</key>
 			<data>
-			/WVDVXAak5mbos79F2cih/UkQllWkvWxEWlmb7RvvBw=
+			zj2UO8D1cbB/BE4U2gaD7sSs+M13uAbvKFPtuzk3Z6E=
 			</data>
 		</dict>
 		<key>www/build/main.css.map</key>
@@ -1659,22 +1659,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Bgg9hV/ec+3GP/LQTkucbcSn+lM=
+			rLwG/pUZNylIYcuOFPwW3L4FCcQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			FgdEaLd38pfv1thjojAw7b0GiU8SvURNVHr3cK+Np1I=
+			N4GoZrjvzDhQgfWIu2wTjFzZvRDMCmHTQSVxD0lEPgY=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			PJdWlwkzMF8pB80b98ZhbmgH96U=
+			v3oetfrkWKYchM59Jr5qIuJR658=
 			</data>
 			<key>hash2</key>
 			<data>
-			iqp+zyz2eyNxkcwa6+t+UQ944OZA7sqaD50fAU28N8Q=
+			1BLaTpkQmg7O3ob43E86kdUB93g/mDJB5bSwLlG8DcQ=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>

@@ -25,25 +25,28 @@
     <h2>  <b>Tell us about your loved one.</b> </h2>
    </ion-row>
 
-<div class="centAlign">
-  
-    
+   <ion-list no-lines>
+
+    <ion-item>
         <ion-label stacked class="inputLabelText"> First Name </ion-label>
           <ion-input placeholder="First Name" class="inputField" [(ngModel)]="firstName"></ion-input>
         
+    </ion-item>
+
  
-  
- 
+        <ion-item>
         <ion-label stacked class="inputLabelText"> Middle Name </ion-label>
           <ion-input placeholder="Middle Name" class="inputField" [(ngModel)]="middleName"></ion-input>
         
- 
+        </ion-item>
   
+        <ion-item>
         <ion-label stacked class="inputLabelText"> Last Name </ion-label>
           <ion-input placeholder="Last Name" class="inputField" [(ngModel)]="lastName"></ion-input>
+        </ion-item>
 
-   
-  </div>
+      </ion-list>
+
 
 <br />
 <br />
