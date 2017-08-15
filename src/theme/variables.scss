@@ -101,3 +101,42 @@ $datetime-ios-padding-left: 25px;
 
 @import "roboto";
 @import "noto-sans";
+
+
+
+
+//Custom CSS Styling for EventApp ProtoType
+
+.footerButton{
+    /* Rectangle 28: */
+    background: #E6785A;
+    /* Primary: */
+    font-family: 'Roboto', sans-serif;
+    font-size: 15.16px;
+    color: #FFFFFF;
+    width: 100%;
+    height: 3em;
+    align-items: center;
+  }
+
+  .footerButtonWhite{
+    /* Rectangle 28: */
+    background: #FFFFFF;
+    /* Primary: */
+    font-family: 'Roboto', sans-serif;
+    font-size: 15.16px;
+    border: 4px solid #33475C;
+    color: #4A4A4A;
+    width: 100%;
+    height: 3em;
+    align-items: center;
+  }
+
+
+
+
+  .item-ios.item-block .item-inner {
+
+  
+    border-bottom: 0;
+  }

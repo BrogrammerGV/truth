@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-navbar hide-tabs>
+    <button ion-button menuToggle>
+      <ion-icon  name="menu"></ion-icon>
+    </button>
+    <ion-title>Information Gathering</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+
+
+
+<ion-content class="outer-content">
+   <!-- <div class="about-header headerTitle"> -->
+  
+      <!-- <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4> -->
+     <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
+  <!-- </div> -->
+<p style="text-align:center;"> Understanding your loved one </p>
+<br />
+<div class="bgCard">
+<br />
+    <ion-row >
+    <h2>  <b>Tell us about your loved one.</b> </h2>
+   </ion-row>
+
+<div class="centAlign">
+  
+    
+        <ion-label stacked class="inputLabelText"> First Name </ion-label>
+          <ion-input placeholder="FirstName" class="inputField" [(ngModel)]="firstName"></ion-input>
+        
+ 
+  
+ 
+        <ion-label stacked class="inputLabelText"> Middle Name </ion-label>
+          <ion-input placeholder="Middle Name" class="inputField" [(ngModel)]="middleName"></ion-input>
+        
+ 
+  
+        <ion-label stacked class="inputLabelText"> Last Name </ion-label>
+          <ion-input placeholder="Last Name" class="inputField" [(ngModel)]="lastName"></ion-input>
+
+   
+  </div>
+
+<br />
+<br />
+
+</div>
+
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+         <button  class="footerButtonWhite"  (click)="goBack()">Back</button>
+    </ion-col>
+<ion-col>
+ <button  class="footerButton"  (click)="insertRecord()">Next</button>
+</ion-col>
+
+</ion-row>
+</ion-footer>

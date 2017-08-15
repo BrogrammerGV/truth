@@ -22,6 +22,8 @@ import { CulturePage } from '../culture/culture';
 import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
 import { ConfirmPage } from '../confirm/confirm';
+import { InfoNamePage } from '../info/info-name/info-name';
+
 
 //AWS Declarations
 declare let callLambda: any;
@@ -118,7 +120,7 @@ submit = "Submit Complete";
 
             if(val != "Yes")
               {
-                this.navCtrl.push(EntryPage);
+                //this.navCtrl.push(EntryPage);
                 return true;
               }
               else return false;
@@ -622,6 +624,11 @@ getSubmit()
 goToConfirm()
 {
   this.navCtrl.push(ConfirmPage);
+}
+
+goImReady()
+{
+this.navCtrl.push(InfoNamePage);
 }
 
 

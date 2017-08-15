@@ -28,6 +28,9 @@ import { ModalPage } from '../pages/modal/modal';
 import { MidModalPage } from '../pages/mid-modal/mid-modal';
 import { CulturePage } from '../pages/culture/culture';
 import { ConfirmPage } from '../pages/confirm/confirm';
+import { InfoNamePage } from '../pages/info/info-name/info-name';
+
+
 
 @NgModule({
   declarations: [
@@ -48,7 +51,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     ModalPage,
     MidModalPage,
     CulturePage, 
-    ConfirmPage
+    ConfirmPage,
+    InfoNamePage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +74,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
         { component: ModalPage, name: 'ModalPage', segment: 'modal' },
         { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' },
         { component: CulturePage, name: 'CulturePage', segment: 'culture' },
-        { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' }
+        { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' },
+        { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' }
         
       ]
     }),BrowserModule, 
@@ -96,7 +101,8 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     ModalPage,
     MidModalPage,
     CulturePage, 
-    ConfirmPage
+    ConfirmPage,
+    InfoNamePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
