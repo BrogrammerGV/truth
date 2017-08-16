@@ -39886,6 +39886,54 @@ page-info-death ion-content div ion-select {
   max-width: 100%;
 }
 
+page-info-military .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-info-military .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-military .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-military ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military .inputLabelText {
+  color: #33475C;
+}
+
 page-info-name .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;

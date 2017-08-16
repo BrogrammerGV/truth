@@ -23,6 +23,7 @@ import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
 import { ConfirmPage } from '../confirm/confirm';
 import { InfoNamePage } from '../info/info-name/info-name';
+import { InfoMilitaryPage } from '../info/info-military/info-military';
 
 
 //AWS Declarations
@@ -660,7 +661,7 @@ goImReady()
 {
   if(this.readyButtonText == 'Continue')
   {
-    this.navCtrl.push(FhPage);
+    this.navCtrl.push(InfoMilitaryPage);
   }
   else {
     this.navCtrl.push(InfoNamePage);

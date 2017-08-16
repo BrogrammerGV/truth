@@ -33,6 +33,7 @@ import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
 import { InfoSsnModalPage } from '../pages/info/info-ssn-modal/info-ssn-modal';
 import { InfoDeathPage } from '../pages/info/info-death/info-death';
 import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
+import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
     InfoBirthPage, 
     InfoSsnModalPage, 
     InfoDeathPage, 
-    InfoAddrPage
+    InfoAddrPage,
+    InfoMilitaryPage
   ],
   imports: [
     BrowserModule,
@@ -81,11 +83,13 @@ import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
         { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' },
         { component: CulturePage, name: 'CulturePage', segment: 'culture' },
         { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' },
+       
         { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' },
          { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' },
               { component: InfoSsnModalPage, name: 'InfoSSNModalPage', segment: 'infoSSNModal' },
               { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' },
-                 { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' }
+                 { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' },
+        { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }
         
       ]
     }),BrowserModule, 
@@ -116,7 +120,8 @@ import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
     InfoBirthPage, 
     InfoSsnModalPage, 
     InfoDeathPage, 
-    InfoAddrPage
+    InfoAddrPage, 
+    InfoMilitaryPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
