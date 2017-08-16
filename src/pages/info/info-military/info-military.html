@@ -24,7 +24,7 @@
 </div>
 </div>
 <br />
-<div style="padding-bottom: 75%;" class="bgCard">
+<div style="padding-bottom: 30%;" class="bgCard">
   <br />
    <br />
 <br /><div class="center">
@@ -39,12 +39,28 @@
    <ion-list no-lines>
 
 <ion-row>
-<ion-col><button class="footerButtonWhite" >Yes</button>
+<ion-col><button [ngClass]="{
+            'footerButtonWhite' : !showDialog,
+            'footerButton' : showDialog
+          }" 
+(click)="showHistory()">Yes</button>
   </ion-col>
   <ion-col> <button class="footerButtonWhite" >No</button>
   </ion-col>
 </ion-row>
 
+
+
+<div *ngIf="showDialog">
+  <div class="center">
+
+ <h2>  <b>Brielfy describe <span class="friendlyName"> {{friendlyName}}'s</span> service, branch served and notable accomplishments.</b> </h2></div>
+     <ion-item class="item-text-wrap">
+         <ion-label stacked class="inputLabelText">Military History</ion-label>
+           <ion-input class="item-text-wrap" style="padding-bottom: 15%;" placeholder="Type Here" class="inputField" [(ngModel)]="militaryHistory"></ion-input>
+          </ion-item>
+
+</div>
  
 
 
@@ -52,8 +68,6 @@
      
 
 
-<br />
-<br />
  </ion-list>
 
 </div>
@@ -68,7 +82,7 @@
          <button  class="footerButtonWhite" >Back</button>
     </ion-col>
 <ion-col>
- <button  class="footerButton">Next</button>
+ <button  class="footerButton"(click)="goNext()">Next</button>
 </ion-col>
 
 </ion-row>

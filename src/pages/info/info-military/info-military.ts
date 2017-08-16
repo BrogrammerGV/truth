@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { InfoHonorsPage } from '../info-honors/info-honors'
 /**
  * Generated class for the InfoMilitaryPage page.
  *
@@ -14,6 +15,13 @@ import { Storage } from '@ionic/storage';
 })
 export class InfoMilitaryPage {
 friendlyName: string;
+militaryInfo: any;
+
+//dynamic variables
+showDialog: boolean = false;
+
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
 
@@ -29,5 +37,20 @@ friendlyName: string;
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoMilitaryPage');
   }
+
+showHistory()
+{
+
+this.showDialog = true;
+
+}
+
+
+
+goNext()
+{
+this.navCtrl.push(InfoHonorsPage);
+}
+
 
 }

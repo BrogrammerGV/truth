@@ -34,6 +34,7 @@ import { InfoSsnModalPage } from '../pages/info/info-ssn-modal/info-ssn-modal';
 import { InfoDeathPage } from '../pages/info/info-death/info-death';
 import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
 import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
+import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
 
 @NgModule({
   declarations: [
@@ -60,7 +61,8 @@ import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
     InfoSsnModalPage, 
     InfoDeathPage, 
     InfoAddrPage,
-    InfoMilitaryPage
+    InfoMilitaryPage, 
+    InfoHonorsPage
   ],
   imports: [
     BrowserModule,
@@ -89,7 +91,8 @@ import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
               { component: InfoSsnModalPage, name: 'InfoSSNModalPage', segment: 'infoSSNModal' },
               { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' },
                  { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' },
-        { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }
+        { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }, 
+           { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' }
         
       ]
     }),BrowserModule, 
@@ -121,7 +124,8 @@ import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
     InfoSsnModalPage, 
     InfoDeathPage, 
     InfoAddrPage, 
-    InfoMilitaryPage
+    InfoMilitaryPage, 
+    InfoHonorsPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
