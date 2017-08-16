@@ -41,6 +41,10 @@ showHistory()
 this.showDialog = true;
 
 }
+goBack()
+{
+  this.navCtrl.pop();
+}
 
 
 }

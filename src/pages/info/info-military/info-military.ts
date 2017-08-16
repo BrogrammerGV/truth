@@ -31,11 +31,15 @@ showDialog: boolean = false;
      this.storage.get('firstName').then((val) => {
                           this.friendlyName = val;
                         });
-           
+this.storage.get('militaryCheck').then((val) => {
+                          this.showDialog = val;
+                        });
+           this.loadFromLocalStorage();
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InfoMilitaryPage');
+
   }
 
 showHistory()
@@ -45,12 +49,46 @@ this.showDialog = true;
 
 }
 
+setLocalStorage()
+{
+  this.storage.set('militaryInfo', this.militaryInfo);
+
+  if(this.showDialog)
+  this.storage.set('militaryCheck', true)
+  else
+    this.storage.set('militaryCheck', false)
+
+}
+
+
+loadFromLocalStorage()
+{
+  try{
+          this.storage.get('militaryInfo').then((val) => {
+                      this.militaryInfo = val;
+                    });
+
+  }
+
+  catch(err)
+  {
+    console.log(err);
+  }
+
+}
+
 
 
 goNext()
 {
+  this.setLocalStorage();
 this.navCtrl.push(InfoHonorsPage);
 }
 
+
+goBack()
+{
+  this.navCtrl.pop();
+}
 
 }

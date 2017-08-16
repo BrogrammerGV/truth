@@ -24,12 +24,12 @@
 </div>
 </div>
 <br />
-<div style="padding-bottom: 30%;" class="bgCard">
+<div style="padding-bottom: 20%;" class="bgCard">
   <br />
    <br />
 <br /><div class="center">
 
- <h2>  <b>Did <span class="friendlyName">{{friendlyName}}</span> serve in the Military?</b> </h2>
+ <h2>  <b>Did <span class="friendlyName">{{friendlyName}}</span> serve in the military?</b> </h2>
 
       
     </div>
@@ -54,19 +54,13 @@
 <div *ngIf="showDialog">
   <div class="center">
 
- <h2>  <b>Brielfy describe <span class="friendlyName"> {{friendlyName}}'s</span> service, branch served and notable accomplishments.</b> </h2></div>
+ <h2>  <b>Briefly describe <span class="friendlyName"> {{friendlyName}}'s</span> service, branch served and notable accomplishments.</b> </h2></div>
      <ion-item class="item-text-wrap">
          <ion-label stacked class="inputLabelText">Military History</ion-label>
-           <ion-input class="item-text-wrap" style="padding-bottom: 15%;" placeholder="Type Here" class="inputField" [(ngModel)]="militaryHistory"></ion-input>
+           <ion-textarea style="height: 45px;" class="item-text-wrap"  placeholder="Type Here" class="inputField" [(ngModel)]="militaryInfo"></ion-textarea>
           </ion-item>
 
 </div>
- 
-
-
-
-     
-
 
  </ion-list>
 
@@ -79,7 +73,7 @@
 <ion-footer>
   <ion-row>
     <ion-col>
-         <button  class="footerButtonWhite" >Back</button>
+         <button  class="footerButtonWhite" (click)="goBack()" >Back</button>
     </ion-col>
 <ion-col>
  <button  class="footerButton"(click)="goNext()">Next</button>
