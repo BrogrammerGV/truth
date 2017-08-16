@@ -7,63 +7,55 @@
 <ion-header>
   <div class="headerBarBump"></div>
   <div class="customHeaderClass">
-    <img src="assets/img/menu.png" class="menuIcon" />
-    PostScript
+    <img src="assets/img/menu.png" class="menuIcon" /> PostScript
   </div>
 </ion-header>
 
 
-<ion-content class="outer-content">
-  <div class="container">
-      <div class="welcomeCenter"
-          [ngClass]="{'slideUp' : buttonClicked}">
-        <div class="mainFont"
-          [ngClass]="{'hideAnimation slideUp' : buttonClicked}">Are you planning an event or searching for one?</div>
-        <hr class="horizontalBreak" style="height: 2px" 
-          [ngClass]="{'hideAnimation slideUp' : buttonClicked}"/>
+<ion-content padding no-bounce>
+  <div class="cardStyle">
+    <div class="" [ngClass]="{'hideAnimation' : buttonClicked}">
+      <div class="mainFont">Are you planning an event or searching for one?</div>
+      <hr class="horizontalBreak" style="height: 2px" />
 
-        <button 
-        [ngClass]="{
+    </div>
+    <button [ngClass]="{
             'whiteButton' : !planningClicked,
             'orangeButton' : planningClicked
-          }"
-          (click)="planning()">Planning</button>
-        <button 
-        [ngClass]="{
+          }" (click)="planning()">Planning</button>
+    <button [ngClass]="{
             'whiteButton' : !searchingClicked,
             'orangeButton' : searchingClicked
-          }"(click)="searching()">Searching</button>
-          
-        <div class="hideAnimation" style="margin-top: 1.5em"
-          [ngClass]="{'showAnimation' : planningClicked}">
-          <div class="mainFont">
-            Create an account or login to get started.
-          </div>
-          <div>
-          <div style="text-align: left">
-            <ion-list>
+          }" (click)="searching()">Searching</button>
+
+    <div class="hideAnimation" style="margin-top: 1.5em" [ngClass]="{'showAnimation' : planningClicked}">
+
+      <div class="mainFont">
+        Create an account or login to get started.
+      </div>
+      <div>
+        <div style="text-align: left">
             <ion-item>
               <ion-label stacked class="inputLabelText">Name</ion-label>
-                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerName"></ion-input>
+              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerName"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Email</ion-label>
-                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerEmail"></ion-input>
+              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerEmail"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Password</ion-label>
-                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerPassword"></ion-input>
+              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerPassword"></ion-input>
             </ion-item>
-            </ion-list>
-          </div>
         </div>
       </div>
     </div>
+    <br />
   </div>
 </ion-content>
 
 
 
 <ion-footer>
-  <button class="footerButton" (click)="login()">Login</button>
+  <button class="footerButton" (click)="login()">{{buttonText}}</button>
 </ion-footer>

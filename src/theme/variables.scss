@@ -70,6 +70,11 @@ $item-ios-padding-right: 25px ;
 $datetime-ios-padding-right: 25px;
 $datetime-ios-padding-left: 25px;
 
+$text-input-ios-margin-top: 0;
+$text-input-ios-margin-bottom: 0;
+$text-input-ios-margin-left: 0;
+$text-input-ios-margin-right: 0;
+
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
@@ -191,15 +196,6 @@ $datetime-ios-padding-left: 25px;
   }
 }
 
-.cardStyle{
-    background: #ffffff;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-    border-radius: 7px;
-    text-align: center;
-    height: 100%;
-    padding: 0px 20px 0px 20px;
-}
-
 .whiteButton
 {
     /* Rectangle 28: */
@@ -240,8 +236,15 @@ $datetime-ios-padding-left: 25px;
 }
 
 .container{
-    height: 100%; 
     padding: 20px 10px 20px 10px;
+}
+
+.cardStyle{
+    background: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+    border-radius: 7px;
+    text-align: center;
+    padding: 10px 20px 10px 20px;
 }
 
 .mainFont{	
@@ -249,4 +252,17 @@ $datetime-ios-padding-left: 25px;
 	font-size: 1.6em;
 	font-weight: bold;
     color: #4a4a4a;
+}
+
+.inputField {
+    background: #FFFFFF;
+    border: 2px solid #33475C;
+    border-radius: 1.5px;
+    height: 3em;
+    text-align: start;
+}
+
+.text-input-ios{
+    margin: 0 !important;
+    height: 100%;
 }
