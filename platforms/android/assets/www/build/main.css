@@ -3815,6 +3815,30 @@ ion-icon::before {
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+#myProgress {
+  margin-left: 25%;
+  width: 50%;
+  background-color: #33475C;
+  border-radius: 7px;
+}
+
+#myBar {
+  width: 10%;
+  height: 5px;
+  background-color: #7CADE4;
+  border-radius: 7px;
+}
+
+/* Understanding your l: */
+.bgCard {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
 .friendlyName {
   color: #7CADE4;
 }
@@ -39683,6 +39707,67 @@ ion-content .bigBox {
   margin-right: 10px;
 }
 
+page-info-addr .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+}
+
+page-info-addr .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-addr .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-addr ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-addr :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-addr ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-addr :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-addr .inputLabelText {
+  color: #33475C;
+}
+
+page-info-addr .whyModal {
+  margin: 60%;
+  color: #7CADE4;
+  font-size: 9px;
+}
+
+page-info-addr ion-content div ion-select {
+  max-width: 100%;
+}
+
+page-info-addr ion-content div ion-input {
+  border-bottom: 0;
+}
+
 page-info-birth .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -39738,6 +39823,10 @@ page-info-birth .whyModal {
 
 page-info-birth ion-content div ion-select {
   max-width: 100%;
+}
+
+page-info-birth ion-content div ion-input {
+  border-bottom: 0;
 }
 
 page-info-death .inputField {
@@ -40180,15 +40269,6 @@ page-mid-modal .orange {
   background-image: linear-gradient(-180deg, #B3D6F3 0%, #7CADE4 100%) !important;
 }
 
-.bgCard {
-  background: #ffffff;
-  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-  border-radius: 7px;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-
 .whiteButton {
   /* Rectangle 28: */
   background: #FFFFFF;
@@ -40199,7 +40279,6 @@ page-mid-modal .orange {
 
 .tileOne {
   width: 100%;
-  height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/info/Tile.png") 60% 80% no-repeat;
@@ -40207,7 +40286,6 @@ page-mid-modal .orange {
 
 .tile2 {
   width: 100%;
-  height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/info/tile2.png") 50% 60% no-repeat;
@@ -40215,7 +40293,6 @@ page-mid-modal .orange {
 
 .tileThree {
   width: 100%;
-  height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/info/tileThree.png") 50% 60% no-repeat;
@@ -40223,7 +40300,6 @@ page-mid-modal .orange {
 
 .tileFour {
   width: 100%;
-  height: 0 !important;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/info/tileFour.png") 60% 80% no-repeat;
@@ -40231,30 +40307,39 @@ page-mid-modal .orange {
 
 .tileText {
   position: relative;
-  top: -40px;
-  left: -5px;
+  top: -20px;
+  left: -0px;
   text-align: left;
 }
 
 .tileTextAbout {
   position: relative;
-  top: -50px;
-  left: -35px;
+  top: -35px;
+  left: -25px;
   text-align: left;
 }
 
 .tileTextWork {
   position: relative;
-  top: -25px;
-  left: -5px;
+  top: -20px;
+  left: 2px;
   text-align: left;
 }
 
 .tileTextLife {
   position: relative;
-  top: -40px;
-  left: -35px;
+  top: -30px;
+  left: -15px;
   text-align: left;
+}
+
+.centAlign {
+  width: 85%;
+  margin: auto;
+}
+
+.checkOver {
+  color: #ffffff;
 }
 
 .tabbar {

@@ -74,7 +74,7 @@ export class ConferenceApp {
           console.log("Logged In: " + loggedIn);
           console.log("Has Seen Tutorial: " + loggedIn);
         } else {
-          this.rootPage = EntryPage;
+          this.rootPage = SelectPage;
         }
       
       });

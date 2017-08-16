@@ -108,12 +108,40 @@ $text-input-ios-margin-right: 0;
 @import "roboto";
 @import "noto-sans";
 
+//Custom Progress Bar - CJM
+#myProgress {
+ margin-left: 25%;
+  width: 50%;
+  background-color: #33475C;;
+  border-radius: 7px;
+}
+
+#myBar {
+  width: 10%;
+  height: 5px;
+  background-color: #7CADE4;
+  border-radius: 7px;
+}/* Understanding your l: */
+
+
+
+
+
+
 
 
 
 //Custom CSS Styling for EventApp ProtoType
 
+  .bgCard{
+     background: #ffffff;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 7px;
+margin-left: 10px;
+margin-right: 10px; 
 
+
+       }
 
 .friendlyName 
 {
@@ -160,4 +188,5 @@ $text-input-ios-margin-right: 0;
     margin: 0;
     height: 100%;
 }
+
 

@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { InfoSsnModalPage } from '../info-ssn-modal/info-ssn-modal';
-import { InfoDeathPage } from '../info-death/info-death';
+import { InfoAddrPage } from '../info-addr/info-addr';
+
 /**
  * Generated class for the InfoBirthPage page.
  *
@@ -83,7 +84,7 @@ loadFromLocalStorage()
 goNext()
 {
   this.setLocalStorage();
-  this.navCtrl.push(InfoDeathPage);
+  this.navCtrl.push(InfoAddrPage);
 
 }
 

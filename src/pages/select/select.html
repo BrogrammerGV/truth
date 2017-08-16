@@ -13,23 +13,51 @@
       <!-- <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4> -->
      <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
   <!-- </div> -->
-
+  <div class="center">
+<p>  Understanding your loved one </p>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+</div>
 <br />
 <div class="bgCard">
-  <ion-grid > 
-    <ion-row>
+  <ion-grid> 
+
+
+
+    <ion-row *ngIf="readyButtonText != 'Continue'">
     <h2> <b>Tell us about your loved one.</b> </h2>
   <p> The following screens will help you collect important information about your loved one. We will use these details to coordinate your event and file the necessary paperwork.</p>
     </ion-row>
 
+    <ion-row *ngIf="readyButtonText == 'Continue'">
+    <h2> <b>Education and Work Expereience</b> </h2>
+  <p> Thank you for the information you've provided so far. In this section, we'll gather details about your loved one's education and work experience.</p>
+    </ion-row>
+
+
     <div class="centAlign">
   <ion-row >
     <ion-col  col-6>
-   <button (click)="goToAbout()" ion-button full class="tileOne"><h2 class="tileTextAbout">About</h2> </button>
+   
+<!--Logic Will Need Reworked for next Pages-->
+
+   <button (click)="goToAbout()" ion-button full class="tileOne"
+   [ngClass]="{'checkOver' : (readyButtonText == 'Continue')}"
+   >
+    
+     <h2  *ngIf="readyButtonText != 'Continue'" class="tileTextAbout">About</h2> 
+     <ion-icon style="font-size: 90px" *ngIf="readyButtonText == 'Continue'" name="checkmark"> </ion-icon>
+     
+     
+     </button>
     </ion-col>
     <ion-col col-6>
-     <button  (click)="goToEdu()" ion-button full class="tile2"><h2 class="tileTextWork">Education<br />and Work <br />Experience</h2>
+     
+     <button  (click)="goToEdu()" ion-button full class="tile2">
+       <h2 class="tileTextWork">Education<br />and Work <br />Experience</h2>
     </button>
+    
     </ion-col>
   </ion-row>
    <ion-row >
@@ -37,11 +65,14 @@
    <button   (click)="goToCulture()" ion-button full class="tileThree"><h2 class="tileTextLife"> Culture<br />and Life </h2> </button>
     </ion-col>
     <ion-col col-6>
-     <button   (click)="gotToServ()" ion-button full class="tileFour"><h2 class="tileText">Services and <br />Memorials </h2></button>
+     <button   (click)="gotToServ()" ion-button full class="tileFour"><h2 class="tileText">Services<br />and<br /> Memorials </h2></button>
 
     </ion-col>
   </ion-row>
   </div>
+
+
+
   </ion-grid>
 
 </div>
@@ -56,7 +87,7 @@
          <button  class="footerButtonWhite"  (click)="insertRecord()">Skip For Now</button>
     </ion-col>
 <ion-col>
- <button  class="footerButton"  (click)="goImReady()">I'm Ready</button>
+ <button  class="footerButton"  (click)="goImReady()">{{readyButtonText}}</button>
 </ion-col>
 
 </ion-row>

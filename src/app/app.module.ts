@@ -32,7 +32,7 @@ import { InfoNamePage } from '../pages/info/info-name/info-name';
 import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
 import { InfoSsnModalPage } from '../pages/info/info-ssn-modal/info-ssn-modal';
 import { InfoDeathPage } from '../pages/info/info-death/info-death';
-
+import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
 
 @NgModule({
   declarations: [
@@ -57,7 +57,8 @@ import { InfoDeathPage } from '../pages/info/info-death/info-death';
     InfoNamePage, 
     InfoBirthPage, 
     InfoSsnModalPage, 
-    InfoDeathPage
+    InfoDeathPage, 
+    InfoAddrPage
   ],
   imports: [
     BrowserModule,
@@ -83,7 +84,8 @@ import { InfoDeathPage } from '../pages/info/info-death/info-death';
         { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' },
          { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' },
               { component: InfoSsnModalPage, name: 'InfoSSNModalPage', segment: 'infoSSNModal' },
-              { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' }
+              { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' },
+                 { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' }
         
       ]
     }),BrowserModule, 
@@ -113,7 +115,8 @@ import { InfoDeathPage } from '../pages/info/info-death/info-death';
     InfoNamePage, 
     InfoBirthPage, 
     InfoSsnModalPage, 
-    InfoDeathPage
+    InfoDeathPage, 
+    InfoAddrPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

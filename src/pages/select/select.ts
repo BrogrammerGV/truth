@@ -28,6 +28,7 @@ import { InfoNamePage } from '../info/info-name/info-name';
 //AWS Declarations
 declare let callLambda: any;
 declare let dataJson: any;
+declare let move: any;
 
 
 @Component({
@@ -87,6 +88,11 @@ dcolor: string;
 /* VARIABLES FOR AWS S3 STORAGE */
       
 
+//Dynamic Page Variables
+readyButtonText: any = "I'm Ready";
+
+
+
 
 //SelectorPage Variables
 dialUp: any;
@@ -99,6 +105,7 @@ submit = "Submit Complete";
   actionSheet: ActionSheet;
   speakers: any[] = [];
   namePass: string;
+  aboutStyle: any;
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
@@ -114,17 +121,14 @@ submit = "Submit Complete";
 
   ionViewCanEnter()
   {
-  this.storage.get('loggedIn').then((val) => {
-    
-            console.log('Are You Logged In?:', val)
+  // this.storage.get('loggedIn').then((val) => {
 
-            if(val != "Yes")
-              {
-                //this.navCtrl.push(EntryPage);
-                return true;
-              }
-              else return false;
-          });
+  //           if(val != "Yes")
+  //             {
+  //               return true;
+  //             }
+  //             else return false;
+  //         });
 
 
   }
@@ -133,8 +137,24 @@ submit = "Submit Complete";
 
     callLambda("GET"); 
     this.grabFromLocalStorage();
-    this.checkForFinal();
-    this.getSubmit(); 
+    //this.checkForFinal();
+    //this.getSubmit(); 
+
+//Redo This to check all values
+
+this.storage.get('aboutCheck').then((val) => {
+
+        if(val == 'Y')
+    {
+      this.readyButtonText= 'Continue'
+      console.log(this.readyButtonText); 
+      return true; 
+    }
+    
+        });
+
+
+  
   }
 
 
@@ -176,32 +196,33 @@ submit = "Submit Complete";
 //About the Deceased Data Collection
   goToAbout()
       {
-            let nameData = {nameToUse: this.namePass}
-            let myModal = this.modalCtrl.create(AboutModal, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(InfoNamePage);
+        //     let nameData = {nameToUse: this.namePass}
+        //     let myModal = this.modalCtrl.create(AboutModal, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('gender', data.gender);
-                    this.storage.set('dateOfBirth', data.dateOfBirth);
-                    this.storage.set('birthCountry', data.birthCountry);
-                    this.storage.set('stateofbirth', data.stateofbirth);
-                    this.storage.set('whenDie', data.whenDie);
-                    this.storage.set('whereDie', data.whereDie);
-                    this.storage.set('whereDieSpec', data.whereDieSpec);
-                    this.storage.set('deathaddr', data.deathaddr);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('gender', data.gender);
+        //             this.storage.set('dateOfBirth', data.dateOfBirth);
+        //             this.storage.set('birthCountry', data.birthCountry);
+        //             this.storage.set('stateofbirth', data.stateofbirth);
+        //             this.storage.set('whenDie', data.whenDie);
+        //             this.storage.set('whereDie', data.whereDie);
+        //             this.storage.set('whereDieSpec', data.whereDieSpec);
+        //             this.storage.set('deathaddr', data.deathaddr);
+        //             console.log(data);
                      
 
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('acolor', data);
-                 this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('acolor', data);
+        //          this.checkForFinal()
+        // }); 
+        //    myModal.present();
       }
 
 
@@ -611,24 +632,33 @@ getSubmit()
        else this.submit = val;
                       });
 
-    this.storage.get('firstName').then((val) => {
-            console.log("Username: " + val)
-            if(val == null|| val == '')
-              this.openIntroModal();
-              else
-              this.namePass = val
-            });
+    // this.storage.get('firstName').then((val) => {
+    //         console.log("Username: " + val)
+    //         if(val == null|| val == '')
+    //           this.openIntroModal();
+    //           else
+    //           this.namePass = val
+    //         });
 }
 
 
 goToConfirm()
 {
-  this.navCtrl.push(ConfirmPage);
+  move(25);
+  this.storage.clear();
+
 }
 
 goImReady()
 {
-this.navCtrl.push(InfoNamePage);
+  if(this.readyButtonText == 'Continue')
+  {
+    this.navCtrl.push(FhPage);
+  }
+  else {
+    this.navCtrl.push(InfoNamePage);
+  }
+
 }
 
 

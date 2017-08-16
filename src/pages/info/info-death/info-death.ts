@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Storage } from '@ionic/storage';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
+import {SelectPage} from '../../select/select';
 /**
  * Generated class for the InfoDeathPage page.
  *
@@ -38,7 +38,12 @@ ionViewCanEnter()
     console.log('ionViewDidLoad InfoDeathPage');
   }
 
-
+ionViewCanLeave(): boolean
+{
+  this.storage.set("aboutCheck", 'Y');
+  console.log("This is Working Fam");
+  return true;
+}
 
 
 
@@ -77,7 +82,8 @@ loadFromLocalStorage()
 goNext()
 {
   this.setLocalStorage();
-  //this.navCtrl.push(InfoDeathPage);
+
+  this.navCtrl.push(SelectPage);
 
 }
 
