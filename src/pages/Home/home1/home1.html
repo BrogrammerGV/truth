@@ -13,15 +13,14 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content class="outer-content">
   <div class="container">
-    <div class="cardStyle">
       <div class="welcomeCenter"
           [ngClass]="{'slideUp' : buttonClicked}">
         <div class="mainFont"
-          [ngClass]="{'hideAnimation' : buttonClicked}">Are you planning an event or searching for one?</div>
+          [ngClass]="{'hideAnimation slideUp' : buttonClicked}">Are you planning an event or searching for one?</div>
         <hr class="horizontalBreak" style="height: 2px" 
-          [ngClass]="{'hideAnimation' : buttonClicked}"/>
+          [ngClass]="{'hideAnimation slideUp' : buttonClicked}"/>
 
         <button 
         [ngClass]="{
@@ -34,6 +33,30 @@
             'whiteButton' : !searchingClicked,
             'orangeButton' : searchingClicked
           }"(click)="searching()">Searching</button>
+          
+        <div class="hideAnimation" style="margin-top: 1.5em"
+          [ngClass]="{'showAnimation' : planningClicked}">
+          <div class="mainFont">
+            Create an account or login to get started.
+          </div>
+          <div>
+          <div style="text-align: left">
+            <ion-list>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Name</ion-label>
+                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Email</ion-label>
+                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerEmail"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Password</ion-label>
+                <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerPassword"></ion-input>
+            </ion-item>
+            </ion-list>
+          </div>
+        </div>
       </div>
     </div>
   </div>
