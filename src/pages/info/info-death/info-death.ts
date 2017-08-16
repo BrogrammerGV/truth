@@ -38,12 +38,12 @@ ionViewCanEnter()
     console.log('ionViewDidLoad InfoDeathPage');
   }
 
-ionViewCanLeave(): boolean
-{
-  this.storage.set("aboutCheck", 'Y');
-  console.log("This is Working Fam");
-  return true;
-}
+// ionViewCanLeave(): boolean
+// {
+//   this.storage.set("aboutCheck", 'Y');
+//   console.log("This is Working Fam");
+//   return true;
+// }
 
 
 
@@ -82,7 +82,8 @@ loadFromLocalStorage()
 goNext()
 {
   this.setLocalStorage();
-
+  this.storage.set("aboutCheck", 'Y');
+  console.log("This is Working Fam");
   this.navCtrl.push(SelectPage);
 
 }

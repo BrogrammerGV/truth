@@ -135,12 +135,21 @@ submit = "Submit Complete";
 
   ionViewDidLoad() {
 
+    console.log("ionViewDidLoad SelectPage");
+
     callLambda("GET"); 
     this.grabFromLocalStorage();
     //this.checkForFinal();
     //this.getSubmit(); 
 
 //Redo This to check all values
+
+
+  
+  }
+
+ionViewDidEnter()
+{
 
 this.storage.get('aboutCheck').then((val) => {
 
@@ -153,9 +162,7 @@ this.storage.get('aboutCheck').then((val) => {
     
         });
 
-
-  
-  }
+}
 
 
 //Culture and Life Data Collection
