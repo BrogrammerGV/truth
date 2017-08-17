@@ -34,20 +34,23 @@
         Create an account or login to get started.
       </div>
       <div>
+        <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
         <div style="text-align: left">
             <ion-item>
               <ion-label stacked class="inputLabelText">Name</ion-label>
-              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerName"></ion-input>
+              <ion-input placeholder="Type here" required class="inputField" [(ngModel)]="userInfo.name" formControlName="name"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Email</ion-label>
-              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerEmail"></ion-input>
+              <ion-input type="email" required placeholder="Type here" class="inputField" [(ngModel)]="userInfo.email" formControlName="email"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Password</ion-label>
-              <ion-input placeholder="Type here" class="inputField" [(ngModel)]="registerPassword"></ion-input>
+              <ion-input type="password" required placeholder="Type here" class="inputField" [(ngModel)]="userInfo.password" formControlName="password"></ion-input>
             </ion-item>
         </div>
+            <button type="submit" style="margin-top:1em" block primary class="orangeButton">Next</button>
+        </form>
       </div>
     </div>
     <br />
@@ -57,5 +60,5 @@
 
 
 <ion-footer>
-  <button class="footerButton" (click)="login()">{{buttonText}}</button>
+  <button class="footerButton" type="submit" (click)="login()">Login</button>
 </ion-footer>
