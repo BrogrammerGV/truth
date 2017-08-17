@@ -95,6 +95,7 @@ dcolor: string;
 readyButtonText: any = "I'm Ready";
 aboutFinished: boolean = false;
 militaryFinished: boolean = false;
+cultureFinished: boolean = false;
 
 
 
@@ -168,6 +169,16 @@ this.storage.get('militaryFinCheck').then((val) => {
     {
       this.aboutFinished = false;
       this.militaryFinished = true;
+      this.readyButtonText= 'Continue'
+    }
+        });
+                
+this.storage.get('cultureFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = false;
+      this.cultureFinished = true;
       this.readyButtonText= 'Continue'
     }
         });

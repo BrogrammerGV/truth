@@ -1,18 +1,83 @@
-<!--
-  Generated template for the CultureParentsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>CultureParents</ion-title>
+  <ion-navbar hide-tabs>
+    <button ion-button menuToggle>
+      <ion-icon  name="menu"></ion-icon>
+    </button>
+    <ion-title>Information Gathering</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
-<ion-content padding>
+
+
+
+<ion-content class="outer-content">
+   <!-- <div class="about-header headerTitle"> -->
+  
+      <!-- <h4 class="slide-in-top"> Click on the categories below to tell us about your loved one. </h4> -->
+     <!-- <img class="logo heartbounce" src="assets/img/one.png" alt="ionic logo">-->
+  <!-- </div> -->
+  <div class="center">
+<p>  Understanding your loved one </p>
+<div id="myProgress">
+  <div id="myBar"></div>
+</div>
+</div>
+<br />
+<div style="padding-bottom: 20%;" class="bgCard">
+
+
+  <div class="center">
+ 
+      
+    <h2>  <b>Tell us about <span class="friendlyName">{{friendlyName}}'s</span> mother.</b> </h2>
+    
+   </div>
+
+
+
+   <ion-list no-lines>
+
+
+    <ion-item>
+      <ion-label  stacked class="inputLabelText">Mother's Name</ion-label>
+      
+          <ion-input placeholder="First Name" class="inputField" [(ngModel)]="motherFirstName"></ion-input>
+    </ion-item>
+
+ 
+        <ion-item>
+        <ion-label stacked class="inputLabelText"> </ion-label>
+          <ion-input placeholder="Middle Name" class="inputField" [(ngModel)]="motherMiddleName"></ion-input>
+        </ion-item>
+  
+        <ion-item>
+        <ion-label stacked class="inputLabelText"> </ion-label>
+          <ion-input placeholder="Last Name" class="inputField" [(ngModel)]="motherLastName"></ion-input>
+        </ion-item>
+
+
+     
+
+
+<br />
+<br />
+ </ion-list>
+
+</div>
+
+
 
 </ion-content>
+
+<ion-footer>
+  <ion-row>
+    <ion-col>
+         <button  class="footerButtonWhite"  (click)="goBack()">Back</button>
+    </ion-col>
+<ion-col>
+ <button  class="footerButton"  (click)="goNext()">Next</button>
+</ion-col>
+
+</ion-row>
+</ion-footer>

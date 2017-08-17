@@ -39615,6 +39615,157 @@ page-culture .defaultValue {
   color: #FFFFFF;
 }
 
+page-culture-father .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-culture-father .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-culture-father .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-culture-father ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-father :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-father ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-father :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-father .inputLabelText {
+  color: #33475C;
+}
+
+page-culture-parents .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-culture-parents .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-culture-parents .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-culture-parents ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-parents :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-parents ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-parents :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-parents .inputLabelText {
+  color: #33475C;
+}
+
+page-culture-race .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+  text-align: start;
+}
+
+page-culture-race .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-culture-race .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-culture-race ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-race :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-race ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-race :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-culture-race .inputLabelText {
+  color: #33475C;
+}
+
+page-culture-race .whyModal {
+  padding-top: 20px;
+  margin: 60%;
+  color: #7CADE4;
+  font-size: 9px;
+}
+
 page-culture-spouse .marButton {
   width: 50%;
   margin-bottom: 5%;

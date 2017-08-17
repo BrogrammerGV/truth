@@ -41,6 +41,10 @@ import { InfoWorkPage } from '../pages/info/info-work/info-work';
 import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spouse';
 import { CultureSpousecontPage } from '../pages/culture/culture-spousecont/culture-spousecont';
 import { CultureParentsPage } from '../pages/culture/culture-parents/culture-parents';
+import { CultureFatherPage } from '../pages/culture/culture-father/culture-father';
+import { CultureRacePage } from '../pages/culture/culture-race/culture-race';
+
+
 
 @NgModule({
   declarations: [
@@ -73,7 +77,9 @@ import { CultureParentsPage } from '../pages/culture/culture-parents/culture-par
     InfoWorkPage, 
     CultureSpousePage,
     CultureSpousecontPage, 
-    CultureParentsPage
+    CultureParentsPage,
+    CultureFatherPage, 
+    CultureRacePage
 
   ],
   imports: [
@@ -109,7 +115,12 @@ import { CultureParentsPage } from '../pages/culture/culture-parents/culture-par
                   { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' },
                       { component: CultureSpousePage, name: 'CultureSpousePage', segment: 'cultureSpouse' },
     { component: CultureSpousecontPage, name: 'CultureSpousecontPage', segment: 'cultureSpousecont' } ,
-       { component: CultureParentsPage, name: 'CultureParentsPage', segment: 'cultureParentsPage' }          
+       { component: CultureParentsPage, name: 'CultureParentsPage', segment: 'cultureParents' },
+           { component: CultureFatherPage, name: 'CultureFatherPage', segment: 'cultureFather' }   ,       
+                    { component: CultureRacePage, name: 'CultureRacePage', segment: 'cultureRace' }          
+                 
+                     
+                  
                  
         
       ]
@@ -148,7 +159,9 @@ import { CultureParentsPage } from '../pages/culture/culture-parents/culture-par
     InfoWorkPage, 
     CultureSpousePage,
     CultureSpousecontPage, 
-    CultureParentsPage
+    CultureParentsPage, 
+    CultureFatherPage, 
+    CultureRacePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
