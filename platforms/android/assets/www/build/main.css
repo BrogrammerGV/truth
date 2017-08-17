@@ -39615,6 +39615,11 @@ page-culture .defaultValue {
   color: #FFFFFF;
 }
 
+page-culture-spouse .marButton {
+  width: 50%;
+  margin-bottom: 5%;
+}
+
 page-schedule ion-item-sliding[track=ionic] ion-label {
   border-left: 2px solid #7CADE4;
   padding-left: 10px;
@@ -39886,7 +39891,6 @@ page-info-death ion-content div ion-select {
   max-width: 100%;
 }
 
-<<<<<<< HEAD
 page-info-edu .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -39935,17 +39939,11 @@ page-info-edu .inputLabelText {
   color: #33475C;
 }
 
-=======
->>>>>>> 75e59fdcacd04bca8817e4d5d9c00144f4af4fca
 page-info-military .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
   border-radius: 1.5px;
-<<<<<<< HEAD
   height: 100px;
-=======
-  height: 50px;
->>>>>>> 75e59fdcacd04bca8817e4d5d9c00144f4af4fca
   text-align: start;
 }
 
