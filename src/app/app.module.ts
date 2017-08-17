@@ -35,6 +35,8 @@ import { InfoDeathPage } from '../pages/info/info-death/info-death';
 import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
 import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
 import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
+import { InfoEduPage } from '../pages/info/info-edu/info-edu';
+import { InfoWorkPage } from '../pages/info/info-work/info-work';
 
 @NgModule({
   declarations: [
@@ -62,7 +64,9 @@ import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
     InfoDeathPage, 
     InfoAddrPage,
     InfoMilitaryPage, 
-    InfoHonorsPage
+    InfoHonorsPage, 
+    InfoEduPage, 
+    InfoWorkPage
   ],
   imports: [
     BrowserModule,
@@ -92,7 +96,9 @@ import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
               { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' },
                  { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' },
         { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }, 
-           { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' }
+           { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' },
+         { component: InfoEduPage, name: 'InfoEduPage', segment: 'infoEdu' },
+                  { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' }     
         
       ]
     }),BrowserModule, 
@@ -125,7 +131,9 @@ import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
     InfoDeathPage, 
     InfoAddrPage, 
     InfoMilitaryPage, 
-    InfoHonorsPage
+    InfoHonorsPage, 
+    InfoEduPage, 
+    InfoWorkPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

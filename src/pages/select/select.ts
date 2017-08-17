@@ -91,6 +91,8 @@ dcolor: string;
 
 //Dynamic Page Variables
 readyButtonText: any = "I'm Ready";
+aboutFinished: boolean = false;
+militaryFinished: boolean = false;
 
 
 
@@ -153,15 +155,21 @@ ionViewDidEnter()
 {
 
 this.storage.get('aboutCheck').then((val) => {
-
         if(val == 'Y')
     {
+      this.aboutFinished = true;
       this.readyButtonText= 'Continue'
-      console.log(this.readyButtonText); 
-      return true; 
     }
-    
         });
+this.storage.get('militaryFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = true;
+      this.readyButtonText= 'Continue'
+    }
+        });
+
 
 }
 
@@ -237,31 +245,32 @@ this.storage.get('aboutCheck').then((val) => {
 //Military / WOrk / Education Data Collection
    goToEdu()
       {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(FhPage, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(InfoMilitaryPage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(FhPage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('military', data.military);
-                    this.storage.set('militaryServ', data.militaryServ);
-                    this.storage.set('militaryMore', data.militaryMore);
-                    this.storage.set('edu', data.edu);
-                    this.storage.set('ocupation', data.ocupation);
-                    this.storage.set('industry', data.industry);
-                    this.storage.set('hispanic', data.hispanic);
-                    this.storage.set('race', data.race);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('military', data.military);
+        //             this.storage.set('militaryServ', data.militaryServ);
+        //             this.storage.set('militaryMore', data.militaryMore);
+        //             this.storage.set('edu', data.edu);
+        //             this.storage.set('ocupation', data.ocupation);
+        //             this.storage.set('industry', data.industry);
+        //             this.storage.set('hispanic', data.hispanic);
+        //             this.storage.set('race', data.race);
+        //             console.log(data);
                  
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                    this.modalDataCheck('bcolor', data);
-                    this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //             this.modalDataCheck('bcolor', data);
+        //             this.checkForFinal()
+        // }); 
+        //    myModal.present();
 
       }
 

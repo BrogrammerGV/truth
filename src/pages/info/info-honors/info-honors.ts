@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { InfoEduPage } from '../info-edu/info-edu'
 /**
  * Generated class for the InfoHonorsPage page.
  *
@@ -26,6 +27,9 @@ showDialog: boolean = false;
      this.storage.get('firstName').then((val) => {
                           this.friendlyName = val;
                         });
+        this.storage.get('militaryCheckTwo').then((val) => {
+                          this.showDialog = val;
+                        });
            
   }
 
@@ -37,10 +41,32 @@ showDialog: boolean = false;
 
 showHistory()
 {
-
+ this.storage.set('militaryCheckTwo', true)
 this.showDialog = true;
 
 }
+
+
+
+goNext()
+{
+this.navCtrl.push(InfoEduPage);
+}
+
+
+goSkip()
+{
+ this.navCtrl.push(InfoEduPage);
+  this.storage.set('militaryCheckTwo', false)
+this.showDialog = false;
+}
+
+
+goBack()
+{
+  this.navCtrl.pop();
+}
+
 
 
 }

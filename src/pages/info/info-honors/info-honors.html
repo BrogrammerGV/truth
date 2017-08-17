@@ -29,7 +29,7 @@
    <br />
 <br /><div class="center">
 
- <h2>  <b>Are you intersted in more information about military honors and burial rights?</b> </h2>
+ <h2>  <b>Are you interested in more information about military honors and burial rights?</b> </h2>
 
       
     </div>
@@ -45,7 +45,7 @@
           }" 
 (click)="showHistory()">Yes</button>
   </ion-col>
-  <ion-col> <button class="footerButtonWhite" >No</button>
+  <ion-col> <button (click)="goSkip()" class="footerButtonWhite" >No</button>
   </ion-col>
 </ion-row>
 
@@ -76,7 +76,7 @@
 <ion-footer>
   <ion-row>
     <ion-col>
-         <button  class="footerButtonWhite" >Back</button>
+         <button  class="footerButtonWhite" (click)="goBack()">Back</button>
     </ion-col>
 <ion-col>
  <button  class="footerButton"(click)="goNext()">Next</button>

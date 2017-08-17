@@ -39886,6 +39886,102 @@ page-info-death ion-content div ion-select {
   max-width: 100%;
 }
 
+page-info-edu .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 100px;
+  text-align: start;
+}
+
+page-info-edu .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-edu .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-edu ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-edu :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-edu ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-edu :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-edu .inputLabelText {
+  color: #33475C;
+}
+
+page-info-military .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 100px;
+  text-align: start;
+}
+
+page-info-military .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-military .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-military ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-military .inputLabelText {
+  color: #33475C;
+}
+
 page-info-name .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -39952,6 +40048,54 @@ page-info-ssn-modal ion-content {
 
 page-info-ssn-modal ion-content h4 {
   font-size: 15px;
+}
+
+page-info-work .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 100px;
+  text-align: start;
+}
+
+page-info-work .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-info-work .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-info-work ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-work :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-work ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-work :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-info-work .inputLabelText {
+  color: #33475C;
 }
 
 page-user .logo {
