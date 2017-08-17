@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
+import { CultureSpousecontPage} from "../culture-spousecont/culture-spousecont";
+import {CultureParentsPage} from '../culture-parents/culture-parents';
 /**
  * Generated class for the CultureSpousePage page.
  *
@@ -40,8 +42,19 @@ export class CultureSpousePage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad CultureSpousePage');
   }
+
+
 goNext()
 {
+if( this.divorcedDialog || this.marriedDialog)
+{
+  this.navCtrl.push(CultureSpousecontPage);
+}
+else 
+{
+this.navCtrl.push(CultureParentsPage)
+}
+
   //this.setLocalStorage();
 //this.navCtrl.push(InfoHonorsPage);
 }

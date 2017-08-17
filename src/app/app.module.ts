@@ -39,6 +39,8 @@ import { InfoEduPage } from '../pages/info/info-edu/info-edu';
 import { InfoWorkPage } from '../pages/info/info-work/info-work';
 
 import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spouse';
+import { CultureSpousecontPage } from '../pages/culture/culture-spousecont/culture-spousecont';
+import { CultureParentsPage } from '../pages/culture/culture-parents/culture-parents';
 
 @NgModule({
   declarations: [
@@ -69,7 +71,9 @@ import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spous
     InfoHonorsPage, 
     InfoEduPage, 
     InfoWorkPage, 
-    CultureSpousePage
+    CultureSpousePage,
+    CultureSpousecontPage, 
+    CultureParentsPage
 
   ],
   imports: [
@@ -103,7 +107,10 @@ import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spous
            { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' },
          { component: InfoEduPage, name: 'InfoEduPage', segment: 'infoEdu' },
                   { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' },
-                      { component: CultureSpousePage, name: 'CultureSpousePage', segment: 'cultureSpouse' }       
+                      { component: CultureSpousePage, name: 'CultureSpousePage', segment: 'cultureSpouse' },
+    { component: CultureSpousecontPage, name: 'CultureSpousecontPage', segment: 'cultureSpousecont' } ,
+       { component: CultureParentsPage, name: 'CultureParentsPage', segment: 'cultureParentsPage' }          
+                 
         
       ]
     }),BrowserModule, 
@@ -139,7 +146,9 @@ import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spous
     InfoHonorsPage, 
     InfoEduPage, 
     InfoWorkPage, 
-    CultureSpousePage
+    CultureSpousePage,
+    CultureSpousecontPage, 
+    CultureParentsPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
