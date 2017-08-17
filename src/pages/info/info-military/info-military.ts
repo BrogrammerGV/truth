@@ -96,5 +96,4 @@ goBack()
   this.navCtrl.pop();
 }
 
-
 }

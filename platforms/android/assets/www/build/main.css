@@ -39886,6 +39886,7 @@ page-info-death ion-content div ion-select {
   max-width: 100%;
 }
 
+<<<<<<< HEAD
 page-info-edu .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -39934,11 +39935,17 @@ page-info-edu .inputLabelText {
   color: #33475C;
 }
 
+=======
+>>>>>>> 75e59fdcacd04bca8817e4d5d9c00144f4af4fca
 page-info-military .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
   border-radius: 1.5px;
+<<<<<<< HEAD
   height: 100px;
+=======
+  height: 50px;
+>>>>>>> 75e59fdcacd04bca8817e4d5d9c00144f4af4fca
   text-align: start;
 }
 
