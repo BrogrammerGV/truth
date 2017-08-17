@@ -38,6 +38,8 @@ import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
 import { InfoEduPage } from '../pages/info/info-edu/info-edu';
 import { InfoWorkPage } from '../pages/info/info-work/info-work';
 
+import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spouse';
+
 @NgModule({
   declarations: [
     ConferenceApp,
@@ -66,7 +68,9 @@ import { InfoWorkPage } from '../pages/info/info-work/info-work';
     InfoMilitaryPage, 
     InfoHonorsPage, 
     InfoEduPage, 
-    InfoWorkPage
+    InfoWorkPage, 
+    CultureSpousePage
+
   ],
   imports: [
     BrowserModule,
@@ -98,7 +102,8 @@ import { InfoWorkPage } from '../pages/info/info-work/info-work';
         { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }, 
            { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' },
          { component: InfoEduPage, name: 'InfoEduPage', segment: 'infoEdu' },
-                  { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' }     
+                  { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' },
+                      { component: CultureSpousePage, name: 'CultureSpousePage', segment: 'cultureSpouse' }       
         
       ]
     }),BrowserModule, 
@@ -133,7 +138,8 @@ import { InfoWorkPage } from '../pages/info/info-work/info-work';
     InfoMilitaryPage, 
     InfoHonorsPage, 
     InfoEduPage, 
-    InfoWorkPage
+    InfoWorkPage, 
+    CultureSpousePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

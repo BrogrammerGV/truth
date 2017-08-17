@@ -39615,6 +39615,11 @@ page-culture .defaultValue {
   color: #FFFFFF;
 }
 
+page-culture-spouse .marButton {
+  width: 50%;
+  margin-bottom: 5%;
+}
+
 page-schedule ion-item-sliding[track=ionic] ion-label {
   border-left: 2px solid #7CADE4;
   padding-left: 10px;

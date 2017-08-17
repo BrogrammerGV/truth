@@ -22,8 +22,10 @@ import { CulturePage } from '../culture/culture';
 import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
 import { ConfirmPage } from '../confirm/confirm';
+
 import { InfoNamePage } from '../info/info-name/info-name';
 import { InfoMilitaryPage } from '../info/info-military/info-military';
+import { CultureSpousePage } from '../culture/culture-spouse/culture-spouse';
 
 
 //AWS Declarations
@@ -668,11 +670,17 @@ goToConfirm()
 
 goImReady()
 {
-  if(this.readyButtonText == 'Continue')
+  if(this.readyButtonText == 'Continue' && this.aboutFinished)
   {
     this.navCtrl.push(InfoMilitaryPage);
   }
-  else {
+  if(this.readyButtonText == 'Continue' && this.militaryFinished)
+  {
+    this.navCtrl.push(CultureSpousePage);
+  }
+  if(this.readyButtonText != 'Continue')
+
+ {
     this.navCtrl.push(InfoNamePage);
   }
 
