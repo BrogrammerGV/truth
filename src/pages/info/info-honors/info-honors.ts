@@ -66,10 +66,6 @@ this.showDialog = false;
 }
 
 
-goBack()
-{
-  this.navCtrl.pop();
-}
 
 
 
