@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		diGuWEoQ5187QWlCoc3Cp1Xam/I=
+		JX6fMiUrCqPw04xXwOIPxTcFRVk=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		7VDqapBL2+JoMqHfMTv9OOPO2GE=
+		tZyZ36GXXNjIeMR+VTOHrHJBHJ0=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		p3ra9215J177Ix4HewfiduYtpFQ=
+		Qyxh7/pTnBt50eAz2nNwxZFqqUc=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -426,7 +426,7 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		51qYQhb4OcJv1+5d71vtkfOgyOk=
+		xTn+7WCJcVD4kTmOlK0k7gJ0N9E=
 		</data>
 		<key>www/build/main.css.map</key>
 		<data>
@@ -434,11 +434,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		3GDkJtJ/uM4MSomCV8ptiqwnZzc=
+		NAS8z7AkAM0YVVFEhCFd/j5nwt0=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		XeSCyOsZWEcxEXb13odw+9Ep5f4=
+		za0w0vZuJqzAE3MD/yGS7HFqAUo=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -739,11 +739,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			diGuWEoQ5187QWlCoc3Cp1Xam/I=
+			JX6fMiUrCqPw04xXwOIPxTcFRVk=
 			</data>
 			<key>hash2</key>
 			<data>
-			0UL0X4EgAdksvyhnrXnFIKAiVqkVbzLyOlqjubqXpiI=
+			rh86NpRsDAR8IJ/+EeqNCVWVdaRDGpF0vmQ68QUqDjA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -761,11 +761,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7VDqapBL2+JoMqHfMTv9OOPO2GE=
+			tZyZ36GXXNjIeMR+VTOHrHJBHJ0=
 			</data>
 			<key>hash2</key>
 			<data>
-			58uDrND1VTBMRnac3XVSL1lc9jyAPn3TJQlp2yE1EsQ=
+			cC/RKlWkJg7rISNsVszRkPPXGWVXHbQ/Ez8M5hdx0/g=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -926,11 +926,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			p3ra9215J177Ix4HewfiduYtpFQ=
+			Qyxh7/pTnBt50eAz2nNwxZFqqUc=
 			</data>
 			<key>hash2</key>
 			<data>
-			1lO6ds26N1/464bf9U6Wx/50DSJgqQz+aJ60ju8RMT0=
+			Ry9SbalC0PNgJmKsS+RRAU/z1tXxuj0fWpENpFpQ21k=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -1652,11 +1652,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			51qYQhb4OcJv1+5d71vtkfOgyOk=
+			xTn+7WCJcVD4kTmOlK0k7gJ0N9E=
 			</data>
 			<key>hash2</key>
 			<data>
-			p8jXYy/HZ2z/+Z0E8MyC5ldWesjj9xid5IHoI8h+Ko4=
+			Ft/5ojv3qAAbWTo2wTKFJEVV28mF46WsenBK1JkL1u4=
 			</data>
 		</dict>
 		<key>www/build/main.css.map</key>
@@ -1674,22 +1674,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3GDkJtJ/uM4MSomCV8ptiqwnZzc=
+			NAS8z7AkAM0YVVFEhCFd/j5nwt0=
 			</data>
 			<key>hash2</key>
 			<data>
-			PB7TjvYuVqC3BY4wfxA6w5Hgj+aQnsS52JnOPAEfuK0=
+			GBBie97CAAa1AqthzlFzkW/ld+ILq/P0Ny+GpAUPa70=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XeSCyOsZWEcxEXb13odw+9Ep5f4=
+			za0w0vZuJqzAE3MD/yGS7HFqAUo=
 			</data>
 			<key>hash2</key>
 			<data>
-			RNKp9nXvm8uCsMqUeuFR5Ekzexaqa4hS27+doYw5YG0=
+			nJpa1B0XavVPmTmQn7INvGloUmUWcBPkquRgXdncFS0=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>

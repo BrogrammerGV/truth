@@ -46,7 +46,7 @@ export class CultureSpousePage {
 
 goNext()
 {
-if( this.divorcedDialog || this.marriedDialog)
+if( this.widowedDialog || this.marriedDialog)
 {
   this.navCtrl.push(CultureSpousecontPage);
 }
