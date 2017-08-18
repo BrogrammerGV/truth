@@ -69,18 +69,19 @@ export class ConferenceApp {
       .then((hasSeenTutorial) => {
         if (hasSeenTutorial) {
 
-          this.storage.get('loggedIn')
-            .then((loggedIn) => {
-              if (loggedIn = 'Yes') {
-                this.rootPage = Welcome1Page;
-                console.log("Logged In: " + loggedIn);
-                console.log("Has Seen Tutorial: " + loggedIn);
-              } else {
-                this.rootPage = Welcome1Page;
-              }
+          // this.storage.get('loggedIn')
+          //   .then((loggedIn) => {
+          //     if (loggedIn = 'Yes') {
+          //       this.rootPage = Welcome1Page;
+          //       console.log("Logged In: " + loggedIn);
+          //       console.log("Has Seen Tutorial: " + loggedIn);
+          //     } else {
+          //       this.rootPage = Welcome1Page;
+          //     }
 
-            });
+          //   });
 
+          this.rootPage = Home1Page;
         } else {
           this.rootPage = Welcome1Page;
         }

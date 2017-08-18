@@ -254,12 +254,28 @@ $text-input-ios-margin-right: 0;
     color: #4a4a4a;
 }
 
+.subFont{
+    font-family: Roboto;
+    font-size: 1.6em;
+    color: #4F565C
+}
+
+.blueText{
+    color: #7CADE4 !important;
+}
+
 .inputField {
     background: #FFFFFF;
     border: 2px solid #33475C;
     border-radius: 1.5px;
     height: 3em;
     text-align: start;
+}
+
+.searchField{
+    background: url("../assets/img/search.png") no-repeat scroll 7px;
+    padding-left:30px;
+    background-size: 1.2em;
 }
 
 .text-input-ios{

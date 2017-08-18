@@ -4,7 +4,8 @@ import {FormGroup, FormBuilder, FormControl, Validators} from "@angular/forms";
 import { AlertController } from 'ionic-angular';
 
 import { LoginPage } from '../../../pages/login/login';
-import { Welcome2Page } from '../../../pages/Welcome/welcome2/welcome2';
+import { Planning1Page } from '../../../pages/Home/planning1/planning1';
+import { Search1Page } from '../../../pages/Home/search1/search1';
 declare let registerCognito: any;
 /**
  * Generated class for the Home1Page page.
@@ -19,11 +20,12 @@ declare let registerCognito: any;
 })
 export class Home1Page {
   myForm: FormGroup;
-  userInfo: {name: string, email: string, password: string} = {name: '', email: '', password: ''};
+  public userInfo: {first: string, last: string, email: string, password: string} = {first: '', last: '', email: '', password: ''};
   public buttonClicked: boolean = false;
   public searchingClicked: boolean = false;
   public planningClicked: boolean = false;
   public buttonText: string = "Login";
+  searchText: string = "";
   shouldHeight = document.body.clientHeight + 'px';
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public formBuilder: FormBuilder, public alertCtrl: AlertController) {
@@ -32,7 +34,8 @@ export class Home1Page {
 
   ngOnInit(): any {
     this.myForm = this.formBuilder.group({
-      'name': ['', [Validators.required, Validators.minLength(3), this.nameValidator.bind(this)]],
+      'firstName': ['', [Validators.required, Validators.minLength(2), this.nameValidator.bind(this)]],
+      'lastName': ['', [Validators.required, Validators.minLength(2), this.nameValidator.bind(this)]],
       'password': ['', [Validators.required, Validators.minLength(8), this.passwordValidator.bind(this)]],
       'email': ['', [Validators.required, this.emailValidator.bind(this)]]
     });
@@ -70,8 +73,11 @@ export class Home1Page {
       subTitle: '',
       buttons: ['OK']
     });
-    if(!this.isValid('name')){
-      message += "-Please provide a valid name.<br />";
+    if(!this.isValid('firstName')){
+      message += "-Please provide a valid first name.<br />";
+    }
+    if(!this.isValid('lastName')){
+      message += "-Please provide a valid last name.<br />";
     }
     if(!this.isValid('email')){
       message += "-Please provide a valid email address.<br />";
@@ -86,13 +92,17 @@ export class Home1Page {
     }else{
       var that: any = this;
       registerCognito({
-        ClientId: 'dh2cl44233vp0pkosqa5eqrhp', /* required */
+        ClientId: '4qedlf7cu5lo5r670tk6d90d19', /* required */
         Password: this.userInfo.password, /* required */
         Username: this.userInfo.email, /* required */
         UserAttributes: [
           {
-            Name: 'name', /* required */
-            Value: this.userInfo.name
+            Name: 'given_name', /* required */
+            Value: this.userInfo.first
+          },
+          {
+            Name: 'family_name', /* required */
+            Value: this.userInfo.last
           },
           {
             Name: 'email', /* required */
@@ -102,9 +112,8 @@ export class Home1Page {
         ]
 
       }).then(function(data: any){
-        that.navCtrl.setRoot(LoginPage);
+        that.navCtrl.setRoot(Planning1Page, {user: that.userInfo});
       }).catch(function(err: any){
-        console.log(err);
         alert.setMessage(err.message);
         alert.present();
       });
@@ -134,6 +143,14 @@ export class Home1Page {
   emailValidator(control: FormControl): {[s: string]: boolean} {
     if (!control.value.match(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/)) {
       return {invalidEmail: true};
+    }
+  }
+
+  doSearch(){
+    if(this.searchText != ""){
+      this.navCtrl.setRoot(Search1Page,{search: this.searchText});
+    }else{
+      alert("Please enter a search term.");
     }
   }
 }

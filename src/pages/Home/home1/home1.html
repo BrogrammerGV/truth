@@ -35,24 +35,43 @@
       </div>
       <div>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
-        <div style="text-align: left">
+          <div style="text-align: left">
             <ion-item>
-              <ion-label stacked class="inputLabelText">Name</ion-label>
-              <ion-input placeholder="Type here" required class="inputField" [(ngModel)]="userInfo.name" formControlName="name"></ion-input>
+              <ion-label stacked class="inputLabelText">First Name</ion-label>
+              <ion-input placeholder="First name" required class="inputField" [(ngModel)]="userInfo.first" formControlName="firstName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Last Name</ion-label>
+              <ion-input placeholder="Last name" required class="inputField" [(ngModel)]="userInfo.last" formControlName="lastName"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Email</ion-label>
-              <ion-input type="email" required placeholder="Type here" class="inputField" [(ngModel)]="userInfo.email" formControlName="email"></ion-input>
+              <ion-input type="email" required placeholder="login@example.com" class="inputField" [(ngModel)]="userInfo.email" formControlName="email"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Password</ion-label>
               <ion-input type="password" required placeholder="Type here" class="inputField" [(ngModel)]="userInfo.password" formControlName="password"></ion-input>
             </ion-item>
-        </div>
-            <button type="submit" style="margin-top:1em" block primary class="orangeButton">Next</button>
+          </div>
+          <button type="submit" style="margin-top:1em" block primary class="orangeButton">Next</button>
         </form>
       </div>
     </div>
+
+    <div class="hideAnimation" style="margin-top: 1.5em" [ngClass]="{'showAnimation' : searchingClicked}">
+
+      <div class="mainFont">
+        Enter the deceased's name, or search by zip code.
+      </div>
+      <hr class="horizontalBreak" style="height: 2px" />
+      <div>
+      <ion-item>
+        <ion-input placeholder="Type here" required class="inputField searchField" [(ngModel)]="searchText"></ion-input>
+      </ion-item>
+      <button style="margin-top:1em" block primary class="orangeButton" (click)="doSearch()">Search</button>
+      </div>
+    </div>
+
     <br />
   </div>
 </ion-content>

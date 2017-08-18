@@ -77,11 +77,9 @@ function registerCognito(bodyData){
     var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
     cognitoidentityserviceprovider.signUp(bodyData, function(err, data) {
       if (err){
-        console.log(err);
         reject(err);
       }  // an error occurred
       else{
-        console.log(data);
         resolve(data);
       }     
     });
