@@ -26,6 +26,7 @@ import { ConfirmPage } from '../confirm/confirm';
 import { InfoNamePage } from '../info/info-name/info-name';
 import { InfoMilitaryPage } from '../info/info-military/info-military';
 import { CultureSpousePage } from '../culture/culture-spouse/culture-spouse';
+import { ServiceDispPage } from '../service/service-disp/service-disp';
 
 
 //AWS Declarations
@@ -96,6 +97,7 @@ readyButtonText: any = "I'm Ready";
 aboutFinished: boolean = false;
 militaryFinished: boolean = false;
 cultureFinished: boolean = false;
+servicesFinished: boolean = false;
 
 
 
@@ -144,7 +146,7 @@ submit = "Submit Complete";
     console.log("ionViewDidLoad SelectPage");
 
     callLambda("GET"); 
-    this.grabFromLocalStorage();
+    //this.grabFromLocalStorage();
     //this.checkForFinal();
     //this.getSubmit(); 
 
@@ -180,6 +182,17 @@ this.storage.get('cultureFinCheck').then((val) => {
       this.militaryFinished = false;
       this.cultureFinished = true;
       this.readyButtonText= 'Continue'
+    }
+        });
+
+this.storage.get('servicesFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = false;
+      this.cultureFinished = false;
+      this.servicesFinished = true;
+      this.readyButtonText= 'Submit';
     }
         });
 
@@ -295,36 +308,37 @@ this.storage.get('cultureFinCheck').then((val) => {
 //Service and Memorial Data Collection 
    gotToServ()
       {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(MidModalPage, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(ServiceDispPage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(MidModalPage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('disp', data.disp);
-                    this.storage.set('plotYN', data.plotYN);
-                    this.storage.set('attendies', data.attendies);
-                    this.storage.set('funMemServ', data.funMemServ);
-                    this.storage.set('famView', data.famView);
-                    this.storage.set('celeLife', data.celeLife);
-                    this.storage.set('cemeteryName', data.cemeteryName);
-                    this.storage.set('processional', data.processional);
-                    this.storage.set('lunch', data.lunch);
-                    this.storage.set('gravServ', data.gravServ);
-                    this.storage.set('pubPrivVis', data.pubPrivVis);
-                    this.storage.set('fhdirector', data.fhdirector);
-                    this.storage.set('physicianName', data.physicianName);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('disp', data.disp);
+        //             this.storage.set('plotYN', data.plotYN);
+        //             this.storage.set('attendies', data.attendies);
+        //             this.storage.set('funMemServ', data.funMemServ);
+        //             this.storage.set('famView', data.famView);
+        //             this.storage.set('celeLife', data.celeLife);
+        //             this.storage.set('cemeteryName', data.cemeteryName);
+        //             this.storage.set('processional', data.processional);
+        //             this.storage.set('lunch', data.lunch);
+        //             this.storage.set('gravServ', data.gravServ);
+        //             this.storage.set('pubPrivVis', data.pubPrivVis);
+        //             this.storage.set('fhdirector', data.fhdirector);
+        //             this.storage.set('physicianName', data.physicianName);
+        //             console.log(data);
             
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('dcolor', data);
-                    this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('dcolor', data);
+        //             this.checkForFinal()
+        // }); 
+        //    myModal.present();
       }
 
 
@@ -676,34 +690,44 @@ getSubmit()
 goToConfirm()
 {
   // move(25);
-  // this.storage.clear();
- var keys = new Array();
- var data = new Array();
-
-keys.push("buffer");
-
-var counter:number = 1;
+  this.storage.clear();
 
 
-  this.storage.forEach((value, key, index) => {
-    if(value)
-      { 
-        data.push(value);
-        keys.push(key);
-      }
+// var data: AWSDataBuilder[] = [];
 
-  })
-data.push(keys);
-callLambda("POST", data); 
+
+// var counter:number = 1;
+
+
+//   this.storage.forEach((value, key, index) => {
+//     if(value)
+
+//       { 
+//         var p = { x:value, y:key  }
+        
+//         data.push(p);
+//       }
+
+//   })
+// //data.push(keys);
+// callLambda("POST", JSON.stringify(data)); 
+
 
 
 }
 
 goImReady()
 {
+
+if(this.readyButtonText == 'Continue' && this.cultureFinished)
+{
+  this.navCtrl.push(ServiceDispPage);
+}
+
+
   if(this.readyButtonText == 'Continue' && this.aboutFinished)
-  {var json = callLambda("GET");
- console.log(json);
+  {
+
     this.navCtrl.push(InfoMilitaryPage);
   }
   if(this.readyButtonText == 'Continue' && this.militaryFinished)
@@ -722,3 +746,10 @@ goImReady()
 
 }
 
+
+export class AWSDataBuilder
+{
+  constructor(x: any, y: any)
+  {}
+
+}

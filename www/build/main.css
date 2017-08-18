@@ -3883,6 +3883,17 @@ ion-icon::before {
   height: 100%;
 }
 
+.marButton {
+  width: 50%;
+  margin-bottom: 5%;
+}
+
+.whyModal {
+  margin: 60%;
+  color: #7CADE4;
+  font-size: 9px;
+}
+
 ion-action-sheet {
   left: 0;
   top: 0;
@@ -39766,11 +39777,6 @@ page-culture-race .whyModal {
   font-size: 9px;
 }
 
-page-culture-spouse .marButton {
-  width: 50%;
-  margin-bottom: 5%;
-}
-
 page-culture-spousecont .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -40017,12 +40023,6 @@ page-info-birth :-ms-input-placeholder {
 
 page-info-birth .inputLabelText {
   color: #33475C;
-}
-
-page-info-birth .whyModal {
-  margin: 60%;
-  color: #7CADE4;
-  font-size: 9px;
 }
 
 page-info-birth ion-content div ion-select {
@@ -40688,6 +40688,254 @@ page-mid-modal .orange {
 
 .checkOver {
   color: #ffffff;
+}
+
+page-service-cemetery .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+}
+
+page-service-cemetery .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-service-cemetery .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-service-cemetery ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-cemetery :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-cemetery ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-cemetery :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-cemetery .inputLabelText {
+  color: #33475C;
+}
+
+page-service-disp .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+}
+
+page-service-disp .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-service-disp .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-service-disp ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-disp :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-disp ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-disp :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-disp .inputLabelText {
+  color: #33475C;
+}
+
+page-service-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+page-service-modal ion-content {
+  height: 30%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 70%;
+  margin-bottom: 50%;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border: 4px solid #7CADE4;
+  border-radius: 3px;
+}
+
+page-service-modal ion-content h4 {
+  font-size: 15px;
+}
+
+page-service-remains .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+}
+
+page-service-remains .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-service-remains .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-service-remains ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-remains :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-remains ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-remains :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-remains .inputLabelText {
+  color: #33475C;
+}
+
+page-service-remains-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+page-service-remains-modal ion-content {
+  height: 30%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 70%;
+  margin-bottom: 50%;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border: 4px solid #7CADE4;
+  border-radius: 3px;
+}
+
+page-service-remains-modal ion-content h4 {
+  font-size: 15px;
+}
+
+page-service-view-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+page-service-view-modal ion-content {
+  height: 30%;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 70%;
+  margin-bottom: 50%;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border: 4px solid #7CADE4;
+  border-radius: 3px;
+}
+
+page-service-view-modal ion-content h4 {
+  font-size: 15px;
+}
+
+page-service-viewing .inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 50px;
+}
+
+page-service-viewing .centAlign {
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+page-service-viewing .centAlignHeader {
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+page-service-viewing ::-webkit-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-viewing :-moz-placeholder {
+  /* older Firefox*/
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-viewing ::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-viewing :-ms-input-placeholder {
+  font-size: 12px;
+  color: #33475C;
+  text-align: left;
+}
+
+page-service-viewing .inputLabelText {
+  color: #33475C;
 }
 
 .tabbar {

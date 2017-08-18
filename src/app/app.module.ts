@@ -45,6 +45,14 @@ import { CultureFatherPage } from '../pages/culture/culture-father/culture-fathe
 import { CultureRacePage } from '../pages/culture/culture-race/culture-race';
 
 
+import { ServiceDispPage } from '../pages/service/service-disp/service-disp';
+import { ServiceViewingPage } from '../pages/service/service-viewing/service-viewing';
+import { ServiceModalPage } from '../pages/service/service-modal/service-modal';
+import { ServiceViewModalPage } from '../pages/service/service-view-modal/service-view-modal';
+import { ServiceRemainsPage } from '../pages/service/service-remains/service-remains';
+import { ServiceCemeteryPage } from '../pages/service/service-cemetery/service-cemetery';
+
+import { ServiceRemainsModalPage } from '../pages/service/service-remains-modal/service-remains-modal';
 
 @NgModule({
   declarations: [
@@ -79,7 +87,15 @@ import { CultureRacePage } from '../pages/culture/culture-race/culture-race';
     CultureSpousecontPage, 
     CultureParentsPage,
     CultureFatherPage, 
-    CultureRacePage
+    CultureRacePage,
+    ServiceDispPage,
+    ServiceModalPage, 
+    ServiceViewingPage,
+    ServiceViewModalPage,
+    ServiceRemainsPage,
+    ServiceRemainsModalPage,
+    ServiceCemeteryPage
+
 
   ],
   imports: [
@@ -161,7 +177,14 @@ import { CultureRacePage } from '../pages/culture/culture-race/culture-race';
     CultureSpousecontPage, 
     CultureParentsPage, 
     CultureFatherPage, 
-    CultureRacePage
+    CultureRacePage,
+    ServiceDispPage,
+    ServiceModalPage,
+    ServiceViewingPage,
+    ServiceViewModalPage,
+    ServiceRemainsPage,
+    ServiceRemainsModalPage,
+    ServiceCemeteryPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
