@@ -190,35 +190,36 @@ this.storage.get('cultureFinCheck').then((val) => {
 //Culture and Life Data Collection
   goToCulture()
     {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(CulturePage, nameData);
-               myModal.onDidDismiss(data => { 
+      this.navCtrl.push(CultureSpousePage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(CulturePage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('married', data.married);
-                    this.storage.set('marStatus', data.marStatus);
-                    this.storage.set('spouseFirst', data.spouseFirst);
-                    this.storage.set('spouseMiddle', data.spouseMiddle);
-                    this.storage.set('spouseLast', data.spouseLast);
-                    this.storage.set('motherFirst', data.motherFirst);
-                    this.storage.set('motherMiddle', data.motherMiddle);
-                    this.storage.set('motherLast', data.motherLast);
-                    this.storage.set('fatherFirst', data.fatherFirst);
-                    this.storage.set('fatherMiddle', data.fatherMiddle);
-                    this.storage.set('fatherLast', data.fatherLast);
-                    this.storage.set('spouseLiving', data.spouseLiving);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('married', data.married);
+        //             this.storage.set('marStatus', data.marStatus);
+        //             this.storage.set('spouseFirst', data.spouseFirst);
+        //             this.storage.set('spouseMiddle', data.spouseMiddle);
+        //             this.storage.set('spouseLast', data.spouseLast);
+        //             this.storage.set('motherFirst', data.motherFirst);
+        //             this.storage.set('motherMiddle', data.motherMiddle);
+        //             this.storage.set('motherLast', data.motherLast);
+        //             this.storage.set('fatherFirst', data.fatherFirst);
+        //             this.storage.set('fatherMiddle', data.fatherMiddle);
+        //             this.storage.set('fatherLast', data.fatherLast);
+        //             this.storage.set('spouseLiving', data.spouseLiving);
+        //             console.log(data);
                     
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('ccolor', data);
-                  this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('ccolor', data);
+        //           this.checkForFinal()
+        // }); 
+        //    myModal.present();
     }
 
 
@@ -674,19 +675,40 @@ getSubmit()
 
 goToConfirm()
 {
-  move(25);
-  this.storage.clear();
+  // move(25);
+  // this.storage.clear();
+ var keys = new Array();
+ var data = new Array();
+
+keys.push("buffer");
+
+var counter:number = 1;
+
+
+  this.storage.forEach((value, key, index) => {
+    if(value)
+      { 
+        data.push(value);
+        keys.push(key);
+      }
+
+  })
+data.push(keys);
+callLambda("POST", data); 
+
 
 }
 
 goImReady()
 {
   if(this.readyButtonText == 'Continue' && this.aboutFinished)
-  {
+  {var json = callLambda("GET");
+ console.log(json);
     this.navCtrl.push(InfoMilitaryPage);
   }
   if(this.readyButtonText == 'Continue' && this.militaryFinished)
   {
+    
     this.navCtrl.push(CultureSpousePage);
   }
   if(this.readyButtonText != 'Continue')
