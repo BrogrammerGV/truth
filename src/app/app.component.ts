@@ -14,6 +14,7 @@ import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
 import { Welcome1Page } from '../pages/Welcome/welcome1/welcome1';
 import { Home1Page } from '../pages/Home/home1/home1';
+import { Search1Page } from '../pages/Home/search1/search1';
 
 export interface PageInterface {
   title: string;
@@ -81,7 +82,7 @@ export class ConferenceApp {
 
           //   });
 
-          this.rootPage = Home1Page;
+          this.rootPage = TabsPage;
         } else {
           this.rootPage = Welcome1Page;
         }

@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+import { AboutPage } from '../../about/about';
+import { MapPage } from '../../map/map';
+import { EntryPage } from '../../entry/entry';
+import { SelectPage } from '../../select/select';
 /**
  * Generated class for the Search1Page page.
  *
@@ -14,6 +18,10 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class Search1Page {
   public searchText: string = "";
+  // set the root pages for each tab
+  tab2Root: any = Search1Page;
+  tab4Root: any = AboutPage;
+  mySelectedIndex: number;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
