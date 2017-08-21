@@ -16,7 +16,11 @@
   <div class="center">
 <p>  Understanding your loved one </p>
 <div id="myProgress">
-  <div id="myBar"></div>
+  <div *ngIf="readyButtonText != 'Continue' && !servicesFinished" style="width: 10%;" id="myBar"></div>
+  <div *ngIf="readyButtonText == 'Continue' && aboutFinished" style="width: 25%;" id="myBar"></div>
+  <div *ngIf="readyButtonText == 'Continue' && militaryFinished" style="width: 50%;" id="myBar"></div>
+  <div *ngIf="readyButtonText == 'Continue' && cultureFinished" style="width: 75%;" id="myBar"></div>
+  <div *ngIf="readyButtonText == 'Submit'" style="width: 100%;" id="myBar"></div>
 </div>
 </div>
 <br />
@@ -47,8 +51,8 @@
     </ion-row>
 
       <ion-row *ngIf="readyButtonText == 'Submit'">
-    <h2> <b>Thank you for going through our info gathering </b> </h2>
-  <p> You May review changes</p>
+    <h2> <b>All done!</b> </h2>
+  <p> Thank you for providing this information. At anytime you can revisit any of the sections below to update or change answers you have provided.</p>
     </ion-row>
 
     <div class="centAlign">
