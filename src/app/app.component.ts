@@ -12,6 +12,9 @@ import { EntryPage } from '../pages/entry/entry';
 import { SelectPage } from '../pages/select/select';
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
+import { Welcome1Page } from '../pages/Welcome/welcome1/welcome1';
+import { Home1Page } from '../pages/Home/home1/home1';
+import { Search1Page } from '../pages/Home/search1/search1';
 
 export interface PageInterface {
   title: string;
@@ -42,12 +45,12 @@ export class ConferenceApp {
   ];
   loggedInPages: PageInterface[] = [
     //{ title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
-   // { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
-   // { title: 'Logout', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
+    // { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
+    // { title: 'Logout', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
-   // { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
-   // { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
+    // { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
+    // { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
     //{ title: 'Signup', name: 'SignupPage', component: SignupPage, icon: 'person-add' }
   ];
   rootPage: any;
@@ -79,8 +82,21 @@ export class ConferenceApp {
       
       });
 
+          // this.storage.get('loggedIn')
+          //   .then((loggedIn) => {
+          //     if (loggedIn = 'Yes') {
+          //       this.rootPage = Welcome1Page;
+          //       console.log("Logged In: " + loggedIn);
+          //       console.log("Has Seen Tutorial: " + loggedIn);
+          //     } else {
+          //       this.rootPage = Welcome1Page;
+          //     }
+
+          //   });
+
+          this.rootPage = TabsPage;
         } else {
-          this.rootPage = TutorialPage;
+          this.rootPage = Welcome1Page;
         }
         this.platformReady()
       });
@@ -112,8 +128,8 @@ export class ConferenceApp {
     // tabs even if changing them from the menu
     if (this.nav.getActiveChildNav() && page.index != undefined) {
       this.nav.getActiveChildNav().select(page.index);
-    // Set the root of the nav with params if it's a tab index
-  } else {
+      // Set the root of the nav with params if it's a tab index
+    } else {
       this.nav.setRoot(page.name, params).catch((err: any) => {
         console.log(`Didn't set nav root: ${err}`);
       });

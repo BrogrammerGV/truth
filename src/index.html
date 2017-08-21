@@ -27,7 +27,7 @@
 
   <link href="build/main.css" rel="stylesheet">
  
- 
+ <script src="assets/js/web-animations.min.js"></script>
  <script src="assets/js/aws-sdk.min.js">
         </script>
         <script src="assets/js/aws-config.js">
@@ -71,6 +71,21 @@ function callLambda(http, bodyData){
               }       // successful response
               });
 }
+
+function registerCognito(bodyData){
+  return new Promise(function(resolve,reject){
+    var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
+    cognitoidentityserviceprovider.signUp(bodyData, function(err, data) {
+      if (err){
+        reject(err);
+      }  // an error occurred
+      else{
+        resolve(data);
+      }     
+    });
+  });
+}
+
         </script>
 </script>
 
