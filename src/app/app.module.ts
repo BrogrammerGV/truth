@@ -28,6 +28,13 @@ import { ModalPage } from '../pages/modal/modal';
 import { MidModalPage } from '../pages/mid-modal/mid-modal';
 import { CulturePage } from '../pages/culture/culture';
 import { ConfirmPage } from '../pages/confirm/confirm';
+import { Welcome1Page } from '../pages/Welcome/welcome1/welcome1';
+import { Welcome2Page } from '../pages/Welcome/welcome2/welcome2';
+import { Welcome3Page } from '../pages/Welcome/welcome3/welcome3';
+import { Home1Page } from '../pages/Home/home1/home1';
+import { Planning1Page } from '../pages/Home/planning1/planning1';
+import { Planning2Page } from '../pages/Home/planning2/planning2';
+import { Search1Page } from '../pages/Home/search1/search1';
 
 @NgModule({
   declarations: [
@@ -48,7 +55,14 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     ModalPage,
     MidModalPage,
     CulturePage, 
-    ConfirmPage
+    ConfirmPage,
+    Welcome1Page,
+    Welcome2Page,
+    Welcome3Page,
+    Home1Page,
+    Planning1Page,
+    Planning2Page,
+    Search1Page
   ],
   imports: [
     BrowserModule,
@@ -96,7 +110,14 @@ import { ConfirmPage } from '../pages/confirm/confirm';
     ModalPage,
     MidModalPage,
     CulturePage, 
-    ConfirmPage
+    ConfirmPage,
+    Welcome1Page,
+    Welcome2Page,
+    Welcome3Page,
+    Home1Page,
+    Planning1Page,
+    Planning2Page,
+    Search1Page
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
