@@ -69,6 +69,18 @@ export class ConferenceApp {
     this.storage.get('hasSeenTutorial')
       .then((hasSeenTutorial) => {
         if (hasSeenTutorial) {
+          
+      this.storage.get('loggedIn')
+            .then((loggedIn) => {
+        if (loggedIn = 'Yes') {
+          this.rootPage = SelectPage;
+          console.log("Logged In: " + loggedIn);
+          console.log("Has Seen Tutorial: " + loggedIn);
+        } else {
+          this.rootPage = SelectPage;
+        }
+      
+      });
 
           // this.storage.get('loggedIn')
           //   .then((loggedIn) => {

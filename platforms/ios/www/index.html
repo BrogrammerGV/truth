@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#387ef5">
@@ -77,7 +77,25 @@ function callLambda(http, bodyData){
         </script>
 </script>
 
+<!--Progress Bar Custom-->
+<script>
+function move(amount) {
+  var elem = document.getElementById("myBar");   
+  var width = 1;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= amount) {
+      clearInterval(id);
+    } else {
+      width++; 
+      elem.style.width = width + '%'; 
+    }
+  }
+}
+</script>
 
+
+<!-- Cole's Custom Json Maker :P -->
 
 </head>
 

@@ -23,9 +23,16 @@ import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
 import { ConfirmPage } from '../confirm/confirm';
 
+import { InfoNamePage } from '../info/info-name/info-name';
+import { InfoMilitaryPage } from '../info/info-military/info-military';
+import { CultureSpousePage } from '../culture/culture-spouse/culture-spouse';
+import { ServiceDispPage } from '../service/service-disp/service-disp';
+
+
 //AWS Declarations
 declare let callLambda: any;
 declare let dataJson: any;
+declare let move: any;
 
 
 @Component({
@@ -85,6 +92,15 @@ dcolor: string;
 /* VARIABLES FOR AWS S3 STORAGE */
       
 
+//Dynamic Page Variables
+readyButtonText: any = "I'm Ready";
+aboutFinished: boolean = false;
+militaryFinished: boolean = false;
+cultureFinished: boolean = false;
+servicesFinished: boolean = false;
+
+
+
 
 //SelectorPage Variables
 dialUp: any;
@@ -97,6 +113,7 @@ submit = "Submit Complete";
   actionSheet: ActionSheet;
   speakers: any[] = [];
   namePass: string;
+  aboutStyle: any;
 
   constructor(
     public actionSheetCtrl: ActionSheetController,
@@ -112,125 +129,175 @@ submit = "Submit Complete";
 
   ionViewCanEnter()
   {
-  this.storage.get('loggedIn').then((val) => {
-    
-            console.log('Are You Logged In?:', val)
+  // this.storage.get('loggedIn').then((val) => {
 
-            if(val != "Yes")
-              {
-                this.navCtrl.push(EntryPage);
-                return true;
-              }
-              else return false;
-          });
+  //           if(val != "Yes")
+  //             {
+  //               return true;
+  //             }
+  //             else return false;
+  //         });
 
 
   }
 
   ionViewDidLoad() {
 
+    console.log("ionViewDidLoad SelectPage");
+
     callLambda("GET"); 
-    this.grabFromLocalStorage();
-    this.checkForFinal();
-    this.getSubmit(); 
+    //this.grabFromLocalStorage();
+    //this.checkForFinal();
+    //this.getSubmit(); 
+
+//Redo This to check all values
+
+
+  
   }
+
+ionViewDidEnter()
+{
+
+this.storage.get('aboutCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = true;
+      this.readyButtonText= 'Continue'
+    }
+        });
+this.storage.get('militaryFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = true;
+      this.readyButtonText= 'Continue'
+    }
+        });
+                
+this.storage.get('cultureFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = false;
+      this.cultureFinished = true;
+      this.readyButtonText= 'Continue'
+    }
+        });
+
+this.storage.get('servicesFinCheck').then((val) => {
+        if(val == 'Y')
+    {
+      this.aboutFinished = false;
+      this.militaryFinished = false;
+      this.cultureFinished = false;
+      this.servicesFinished = true;
+      this.readyButtonText= 'Submit';
+    }
+        });
+
+
+}
 
 
 //Culture and Life Data Collection
   goToCulture()
     {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(CulturePage, nameData);
-               myModal.onDidDismiss(data => { 
+      this.navCtrl.push(CultureSpousePage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(CulturePage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('married', data.married);
-                    this.storage.set('marStatus', data.marStatus);
-                    this.storage.set('spouseFirst', data.spouseFirst);
-                    this.storage.set('spouseMiddle', data.spouseMiddle);
-                    this.storage.set('spouseLast', data.spouseLast);
-                    this.storage.set('motherFirst', data.motherFirst);
-                    this.storage.set('motherMiddle', data.motherMiddle);
-                    this.storage.set('motherLast', data.motherLast);
-                    this.storage.set('fatherFirst', data.fatherFirst);
-                    this.storage.set('fatherMiddle', data.fatherMiddle);
-                    this.storage.set('fatherLast', data.fatherLast);
-                    this.storage.set('spouseLiving', data.spouseLiving);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('married', data.married);
+        //             this.storage.set('marStatus', data.marStatus);
+        //             this.storage.set('spouseFirst', data.spouseFirst);
+        //             this.storage.set('spouseMiddle', data.spouseMiddle);
+        //             this.storage.set('spouseLast', data.spouseLast);
+        //             this.storage.set('motherFirst', data.motherFirst);
+        //             this.storage.set('motherMiddle', data.motherMiddle);
+        //             this.storage.set('motherLast', data.motherLast);
+        //             this.storage.set('fatherFirst', data.fatherFirst);
+        //             this.storage.set('fatherMiddle', data.fatherMiddle);
+        //             this.storage.set('fatherLast', data.fatherLast);
+        //             this.storage.set('spouseLiving', data.spouseLiving);
+        //             console.log(data);
                     
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('ccolor', data);
-                  this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('ccolor', data);
+        //           this.checkForFinal()
+        // }); 
+        //    myModal.present();
     }
 
 
 //About the Deceased Data Collection
   goToAbout()
       {
-            let nameData = {nameToUse: this.namePass}
-            let myModal = this.modalCtrl.create(AboutModal, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(InfoNamePage);
+        //     let nameData = {nameToUse: this.namePass}
+        //     let myModal = this.modalCtrl.create(AboutModal, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('gender', data.gender);
-                    this.storage.set('dateOfBirth', data.dateOfBirth);
-                    this.storage.set('birthCountry', data.birthCountry);
-                    this.storage.set('stateofbirth', data.stateofbirth);
-                    this.storage.set('whenDie', data.whenDie);
-                    this.storage.set('whereDie', data.whereDie);
-                    this.storage.set('whereDieSpec', data.whereDieSpec);
-                    this.storage.set('deathaddr', data.deathaddr);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('gender', data.gender);
+        //             this.storage.set('dateOfBirth', data.dateOfBirth);
+        //             this.storage.set('birthCountry', data.birthCountry);
+        //             this.storage.set('stateofbirth', data.stateofbirth);
+        //             this.storage.set('whenDie', data.whenDie);
+        //             this.storage.set('whereDie', data.whereDie);
+        //             this.storage.set('whereDieSpec', data.whereDieSpec);
+        //             this.storage.set('deathaddr', data.deathaddr);
+        //             console.log(data);
                      
 
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('acolor', data);
-                 this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('acolor', data);
+        //          this.checkForFinal()
+        // }); 
+        //    myModal.present();
       }
 
 
 //Military / WOrk / Education Data Collection
    goToEdu()
       {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(FhPage, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(InfoMilitaryPage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(FhPage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('military', data.military);
-                    this.storage.set('militaryServ', data.militaryServ);
-                    this.storage.set('militaryMore', data.militaryMore);
-                    this.storage.set('edu', data.edu);
-                    this.storage.set('ocupation', data.ocupation);
-                    this.storage.set('industry', data.industry);
-                    this.storage.set('hispanic', data.hispanic);
-                    this.storage.set('race', data.race);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('military', data.military);
+        //             this.storage.set('militaryServ', data.militaryServ);
+        //             this.storage.set('militaryMore', data.militaryMore);
+        //             this.storage.set('edu', data.edu);
+        //             this.storage.set('ocupation', data.ocupation);
+        //             this.storage.set('industry', data.industry);
+        //             this.storage.set('hispanic', data.hispanic);
+        //             this.storage.set('race', data.race);
+        //             console.log(data);
                  
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                    this.modalDataCheck('bcolor', data);
-                    this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //             this.modalDataCheck('bcolor', data);
+        //             this.checkForFinal()
+        // }); 
+        //    myModal.present();
 
       }
 
@@ -241,36 +308,37 @@ submit = "Submit Complete";
 //Service and Memorial Data Collection 
    gotToServ()
       {
-        let nameData = {nameToUse: this.namePass}
-        let myModal = this.modalCtrl.create(MidModalPage, nameData);
-               myModal.onDidDismiss(data => { 
+        this.navCtrl.push(ServiceDispPage);
+        // let nameData = {nameToUse: this.namePass}
+        // let myModal = this.modalCtrl.create(MidModalPage, nameData);
+        //        myModal.onDidDismiss(data => { 
                  
-                 try
-                  {
-                    this.storage.set('disp', data.disp);
-                    this.storage.set('plotYN', data.plotYN);
-                    this.storage.set('attendies', data.attendies);
-                    this.storage.set('funMemServ', data.funMemServ);
-                    this.storage.set('famView', data.famView);
-                    this.storage.set('celeLife', data.celeLife);
-                    this.storage.set('cemeteryName', data.cemeteryName);
-                    this.storage.set('processional', data.processional);
-                    this.storage.set('lunch', data.lunch);
-                    this.storage.set('gravServ', data.gravServ);
-                    this.storage.set('pubPrivVis', data.pubPrivVis);
-                    this.storage.set('fhdirector', data.fhdirector);
-                    this.storage.set('physicianName', data.physicianName);
-                    console.log(data);
+        //          try
+        //           {
+        //             this.storage.set('disp', data.disp);
+        //             this.storage.set('plotYN', data.plotYN);
+        //             this.storage.set('attendies', data.attendies);
+        //             this.storage.set('funMemServ', data.funMemServ);
+        //             this.storage.set('famView', data.famView);
+        //             this.storage.set('celeLife', data.celeLife);
+        //             this.storage.set('cemeteryName', data.cemeteryName);
+        //             this.storage.set('processional', data.processional);
+        //             this.storage.set('lunch', data.lunch);
+        //             this.storage.set('gravServ', data.gravServ);
+        //             this.storage.set('pubPrivVis', data.pubPrivVis);
+        //             this.storage.set('fhdirector', data.fhdirector);
+        //             this.storage.set('physicianName', data.physicianName);
+        //             console.log(data);
             
-                 }
-                  catch (err)
-                  {
-                    console.log(err);
-                  }
-                  this.modalDataCheck('dcolor', data);
-                    this.checkForFinal()
-        }); 
-           myModal.present();
+        //          }
+        //           catch (err)
+        //           {
+        //             console.log(err);
+        //           }
+        //           this.modalDataCheck('dcolor', data);
+        //             this.checkForFinal()
+        // }); 
+        //    myModal.present();
       }
 
 
@@ -511,10 +579,14 @@ grabFromLocalStorage(){
 
 checkForFinal()
     { 
-       var perc: number = 0;
+       
+      
+      var perc: number = 0;
          
        this.storage.forEach( (value, key, index) => {
-              if(value == null|| value == '')
+            
+        
+        if(value == null|| value == '')
                 {
 
                 }
@@ -605,21 +677,86 @@ getSubmit()
        else this.submit = val;
                       });
 
-    this.storage.get('firstName').then((val) => {
-            console.log("Username: " + val)
-            if(val == null|| val == '')
-              this.openIntroModal();
-              else
-              this.namePass = val
-            });
+    // this.storage.get('firstName').then((val) => {
+    //         console.log("Username: " + val)
+    //         if(val == null|| val == '')
+    //           this.openIntroModal();
+    //           else
+    //           this.namePass = val
+    //         });
 }
 
 
 goToConfirm()
 {
-  this.navCtrl.push(ConfirmPage);
+  // move(25);
+  //this.storage.clear();
+
+
+var viewData = { 
+ 
+"info": { }
+
+};
+
+
+
+var jsonData: any = {};
+
+
+  this.storage.forEach((value, key, index) => {
+    if(value)
+
+      { 
+        jsonData[key] = value;
+console.log(jsonData);
+      }
+
+
+  })
+
+//data.push(keys);
+callLambda("POST", jsonData); 
+
+
+
+}
+
+goImReady()
+{
+callLambda("GET");
+console.log(dataJson);
+if(this.readyButtonText == 'Continue' && this.cultureFinished)
+{
+  this.navCtrl.push(ServiceDispPage);
+}
+
+
+  if(this.readyButtonText == 'Continue' && this.aboutFinished)
+  {
+
+    this.navCtrl.push(InfoMilitaryPage);
+  }
+  if(this.readyButtonText == 'Continue' && this.militaryFinished)
+  {
+    
+    this.navCtrl.push(CultureSpousePage);
+  }
+  if(this.readyButtonText != 'Continue')
+
+ {
+    this.navCtrl.push(InfoNamePage);
+  }
+
 }
 
 
 }
 
+
+export class AWSDataBuilder
+{
+  constructor(x: any, y: any)
+  {}
+
+}

@@ -69,6 +69,12 @@ $item-ios-padding-left: 25px ;
 $item-ios-padding-right: 25px ;
 $datetime-ios-padding-right: 25px;
 $datetime-ios-padding-left: 25px;
+$text-input-ios-margin-top: 0;
+$text-input-ios-margin-bottom: 0;
+$text-input-ios-margin-left: 0;
+$text-input-ios-margin-right: 0;
+
+
 
 $text-input-ios-margin-top: 0;
 $text-input-ios-margin-bottom: 0;
@@ -106,6 +112,100 @@ $text-input-ios-margin-right: 0;
 
 @import "roboto";
 @import "noto-sans";
+
+//Custom Progress Bar - CJM
+#myProgress {
+ margin-left: 25%;
+  width: 50%;
+  background-color: #33475C;;
+  border-radius: 7px;
+}
+
+#myBar {
+  width: 10%;
+  height: 5px;
+  background-color: #7CADE4;
+  border-radius: 7px;
+}/* Understanding your l: */
+
+
+
+
+
+
+
+
+
+
+//Custom CSS Styling for EventApp ProtoType
+
+  .bgCard{
+     background: #ffffff;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 7px;
+margin-left: 10px;
+margin-right: 10px; 
+
+
+       }
+
+.friendlyName 
+{
+  color: #7CADE4;
+}
+
+
+  .footerButtonWhite{
+    /* Rectangle 28: */
+    background: #FFFFFF;
+    /* Primary: */
+    font-family: 'Roboto', sans-serif;
+    font-size: 15.16px;
+    border: 4px solid #33475C;
+    color: #4A4A4A;
+    width: 100%;
+    height: 3em;
+    align-items: center;
+  }
+
+
+
+
+  .item-ios.item-block .item-inner {
+
+  
+    border-bottom: 0;
+  }
+
+
+
+  .text-input-ios{
+    margin: 0;
+    height: 100%;
+}
+
+   .marButton
+    {
+     width: 50%;
+     margin-bottom: 5%;
+    }
+
+    .whyModal
+    {
+        margin: 60%;
+        color: #7CADE4;
+        font-size: 9px;
+    }
+
+
+/////END OF COLE'S CSS CHANGES!!!
+
+
+
+
+
+/////START OF TRAVI'S CSS CHANGES!!!!
+
 
 .footerButton{
   /* Rectangle 28: */
