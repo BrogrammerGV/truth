@@ -690,33 +690,33 @@ getSubmit()
 goToConfirm()
 {
   // move(25);
-  //this.storage.clear();
+  this.storage.clear();
 
 
-var viewData = { 
+// var viewData = { 
  
-"info": { }
+// "info": { }
 
-};
-
-
-
-var jsonData: any = {};
+// };
 
 
-  this.storage.forEach((value, key, index) => {
-    if(value)
 
-      { 
-        jsonData[key] = value;
-console.log(jsonData);
-      }
+// var jsonData: any = {};
 
 
-  })
+//   this.storage.forEach((value, key, index) => {
+//     if(value)
 
-//data.push(keys);
-callLambda("POST", jsonData); 
+//       { 
+//         jsonData[key] = value;
+// console.log(jsonData);
+//       }
+
+
+//   })
+
+// //data.push(keys);
+//callLambda("POST", jsonData); 
 
 
 
