@@ -690,27 +690,33 @@ getSubmit()
 goToConfirm()
 {
   // move(25);
-  this.storage.clear();
+  //this.storage.clear();
 
 
-// var data: AWSDataBuilder[] = [];
+var viewData = { 
+ 
+"info": { }
+
+};
 
 
-// var counter:number = 1;
+
+var jsonData: any = {};
 
 
-//   this.storage.forEach((value, key, index) => {
-//     if(value)
+  this.storage.forEach((value, key, index) => {
+    if(value)
 
-//       { 
-//         var p = { x:value, y:key  }
-        
-//         data.push(p);
-//       }
+      { 
+        jsonData[key] = value;
+console.log(jsonData);
+      }
 
-//   })
-// //data.push(keys);
-// callLambda("POST", JSON.stringify(data)); 
+
+  })
+
+//data.push(keys);
+callLambda("POST", jsonData); 
 
 
 
@@ -718,7 +724,8 @@ goToConfirm()
 
 goImReady()
 {
-
+callLambda("GET");
+console.log(dataJson);
 if(this.readyButtonText == 'Continue' && this.cultureFinished)
 {
   this.navCtrl.push(ServiceDispPage);
