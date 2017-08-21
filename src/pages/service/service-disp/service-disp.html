@@ -1,13 +1,9 @@
 <ion-header>
-  <ion-navbar hide-tabs>
-    <button ion-button menuToggle>
-      <ion-icon  name="menu"></ion-icon>
-    </button>
-    <ion-title>Information Gathering</ion-title>
-  </ion-navbar>
+  <div class="headerBarBump"></div>
+  <div class="customHeaderClass">
+    <img src="assets/img/menu.png" class="menuIcon" /> PostScript
+  </div>
 </ion-header>
-
-
 
 
 
@@ -42,13 +38,13 @@
 
 <button  [ngClass]="{
             'footerButtonWhite' : !privateDialog,
-            'footerButton' : privateDialog
+            'orangeSwitchButton' : privateDialog
           }" 
 (click)="showPrivate()" class="marButton"><b>Private Service</b></button>
 
 <button  [ngClass]="{
             'footerButtonWhite' : !publicDialog,
-            'footerButton' : publicDialog
+            'orangeSwitchButton' : publicDialog
           }" 
 (click)="showPublic()" class="marButton"><b>Public Service</b></button>
 
@@ -56,13 +52,13 @@
 
 <button  [ngClass]="{
             'footerButtonWhite' : !bothDialog,
-            'footerButton' : bothDialog
+            'orangeSwitchButton' : bothDialog
           }" 
 (click)="showBoth()" class="marButton"><b>Both</b></button>
 
 <button  [ngClass]="{
             'footerButtonWhite' : !neitherDialog,
-            'footerButton' : neitherDialog
+            'orangeSwitchButton' : neitherDialog
           }" 
 (click)="showNeither()" class="marButton"><b>Neither</b></button>
 
@@ -89,13 +85,13 @@
 
 <button  [ngClass]="{
             'footerButtonWhite' : !fhDialog,
-            'footerButton' : fhDialog
+            'orangeSwitchButton' : fhDialog
           }" 
 (click)="showFH()" class="marButton"><b>Funeral Home</b></button>
 
 <button  [ngClass]="{
             'footerButtonWhite' : !graveDialog,
-            'footerButton' : graveDialog
+            'orangeSwitchButton' : graveDialog
           }" 
 (click)="showGrave()" class="marButton"><b>Graveside</b></button>
 
@@ -103,7 +99,7 @@
 
 <button  [ngClass]="{
             'footerButtonWhite' : !otherDialog,
-            'footerButton' : otherDialog
+            'orangeSwitchButton' : otherDialog
           }" 
 (click)="showOther()" class="marButton"><b>Other</b></button>
 
@@ -128,14 +124,13 @@
 
 
 </ion-content>
-
 <ion-footer>
   <ion-row>
-    <ion-col>
-         <button  (click)="goBack()" class="footerButtonWhite" >Back</button>
+    <ion-col style="padding: 0;">
+         <button  class="footerButtonWhite"  (click)="goBack()">Back</button>
     </ion-col>
-<ion-col>
- <button  class="footerButton"(click)="goNext()">Next</button>
+<ion-col style="padding: 0;">
+ <button  class="footerButtonDouble"  (click)="goNext()">Next</button>
 </ion-col>
 
 </ion-row>

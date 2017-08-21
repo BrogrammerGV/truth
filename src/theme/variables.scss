@@ -161,7 +161,7 @@ margin-right: 10px;
     /* Primary: */
     font-family: 'Roboto', sans-serif;
     font-size: 15.16px;
-    border: 4px solid #33475C;
+    border: 2px solid #33475C;
     color: #4A4A4A;
     width: 100%;
     height: 3em;
@@ -198,6 +198,35 @@ margin-right: 10px;
     }
 
 
+.footerButtonBump
+{
+    padding: 0;
+}
+
+.footerButtonDouble{
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+  width: 100%;
+  height: 100%;;
+  align-items: center;
+}
+
+
+
+.orangeSwitchButton{
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+  height: 2.8em;
+  align-items: center;
+}
 /////END OF COLE'S CSS CHANGES!!!
 
 

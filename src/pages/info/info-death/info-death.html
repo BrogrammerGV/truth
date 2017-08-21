@@ -1,10 +1,8 @@
 <ion-header>
-  <ion-navbar hide-tabs>
-    <button ion-button menuToggle>
-      <ion-icon  name="menu"></ion-icon>
-    </button>
-    <ion-title>Information Gathering</ion-title>
-  </ion-navbar>
+  <div class="headerBarBump"></div>
+  <div class="customHeaderClass">
+    <img src="assets/img/menu.png" class="menuIcon" /> PostScript
+  </div>
 </ion-header>
 
 
@@ -59,14 +57,13 @@
 
 
 </ion-content>
-
 <ion-footer>
   <ion-row>
-    <ion-col>
+    <ion-col style="padding: 0;">
          <button  class="footerButtonWhite"  (click)="goBack()">Back</button>
     </ion-col>
-<ion-col>
- <button  class="footerButton"  (click)="goNext()">Next</button>
+<ion-col style="padding: 0;">
+ <button  class="footerButtonDouble"  (click)="goNext()">Next</button>
 </ion-col>
 
 </ion-row>

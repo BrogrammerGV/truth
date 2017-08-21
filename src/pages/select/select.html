@@ -1,10 +1,8 @@
 <ion-header>
-  <ion-navbar hide-tabs>
-    <button ion-button menuToggle>
-      <ion-icon  name="menu"></ion-icon>
-    </button>
-    <ion-title>Information Gathering</ion-title>
-  </ion-navbar>
+  <div class="headerBarBump"></div>
+  <div class="customHeaderClass">
+    <img src="assets/img/menu.png" class="menuIcon" /> PostScript
+  </div>
 </ion-header>
 
 <ion-content class="outer-content speaker-list">
@@ -121,11 +119,11 @@
 
 <ion-footer>
   <ion-row>
-    <ion-col>
+    <ion-col style="padding: 0;">
          <button  class="footerButtonWhite"  (click)="insertRecord()">Skip For Now</button>
     </ion-col>
-<ion-col>
- <button  class="footerButton"  (click)="goImReady()">{{readyButtonText}}</button>
+<ion-col style="padding: 0;">
+ <button  class="footerButtonDouble"  (click)="goImReady()">{{readyButtonText}}</button>
 </ion-col>
 
 </ion-row>
