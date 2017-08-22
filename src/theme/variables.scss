@@ -275,6 +275,7 @@ margin-right: 10px;
     height: 2.8em;
     line-height: 2.8em;
     position: relative;
+    padding-top: 10px;
 }
 
 
@@ -282,7 +283,7 @@ margin-right: 10px;
 
 .customEventHeaderClass{
     background-image: url("../assets/img/eventheader.png");
-        background-size: 105%;
+        background-size: 107%;
 background-repeat: no-repeat;
     border-bottom: solid 0.5px #979797;
     font-family: Roboto;
@@ -302,7 +303,8 @@ box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
 /* Sketch doesnt export pattern fills at this point */
 /* Rectangle: */
 .frontLayer
-{ height: 100%;
+{ padding-top: 10px;
+    height: 100%;
     background-color: rgba(51, 71, 92, 0.7
     );
 opacity: 1;

@@ -3946,12 +3946,13 @@ ion-icon::before {
   height: 2.8em;
   line-height: 2.8em;
   position: relative;
+  padding-top: 10px;
 }
 
 /* Rectangle: */
 .customEventHeaderClass {
   background-image: url("../assets/img/eventheader.png");
-  background-size: 105%;
+  background-size: 107%;
   background-repeat: no-repeat;
   border-bottom: solid 0.5px #979797;
   font-family: Roboto;
@@ -3972,6 +3973,7 @@ ion-icon::before {
 }
 
 .customEventHeaderClass .frontLayer {
+  padding-top: 10px;
   height: 100%;
   background-color: rgba(51, 71, 92, 0.7);
   opacity: 1;
