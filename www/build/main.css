@@ -3815,6 +3815,211 @@ ion-icon::before {
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+.footerButton {
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+  width: 100%;
+  height: 2.8em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.ios .headerBarBump {
+  height: 20px;
+  background-color: #7cade4;
+}
+
+.customHeaderClass {
+  background-color: #7cade4;
+  border-bottom: solid 0.5px #979797;
+  font-family: Roboto;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: center;
+  color: #ffffff;
+  height: 2.8em;
+  line-height: 2.8em;
+  position: relative;
+}
+
+.menuIcon {
+  height: 50%;
+  position: absolute;
+  right: 20px;
+  top: 25%;
+}
+
+.welcomeSkipText {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #CCCCCC;
+}
+
+.welcomeCenter {
+  position: relative;
+  top: 33%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+  width: 100%;
+  display: block;
+  margin: auto;
+}
+
+.welcomeHeader1 {
+  font-family: Roboto;
+  font-size: 2em;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+.welcomeHeader2 {
+  font-family: Roboto;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 15px;
+}
+
+.welcomeImage {
+  height: 5em;
+  display: block;
+  margin: auto;
+}
+
+.ios .welcomeSkipText {
+  position: fixed;
+  top: 30px;
+  right: 10px;
+}
+
+.whiteButton {
+  /* Rectangle 28: */
+  background: #FFFFFF;
+  border-radius: 3px;
+  border: solid 3px #33475c;
+  text-align: center;
+  height: 2.5em;
+  width: 48%;
+  font-size: 1.1em;
+  font-family: Roboto;
+  font-weight: bold;
+  text-align: center;
+  color: #33475c;
+}
+
+.orangeButton {
+  /* Rectangle 28: */
+  background: #E6785A;
+  border-radius: 3px;
+  text-align: center;
+  height: 2.5em;
+  width: 48%;
+  font-size: 1.1em;
+  font-family: Roboto;
+  font-weight: bold;
+  text-align: center;
+  color: #FFFFFF;
+}
+
+.horizontalBreak {
+  width: 4em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.container {
+  padding: 20px 10px 20px 10px;
+}
+
+.cardStyle {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  text-align: center;
+  padding: 10px 20px 10px 20px;
+}
+
+.mainFont {
+  font-family: Roboto;
+  font-size: 1.6em;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+
+.subFont {
+  font-family: Roboto;
+  font-size: 1.6em;
+  color: #4F565C;
+}
+
+.blueText {
+  color: #7CADE4 !important;
+}
+
+.inputField {
+  background: #FFFFFF;
+  border: 2px solid #33475C;
+  border-radius: 1.5px;
+  height: 2.3em;
+  text-align: start;
+}
+
+.noHeaderInputField {
+  margin: 0 !important;
+}
+
+.searchField {
+  background: url("../assets/img/search.png") no-repeat scroll 7px;
+  padding-left: 30px;
+  background-size: 1.2em;
+}
+
+.text-input-ios {
+  margin: 0 !important;
+  height: 100%;
+}
+
+.text-input-md {
+  margin: 0 !important;
+  height: 100%;
+}
+
+.searchMainFont {
+  color: #33475C;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-family: Roboto;
+}
+
+.searchSubFont {
+  color: #33475C;
+  font-size: 1.3em;
+  font-family: Roboto;
+}
+
+.noResults {
+  font-family: Roboto;
+  color: #B2BAC4;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  margin: 20px;
+}
+
 ion-action-sheet {
   left: 0;
   top: 0;
@@ -15907,9 +16112,9 @@ input.text-input:-webkit-autofill {
 }
 
 .text-input-ios {
-  margin: 11px 12.5px 11px 0;
+  margin: 0;
   padding: 0;
-  width: calc(100% - 12.5px);
+  width: calc(100% - 0);
 }
 
 .input-ios .inset-input {
@@ -15922,7 +16127,7 @@ input.text-input:-webkit-autofill {
   margin-left: 0;
   margin-top: 8px;
   margin-bottom: 8px;
-  width: calc(100% - 12.5px);
+  width: calc(100% - 0);
 }
 
 .item-ios.item-label-stacked .label-ios + .input + .cloned-input,
@@ -39411,6 +39616,55 @@ ion-navbar.toolbar {
 
 [hidden-xl-down] {
   display: none;
+}
+
+page-home1 .hide {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+page-home1 .hideAnimation {
+  opacity: 0;
+  max-height: 0;
+  margin: 0;
+  display: none;
+  -webkit-transition: margin 0.5s linear, max-height 0.5s linear, opacity 0.5s linear;
+  transition: margin 0.5s linear, max-height 0.5s linear, opacity 0.5s linear;
+}
+
+page-home1 .showAnimation {
+  opacity: 1;
+  max-height: 100%;
+  margin: 0;
+  display: block;
+  -webkit-transition: margin 0.5s linear, max-height 0.5s linear, opacity 0.5s linear;
+  transition: margin 0.5s linear, max-height 0.5s linear, opacity 0.5s linear;
+}
+
+page-home1 .slideUp {
+  max-height: 0em;
+  opacity: 0;
+  -webkit-transition: max-height 0.5s linear;
+  transition: max-height 0.5s linear;
+}
+
+page-home1 .slideUp2 {
+  margin: 0;
+  -webkit-transition: margin 0.5s linear;
+  transition: margin 0.5s linear;
+}
+
+page-welcome1 ion-content {
+  background-image: url("../assets/img/background.png");
+}
+
+page-welcome2 ion-content {
+  background-image: url("../assets/img/background.png");
+}
+
+page-welcome3 ion-content {
+  background-image: url("../assets/img/background.png");
 }
 
 .about-header {

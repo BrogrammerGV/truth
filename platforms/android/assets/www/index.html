@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
-
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#387ef5">
@@ -29,8 +29,9 @@
   </script>
 
   <link href="build/main.css" rel="stylesheet">
- 
- 
+  
+ <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/web-animations.min.js"></script>
  <script src="assets/js/aws-sdk.min.js">
         </script>
         <script src="assets/js/aws-config.js">
@@ -74,6 +75,45 @@ function callLambda(http, bodyData){
               }       // successful response
               });
 }
+
+function registerCognito(bodyData){
+
+  return new Promise(function(resolve,reject){
+    var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
+    cognitoidentityserviceprovider.signUp(bodyData, function(err, data) {
+      if (err){
+        reject(err);
+      }  // an error occurred
+      else{
+        resolve(data);
+      }     
+    });
+  });
+}
+
+function performSearch(bodyData){
+  return new Promise(function(resolve,reject){
+
+    var lambda = new AWS.Lambda();
+    var params = {
+     FunctionName: "PostScriptSearch", 
+     InvocationType : 'RequestResponse',
+     Payload: JSON.stringify({body: bodyData, userID: credentials.identityId.toString()})
+   };
+
+   lambda.invoke(params, function(err, data) {
+   if (err) {
+     reject(err);
+   }
+   else     
+   {
+     resolve(data);   
+   }       // successful response
+   
+   });
+  });
+}
+
         </script>
 </script>
 
