@@ -29,14 +29,9 @@
   </script>
 
   <link href="build/main.css" rel="stylesheet">
-<<<<<<< HEAD
   
  <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/js/web-animations.min.js"></script>
-=======
- 
- <script src="assets/js/web-animations.min.js"></script>
->>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
  <script src="assets/js/aws-sdk.min.js">
         </script>
         <script src="assets/js/aws-config.js">
@@ -82,10 +77,7 @@ function callLambda(http, bodyData){
 }
 
 function registerCognito(bodyData){
-<<<<<<< HEAD
 
-=======
->>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
   return new Promise(function(resolve,reject){
     var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
     cognitoidentityserviceprovider.signUp(bodyData, function(err, data) {
@@ -99,7 +91,6 @@ function registerCognito(bodyData){
   });
 }
 
-<<<<<<< HEAD
 function performSearch(bodyData){
   return new Promise(function(resolve,reject){
 
@@ -123,8 +114,6 @@ function performSearch(bodyData){
   });
 }
 
-=======
->>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
         </script>
 </script>
 

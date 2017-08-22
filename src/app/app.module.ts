@@ -60,6 +60,7 @@ import { Home1Page } from '../pages/Home/home1/home1';
 import { Planning1Page } from '../pages/Home/planning1/planning1';
 import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
+import { EventsPage } from '../pages/Home/events/events';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventsPage
   ],
   imports: [
     BrowserModule,
@@ -203,7 +205,8 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventsPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
