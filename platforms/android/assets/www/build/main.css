@@ -3928,6 +3928,12 @@ ion-icon::before {
   background-color: #7cade4;
 }
 
+.ios .headerBarBumpTwo {
+  height: 20px;
+  opacity: .7;
+  background-color: #33475C;
+}
+
 .customHeaderClass {
   background-color: #7cade4;
   border-bottom: solid 0.5px #979797;
