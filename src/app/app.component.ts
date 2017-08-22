@@ -81,9 +81,9 @@ export class ConferenceApp {
 
           //   });
 
-          this.rootPage = SelectPage;
+          this.rootPage = TabsPage;
         } else {
-          this.rootPage = Welcome1Page;
+          this.rootPage = TabsPage;
         }
         this.platformReady()
       });
