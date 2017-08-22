@@ -18,10 +18,10 @@ export class TabsPage {
   tab2Root: any = Search1Page;
   tab3Root: any = EventsPage;
   tab4Root: any = AboutPage;
-  mySelectedIndex: 1;
+
 
   constructor(navParams: NavParams) {
-    this.mySelectedIndex = navParams.data.tabIndex || 0;
+    //this.mySelectedIndex = navParams.data.tabIndex || 0;
   }
 
 }

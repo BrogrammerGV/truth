@@ -69,6 +69,12 @@ $item-ios-padding-left: 25px ;
 $item-ios-padding-right: 25px ;
 $datetime-ios-padding-right: 25px;
 $datetime-ios-padding-left: 25px;
+$text-input-ios-margin-top: 0;
+$text-input-ios-margin-bottom: 0;
+$text-input-ios-margin-left: 0;
+$text-input-ios-margin-right: 0;
+
+
 
 $text-input-ios-margin-top: 0;
 $text-input-ios-margin-bottom: 0;
@@ -107,6 +113,129 @@ $text-input-ios-margin-right: 0;
 @import "roboto";
 @import "noto-sans";
 
+//Custom Progress Bar - CJM
+#myProgress {
+ margin-left: 25%;
+  width: 50%;
+  background-color: #33475C;;
+  border-radius: 7px;
+}
+
+#myBar {
+  width: 10%;
+  height: 5px;
+  background-color: #7CADE4;
+  border-radius: 7px;
+}/* Understanding your l: */
+
+
+
+
+
+
+
+
+
+
+//Custom CSS Styling for EventApp ProtoType
+
+  .bgCard{
+     background: #ffffff;
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+border-radius: 7px;
+margin-left: 10px;
+margin-right: 10px; 
+
+
+       }
+
+.friendlyName 
+{
+  color: #7CADE4;
+}
+
+
+  .footerButtonWhite{
+    /* Rectangle 28: */
+    background: #FFFFFF;
+    /* Primary: */
+    font-family: 'Roboto', sans-serif;
+    font-size: 15.16px;
+    border: 2px solid #33475C;
+    color: #4A4A4A;
+    width: 100%;
+    height: 3em;
+    align-items: center;
+  }
+
+
+
+
+  .item-ios.item-block .item-inner {
+
+  
+    border-bottom: 0;
+  }
+
+
+
+  .text-input-ios{
+    margin: 0;
+    height: 100%;
+}
+
+   .marButton
+    {
+     width: 50%;
+     margin-bottom: 5%;
+    }
+
+    .whyModal
+    {
+        margin: 60%;
+        color: #7CADE4;
+        font-size: 9px;
+    }
+
+
+.footerButtonBump
+{
+    padding: 0;
+}
+
+.footerButtonDouble{
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+  width: 100%;
+  height: 100%;;
+  
+}
+
+
+
+.orangeSwitchButton{
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+  height: 2.8em;
+  align-items: center;
+}
+/////END OF COLE'S CSS CHANGES!!!
+
+
+
+
+
+/////START OF TRAVI'S CSS CHANGES!!!!
+
+
 .footerButton{
   /* Rectangle 28: */
   background: #E6785A;
@@ -124,6 +253,14 @@ $text-input-ios-margin-right: 0;
         height: 20px;
         background-color: #7cade4;
     }
+    
+        .headerBarBumpTwo
+        {
+  height: 20px;
+  opacity: .7;
+        background-color: #33475C;
+        }
+    
 }
 
 .customHeaderClass{
@@ -138,7 +275,62 @@ $text-input-ios-margin-right: 0;
     height: 2.8em;
     line-height: 2.8em;
     position: relative;
+    padding-top: 10px;
 }
+
+
+/* Rectangle: */
+
+.customEventHeaderClass{
+    background-image: url("../assets/img/eventheader.png");
+        background-size: 107%;
+background-repeat: no-repeat;
+    border-bottom: solid 0.5px #979797;
+    font-family: Roboto;
+	font-size: 1.5em;
+	
+    text-align: center;
+    vertical-align: center;
+    color: #ffffff;
+    height: 6.2em;
+    opacity: 1;
+
+
+    position: relative;
+    /* Mask: */
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+/* 555799527: */
+/* Sketch doesnt export pattern fills at this point */
+/* Rectangle: */
+.frontLayer
+{ padding-top: 10px;
+    height: 100%;
+    background-color: rgba(51, 71, 92, 0.7
+    );
+opacity: 1;
+
+}
+/* StatusBar: */
+    img{
+        height: 1.3em;
+         margin-top: -20px;
+    }
+    .date
+    { text-align: left;
+    margin-left: 5%;
+    margin-bottom: -5%;
+        span{
+    
+font-size: 3.8em;
+opacity: 1.0;
+        }
+    }
+    .info{
+
+       
+    }
+}
+
 
 .menuIcon{
     height: 50%;
@@ -306,6 +498,7 @@ $text-input-ios-margin-right: 0;
     font-family: Roboto;
     
 }
+<<<<<<< HEAD
 
 .noResults{
     font-family: Roboto;
@@ -316,3 +509,5 @@ $text-input-ios-margin-right: 0;
     text-align: center;
     margin: 20px;
 }
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290

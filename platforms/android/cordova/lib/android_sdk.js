@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 /*
        Licensed to the Apache Software Foundation (ASF) under one
        or more contributor license agreements.  See the NOTICE file
@@ -68,6 +71,7 @@ module.exports.version_string_to_api_level = {
     '7.1.1': 25
 };
 
+<<<<<<< HEAD
 module.exports.list_targets_with_android = function() {
     return superspawn.spawn('android', ['list', 'targets'])
     .then(function(stdout) {
@@ -127,6 +131,40 @@ module.exports.list_targets = function() {
             return module.exports.list_targets_with_sdkmanager();
         } else throw err;
     }).then(function(targets) {
+=======
+function parse_targets(output) {
+    var target_out = output.split('\n');
+    var targets = [];
+    for (var i = target_out.length - 1; i >= 0; i--) {
+        if(target_out[i].match(/id:/)) { // if "id:" is in the line...
+            targets.push(target_out[i].match(/"(.+)"/)[1]); //.. match whatever is in quotes.
+        }
+    }
+    return targets;
+}
+
+module.exports.list_targets_with_android = function() {
+    return superspawn.spawn('android', ['list', 'target'])
+    .then(parse_targets);
+};
+
+module.exports.list_targets_with_avdmanager = function() {
+    return superspawn.spawn('avdmanager', ['list', 'target'])
+    .then(parse_targets);
+};
+
+module.exports.list_targets = function() {
+    return module.exports.list_targets_with_avdmanager()
+    .catch(function(err) {
+        // If there's an error, like avdmanager could not be found, we can try
+        // as a last resort, to run `android`, in case this is a super old
+        // SDK installation.
+        if (err && (err.code == 'ENOENT' || (err.stderr && err.stderr.match(/not recognized/)))) {
+            return module.exports.list_targets_with_android();
+        } else throw err;
+    })
+    .then(function(targets) {
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
         if (targets.length === 0) {
             return Q.reject(new Error('No android targets (SDKs) installed!'));
         }

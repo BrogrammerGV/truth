@@ -28,6 +28,31 @@ import { ModalPage } from '../pages/modal/modal';
 import { MidModalPage } from '../pages/mid-modal/mid-modal';
 import { CulturePage } from '../pages/culture/culture';
 import { ConfirmPage } from '../pages/confirm/confirm';
+import { InfoNamePage } from '../pages/info/info-name/info-name';
+import { InfoBirthPage } from '../pages/info/info-birth/info-birth';
+import { InfoSsnModalPage } from '../pages/info/info-ssn-modal/info-ssn-modal';
+import { InfoDeathPage } from '../pages/info/info-death/info-death';
+import { InfoAddrPage } from '../pages/info/info-addr/info-addr';
+import { InfoMilitaryPage } from '../pages/info/info-military/info-military';
+import { InfoHonorsPage } from '../pages/info/info-honors/info-honors';
+import { InfoEduPage } from '../pages/info/info-edu/info-edu';
+import { InfoWorkPage } from '../pages/info/info-work/info-work';
+
+import { CultureSpousePage } from '../pages/culture/culture-spouse/culture-spouse';
+import { CultureSpousecontPage } from '../pages/culture/culture-spousecont/culture-spousecont';
+import { CultureParentsPage } from '../pages/culture/culture-parents/culture-parents';
+import { CultureFatherPage } from '../pages/culture/culture-father/culture-father';
+import { CultureRacePage } from '../pages/culture/culture-race/culture-race';
+
+
+import { ServiceDispPage } from '../pages/service/service-disp/service-disp';
+import { ServiceViewingPage } from '../pages/service/service-viewing/service-viewing';
+import { ServiceModalPage } from '../pages/service/service-modal/service-modal';
+import { ServiceViewModalPage } from '../pages/service/service-view-modal/service-view-modal';
+import { ServiceRemainsPage } from '../pages/service/service-remains/service-remains';
+import { ServiceCemeteryPage } from '../pages/service/service-cemetery/service-cemetery';
+
+import { ServiceRemainsModalPage } from '../pages/service/service-remains-modal/service-remains-modal';
 import { Welcome1Page } from '../pages/Welcome/welcome1/welcome1';
 import { Welcome2Page } from '../pages/Welcome/welcome2/welcome2';
 import { Welcome3Page } from '../pages/Welcome/welcome3/welcome3';
@@ -56,6 +81,27 @@ import { Search1Page } from '../pages/Home/search1/search1';
     MidModalPage,
     CulturePage, 
     ConfirmPage,
+    InfoNamePage, 
+    InfoBirthPage, 
+    InfoSsnModalPage, 
+    InfoDeathPage, 
+    InfoAddrPage,
+    InfoMilitaryPage, 
+    InfoHonorsPage, 
+    InfoEduPage, 
+    InfoWorkPage, 
+    CultureSpousePage,
+    CultureSpousecontPage, 
+    CultureParentsPage,
+    CultureFatherPage, 
+    CultureRacePage,
+    ServiceDispPage,
+    ServiceModalPage, 
+    ServiceViewingPage,
+    ServiceViewModalPage,
+    ServiceRemainsPage,
+    ServiceRemainsModalPage,
+    ServiceCemeteryPage,
     Welcome1Page,
     Welcome2Page,
     Welcome3Page,
@@ -84,7 +130,26 @@ import { Search1Page } from '../pages/Home/search1/search1';
         { component: ModalPage, name: 'ModalPage', segment: 'modal' },
         { component: MidModalPage, name: 'MidModalPage', segment: 'midModal' },
         { component: CulturePage, name: 'CulturePage', segment: 'culture' },
-        { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' }
+        { component: ConfirmPage, name: 'ConfirmPage', segment: 'confirm' },
+       
+        { component: InfoNamePage, name: 'InfoNamePage', segment: 'infoName' },
+         { component: InfoBirthPage, name: 'InfoBirthPage', segment: 'infoBirth' },
+              { component: InfoSsnModalPage, name: 'InfoSSNModalPage', segment: 'infoSSNModal' },
+              { component: InfoDeathPage, name: 'InfoDeathPage', segment: 'infoDeath' },
+                 { component: InfoAddrPage, name: 'InfoAddrPage', segment: 'infoAddr' },
+        { component: InfoMilitaryPage, name: 'InfoMilitaryPage', segment: 'infoMilitary' }, 
+           { component: InfoHonorsPage, name: 'InfoHonorsPage', segment: 'infoHonors' },
+         { component: InfoEduPage, name: 'InfoEduPage', segment: 'infoEdu' },
+                  { component: InfoWorkPage, name: 'InfoWorkPage', segment: 'infoWork' },
+                      { component: CultureSpousePage, name: 'CultureSpousePage', segment: 'cultureSpouse' },
+    { component: CultureSpousecontPage, name: 'CultureSpousecontPage', segment: 'cultureSpousecont' } ,
+       { component: CultureParentsPage, name: 'CultureParentsPage', segment: 'cultureParents' },
+           { component: CultureFatherPage, name: 'CultureFatherPage', segment: 'cultureFather' }   ,       
+                    { component: CultureRacePage, name: 'CultureRacePage', segment: 'cultureRace' }          
+                 
+                     
+                  
+                 
         
       ]
     }),BrowserModule, 
@@ -111,6 +176,27 @@ import { Search1Page } from '../pages/Home/search1/search1';
     MidModalPage,
     CulturePage, 
     ConfirmPage,
+    InfoNamePage, 
+    InfoBirthPage, 
+    InfoSsnModalPage, 
+    InfoDeathPage, 
+    InfoAddrPage, 
+    InfoMilitaryPage, 
+    InfoHonorsPage, 
+    InfoEduPage, 
+    InfoWorkPage, 
+    CultureSpousePage,
+    CultureSpousecontPage, 
+    CultureParentsPage, 
+    CultureFatherPage, 
+    CultureRacePage,
+    ServiceDispPage,
+    ServiceModalPage,
+    ServiceViewingPage,
+    ServiceViewModalPage,
+    ServiceRemainsPage,
+    ServiceRemainsModalPage,
+    ServiceCemeteryPage,
     Welcome1Page,
     Welcome2Page,
     Welcome3Page,

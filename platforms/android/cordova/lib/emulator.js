@@ -116,7 +116,11 @@ module.exports.list_images_using_avdmanager = function () {
 };
 
 module.exports.list_images_using_android = function() {
+<<<<<<< HEAD
     return superspawn.spawn('android', ['list', 'avds'])
+=======
+    return superspawn.spawn('android', ['list', 'avd'])
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     .then(function(output) {
         var response = output.split('\n');
         var emulator_list = [];
@@ -171,6 +175,7 @@ module.exports.list_images_using_android = function() {
    }
  */
 module.exports.list_images = function() {
+<<<<<<< HEAD
     if (forgivingWhichSync('android')) {
         return module.exports.list_images_using_android()
         .catch(function(err) {
@@ -185,6 +190,12 @@ module.exports.list_images = function() {
         });
     } else if (forgivingWhichSync('avdmanager')) {
         return module.exports.list_images_using_avdmanager();
+=======
+    if (forgivingWhichSync('avdmanager')) {
+        return module.exports.list_images_using_avdmanager();
+    } else if (forgivingWhichSync('android')) {
+        return module.exports.list_images_using_android();
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     } else {
         return Q().then(function() {
             throw new CordovaError('Could not find either `android` or `avdmanager` on your $PATH! Are you sure the Android SDK is installed and available?');
@@ -228,6 +239,7 @@ module.exports.list_started = function() {
 };
 
 // Returns a promise.
+// TODO: we should remove this, there's a more robust method under android_sdk.js
 module.exports.list_targets = function() {
     return superspawn.spawn('android', ['list', 'targets'], {cwd: os.tmpdir()})
     .then(function(output) {
@@ -399,6 +411,10 @@ module.exports.create_image = function(name, target) {
         });
     } else {
         console.log('WARNING : Project target not found, creating avd with a different target but the project may fail to install.');
+<<<<<<< HEAD
+=======
+        // TODO: there's a more robust method for finding targets in android_sdk.js
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
         return superspawn.spawn('android', ['create', 'avd', '--name', name, '--target', this.list_targets()[0]])
         .then(function() {
             // TODO: This seems like another error case, even though it always happens.

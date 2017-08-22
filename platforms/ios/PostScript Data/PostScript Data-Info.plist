@@ -13,7 +13,11 @@
     <key>CFBundleIcons~ipad</key>
     <dict/>
     <key>CFBundleIdentifier</key>
+<<<<<<< HEAD
     <string>io.ionic.conferenceapp</string>
+=======
+    <string>com.Homesteaders.PostScript</string>
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     <key>CFBundleInfoDictionaryVersion</key>
     <string>6.0</string>
     <key>CFBundleName</key>
@@ -37,6 +41,7 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
+<<<<<<< HEAD
         <key>10.6.1.49</key>
         <dict>
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
@@ -47,10 +52,17 @@
           <key>NSExceptionAllowsInsecureHTTPLoads</key>
           <true/>
         </dict>
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
       </dict>
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
+<<<<<<< HEAD
+=======
+    <key>NSMainNibFile</key>
+    <string/>
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     <key>NSMainNibFile~ipad</key>
     <string/>
     <key>UIRequiresFullScreen</key>
