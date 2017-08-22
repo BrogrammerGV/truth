@@ -13,6 +13,12 @@ import { UserData } from '../../providers/user-data';
 import {SelectPage} from '../select/select';
 import {ModalPage} from '../modal/modal';
 
+
+//AWS Functions
+declare let performMetaGet: any;
+
+
+
 @Component({
   selector: 'page-schedule',
   templateUrl: 'entry.html'
@@ -33,6 +39,14 @@ export class EntryPage {
   confDate: string;
   code: any;
 
+//Variables for Data Load
+nameToUse: string;
+
+
+
+
+
+
   constructor(
     public alertCtrl: AlertController,
     public app: App,
@@ -46,7 +60,7 @@ export class EntryPage {
   ) {}
 
   ionViewDidLoad() {
-    this.app.setTitle('InfoMemories');
+    this.app.setTitle('PostScript');
    
   }
 
@@ -101,11 +115,44 @@ export class EntryPage {
 
 
           }
+
+
+ doSearch(){
+    
+    performMetaGet({"eventID": "guidstuff3"
+    }).then(function(data: any){
+      //console.log(this);
+      //console.log(data);
+      this.logItem(data);
+
+    }.bind(this));
+  }
+
+
+
+logItem(ref: any){
+  
+    var x = JSON.parse(ref.Payload)
+console.log(x.Item.firstName);
+   this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
+
+   
+    // for (var i = 0; i < x.length; i++) {
+    //   console.log(x[i]);
+    // }
+ 
+  }
+
+
+
+
+
             
           clearFix()
           {
             this.code = "";
             
+
           }
 
             openSocial(network: string, fab: FabContainer) {

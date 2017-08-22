@@ -17,11 +17,11 @@
 
     <span style="font-size: .8em; opacity: 1;"> Funeral Service for</span>
 <br />
-     <span style	="font-size: 1em; opacity: 1;"> <b>Cole McFarland</b> </span>
+     <span style	="font-size: 1em; opacity: 1;"> <b>{{nameToUse}}</b> </span>
 <br />     
     <span style=" font-size: .8em; opacity: 1;"> Western Babtist Church</span>
 <br /> 
-    <span style="font-size: .8em; opacity: 1;"> 10 am. | Aug. 24</span>
+    <span style="font-size: .8em; opacity: 1;"> {{eventTime}} | Aug. 24</span>
 
 </div>
 </div>
@@ -126,5 +126,5 @@
 </ion-content>
 
 <ion-footer>
-  <button class="footerButton" (click)="goToCollector()"> Event Info</button>
+  <button class="footerButton" (click)="doSearch()"> Event Info</button>
 </ion-footer>
