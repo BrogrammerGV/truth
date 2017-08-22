@@ -3951,16 +3951,15 @@ ion-icon::before {
 /* Rectangle: */
 .customEventHeaderClass {
   background-image: url("../assets/img/eventheader.png");
-  background-size: 100%;
+  background-size: 105%;
   background-repeat: no-repeat;
   border-bottom: solid 0.5px #979797;
   font-family: Roboto;
   font-size: 1.5em;
-  font-weight: bold;
   text-align: center;
   vertical-align: center;
   color: #ffffff;
-  height: 5.8em;
+  height: 6.2em;
   opacity: 1;
   position: relative;
   /* Mask: */
@@ -3990,8 +3989,7 @@ ion-icon::before {
 }
 
 .customEventHeaderClass .date span {
-  margin-top: -10px;
-  font-size: 3.5em;
+  font-size: 3.8em;
   opacity: 1.0;
 }
 
