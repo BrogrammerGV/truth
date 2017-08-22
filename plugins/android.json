@@ -7,6 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
+<<<<<<< HEAD
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.ionic.conferenceapp"
+=======
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
@@ -38,6 +42,7 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
         }
     },
     "dependent_plugins": {}

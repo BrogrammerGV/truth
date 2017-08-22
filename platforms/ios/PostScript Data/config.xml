@@ -57,6 +57,8 @@
     <allow-navigation href="http://*/*" />
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
+    <allow-navigation href="http://10.6.1.49:8100" />
+    <allow-navigation href="http://169.254.79.230:8100" />
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />

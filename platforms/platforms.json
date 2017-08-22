@@ -1,4 +1,8 @@
 {
     "ios": "4.4.0",
+<<<<<<< HEAD
+    "android": "6.2.2"
+=======
     "android": "6.2.3"
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }

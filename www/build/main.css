@@ -3815,6 +3815,8 @@ ion-icon::before {
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+<<<<<<< HEAD
+=======
 #myProgress {
   margin-left: 25%;
   width: 50%;
@@ -3908,6 +3910,7 @@ ion-icon::before {
   align-items: center;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .footerButton {
   /* Rectangle 28: */
   background: #E6785A;
@@ -3928,12 +3931,15 @@ ion-icon::before {
   background-color: #7cade4;
 }
 
+<<<<<<< HEAD
+=======
 .ios .headerBarBumpTwo {
   height: 20px;
   opacity: .7;
   background-color: #33475C;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .customHeaderClass {
   background-color: #7cade4;
   border-bottom: solid 0.5px #979797;
@@ -3946,6 +3952,8 @@ ion-icon::before {
   height: 2.8em;
   line-height: 2.8em;
   position: relative;
+<<<<<<< HEAD
+=======
   padding-top: 10px;
 }
 
@@ -3993,6 +4001,7 @@ ion-icon::before {
 .customEventHeaderClass .date span {
   font-size: 3.8em;
   opacity: 1.0;
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }
 
 .menuIcon {
@@ -4119,10 +4128,21 @@ ion-icon::before {
   background: #FFFFFF;
   border: 2px solid #33475C;
   border-radius: 1.5px;
+<<<<<<< HEAD
+  height: 2.3em;
+  text-align: start;
+}
+
+.noHeaderInputField {
+  margin: 0 !important;
+}
+
+=======
   height: 3em;
   text-align: start;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .searchField {
   background: url("../assets/img/search.png") no-repeat scroll 7px;
   padding-left: 30px;
@@ -4134,6 +4154,14 @@ ion-icon::before {
   height: 100%;
 }
 
+<<<<<<< HEAD
+.text-input-md {
+  margin: 0 !important;
+  height: 100%;
+}
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .searchMainFont {
   color: #33475C;
   font-size: 1.3em;
@@ -4147,6 +4175,19 @@ ion-icon::before {
   font-family: Roboto;
 }
 
+<<<<<<< HEAD
+.noResults {
+  font-family: Roboto;
+  color: #B2BAC4;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  margin: 20px;
+}
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 ion-action-sheet {
   left: 0;
   top: 0;

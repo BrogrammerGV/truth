@@ -3815,6 +3815,8 @@ ion-icon::before {
   src: local("Noto Sans Bold"), local("Noto-Sans-Bold"), url("../assets/fonts/noto-sans-bold.woff") format("woff"), url("../assets/fonts/noto-sans-bold.ttf") format("truetype");
 }
 
+<<<<<<< HEAD
+=======
 #myProgress {
   margin-left: 25%;
   width: 50%;
@@ -3908,6 +3910,7 @@ ion-icon::before {
   align-items: center;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .footerButton {
   /* Rectangle 28: */
   background: #E6785A;
@@ -3928,12 +3931,15 @@ ion-icon::before {
   background-color: #7cade4;
 }
 
+<<<<<<< HEAD
+=======
 .ios .headerBarBumpTwo {
   height: 20px;
   opacity: .7;
   background-color: #33475C;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .customHeaderClass {
   background-color: #7cade4;
   border-bottom: solid 0.5px #979797;
@@ -3946,6 +3952,8 @@ ion-icon::before {
   height: 2.8em;
   line-height: 2.8em;
   position: relative;
+<<<<<<< HEAD
+=======
   padding-top: 10px;
 }
 
@@ -3993,6 +4001,7 @@ ion-icon::before {
 .customEventHeaderClass .date span {
   font-size: 3.8em;
   opacity: 1.0;
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }
 
 .menuIcon {
@@ -4119,10 +4128,21 @@ ion-icon::before {
   background: #FFFFFF;
   border: 2px solid #33475C;
   border-radius: 1.5px;
+<<<<<<< HEAD
+  height: 2.3em;
+  text-align: start;
+}
+
+.noHeaderInputField {
+  margin: 0 !important;
+}
+
+=======
   height: 3em;
   text-align: start;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .searchField {
   background: url("../assets/img/search.png") no-repeat scroll 7px;
   padding-left: 30px;
@@ -4134,6 +4154,14 @@ ion-icon::before {
   height: 100%;
 }
 
+<<<<<<< HEAD
+.text-input-md {
+  margin: 0 !important;
+  height: 100%;
+}
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 .searchMainFont {
   color: #33475C;
   font-size: 1.3em;
@@ -4147,6 +4175,19 @@ ion-icon::before {
   font-family: Roboto;
 }
 
+<<<<<<< HEAD
+.noResults {
+  font-family: Roboto;
+  color: #B2BAC4;
+  font-size: 1.3em;
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+  margin: 20px;
+}
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 ion-action-sheet {
   left: 0;
   top: 0;
@@ -39896,6 +39937,13 @@ ion-item {
   background-clip: padding-box;
 }
 
+<<<<<<< HEAD
+ion-footer {
+  background: #E6785A;
+}
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 page-account img {
   max-width: 140px;
   border-radius: 50%;
@@ -39928,6 +39976,8 @@ page-culture .defaultValue {
   color: #FFFFFF;
 }
 
+<<<<<<< HEAD
+=======
 page-culture-father .inputField {
   background: #FFFFFF;
   border: 2px solid #33475C;
@@ -40127,6 +40177,7 @@ page-culture-spousecont .inputLabelText {
   color: #33475C;
 }
 
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 page-schedule ion-item-sliding[track=ionic] ion-label {
   border-left: 2px solid #7CADE4;
   padding-left: 10px;
@@ -40217,6 +40268,8 @@ ion-content .bigBox {
   border-radius: 7px;
   margin-left: 10px;
   margin-right: 10px;
+<<<<<<< HEAD
+=======
 }
 
 page-info-addr .inputField {
@@ -40602,6 +40655,7 @@ page-info-work :-ms-input-placeholder {
 
 page-info-work .inputLabelText {
   color: #33475C;
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }
 
 page-user .logo {
@@ -40659,6 +40713,60 @@ page-mid-modal .orange {
   border-radius: 7px;
   padding-left: 5px;
   padding-right: 5px;
+<<<<<<< HEAD
+}
+
+.badButton {
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+}
+
+.bgCard {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.badButton {
+  /* Rectangle 28: */
+  background: #E6785A;
+  /* Primary: */
+  font-family: 'Roboto', sans-serif;
+  font-size: 15.16px;
+  color: #FFFFFF;
+}
+
+page-speaker-list .scroll-content {
+  background: #EDEDED;
+}
+
+page-speaker-list .speaker-card {
+  height: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+page-speaker-list .speaker-card ion-card-content {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }
 
 .badButton {
@@ -40919,6 +41027,15 @@ page-mid-modal .orange {
   background-image: linear-gradient(-180deg, #B3D6F3 0%, #7CADE4 100%) !important;
 }
 
+<<<<<<< HEAD
+.truth {
+  background: #ffffff;
+  -webkit-box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 2px 4px 1px rgba(0, 0, 0, 0.5);
+  border-radius: 7px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+=======
 .whiteButton {
   /* Rectangle 28: */
   background: #FFFFFF;
@@ -41238,6 +41355,7 @@ page-service-viewing :-ms-input-placeholder {
 
 page-service-viewing .inputLabelText {
   color: #33475C;
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 }
 
 .tabbar {

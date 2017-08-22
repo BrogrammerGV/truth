@@ -460,8 +460,12 @@ opacity: 1.0;
     background: #FFFFFF;
     border: 2px solid #33475C;
     border-radius: 1.5px;
-    height: 3em;
+    height: 2.3em;
     text-align: start;
+}
+
+.noHeaderInputField{
+    margin:0 !important;
 }
 
 .searchField{
@@ -471,6 +475,11 @@ opacity: 1.0;
 }
 
 .text-input-ios{
+    margin: 0 !important;
+    height: 100%;
+}
+
+.text-input-md{
     margin: 0 !important;
     height: 100%;
 }
@@ -489,3 +498,16 @@ opacity: 1.0;
     font-family: Roboto;
     
 }
+<<<<<<< HEAD
+
+.noResults{
+    font-family: Roboto;
+    color: #B2BAC4;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin: 20px;
+}
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290

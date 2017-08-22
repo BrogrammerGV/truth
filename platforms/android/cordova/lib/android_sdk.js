@@ -1,3 +1,8 @@
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 /*
        Licensed to the Apache Software Foundation (ASF) under one
        or more contributor license agreements.  See the NOTICE file
@@ -66,6 +71,67 @@ module.exports.version_string_to_api_level = {
     '7.1.1': 25
 };
 
+<<<<<<< HEAD
+module.exports.list_targets_with_android = function() {
+    return superspawn.spawn('android', ['list', 'targets'])
+    .then(function(stdout) {
+        var target_out = stdout.split('\n');
+        var targets = [];
+        for (var i = target_out.length - 1; i >= 0; i--) {
+            if(target_out[i].match(/id:/)) {
+                targets.push(target_out[i].match(/"(.+)"/)[1]);
+            }
+        }
+        return targets;
+    });
+};
+
+module.exports.list_targets_with_sdkmanager = function() {
+    return superspawn.spawn('sdkmanager', ['--list'])
+    .then(function(stdout) {
+        var parsing_installed_packages = false;
+        var lines = stdout.split('\n');
+        var targets = [];
+        for (var i = 0, l = lines.length; i < l; i++) {
+            var line = lines[i];
+            if (line.match(/Installed packages/)) {
+                parsing_installed_packages = true;
+            } else if (line.match(/Available Packages/) || line.match(/Available Updates/)) {
+                // we are done working through installed packages, exit
+                break;
+            }
+            if (parsing_installed_packages) {
+                // Match stock android platform
+                if (line.match(/platforms;android-\d+/)) {
+                    targets.push(line.match(/(android-\d+)/)[1]);
+                }
+                // Match Google APIs
+                if (line.match(/addon-google_apis-google-\d+/)) {
+                    var description = lines[i + 1];
+                    // munge description to match output from old android sdk tooling
+                    var api_level = description.match(/Android (\d+)/); //[1];
+                    if (api_level) {
+                        targets.push('Google Inc.:Google APIs:' + api_level[1]);
+                    }
+                }
+                // TODO: match anything else?
+            }
+        }
+        return targets;
+    });
+};
+
+module.exports.list_targets = function() {
+    return module.exports.list_targets_with_android()
+    .catch(function(err) {
+        // there's a chance `android` no longer works.
+        // lets see if `sdkmanager` is available and we can figure it out
+        var avail_regex = /"?android"? command is no longer available/;
+        if (err.code && ((err.stdout && err.stdout.match(avail_regex)) || (err.stderr && err.stderr.match(avail_regex)))) {
+            return module.exports.list_targets_with_sdkmanager();
+        } else throw err;
+    }).then(function(targets) {
+=======
 function parse_targets(output) {
     var target_out = output.split('\n');
     var targets = [];
@@ -98,6 +164,7 @@ module.exports.list_targets = function() {
         } else throw err;
     })
     .then(function(targets) {
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
         if (targets.length === 0) {
             return Q.reject(new Error('No android targets (SDKs) installed!'));
         }

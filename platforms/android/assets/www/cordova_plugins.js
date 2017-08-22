@@ -1,4 +1,11 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
+<<<<<<< HEAD
+module.exports = [];
+module.exports.metadata = 
+// TOP OF METADATA
+{
+    "cordova-plugin-whitelist": "1.3.1"
+=======
 module.exports = [
     {
         "id": "cordova-plugin-device.device",
@@ -55,6 +62,7 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "ionic-plugin-keyboard": "2.2.1"
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
 };
 // BOTTOM OF METADATA
 });

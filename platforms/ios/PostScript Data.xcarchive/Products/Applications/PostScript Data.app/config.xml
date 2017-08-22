@@ -1,5 +1,9 @@
 <?xml version='1.0' encoding='utf-8'?>
+<<<<<<< HEAD
+<widget id="io.ionic.conferenceapp" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+=======
 <widget id="com.Homesteaders.PostScript" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     <feature name="LocalStorage">
         <param name="ios-package" value="CDVLocalStorage" />
     </feature>
@@ -57,6 +61,11 @@
     <allow-navigation href="http://*/*" />
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
+<<<<<<< HEAD
+    <allow-navigation href="http://10.6.1.49:8100" />
+    <allow-navigation href="http://169.254.79.230:8100" />
+=======
+>>>>>>> ca4fad9da561edbff9f1d74f36e0dff7dcd86290
     <allow-intent href="itms:*" />
     <allow-intent href="itms-apps:*" />
     <icon height="57" src="resources/ios/icon/icon.png" width="57" />
