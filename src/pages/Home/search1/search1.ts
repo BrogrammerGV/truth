@@ -21,6 +21,8 @@ declare let performSearch: any;
 export class Search1Page {
   public searchText: string = "";
   public searchResults: string[] = [];
+  public searched: boolean = false;
+  public noResults: boolean = false;
   // set the root pages for each tab
   tab2Root: any = Search1Page;
   tab4Root: any = AboutPage;
@@ -40,7 +42,7 @@ export class Search1Page {
   }
 
   doSearch(){
-    console.log(this.searchText);
+    this.searched = true;
     performSearch({queryText: this.searchText
     }).then(function(data: any){
       //console.log(this);
@@ -56,6 +58,8 @@ export class Search1Page {
       console.log(x[i]);
       this.searchResults.push(x[i]);
     }
+  
+    this.noResults = !x.length;
   }
 
   openEvent(item: any){

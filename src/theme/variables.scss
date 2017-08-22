@@ -274,7 +274,6 @@ $text-input-ios-margin-right: 0;
 
 .noHeaderInputField{
     margin:0 !important;
-    height: 100% !important;
 }
 
 .searchField{
@@ -284,6 +283,11 @@ $text-input-ios-margin-right: 0;
 }
 
 .text-input-ios{
+    margin: 0 !important;
+    height: 100%;
+}
+
+.text-input-md{
     margin: 0 !important;
     height: 100%;
 }
@@ -301,4 +305,14 @@ $text-input-ios-margin-right: 0;
     font-size: 1.3em;
     font-family: Roboto;
     
+}
+
+.noResults{
+    font-family: Roboto;
+    color: #B2BAC4;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin: 20px;
 }
