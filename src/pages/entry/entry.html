@@ -1,48 +1,74 @@
 <ion-header>
-  <ion-navbar no-border-bottom>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"> Info Memories Beta</ion-icon>
-    </button>
+  <div class="headerBarBumpTwo"></div>
+  <div class="customEventHeaderClass">
 
-   <!--<ion-segment [(ngModel)]="segment" (ionChange)="updateSchedule()">
-      <ion-segment-button value="all">
-        All
-      </ion-segment-button>
-      <ion-segment-button value="favorites">
-        Favorites
-      </ion-segment-button>
-    </ion-segment>-->
+    
+  
+<div style="" class="frontLayer">
 
-    <ion-buttons end>
-      <button ion-button icon-only (click)="presentFilter()">
-        <ion-icon ios="ios-options-outline" md="md-options"></ion-icon>
-      </button>
-    </ion-buttons>
-  </ion-navbar>
+<div  style="position:absolute; width: 30%; margin-left: -5px;" class="date">
+    <span style="font-size:1.2em; opacity: 1; margin-left: 15px; margin-bottom: -10px;letter-spacing: 0.1px;"><b> Aug</b></span> 
+    <span style="position: relative; top: -12px; opacity: 1;  margin-left: 15px;"> <b>24</b> </span>
+    </div>
 
- <!-- <ion-toolbar no-border-top>
-    <ion-searchbar color="primary"
-                   [(ngModel)]="queryText"
-                   (ionInput)="updateSchedule()"
-                   placeholder="Search">
-    </ion-searchbar>
-  </ion-toolbar>-->
+<div style="margin-left: 30%; text-align:left;">
+
+  <img  src="assets/img/menu.png" class="menuIcon" />
+
+    <span style="font-size: .8em; opacity: 1;"> Funeral Service for</span>
+<br />
+     <span style	="font-size: 1em; opacity: 1;"> <b>Cole McFarland</b> </span>
+<br />     
+    <span style=" font-size: .8em; opacity: 1;"> Western Babtist Church</span>
+<br /> 
+    <span style="font-size: .8em; opacity: 1;"> 10 am. | Aug. 24</span>
+
+</div>
+</div>
+  </div>
+
+
 </ion-header>
 
+
 <ion-content>
+  <div class="bgCard" style="padding-bottom: 30%;">
   <ion-refresher (ionRefresh)="doRefresh($event)">
     <ion-refresher-content></ion-refresher-content>
   </ion-refresher>
-    <h1>
-      We are sorry to hear about your loss
-    </h1>
-    <p>
+  
+  <div style="margin-left: 3%; margin-top: 5%; float:left;">
+        <img style="height: 80px; " src="assets/img/Obiticon.png" />
+      </div>
+  <div style="float:right; width: 33%; border-color: red; text-align:right">
+        <img style="border-radius: 300px" src="assets/img/speakers/bear.jpg" />
+      </div>
+   
+   <br />
+   <br />
+      
+   <br />
+   <br />
+
+   
+   <br />
+   <br />
+
+<div style="margin: 10px;">
+           <p style="color: #33475C">
       Our goal is to help you make this hard time a little bit easier by simplifying the process to give you more time with your family. To start, please enter the code provided to you.
-    </p>
-    <ion-item>
+
+      <br /> 
+      Our goal is to help you make this hard time a little bit easier by simplifying the process to give you more time with your family. To start, please enter the code provided to you.
+      Our goal is to help you make this hard time a little bit easier by simplifying the process to give you more time with your family. To start, please enter the code provided to you.</p> 
+   </div>
+
+
+ 
+    <!--<ion-item>
     <ion-label>Enter Code</ion-label>
     <ion-input class="footer" (click)="clearFix()" [(ngModel)]="code" type="text"></ion-input>
-  </ion-item>
+  </ion-item>-->
  
  <!-- <ion-list #scheduleList [hidden]="shownSessions === 0">
 
@@ -86,7 +112,7 @@
       No Sessions Found
   </ion-list-header>
 -->
-  <ion-fab bottom right #fab>
+  <!--<ion-fab bottom right #fab>
     <button ion-fab><ion-icon name="share"></ion-icon></button>
     <ion-fab-list side="top">
       <button ion-fab color="vimeo" (click)="openSocial('Vimeo', fab)"><ion-icon name="logo-vimeo"></ion-icon></button>
@@ -94,11 +120,11 @@
       <button ion-fab color="twitter" (click)="openSocial('Twitter', fab)"><ion-icon name="logo-twitter"></ion-icon></button>
       <button ion-fab color="facebook" (click)="openSocial('Facebook', fab)"><ion-icon name="logo-facebook"></ion-icon></button>
     </ion-fab-list>
-  </ion-fab>
+  </ion-fab>-->
 
-
+</div>
 </ion-content>
 
 <ion-footer>
-  <button class="badButton" ion-button block (click)="goToCollector()" ion-button full> Submit Code </button>
+  <button class="footerButton" (click)="goToCollector()"> Event Info</button>
 </ion-footer>

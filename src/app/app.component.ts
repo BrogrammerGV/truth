@@ -69,7 +69,6 @@ export class ConferenceApp {
     this.storage.get('hasSeenTutorial')
       .then((hasSeenTutorial) => {
         if (hasSeenTutorial) {
-
           // this.storage.get('loggedIn')
           //   .then((loggedIn) => {
           //     if (loggedIn = 'Yes') {
@@ -84,7 +83,7 @@ export class ConferenceApp {
 
           this.rootPage = TabsPage;
         } else {
-          this.rootPage = Welcome1Page;
+          this.rootPage = TabsPage;
         }
         this.platformReady()
       });
