@@ -52,7 +52,7 @@ export class Search1Page {
 
   addSearchResult(ref: any){
     this.searchResults = [];
-    var x = JSON.parse(ref.Payload).Items;
+    var x = ref.Items;
 
     for (var i = 0; i < x.length; i++) {
       console.log(x[i]);

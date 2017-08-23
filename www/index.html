@@ -104,7 +104,7 @@ function lambda(lambdaFunc, bodyData){
    }
    else     
    {
-     resolve(data);   
+     resolve(JSON.parse(data.Payload));   
    }       // successful response
    
    });
