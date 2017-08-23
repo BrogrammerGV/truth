@@ -99,7 +99,6 @@ export class Home1Page {
       alert.setSubTitle(message);
       alert.present();
     }else{
-      var that: any = this;
       registerCognito({
         ClientId: '4qedlf7cu5lo5r670tk6d90d19', /* required */
         Password: this.userInfo.password, /* required */
@@ -121,8 +120,8 @@ export class Home1Page {
         ]
 
       }).then(function(data: any){
-        that.navCtrl.setRoot(Planning1Page, {user: that.userInfo});
-      }).catch(function(err: any){
+        this.navCtrl.setRoot(Planning1Page, {user: this.userInfo});
+      }.bind(this)).catch(function(err: any){
         alert.setMessage(err.message);
         alert.present();
       });

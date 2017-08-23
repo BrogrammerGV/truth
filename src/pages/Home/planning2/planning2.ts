@@ -27,6 +27,6 @@ export class Planning2Page {
   }
 
   nextPage(){
-    this.navCtrl.setRoot(SelectPage);
+    this.navCtrl.parent.parent.setRoot(SelectPage);
   }
 }
