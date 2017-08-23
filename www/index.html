@@ -2,9 +2,6 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <script data-ionic="inject">
-    (function(w){var i=w.Ionic=w.Ionic||{};i.version='3.5.0';i.angular='4.1.3';i.staticDir='build/';})(window);
-  </script>
   <meta charset="UTF-8">
   <title>InfoMemories</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -88,7 +85,8 @@ function registerCognito(bodyData){
   });
 }
 
-function loginCognito(user, pass){
+var cognitoUser
+function loginCognitoUser(user, pass){
   var authenticationData = {
         Username : user,
         Password : pass,
@@ -106,7 +104,7 @@ function loginCognito(user, pass){
     };
 
     return new Promise( function(resolve,reject){
-      var cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
+      cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
       cognitoUser.authenticateUser(authenticationDetails, {
           onSuccess: function (result) {
               resolve(result.getAccessToken().getJwtToken());
@@ -115,9 +113,38 @@ function loginCognito(user, pass){
           onFailure: function(err) {
               reject(err.message);
           },
-
       });
     });
+}
+
+function cognitoHelper(funcName, confirmCode){
+  return new Promise(function(resolve,reject){
+    
+  if(funcName == "attr"){
+    if(cognitoUser){
+    cognitoUser.getUserAttributes(function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in")};
+  }else if(funcName == "resend"){
+    if(cognitoUser){
+    cognitoUser.resendConfirmationCode(function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in");
+  }
+  }else if(funcName == "confirm"){
+    if(cognitoUser){
+    cognitoUser.confirmRegistration(confirmCode, true, function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in");
+  }    
+  }
+  });
 }
 
 function forgotPasswordCognito(){
