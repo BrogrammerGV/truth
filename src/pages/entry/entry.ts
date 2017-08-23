@@ -13,6 +13,8 @@ import { UserData } from '../../providers/user-data';
 import {SelectPage} from '../select/select';
 import {ModalPage} from '../modal/modal';
 
+import { EventInfoOnePage } from '../event-info/event-info-one/event-info-one';
+
 
 //AWS Functions
 declare let performMetaGet: any;
@@ -131,6 +133,8 @@ funeralHome: string;
       this.logItem(data);
 
     }.bind(this));
+
+    this.navCtrl.push(EventInfoOnePage);
   }
 
 

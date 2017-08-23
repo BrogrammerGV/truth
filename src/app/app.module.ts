@@ -61,6 +61,10 @@ import { Planning1Page } from '../pages/Home/planning1/planning1';
 import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
 
+import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
+
+
+
 @NgModule({
   declarations: [
     ConferenceApp,
@@ -108,7 +112,8 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventInfoOnePage
   ],
   imports: [
     BrowserModule,
@@ -203,7 +208,8 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventInfoOnePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
