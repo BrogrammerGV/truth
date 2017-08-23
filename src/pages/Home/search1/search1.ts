@@ -12,7 +12,7 @@ import { SelectPage } from '../../select/select';
  * on Ionic pages and navigation.
  */
 
-declare let performSearch: any;
+declare let lambda: any;
 @IonicPage()
 @Component({
   selector: 'page-search1',
@@ -43,7 +43,7 @@ export class Search1Page {
 
   doSearch(){
     this.searched = true;
-    performSearch({queryText: this.searchText
+    lambda("PostScriptSearch",{queryText: this.searchText
     }).then(function(data: any){
       //console.log(this);
       this.addSearchResult(data);
