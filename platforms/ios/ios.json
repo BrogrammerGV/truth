@@ -59,31 +59,31 @@
     },
     "installed_plugins": {
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-crosswalk-webview": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-wkwebview-engine": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {},

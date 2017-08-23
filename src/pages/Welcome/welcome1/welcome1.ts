@@ -3,7 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
 import { Welcome2Page } from '../welcome2/welcome2';
-import { Home1Page } from '../../../pages/Home/home1/home1';
+import { TabsPage } from '../../../pages/tabs/tabs';
 
 /**
  * Generated class for the Welcome1Page page.
@@ -30,6 +30,6 @@ export class Welcome1Page {
 
   skipPage(){
     this.storage.set('hasSeenTutorial', 'true');
-    this.navCtrl.push(Home1Page);
+    this.navCtrl.push(TabsPage);
   }
 }

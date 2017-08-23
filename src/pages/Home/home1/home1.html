@@ -36,13 +36,14 @@
       <div>
         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
           <div style="text-align: left">
+            <ion-list no-lines>
             <ion-item>
               <ion-label stacked class="inputLabelText">First Name</ion-label>
-              <ion-input placeholder="First name" required class="inputField" [(ngModel)]="userInfo.first" formControlName="firstName"></ion-input>
+              <ion-input placeholder="Type here" required class="inputField" [(ngModel)]="userInfo.first" formControlName="firstName"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Last Name</ion-label>
-              <ion-input placeholder="Last name" required class="inputField" [(ngModel)]="userInfo.last" formControlName="lastName"></ion-input>
+              <ion-input placeholder="Type here" required class="inputField" [(ngModel)]="userInfo.last" formControlName="lastName"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Email</ion-label>
@@ -52,8 +53,9 @@
               <ion-label stacked class="inputLabelText">Password</ion-label>
               <ion-input type="password" required placeholder="Type here" class="inputField" [(ngModel)]="userInfo.password" formControlName="password"></ion-input>
             </ion-item>
+          </ion-list>
           </div>
-          <button type="submit" style="margin-top:1em" block primary class="orangeButton">Next</button>
+          <div (click)="login()" style="text-align: right; color: #7cade4; margin-top: 10px">Already have an account?</div>
         </form>
       </div>
     </div>
@@ -68,7 +70,7 @@
       <ion-item>
         <ion-input placeholder="Type here" required class="inputField searchField" [(ngModel)]="searchText"></ion-input>
       </ion-item>
-      <button style="margin-top:1em" block primary class="orangeButton" (click)="doSearch()">Search</button>
+      <div (click)="login()" style="text-align: right; color: #7cade4; margin-top: 10px">Already have an account?</div>
       </div>
     </div>
 
@@ -79,5 +81,5 @@
 
 
 <ion-footer>
-  <button class="footerButton" type="submit" (click)="login()">Login</button>
+  <button class="footerButton" type="submit" (click)="onSubmit()" >{{buttonText}}</button>
 </ion-footer>

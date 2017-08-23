@@ -53,12 +53,14 @@ export class Home1Page {
     this.buttonClicked = true;
     this.planningClicked = true;
     this.searchingClicked = false;
+    this.buttonText = "Next";
   }
 
   searching(){
     this.buttonClicked = true;
     this.planningClicked = false;
     this.searchingClicked = true;
+    this.buttonText = "Search";
   }
   
   login(){
@@ -67,6 +69,13 @@ export class Home1Page {
 
   onSubmit(){
     var message: string = "";
+
+    if(this.buttonText == "Search"){
+      this.doSearch();
+    }else if (this.buttonText == "Login"){
+      this.login();
+    }else{
+      
 
     let alert = this.alertCtrl.create({
       title: 'Required',
@@ -118,6 +127,7 @@ export class Home1Page {
         alert.present();
       });
     }
+  }
     
   }
 
