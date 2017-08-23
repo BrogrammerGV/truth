@@ -141,13 +141,19 @@ $text-input-ios-margin-right: 0;
 
   .bgCard{
      background: #ffffff;
-box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
-border-radius: 7px;
-margin-left: 10px;
-margin-right: 10px; 
+ 
 
 
        }
+
+       .bgPane{
+        background: #ffffff;
+height: 100%;
+padding: 10px, 10px;;
+   
+   
+          }
+
 
 .friendlyName 
 {

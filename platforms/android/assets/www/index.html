@@ -121,7 +121,7 @@ function performMetaGet(bodyData){
 
     var lambda = new AWS.Lambda();
     var params = {
-     FunctionName: "PostScriptGetMetaData", 
+     FunctionName: "GetPostScriptMetadata", 
      InvocationType : 'RequestResponse',
      Payload: JSON.stringify({body: bodyData, userID: credentials.identityId.toString()})
    };

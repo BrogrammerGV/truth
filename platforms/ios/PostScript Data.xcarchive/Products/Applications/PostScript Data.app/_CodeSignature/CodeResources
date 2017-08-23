@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		xO1yK5oz3YCJzRIl0pzZGGdG5Z4=
+		QvXXiqjQ2Yw+dglU8NdENIUpv7U=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,7 +94,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		rG+P3KGfT02FNXTQlvsSAF0UmcE=
+		rtPkUXNHIHHd6CJDTtqtYTKLSbQ=
 		</data>
 		<key>Info.plist</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		31Wt4Qv0sPGQ54bxKf2vtFjlw5o=
+		zmghQmzk1HhOm9Xn3KZEhmTMWsY=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -248,6 +248,10 @@
 		<data>
 		dbGwrlT3OC/r8YSHy5RJxpl8cB0=
 		</data>
+		<key>www/assets/img/care.png</key>
+		<data>
+		jRe3tctPa1UBAqAAF6nhGpGrKok=
+		</data>
 		<key>www/assets/img/checkmark.png</key>
 		<data>
 		ykuy1x8ggsNGSht0RflWRtVhBl4=
@@ -259,6 +263,14 @@
 		<key>www/assets/img/eventheader.png</key>
 		<data>
 		GD6CnPqhaeT6geRe4fA0gPdJk+I=
+		</data>
+		<key>www/assets/img/feed.png</key>
+		<data>
+		QpJNMqFgDukg4B+M3Z8bc++UKlc=
+		</data>
+		<key>www/assets/img/flag.jpg</key>
+		<data>
+		2+E0fI3ys8neIUW3V9FDrN4BEuM=
 		</data>
 		<key>www/assets/img/four.png</key>
 		<data>
@@ -287,6 +299,10 @@
 		<key>www/assets/img/info/Tile.png</key>
 		<data>
 		0AHkFLTwsiIVMDpy6r26ZI3EhVU=
+		</data>
+		<key>www/assets/img/info/flag.jpg</key>
+		<data>
+		2+E0fI3ys8neIUW3V9FDrN4BEuM=
 		</data>
 		<key>www/assets/img/info/tile2.png</key>
 		<data>
@@ -430,7 +446,7 @@
 		</data>
 		<key>www/build/main.css</key>
 		<data>
-		ELJOyaUhjpMPEAKEeAR5WcAaqo4=
+		krJtU0I/HbqLLiC2m6LQMJJIxPY=
 		</data>
 		<key>www/build/main.css.map</key>
 		<data>
@@ -438,11 +454,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		KOrib9j0Z96Z5pelCdt3h2GJoi0=
+		EHBNi6GzLsFDxvFirUehSh4x+mw=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		a1IJiUr5cIz0FOviUXee3wNgcGY=
+		z6VGgwMed8eSRPkqq4324xtAOqU=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -470,7 +486,7 @@
 		</data>
 		<key>www/index.html</key>
 		<data>
-		Kz+XL603pV94YGOHt4k0VTNzhbI=
+		9j9xfSwgT2gKRMJFeggpZ+2F630=
 		</data>
 		<key>www/manifest.json</key>
 		<data>
@@ -743,11 +759,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			xO1yK5oz3YCJzRIl0pzZGGdG5Z4=
+			QvXXiqjQ2Yw+dglU8NdENIUpv7U=
 			</data>
 			<key>hash2</key>
 			<data>
-			x7QQLTXHms97w4HsMRn+EWc3GgYyYjUeMfKVAl+eBlY=
+			FIv+JKtEw/S0kLoFyPGwV8w5vd53chNpuhkdjqA6J70=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -765,11 +781,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			rG+P3KGfT02FNXTQlvsSAF0UmcE=
+			rtPkUXNHIHHd6CJDTtqtYTKLSbQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			0AqpCTHHt3RYbQ89xV54rur7DTjexaR5tIE9qmy9aFY=
+			dt/QytwuKnNCnMg/sokBs3gmrV/7MXUHPH2xGDB3gIQ=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -930,11 +946,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			31Wt4Qv0sPGQ54bxKf2vtFjlw5o=
+			zmghQmzk1HhOm9Xn3KZEhmTMWsY=
 			</data>
 			<key>hash2</key>
 			<data>
-			SJL6gCQ+h1ndbW7knB3XeB1KaqVfMWfhoHL5eVpL4hA=
+			ym9QQRGZZrcNBX/flN1HEDpo4xuC2yTBFMAlY+xd2mE=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -1168,6 +1184,17 @@
 			MYMMqqN58dzk+4pr0CtiLQebtq9NAzm6BBWystR3A7s=
 			</data>
 		</dict>
+		<key>www/assets/img/care.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jRe3tctPa1UBAqAAF6nhGpGrKok=
+			</data>
+			<key>hash2</key>
+			<data>
+			tIWNfcA789enOzRm6KWl2NNT9eMYTtiKx7lh9YF0/LQ=
+			</data>
+		</dict>
 		<key>www/assets/img/checkmark.png</key>
 		<dict>
 			<key>hash</key>
@@ -1199,6 +1226,28 @@
 			<key>hash2</key>
 			<data>
 			hZ3dyaeon6RzpgFD05D3ySuo0AvOZ7W4RLA0+P86x9c=
+			</data>
+		</dict>
+		<key>www/assets/img/feed.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			QpJNMqFgDukg4B+M3Z8bc++UKlc=
+			</data>
+			<key>hash2</key>
+			<data>
+			9xqjlaPW25rVHKt3N97CTPQqYIMYETkW9EWLe0QdpyA=
+			</data>
+		</dict>
+		<key>www/assets/img/flag.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2+E0fI3ys8neIUW3V9FDrN4BEuM=
+			</data>
+			<key>hash2</key>
+			<data>
+			SJmYl/kp06BdnCxqE/FK/xSS6GrZ0BZNZX78BuAlG7I=
 			</data>
 		</dict>
 		<key>www/assets/img/four.png</key>
@@ -1276,6 +1325,17 @@
 			<key>hash2</key>
 			<data>
 			M6tZdbw2oZcI5qGZvIC4HGlgVChMhD6FKcCswp7U6E4=
+			</data>
+		</dict>
+		<key>www/assets/img/info/flag.jpg</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2+E0fI3ys8neIUW3V9FDrN4BEuM=
+			</data>
+			<key>hash2</key>
+			<data>
+			SJmYl/kp06BdnCxqE/FK/xSS6GrZ0BZNZX78BuAlG7I=
 			</data>
 		</dict>
 		<key>www/assets/img/info/tile2.png</key>
@@ -1667,11 +1727,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			ELJOyaUhjpMPEAKEeAR5WcAaqo4=
+			krJtU0I/HbqLLiC2m6LQMJJIxPY=
 			</data>
 			<key>hash2</key>
 			<data>
-			NuymZVl77L9x/TIex6UqBbeNugBtYcKx2RCjHKFoDtY=
+			Hb+oFSqA/eduXmVH/SlP5Fx5n8R/yXT0rPC1mMv0PZU=
 			</data>
 		</dict>
 		<key>www/build/main.css.map</key>
@@ -1689,22 +1749,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			KOrib9j0Z96Z5pelCdt3h2GJoi0=
+			EHBNi6GzLsFDxvFirUehSh4x+mw=
 			</data>
 			<key>hash2</key>
 			<data>
-			FS+cZ2aHICVWK7SzU00BBGgBGCwhmmvY2TicjgGB1KY=
+			somXkSkKGdEJSSSrmOphxTjaAD5Tl5AMm/akqUtC+EQ=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			a1IJiUr5cIz0FOviUXee3wNgcGY=
+			z6VGgwMed8eSRPkqq4324xtAOqU=
 			</data>
 			<key>hash2</key>
 			<data>
-			JggF3z90DLirjJ+9D/n8Isi6NmxEirVo9ts43/S9kfc=
+			7eXe4ADJvXCT9YKsCHCLukKu+eMxUlUd7Qlde/BKHKw=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
@@ -1777,11 +1837,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Kz+XL603pV94YGOHt4k0VTNzhbI=
+			9j9xfSwgT2gKRMJFeggpZ+2F630=
 			</data>
 			<key>hash2</key>
 			<data>
-			2znlmXckavExHHUbeulJlrazLLFDGydOrTOlsD3BNrc=
+			6HxZe5vpaPjQeiJsInkhI1MXNXMT855uUMIP2KXXty0=
 			</data>
 		</dict>
 		<key>www/manifest.json</key>
