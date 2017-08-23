@@ -76,6 +76,10 @@ logItem(ref: any){
  
   }
 
+goToObit()
+{
+  this.navCtrl.pop();
+}
 
 
 }
