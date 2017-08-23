@@ -88,12 +88,12 @@ function registerCognito(bodyData){
   });
 }
 
-function lambda(bodyData){
+function lambda(lambdaFunc, bodyData){
   return new Promise(function(resolve,reject){
 
     var lambda = new AWS.Lambda();
     var params = {
-     FunctionName: "PostScriptSearch", 
+     FunctionName: lambdaFunc, 
      InvocationType : 'RequestResponse',
      Payload: JSON.stringify({body: bodyData, userID: credentials.identityId.toString()})
    };
