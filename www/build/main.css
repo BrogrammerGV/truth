@@ -3891,7 +3891,7 @@ ion-icon::before {
   font-size: 15.16px;
   color: #FFFFFF;
   width: 100%;
-  height: 100%;
+  height: 3em;
 }
 
 .orangeSwitchButton {
@@ -4164,6 +4164,12 @@ ion-icon::before {
   font-style: italic;
   text-align: center;
   margin: 20px;
+}
+
+.blueRightText {
+  text-align: right;
+  color: #7cade4;
+  margin-top: 10px;
 }
 
 ion-action-sheet {

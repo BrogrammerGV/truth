@@ -30,12 +30,10 @@
 
   <link href="build/main.css" rel="stylesheet">
   
- <script src="assets/js/jquery-3.2.1.min.js"></script>
-  <script src="assets/js/web-animations.min.js"></script>
- <script src="assets/js/aws-sdk.min.js">
-        </script>
-        <script src="assets/js/aws-config.js">
-        </script>
+ <script src="assets/js/aws-sdk.min.js"></script>
+        <script src="assets/js/aws-config.js"></script>
+        <script src="assets/js/aws-cognito-sdk.min.js"></script>
+        <script src="assets/js/amazon-cognito-identity.min.js"></script>
         <script>          
           console.log("Getting AWS credentials...");
           
@@ -77,7 +75,6 @@ function callLambda(http, bodyData){
 }
 
 function registerCognito(bodyData){
-
   return new Promise(function(resolve,reject){
     var cognitoidentityserviceprovider = new AWS.CognitoIdentityServiceProvider();
     cognitoidentityserviceprovider.signUp(bodyData, function(err, data) {
@@ -91,12 +88,48 @@ function registerCognito(bodyData){
   });
 }
 
-function performSearch(bodyData){
+function loginCognito(user, pass){
+  var authenticationData = {
+        Username : user,
+        Password : pass,
+    };
+
+    var authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails(authenticationData);
+    var poolData = { UserPoolId : 'us-east-1_LiPMu0IF2',
+        ClientId : '4qedlf7cu5lo5r670tk6d90d19'
+    };
+
+    var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
+    var userData = {
+        Username : user,
+        Pool : userPool
+    };
+
+    return new Promise( function(resolve,reject){
+      var cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
+      cognitoUser.authenticateUser(authenticationDetails, {
+          onSuccess: function (result) {
+              resolve(result.getAccessToken().getJwtToken());
+          },
+
+          onFailure: function(err) {
+              reject(err.message);
+          },
+
+      });
+    });
+}
+
+function forgotPasswordCognito(){
+
+}
+
+function lambda(lambdaFunc, bodyData){
   return new Promise(function(resolve,reject){
 
     var lambda = new AWS.Lambda();
     var params = {
-     FunctionName: "PostScriptSearch", 
+     FunctionName: lambdaFunc, 
      InvocationType : 'RequestResponse',
      Payload: JSON.stringify({body: bodyData, userID: credentials.identityId.toString()})
    };
@@ -107,7 +140,7 @@ function performSearch(bodyData){
    }
    else     
    {
-     resolve(data);   
+     resolve(JSON.parse(data.Payload));   
    }       // successful response
    
    });
