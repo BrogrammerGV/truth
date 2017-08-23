@@ -41,6 +41,10 @@ export class EntryPage {
 
 //Variables for Data Load
 nameToUse: string;
+eventTime: string;
+eventDate: string;
+eventMonth: string;
+funeralHome: string;
 
 
 
@@ -119,6 +123,7 @@ nameToUse: string;
 
  doSearch(){
     
+    //this is where we pick a guid to search
     performMetaGet({"eventID": "guidstuff3"
     }).then(function(data: any){
       //console.log(this);
@@ -135,6 +140,10 @@ logItem(ref: any){
     var x = JSON.parse(ref.Payload)
 console.log(x.Item.firstName);
    this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
+   this.eventDate = x.Item.eventDate.S;
+   this.eventTime = x.Item.eventTime.S;
+   this.funeralHome = x.Item.funeralHome.S;
+   this.eventMonth = x.Item.eventMonth.S;
 
    
     // for (var i = 0; i < x.length; i++) {
