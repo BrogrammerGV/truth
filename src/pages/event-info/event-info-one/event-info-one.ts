@@ -23,6 +23,7 @@ export class EventInfoOnePage {
 
 
 //Variables for Data Load
+firstName: string;
 nameToUse: string;
 eventTime: string;
 eventDate: string;
@@ -61,6 +62,7 @@ funeralHome: string;
 logItem(ref: any){
 
               var x = JSON.parse(ref.Payload)
+              this.firstName = x.Item.firstName.S;
               this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
               this.eventDate = x.Item.eventDate.S;
               this.eventTime = x.Item.eventTime.S;
