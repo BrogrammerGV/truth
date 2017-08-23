@@ -1,10 +1,13 @@
 <ion-header>
   <div class="headerBarBumpTwo"></div>
-  <div class="customEventLongHeaderClass">
+  <div  [ngClass]="{
+            'customEventLongHeaderClass' : !expandDialog,
+            'customEventLongHeaderClassTwo' : expandDialog
+          }" >
 
-    
+   
   
-<div style="" class="frontLayer">
+<div class="frontLayer">
 
 <div  style="position:absolute; width: 30%; margin-left: -5px;" class="date">
     <span style="font-size:1.2em; opacity: 1; margin-left: 15px; margin-bottom: -10px;letter-spacing: 0.1px;"><b> {{eventMonth}}</b></span> 
@@ -25,6 +28,9 @@
 
 </div>
 <br />
+
+
+
 <div style="margin-left: 5%; text-align:left;">
 
     <span style="font-size: .8em; opacity: 1;"> <i>A Message from {{firstName}}'s Family</i></span>
@@ -33,11 +39,41 @@
 
 </div>
 
-<div style="padding-top: 8%; padding-bottom: 5px;" class="center">
-  <span style="font-size: .8em; opacity: 1;"> <i> Expand </i></span><br />
-  <ion-icon  name="arrow-down"></ion-icon>
+<div *ngIf="expandDialog">
+
+<div  style="margin-left: 5%; text-align:left;">
+    <span style="font-size: .8em; opacity: 1;"> <b>Schedule of Events</b></span>
+ <ul style="list-style-type: disc;">
+   <li>
+    <span style="font-size: .8em; opacity: 1;"> <b> 8/23 7 p.m. </b>| Private Family Viewing</span></li>
+   <li> <span style="font-size: .8em; opacity: 1;"> <b> 8/24 4-8 p.m. </b>| Public Visitation</span></li>
+
+    <li><span style="font-size: .8em; opacity: 1;"> <b> 8/25 10:30 a.m.. </b>| Funeral Service, Internment and Luncheon to Follow</span></li>
+</ul>
+
+</div>
+<div class="center">
+<button  style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Add Events To Calendar</b></button>
+<br />
+<button  style="width: 60%; margin-bottom: 3%;"  class="footerButton"><b>Venue Information</b></button>
+</div>
+
+</div>
+
+<div (click)="expandHeader()" style="padding-bottom: 10px;" class="center">
+   <ion-icon *ngIf="expandDialog" name="arrow-up"></ion-icon>
+   <br />
+  <span  style="font-size: .8em; opacity: 1;"> 
+    
+    <i> {{expandText}} </i>
+  
+  </span>
+  
+  <br />
+  <ion-icon *ngIf="!expandDialog" name="arrow-down"></ion-icon>
   <br />
   </div>
+
 
 </div>
 

@@ -22,6 +22,10 @@ declare let performMetaGet: any;
 export class EventInfoOnePage {
 
 
+//bool switcher
+expandDialog : boolean = false;
+expandText : string = "Expand"
+
 //Variables for Data Load
 firstName: string;
 nameToUse: string;
@@ -81,5 +85,19 @@ goToObit()
   this.navCtrl.pop();
 }
 
+expandHeader()
+{
+  if(this.expandText == "Expand"){
+    this.expandDialog = true;
+    this.expandText = "Collapse";
+  
+  }
+    else{
+      this.expandDialog = false;
+      this.expandText = "Expand";
+    }
+
+
+}
 
 }

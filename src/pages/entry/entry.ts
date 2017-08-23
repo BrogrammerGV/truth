@@ -67,6 +67,7 @@ funeralHome: string;
 
   ionViewDidLoad() {
     this.app.setTitle('PostScript');
+    this.doSearch();
    
   }
 
@@ -134,10 +135,14 @@ funeralHome: string;
 
     }.bind(this));
 
-    this.navCtrl.push(EventInfoOnePage);
+
   }
 
 
+goNext()
+{
+  this.navCtrl.push(EventInfoOnePage);
+}
 
 logItem(ref: any){
   
