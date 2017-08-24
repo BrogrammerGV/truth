@@ -5,6 +5,7 @@ import { AlertController } from 'ionic-angular';
 
 import { LoginPage } from '../../../pages/login/login';
 import { Planning1Page } from '../../../pages/Home/planning1/planning1';
+import { Planning2Page } from '../../../pages/Home/planning2/planning2';
 import { Search1Page } from '../../../pages/Home/search1/search1';
 declare let registerCognito: any;
 /**
@@ -13,6 +14,7 @@ declare let registerCognito: any;
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+declare let cognitoHelper: any;
 @IonicPage()
 @Component({
   selector: 'page-home1',
@@ -50,10 +52,16 @@ export class Home1Page {
   }
 
   planning(){
-    this.buttonClicked = true;
-    this.planningClicked = true;
-    this.searchingClicked = false;
-    this.buttonText = "Next";
+    cognitoHelper("attr").then(function(data:any){
+      this.userInfo.first = data[2].Value;
+      this.navCtrl.setRoot(Planning2Page, {user: this.userInfo});
+    }.bind(this))
+    .catch(function(data:any){
+      this.buttonClicked = true;
+      this.planningClicked = true;
+      this.searchingClicked = false;
+      this.buttonText = "Next";
+    }.bind(this));
   }
 
   searching(){
@@ -64,7 +72,7 @@ export class Home1Page {
   }
   
   login(){
-      this.navCtrl.push(LoginPage);
+      this.navCtrl.push(LoginPage, {searchingClicked: this.searchingClicked, planningClicked: this.planningClicked});
   }
 
   onSubmit(){
