@@ -350,6 +350,50 @@ opacity: 1.0;
 }
 
 
+ 
+
+.customEventMedHeaderClass{
+    background-image: url("../assets/img/eventheader.png");
+        background-size: 107%;
+background-repeat: no-repeat;
+    border-bottom: solid 0.5px #979797;
+    font-family: Roboto;
+	font-size: 1.5em;
+    text-align: center;
+    vertical-align: center;
+    color: #ffffff;
+    opacity: 1;
+    position: relative;
+    /* Mask: */
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+/* 555799527: */
+/* Sketch doesnt export pattern fills at this point */
+/* Rectangle: */
+.frontLayer
+{ padding-top: 10px;
+    height: 100%;
+    background-color: rgba(51, 71, 92, 0.7
+    );
+opacity: 1;
+
+}
+/* StatusBar: */
+    img{
+        height: 1.3em;
+         margin-top: -20px;
+    }
+    .date
+    { text-align: left;
+    margin-left: 5%;
+    margin-bottom: -5%;
+        span{
+    
+font-size: 3.8em;
+opacity: 1.0;
+        }
+    }
+}
+
 
 //Event Elongated Header
 
