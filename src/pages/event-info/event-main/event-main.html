@@ -121,17 +121,17 @@
 <ion-list no-lines>
      <ion-item>
          <ion-label stacked class="inputLabelText">Greeting</ion-label>
-           <ion-input placeholder="Type Here" class="inputField" [(ngModel)]="greetingText"></ion-input>
+           <ion-input placeholder="{{helperText}}" class="inputField" [(ngModel)]="greetingText"></ion-input>
           </ion-item>
 
      <ion-item class="item-text-wrap">
          <ion-label stacked class="inputLabelText">Message</ion-label>
-           <ion-input  placeholder="Type Here" class="inputField" [(ngModel)]="messageText"></ion-input>
+           <ion-input class="item-text-wrap" style="padding-bottom: 15px;" placeholder="{{helperText2}}" class="inputField" [(ngModel)]="messageText"></ion-input>
     </ion-item>
 </ion-list>
 <br />
 
-
+<ion-footer>
   <ion-row>
     <ion-col style="padding: 0;">
          <button  class="footerButtonWhite"  (click)="removeEditScreen()">Back</button>
@@ -142,7 +142,7 @@
 
 </ion-row>
 
-
+</ion-footer>
 </div>
 
 
