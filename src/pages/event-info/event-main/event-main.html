@@ -112,7 +112,7 @@
 
 
   <div *ngIf="showEditScreen" class="bgPane" style="padding-bottom: 30%;">
-
+<br />
 <div class="center">
   <h2> <b>Customize Your <br /> Message Below </b></h2>
 </div>
@@ -121,12 +121,12 @@
 <ion-list no-lines>
      <ion-item>
          <ion-label stacked class="inputLabelText">Greeting</ion-label>
-           <ion-input placeholder="{{helperText}}" class="inputField" [(ngModel)]="greetingText"></ion-input>
+           <ion-input  class="inputField" [(ngModel)]="greetingText"></ion-input>
           </ion-item>
 
      <ion-item class="item-text-wrap">
          <ion-label stacked class="inputLabelText">Message</ion-label>
-           <ion-input class="item-text-wrap" style="padding-bottom: 15%;" placeholder="{{helperText2}}" class="textField" [(ngModel)]="messageText"></ion-input>
+           <ion-textarea class="item-text-wrap" style="padding-bottom: 15%;" class="textField" [(ngModel)]="messageText"></ion-textarea>
     </ion-item>
 </ion-list>
 <br />

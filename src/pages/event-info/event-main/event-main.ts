@@ -79,7 +79,8 @@ console.log(x.Item.firstName);
    //Setting Variable Texr
         this.helperText = "A Message from "+ this.firstName + "'s Family";
         this.helperText2 = "Thank you for supporting our family during this difficult time We appreciate your condolences and invite you to join us as we celelbrate "  + this.firstName + ".";
-        
+        this.messageText = this.helperText2;
+        this.greetingText = this.helperText;
  
   }
   goNext()
