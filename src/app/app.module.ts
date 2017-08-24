@@ -118,13 +118,10 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     Planning1Page,
     Planning2Page,
     Search1Page,
-<<<<<<< HEAD
     EventInfoOnePage,
-    EventMainPage
-=======
+    EventMainPage,
     Search2Page,
     EventsPage
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   imports: [
     BrowserModule,
@@ -220,13 +217,10 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     Planning1Page,
     Planning2Page,
     Search1Page,
-<<<<<<< HEAD
     EventInfoOnePage,
-    EventMainPage
-=======
+    EventMainPage,
     Search2Page,
     EventsPage
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -234,11 +228,8 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     UserData,
     InAppBrowser,
     SplashScreen,
-<<<<<<< HEAD
-    Calendar
-=======
+    Calendar,
     SocialSharing
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ]
 })
 export class AppModule { }
