@@ -10,6 +10,7 @@ import { TabsPage } from '../tabs/tabs';
 import { SignupPage } from '../signup/signup';
 import { Planning2Page } from '../Home/planning2/planning2';
 import { Search1Page } from '../Home/search1/search1';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 declare let loginCognitoUser: any;
 declare let cognitoHelper: any;
@@ -25,7 +26,7 @@ export class LoginPage {
   submitted = false;
   public userInfo: {first: string, last: string, email: string, password: string} = {first: '', last: '', email: '', password: ''};
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public userData: UserData, private storage: Storage) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, public userData: UserData, private storage: Storage,  public socialSharing: SocialSharing) { }
 
   next() {
     if (this.confirm) {
@@ -37,8 +38,26 @@ export class LoginPage {
   }
 
   forgotPassword() {
-
-
+    if(this.userName){
+      
+    // Check if sharing via email is supported
+    this.socialSharing.canShareViaEmail().then(() => {
+      // Share via email
+      this.socialSharing.shareViaEmail('This is a password reset request for ' + this.userName, 'Reset PostScript Password', ['nerrickk00@hotmail.com'])
+      .then(function(data:any){
+        // Success!
+      }.bind(this))
+      .catch((err) => {
+        alert(err);
+        // Error!
+      });
+    }).catch((err) => {
+      alert(err);
+      // Sharing via email is not possible
+    });
+  }else{
+    alert("Please enter an email address and then click forgot password.");
+  }
   }
 
   resendConfirmation() {

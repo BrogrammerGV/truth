@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConferenceApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { PopoverPage } from '../pages/about-popover/about-popover';
@@ -60,6 +61,7 @@ import { Home1Page } from '../pages/Home/home1/home1';
 import { Planning1Page } from '../pages/Home/planning1/planning1';
 import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
+import { Search2Page } from '../pages/Home/search2/search2';
 import { EventsPage } from '../pages/Home/events/events';
 
 @NgModule({
@@ -110,6 +112,7 @@ import { EventsPage } from '../pages/Home/events/events';
     Planning1Page,
     Planning2Page,
     Search1Page,
+    Search2Page,
     EventsPage
   ],
   imports: [
@@ -206,6 +209,7 @@ import { EventsPage } from '../pages/Home/events/events';
     Planning1Page,
     Planning2Page,
     Search1Page,
+    Search2Page,
     EventsPage
   ],
   providers: [
@@ -213,7 +217,8 @@ import { EventsPage } from '../pages/Home/events/events';
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    SocialSharing
   ]
 })
 export class AppModule { }
