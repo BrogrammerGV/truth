@@ -43,7 +43,7 @@ export class LoginPage {
     // Check if sharing via email is supported
     this.socialSharing.canShareViaEmail().then(() => {
       // Share via email
-      this.socialSharing.shareViaEmail('This is a password reset request for ' + this.userName, 'Reset PostScript Password', ['nerrickk00@hotmail.com'])
+      this.socialSharing.shareViaEmail('This is a password reset request for ' + this.userName, 'Reset PostScript Password', ['androiddev@homesteaderslife.com'])
       .then(function(data:any){
         // Success!
       }.bind(this))
