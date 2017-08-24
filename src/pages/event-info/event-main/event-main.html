@@ -4,7 +4,12 @@
 
     
   
-<div style="" class="frontLayer">
+<div  class="frontLayer">
+
+<!--Start of Custom Tab Header: CJM -->
+
+
+
 
 <div  style="position:absolute; width: 30%; margin-left: -5px;" class="date">
     <span style="font-size:1.2em; opacity: 1; margin-left: 15px; margin-bottom: -10px;letter-spacing: 0.1px;"><b> {{eventMonth}}</b></span> 
@@ -15,7 +20,7 @@
 
   <img  src="assets/img/menu.png" class="menuIcon" />
 
-    <span style="font-size: .8em; opacity: 1;"> Funeral Service for</span>
+    <span style="font-size: .8em; opacity: 1;"> Remebering</span>
 <br />
      <span style	="font-size: 1em; opacity: 1;"> <b>{{nameToUse}}</b> </span>
 <br />     
@@ -32,46 +37,49 @@
 
 
 <ion-content>
+
+<div class="row">
+
+<div style="" class="col">
+   <img style="height: 60px; " src="assets/img/feedsmall.png" />
+</div>
+
+  <div style="" class="col">
+    <img style="height: 60px; " src="assets/img/caresmall.png" />
+</div>
+
+<div style="" class="col">
+    <img (click)="goToObit()" style="height: 60px; " src="assets/img/obitsmall.png" />
+</div>
+</div>
   <div class="bgPane" style="padding-bottom: 30%;">
-  
-  
-   <br />
-   <br />
-      
-   <br />
-   <br />
-
-   
-   <br />
-   <br />
-
-
+<br />
 
 <div style="margin-left: 5%; margin-right: 5%; -text-align:left;">
-
-    <span style="font-size: .8em; opacity: 1;"> <i>A Message from {{firstName}}'s Family</i></span>
+    <div style="font-size: 1.3em;"> <i style="padding-bottom: 10px;">A Message from {{firstName}}'s Family</i></div>
  <br /> 
-    <span style="font-size: .8em; opacity: 1;"> <b> Thank you for supporting our family during this difficult time. We appreciate your condolences and invite you to join us as we celelbrate {{nameToUse}}'s Life.</b></span>
+     <span style="font-size: 1.2em;">Thank you for supporting our family during this difficult time.
+       We appreciate your condolences and invite you to join us as we celelbrate {{firstName}}'s
+        Life.</span>
 
 </div>
-
+<br />
 
 <div  style="margin-left: 5%; margin-right: 5%; margin-top: 6px; text-align:left;">
-    <span style="font-size: .8em; opacity: 1;"> <b>Schedule of Events</b></span>
- <ul style="margin-top: -3px; list-style-type: square;">
-   <li style="color: #E6785A">
-    <span style="font-size: .8em; opacity: 1; color: #ffffff;"> <b> 8/23 7 p.m. </b>| Private Family Viewing</span></li>
-  <li style="color: #E6785A">
-    <span style="font-size: .8em; opacity: 1; color: #ffffff;"> <b> 8/24 4-8 p.m. </b>| Public Visitation</span></li>
+    <span style="font-size: 1.3em;"> <b>Schedule of Events</b></span>
+ <ul style="list-style-type: square;">
+   <li style="color: #E6785A; margin-top:3px;">
+    <span style="font-size: 1.3em; color: #000000;"> <b> 8/23 7 p.m. </b>| Private Family Viewing</span></li>
+  <li style="color: #E6785A; margin-top:8px;">
+    <span style="font-size: 1.3em;  color: #000000;"> <b> 8/24 4-8 p.m. </b>| Public Visitation</span></li>
 
-    <li style="color: #E6785A"><span style="font-size: .8em; opacity: 1; color: #ffffff;"> <b> 8/25 10:30 a.m.. </b>| Funeral Service, Internment and Luncheon to Follow</span></li>
+    <li style="color: #E6785A; margin-top:8px;"><span style="font-size: 1.3em;  color: #000000;"> <b> 8/25 10:30 a.m.. </b>| Funeral Service, Internment and Luncheon to Follow</span></li>
 </ul>
+
 </div>
-
-
+<div class="center">
+ <button style="width: 50%;" class="orangeSwitchButton" (click)="goNext()"> Share</button>
+ </div>
 </div>
 </ion-content>
 
-<ion-footer>
-  <button class="orangeSwitchButton" (click)="goNext()"> Share</button>
-</ion-footer>
