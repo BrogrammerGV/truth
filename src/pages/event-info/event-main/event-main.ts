@@ -36,12 +36,20 @@ funeralHome: string;
 firstName: string;
 
 
+//Bool Checks
+showEditScreen : boolean = false;
+helperText: string;
+helperText2: string;
+greetingText: string;
+messageText: string;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventMainPage');
         this.doSearch();
+   
   }
 
 
@@ -67,15 +75,41 @@ console.log(x.Item.firstName);
    this.funeralHome = x.Item.funeralHome.S;
    this.eventMonth = x.Item.eventMonth.S;
    this.firstName = x.Item.firstName.S;
-   
-    // for (var i = 0; i < x.length; i++) {
-    //   console.log(x[i]);
-    // }
+
+   //Setting Variable Texr
+        this.helperText = "A Message from "+ this.firstName + "'s Family";
+        this.helperText2 = "Thank you for supporting our family during this difficult time We appreciate your condolences and invite you to join us as we celelbrate "  + this.firstName + ".";
+        
  
   }
   goNext()
   {
 this.navCtrl.push(EventInfoOnePage)
   }
+
+
+swapScreen()
+{
+
+this.showEditScreen = true;
+
+}
+
+removeEditScreen()
+{
+  this.showEditScreen=false;
+}
+
+saveEditText()
+{
+  if(this.greetingText)
+  this.helperText = this.greetingText;
+  if(this.helperText)
+  this.helperText2 = this.messageText
+  
+
+  this.showEditScreen = false;
+}
+
 
 }

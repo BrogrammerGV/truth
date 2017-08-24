@@ -76,23 +76,19 @@
 
 <ion-content>
 
-  <div class="bgPane" style="padding-bottom: 30%;">
-
-
+  <div *ngIf="!showEditScreen" class="bgPane" style="padding-bottom: 30%;">
 
 <br />
 
 <div style="margin-left: 5%; margin-right: 5%; -text-align:left;">
 <div style="float: right;">
-      <ion-icon  style="color: #B2BAC4; font-size: 2.8em;" name="brush">
+      <ion-icon (click)="swapScreen()" style="color: #B2BAC4; font-size: 2.3em;" name="brush">
     </ion-icon>
   </div>
 
-    <div style="font-size: 1.3em;"> <i style="padding-bottom: 10px; color: #686C71">A Message from {{firstName}}'s Family</i></div>
+    <div style="font-size: 1.3em;"> <i style="padding-bottom: 10px; color: #686C71">{{helperText}}</i></div>
  <br /> 
-     <span style="font-size: 1.2em;color: #686C71">Thank you for supporting our family during this difficult time.
-       We appreciate your condolences and invite you to join us as we celelbrate {{firstName}}'s
-        Life.</span>
+     <span style="font-size: 1.2em;color: #686C71">{{helperText2}}</span>
 
 </div>
 <br />
@@ -113,5 +109,45 @@
  <button style="width: 50%;" class="orangeSwitchButton" (click)="goNext()"> Share</button>
  </div>
 </div>
+
+
+  <div *ngIf="showEditScreen" class="bgPane" style="padding-bottom: 30%;">
+
+<div class="center">
+  <h2> Customize Your <br /> Message Below </h2>
+</div>
+
+
+<ion-list no-lines>
+     <ion-item>
+         <ion-label stacked class="inputLabelText">Greeting</ion-label>
+           <ion-input placeholder="Type Here" class="inputField" [(ngModel)]="greetingText"></ion-input>
+          </ion-item>
+
+     <ion-item class="item-text-wrap">
+         <ion-label stacked class="inputLabelText">Message</ion-label>
+           <ion-input  placeholder="Type Here" class="inputField" [(ngModel)]="messageText"></ion-input>
+    </ion-item>
+</ion-list>
+<br />
+
+
+  <ion-row>
+    <ion-col style="padding: 0;">
+         <button  class="footerButtonWhite"  (click)="removeEditScreen()">Back</button>
+    </ion-col>
+<ion-col style="padding: 0;">
+ <button  class="footerButtonDouble"  (click)="saveEditText()">Save Changes</button>
+</ion-col>
+
+</ion-row>
+
+
+</div>
+
+
+
+
+
 </ion-content>
 
