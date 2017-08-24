@@ -49,6 +49,14 @@
     <true/>
     <key>NSAppTransportSecurity</key>
     <dict>
+      <key>NSExceptionDomains</key>
+      <dict>
+        <key>localhost</key>
+        <dict>
+          <key>NSExceptionAllowsInsecureHTTPLoads</key>
+          <true/>
+        </dict>
+      </dict>
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
@@ -61,6 +69,6 @@
       <string>it</string>
     </array>
     <key>NSCalendarsUsageDescription</key>
-    <string></string>
+    <string/>
   </dict>
 </plist>
