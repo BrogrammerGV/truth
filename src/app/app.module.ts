@@ -13,6 +13,7 @@ import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
 //import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
+import { Calendar } from '@ionic-native/calendar';
 
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
@@ -216,7 +217,8 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    Calendar
   ]
 })
 export class AppModule { }

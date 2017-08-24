@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Calendar } from '@ionic-native/calendar';
+
 
 /**
  * Generated class for the EventInfoOnePage page.
@@ -36,7 +38,7 @@ funeralHome: string;
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private calendar: Calendar) {
   }
 
   ionViewDidLoad() {
@@ -47,7 +49,14 @@ funeralHome: string;
 
 
 
+calendarUpdate()
+{
+  var startDate = new Date(2017,8,10);
+    var endDate = new Date(2017,8,12);
 
+
+  this.calendar.createEvent("The Funeral Event", "HomeSteaders Life Company", "We are testing this functionality", startDate, endDate)
+}
 
  doSearch(){
             //this is where we pick a guid to search

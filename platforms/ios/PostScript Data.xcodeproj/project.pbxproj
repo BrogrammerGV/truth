@@ -38,6 +38,9 @@
 		EA3609501EA04D97BCBBE0BE /* CDVWKProcessPoolFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = BF2E8241BE70490B856224E1 /* CDVWKProcessPoolFactory.m */; };
 		FC6AAE666EFC4E9D836D9658 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 39C54BEEB83643B8AB024DA0 /* CDVLogger.m */; };
 		FE470D83A5BD42B9982A69FB /* GCDWebServerErrorResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 19249F322C2442B8A04C4EE3 /* GCDWebServerErrorResponse.m */; };
+		0C6BABB1D4E24E4BB98209F2 /* Calendar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CFD9444AFAF4E078160DF50 /* Calendar.m */; };
+		8313DA31D6E84C69BF2DD09B /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5B048C9E5624049B6C1DD5B /* EventKit.framework */; };
+		BDA5DAE3A4BF499E8F47D20E /* EventKitUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A676398024B4141923ED1F4 /* EventKitUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -135,6 +138,10 @@
 		F1EA2A268535418FB3454B45 /* GCDWebServerFileRequest.h */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.h; name = GCDWebServerFileRequest.h; path = "cordova-plugin-wkwebview-engine/GCDWebServerFileRequest.h"; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = "PostScript Data/config.xml"; sourceTree = "<group>"; };
 		FB23427EE8D4490B84EE04A6 /* GCDWebServerFileResponse.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerFileResponse.m; path = "cordova-plugin-wkwebview-engine/GCDWebServerFileResponse.m"; sourceTree = "<group>"; };
+		8CFD9444AFAF4E078160DF50 /* Calendar.m */ = {isa = PBXFileReference; name = "Calendar.m"; path = "cordova-plugin-calendar/Calendar.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		73B88B6BE800434BB6481332 /* Calendar.h */ = {isa = PBXFileReference; name = "Calendar.h"; path = "cordova-plugin-calendar/Calendar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		B5B048C9E5624049B6C1DD5B /* EventKit.framework */ = {isa = PBXFileReference; name = "EventKit.framework"; path = "System/Library/Frameworks/EventKit.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		9A676398024B4141923ED1F4 /* EventKitUI.framework */ = {isa = PBXFileReference; name = "EventKitUI.framework"; path = "System/Library/Frameworks/EventKitUI.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +152,8 @@
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
 				58934694D1BC4B549B0408C9 /* WebKit.framework in Frameworks */,
 				C8EADBE6C57D4F4DBA231EF9 /* libz.tbd in Frameworks */,
+				8313DA31D6E84C69BF2DD09B /* EventKit.framework in Frameworks */,
+				BDA5DAE3A4BF499E8F47D20E /* EventKitUI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +226,8 @@
 			children = (
 				D8182809C6054CEFA6CFE4FB /* WebKit.framework */,
 				23BB01C795BA4EC29C19521F /* libz.tbd */,
+				B5B048C9E5624049B6C1DD5B /* EventKit.framework */,
+				9A676398024B4141923ED1F4 /* EventKitUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -291,6 +302,8 @@
 				821045B6A0E043219443416A /* GCDWebServerStreamedResponse.h */,
 				D31C2B18E0234F409200F89D /* IonicKeyboard.m */,
 				A2BF59618A84489A83273892 /* IonicKeyboard.h */,
+				8CFD9444AFAF4E078160DF50 /* Calendar.m */,
+				73B88B6BE800434BB6481332 /* Calendar.h */,
 			);
 			name = Plugins;
 			path = "PostScript Data/Plugins";
@@ -441,6 +454,7 @@
 				D8591039ECBD465F9EB6DAB3 /* GCDWebServerFileResponse.m in Sources */,
 				223AC96A90794FBBAF79EC4D /* GCDWebServerStreamedResponse.m in Sources */,
 				E1B80FEA68A0420AA0484D22 /* IonicKeyboard.m in Sources */,
+				0C6BABB1D4E24E4BB98209F2 /* Calendar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
