@@ -27,12 +27,19 @@
 
   <link href="build/main.css" rel="stylesheet">
   
+<<<<<<< HEAD
  <script src="assets/js/jquery-3.2.1.min.js"></script>
   <script src="assets/js/web-animations.min.js"></script>
  <script src="assets/js/aws-sdk.min.js">
         </script>
         <script src="assets/js/aws-config.js">
         </script>
+=======
+ <script src="assets/js/aws-sdk.min.js"></script>
+        <script src="assets/js/aws-config.js"></script>
+        <script src="assets/js/aws-cognito-sdk.min.js"></script>
+        <script src="assets/js/amazon-cognito-identity.min.js"></script>
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
         <script>          
           console.log("Getting AWS credentials...");
           
@@ -88,6 +95,7 @@ function registerCognito(bodyData){
   });
 }
 
+<<<<<<< HEAD
 function performSearch(bodyData){
   return new Promise(function(resolve,reject){
 
@@ -114,11 +122,84 @@ function performSearch(bodyData){
 
 
 function performMetaGet(bodyData){
+=======
+var cognitoUser
+function loginCognitoUser(user, pass){
+  var authenticationData = {
+        Username : user,
+        Password : pass,
+    };
+
+    var authenticationDetails = new AWSCognito.CognitoIdentityServiceProvider.AuthenticationDetails(authenticationData);
+    var poolData = { UserPoolId : 'us-east-1_LiPMu0IF2',
+        ClientId : '4qedlf7cu5lo5r670tk6d90d19'
+    };
+
+    var userPool = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserPool(poolData);
+    var userData = {
+        Username : user,
+        Pool : userPool
+    };
+
+    return new Promise( function(resolve,reject){
+      cognitoUser = new AWSCognito.CognitoIdentityServiceProvider.CognitoUser(userData);
+      cognitoUser.authenticateUser(authenticationDetails, {
+          onSuccess: function (result) {
+              resolve(result.getAccessToken().getJwtToken());
+          },
+
+          onFailure: function(err) {
+              reject(err.message);
+          },
+      });
+    });
+}
+
+function cognitoHelper(funcName, confirmCode){
+  return new Promise(function(resolve,reject){
+    
+  if(funcName == "attr"){
+    if(cognitoUser){
+    cognitoUser.getUserAttributes(function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in")};
+  }else if(funcName == "resend"){
+    if(cognitoUser){
+    cognitoUser.resendConfirmationCode(function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in");
+  }
+  }else if(funcName == "confirm"){
+    if(cognitoUser){
+    cognitoUser.confirmRegistration(confirmCode, true, function(err, result){
+      if (err){reject(err.message);}
+      else{resolve(result);}
+    });
+    }else{reject("Not signed in");
+  }    
+  }
+  });
+}
+
+function forgotPasswordCognito(){
+
+}
+
+function lambda(lambdaFunc, bodyData){
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   return new Promise(function(resolve,reject){
 
     var lambda = new AWS.Lambda();
     var params = {
+<<<<<<< HEAD
      FunctionName: "GetPostScriptMetadata", 
+=======
+     FunctionName: lambdaFunc, 
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
      InvocationType : 'RequestResponse',
      Payload: JSON.stringify({body: bodyData, userID: credentials.identityId.toString()})
    };
@@ -129,14 +210,21 @@ function performMetaGet(bodyData){
    }
    else     
    {
+<<<<<<< HEAD
      resolve(data);   
+=======
+     resolve(JSON.parse(data.Payload));   
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
    }       // successful response
    
    });
   });
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
         </script>
 </script>
 

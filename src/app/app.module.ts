@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConferenceApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { PopoverPage } from '../pages/about-popover/about-popover';
@@ -61,6 +62,8 @@ import { Home1Page } from '../pages/Home/home1/home1';
 import { Planning1Page } from '../pages/Home/planning1/planning1';
 import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
+import { Search2Page } from '../pages/Home/search2/search2';
+import { EventsPage } from '../pages/Home/events/events';
 
 import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
 import { EventMainPage } from '../pages/event-info/event-main/event-main';
@@ -115,8 +118,13 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     Planning1Page,
     Planning2Page,
     Search1Page,
+<<<<<<< HEAD
     EventInfoOnePage,
     EventMainPage
+=======
+    Search2Page,
+    EventsPage
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   imports: [
     BrowserModule,
@@ -212,8 +220,13 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     Planning1Page,
     Planning2Page,
     Search1Page,
+<<<<<<< HEAD
     EventInfoOnePage,
     EventMainPage
+=======
+    Search2Page,
+    EventsPage
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -221,7 +234,11 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     UserData,
     InAppBrowser,
     SplashScreen,
+<<<<<<< HEAD
     Calendar
+=======
+    SocialSharing
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ]
 })
 export class AppModule { }

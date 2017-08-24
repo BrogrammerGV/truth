@@ -41,6 +41,11 @@ Thumbs.db
 *.platforms
 *.node_modules
 *.plugins
-
+www/
+platforms/
+/www/
+/platforms/
+/www
+/platforms
 # Specifc Files Not Needing Moved #
 ###################################

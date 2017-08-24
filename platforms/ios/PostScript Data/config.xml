@@ -39,8 +39,14 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+<<<<<<< HEAD
     <feature name="Calendar">
         <param name="ios-package" value="Calendar" />
+=======
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+        <param name="onload" value="true" />
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
     </feature>
     <name>PostScript Data</name>
     <description>
@@ -87,6 +93,11 @@
     <splash height="1024" src="resources/ios/splash/Default-Portrait~ipad.png" width="768" />
     <splash height="960" src="resources/ios/splash/Default@2x~iphone.png" width="640" />
     <splash height="480" src="resources/ios/splash/Default~iphone.png" width="320" />
+    <splash height="1242" src="resources/ios/splash/Default-Landscape-736h.png" width="2208" />
+    <splash height="1536" src="resources/ios/splash/Default-Landscape@2x~ipad.png" width="2048" />
+    <splash height="2048" src="resources/ios/splash/Default-Landscape@~ipadpro.png" width="2732" />
+    <splash height="768" src="resources/ios/splash/Default-Landscape~ipad.png" width="1024" />
+    <splash height="2732" src="resources/ios/splash/Default-Portrait@~ipadpro.png" width="2048" />
     <preference name="AllowInlineMediaPlayback" value="false" />
     <preference name="BackupWebStorage" value="none" />
     <preference name="DisallowOverscroll" value="true" />

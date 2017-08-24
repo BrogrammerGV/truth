@@ -1,6 +1,11 @@
 {
     "WebKit.framework": 1,
     "libz.tbd": 1,
+<<<<<<< HEAD
     "EventKit.framework": 1,
     "EventKitUI.framework": 1
+=======
+    "Social.framework": 1,
+    "MessageUI.framework": 1
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
 }

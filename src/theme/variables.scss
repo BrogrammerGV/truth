@@ -217,7 +217,7 @@ padding: 10px, 10px;;
   font-size: 15.16px;
   color: #FFFFFF;
   width: 100%;
-  height: 100%;;
+  height: 3em;
   
 }
 
@@ -515,7 +515,7 @@ opacity: 1.0;
     /* Rectangle 28: */
     background: #FFFFFF;
 	border-radius: 3px;
-	border: solid 3px #33475c;
+	border: solid 2px #33475c;
     text-align: center;
     height: 2.5em;
     width: 48%;
@@ -582,8 +582,12 @@ opacity: 1.0;
     background: #FFFFFF;
     border: 2px solid #33475C;
     border-radius: 1.5px;
-    height: 3em;
+    height: 2.3em;
     text-align: start;
+}
+
+.noHeaderInputField{
+    margin:0 !important;
 }
 
 .searchField{
@@ -593,6 +597,11 @@ opacity: 1.0;
 }
 
 .text-input-ios{
+    margin: 0 !important;
+    height: 100%;
+}
+
+.text-input-md{
     margin: 0 !important;
     height: 100%;
 }
@@ -610,4 +619,20 @@ opacity: 1.0;
     font-size: 1.3em;
     font-family: Roboto;
     
+}
+
+.noResults{
+    font-family: Roboto;
+    color: #B2BAC4;
+    font-size: 1.3em;
+    font-weight: bold;
+    font-style: italic;
+    text-align: center;
+    margin: 20px;
+}
+
+.blueRightText{
+    text-align: right; 
+    color: #7cade4; 
+    margin-top: 10px
 }
