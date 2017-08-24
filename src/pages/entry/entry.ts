@@ -14,7 +14,7 @@ import {SelectPage} from '../select/select';
 import {ModalPage} from '../modal/modal';
 
 import { EventInfoOnePage } from '../event-info/event-info-one/event-info-one';
-
+import { EventMainPage } from '../event-info/event-main/event-main';
 
 //AWS Functions
 declare let performMetaGet: any;
@@ -125,24 +125,23 @@ funeralHome: string;
 
 
  doSearch(){
-    
-    //this is where we pick a guid to search
+
     performMetaGet({"eventID": "guidstuff3"
     }).then(function(data: any){
-      //console.log(this);
-      //console.log(data);
+ 
       this.logItem(data);
 
     }.bind(this));
-
 
   }
 
 
 goNext()
 {
-  this.navCtrl.push(EventInfoOnePage);
+  //this.navCtrl.push(EventInfoOnePage);
+  this.navCtrl.push(EventMainPage);
 }
+
 
 logItem(ref: any){
   

@@ -63,6 +63,7 @@ import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
 
 import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
+import { EventMainPage } from '../pages/event-info/event-main/event-main';
 
 
 
@@ -114,7 +115,8 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
     Planning1Page,
     Planning2Page,
     Search1Page,
-    EventInfoOnePage
+    EventInfoOnePage,
+    EventMainPage
   ],
   imports: [
     BrowserModule,
@@ -210,7 +212,8 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
     Planning1Page,
     Planning2Page,
     Search1Page,
-    EventInfoOnePage
+    EventInfoOnePage,
+    EventMainPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

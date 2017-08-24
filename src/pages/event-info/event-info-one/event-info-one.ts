@@ -63,6 +63,7 @@ export class EventInfoOnePage {
 
         var startDate = new Date("August 24, 2016 4:00:00");
         var endDate = new Date("August 24, 2016 8:00:00");
+
         this.calendar.createEventInteractivelyWithOptions(eventDetails + "Public Visitation", this.funeralHome,
           "We are testing this functionality", startDate, endDate,{calendarName: "Home"})
           .then(function (data: any) { }.bind(this))
@@ -71,6 +72,7 @@ export class EventInfoOnePage {
 
             var startDate = new Date("August 25, 2016 10:30:00");
             var endDate = new Date("August 25, 2016 12:00:00");
+
             this.calendar.createEventInteractivelyWithOptions(eventDetails + "Funeral Service", this.funeralHome,
               "We are testing this functionality", startDate, endDate, {calendarName: "Home"})
 
@@ -109,15 +111,14 @@ export class EventInfoOnePage {
     this.eventMonth = x.Item.eventMonth.S;
 
 
-    // for (var i = 0; i < x.length; i++) {
-    //   console.log(x[i]);
-    // }
 
   }
 
   goToObit() {
     this.navCtrl.pop();
   }
+
+
 
   expandHeader() {
     if (this.expandText == "Expand") {
