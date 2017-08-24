@@ -14,5 +14,17 @@
 
 
 <ion-content padding>
-<div class="cardStyle"><div>Test</div></div>
+  <br />
+  <button [ngClass]="{
+          'whiteButton' : !planningClicked,
+          'orangeButton' : planningClicked
+        }" (click)="email()">Email</button>
+  <button [ngClass]="{
+          'whiteButton' : !searchingClicked,
+          'orangeButton' : searchingClicked
+        }" (click)="text()">Text</button>
+        <button [ngClass]="{
+                'whiteButton' : !planningClicked,
+                'orangeButton' : planningClicked
+              }" (click)="facebook()">Facebook</button>
 </ion-content>

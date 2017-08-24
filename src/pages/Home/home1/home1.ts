@@ -7,6 +7,7 @@ import { LoginPage } from '../../../pages/login/login';
 import { Planning1Page } from '../../../pages/Home/planning1/planning1';
 import { Planning2Page } from '../../../pages/Home/planning2/planning2';
 import { Search1Page } from '../../../pages/Home/search1/search1';
+
 declare let registerCognito: any;
 /**
  * Generated class for the Home1Page page.
