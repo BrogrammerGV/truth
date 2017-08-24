@@ -77,18 +77,32 @@
         "is_top_level": true,
         "variables": {}
     },
+<<<<<<< HEAD
+    "cordova-plugin-calendar": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-calendar"
+=======
     "cordova-plugin-x-socialsharing": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-x-socialsharing"
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
         },
         "is_top_level": true,
         "variables": {}
     },
+<<<<<<< HEAD
+    "cordova-plugin-compat": {
+        "source": {
+            "type": "registry",
+            "id": "cordova-plugin-compat@^1.0.0"
+=======
     "es6-promise-plugin": {
         "source": {
             "type": "registry",
             "id": "es6-promise-plugin@4.1.0"
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
         },
         "is_top_level": false,
         "variables": {}

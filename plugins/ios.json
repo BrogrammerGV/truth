@@ -32,9 +32,16 @@
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "ionic-plugin-keyboard": {
+<<<<<<< HEAD
+            "PACKAGE_NAME": "io.ionic.conferenceapp"
+        },
+        "cordova-plugin-calendar": {
+            "CALENDAR_USAGE_DESCRIPTION": " ",
+=======
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-x-socialsharing": {
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },

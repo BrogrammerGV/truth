@@ -14,6 +14,7 @@ import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
 //import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
+import { Calendar } from '@ionic-native/calendar';
 
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
@@ -64,6 +65,11 @@ import { Search1Page } from '../pages/Home/search1/search1';
 import { Search2Page } from '../pages/Home/search2/search2';
 import { EventsPage } from '../pages/Home/events/events';
 
+import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
+import { EventMainPage } from '../pages/event-info/event-main/event-main';
+
+
+
 @NgModule({
   declarations: [
     ConferenceApp,
@@ -112,8 +118,13 @@ import { EventsPage } from '../pages/Home/events/events';
     Planning1Page,
     Planning2Page,
     Search1Page,
+<<<<<<< HEAD
+    EventInfoOnePage,
+    EventMainPage
+=======
     Search2Page,
     EventsPage
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   imports: [
     BrowserModule,
@@ -209,8 +220,13 @@ import { EventsPage } from '../pages/Home/events/events';
     Planning1Page,
     Planning2Page,
     Search1Page,
+<<<<<<< HEAD
+    EventInfoOnePage,
+    EventMainPage
+=======
     Search2Page,
     EventsPage
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -218,7 +234,11 @@ import { EventsPage } from '../pages/Home/events/events';
     UserData,
     InAppBrowser,
     SplashScreen,
+<<<<<<< HEAD
+    Calendar
+=======
     SocialSharing
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
   ]
 })
 export class AppModule { }

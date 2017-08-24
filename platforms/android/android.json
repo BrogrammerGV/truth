@@ -61,7 +61,11 @@
                             "count": 1
                         },
                         {
+<<<<<<< HEAD
+                            "xml": "<feature name=\"Calendar\"><param name=\"android-package\" value=\"nl.xservices.plugins.Calendar\" /></feature>",
+=======
                             "xml": "<feature name=\"SocialSharing\"><param name=\"android-package\" value=\"nl.xservices.plugins.SocialSharing\" /></feature>",
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
                             "count": 1
                         }
                     ]
@@ -86,6 +90,16 @@
                     "/manifest/application": [
                         {
                             "xml": "<provider android:authorities=\"${applicationId}.sharing.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"nl.xservices.plugins.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/sharing_paths\" /></provider>",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.READ_CALENDAR\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.WRITE_CALENDAR\" />",
                             "count": 1
                         }
                     ]
@@ -126,10 +140,17 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
+<<<<<<< HEAD
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-calendar": {
+=======
         "es6-promise-plugin": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-x-socialsharing": {
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
@@ -178,6 +199,13 @@
             "runs": true
         },
         {
+<<<<<<< HEAD
+            "id": "cordova-plugin-calendar.Calendar",
+            "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+            "pluginId": "cordova-plugin-calendar",
+            "clobbers": [
+                "Calendar"
+=======
             "id": "es6-promise-plugin.Promise",
             "file": "plugins/es6-promise-plugin/www/promise.js",
             "pluginId": "es6-promise-plugin",
@@ -189,6 +217,7 @@
             "pluginId": "cordova-plugin-x-socialsharing",
             "clobbers": [
                 "window.plugins.socialsharing"
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             ]
         }
     ],
@@ -202,7 +231,12 @@
         "cordova-plugin-whitelist": "1.3.1",
         "cordova-plugin-wkwebview-engine": "1.1.4-dev",
         "ionic-plugin-keyboard": "2.2.1",
+<<<<<<< HEAD
+        "cordova-plugin-compat": "1.1.0",
+        "cordova-plugin-calendar": "4.6.0"
+=======
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-x-socialsharing": "5.1.8"
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
     }
 }

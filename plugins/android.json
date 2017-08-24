@@ -39,12 +39,20 @@
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
+<<<<<<< HEAD
+        "cordova-plugin-calendar": {
+=======
         "cordova-plugin-x-socialsharing": {
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {
+<<<<<<< HEAD
+        "cordova-plugin-compat": {
+=======
         "es6-promise-plugin": {
+>>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     }
