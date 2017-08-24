@@ -39,6 +39,9 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <feature name="Calendar">
+        <param name="ios-package" value="Calendar" />
+    </feature>
     <name>PostScript Data</name>
     <description>
        Research and Development Prototype

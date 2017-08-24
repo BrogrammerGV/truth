@@ -39,6 +39,9 @@
     <feature name="Keyboard">
         <param name="ios-package" onload="true" value="IonicKeyboard" />
     </feature>
+    <feature name="Calendar">
+        <param name="ios-package" value="Calendar" />
+    </feature>
     <name>PostScript Data</name>
     <description>
        Research and Development Prototype
@@ -110,7 +113,4 @@
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="orientation" value="default" />
-    <feature name="Calendar">
-        <param name="ios-package" value="Calendar" />
-    </feature>
 </widget>

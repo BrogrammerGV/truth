@@ -24,17 +24,17 @@ declare let performMetaGet: any;
 export class EventInfoOnePage {
 
 
-//bool switcher
-expandDialog : boolean = false;
-expandText : string = "Expand"
+  //bool switcher
+  expandDialog: boolean = false;
+  expandText: string = "Expand"
 
-//Variables for Data Load
-firstName: string;
-nameToUse: string;
-eventTime: string;
-eventDate: string;
-eventMonth: string;
-funeralHome: string;
+  //Variables for Data Load
+  firstName: string;
+  nameToUse: string;
+  eventTime: string;
+  eventDate: string;
+  eventMonth: string;
+  funeralHome: string;
 
 
 
@@ -49,64 +49,88 @@ funeralHome: string;
 
 
 
-calendarUpdate()
-{
-  var startDate = new Date(2017,8,10);
-    var endDate = new Date(2017,8,12);
+  calendarUpdate() {
+    var startDate = new Date("August 23, 2016 7:00:00");
+    var endDate = new Date("August 23, 2016 9:00:00");
+    var eventDetails = this.firstName + "'s ";
 
+    this.calendar.createEventInteractivelyWithOptions(eventDetails + "Private Family Viewing", this.funeralHome,
+      "We are testing this functionality", startDate, endDate,{calendarName: "Home"})
 
-  this.calendar.createEvent("The Funeral Event", "HomeSteaders Life Company", "We are testing this functionality", startDate, endDate)
-}
+      .then(function (data: any) { }.bind(this))
+      .catch(function (data: any) { }.bind(this))
+      .then(function (data: any) {
 
- doSearch(){
-            //this is where we pick a guid to search
-            performMetaGet({"eventID": "guidstuff3"
-            }).then(function(data: any){
-              //console.log(this);
-              //console.log(data);
-              this.logItem(data);
+        var startDate = new Date("August 24, 2016 4:00:00");
+        var endDate = new Date("August 24, 2016 8:00:00");
+        this.calendar.createEventInteractivelyWithOptions(eventDetails + "Public Visitation", this.funeralHome,
+          "We are testing this functionality", startDate, endDate,{calendarName: "Home"})
+          .then(function (data: any) { }.bind(this))
+          .catch(function (data: any) { }.bind(this))
+          .then(function (data: any) {
 
-            }.bind(this));
+            var startDate = new Date("August 25, 2016 10:30:00");
+            var endDate = new Date("August 25, 2016 12:00:00");
+            this.calendar.createEventInteractivelyWithOptions(eventDetails + "Funeral Service", this.funeralHome,
+              "We are testing this functionality", startDate, endDate, {calendarName: "Home"})
+
+              .then(function (data: any) { }.bind(this))
+              .catch(function (data: any) { }.bind(this))
+              .then(function (data: any) {
+
+              }.bind(this));
+          }.bind(this));
+      }.bind(this));
+  }
+
+  doSearch() {
+    //this is where we pick a guid to search
+    performMetaGet({
+      "eventID": "guidstuff3"
+    }).then(function (data: any) {
+      //console.log(this);
+      //console.log(data);
+      this.logItem(data);
+
+    }.bind(this));
 
   }
 
 
 
-logItem(ref: any){
+  logItem(ref: any) {
 
-              var x = JSON.parse(ref.Payload)
-              this.firstName = x.Item.firstName.S;
-              this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
-              this.eventDate = x.Item.eventDate.S;
-              this.eventTime = x.Item.eventTime.S;
-              this.funeralHome = x.Item.funeralHome.S;
-              this.eventMonth = x.Item.eventMonth.S;
+    var x = JSON.parse(ref.Payload)
+    this.firstName = x.Item.firstName.S;
+    this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
+    this.eventDate = x.Item.eventDate.S;
+    this.eventTime = x.Item.eventTime.S;
+    this.funeralHome = x.Item.funeralHome.S;
+    this.eventMonth = x.Item.eventMonth.S;
 
-   
+
     // for (var i = 0; i < x.length; i++) {
     //   console.log(x[i]);
     // }
- 
+
   }
 
-goToObit()
-{
-  this.navCtrl.pop();
-}
-
-expandHeader()
-{
-  if(this.expandText == "Expand"){
-    this.expandDialog = true;
-    this.expandText = "Collapse";
-  
+  goToObit() {
+    this.navCtrl.pop();
   }
-    else{
+
+  expandHeader() {
+    if (this.expandText == "Expand") {
+      this.expandDialog = true;
+      this.expandText = "Collapse";
+
+    }
+    else {
       this.expandDialog = false;
       this.expandText = "Expand";
     }
 
 
-}
+  }
 
 }

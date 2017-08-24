@@ -86,7 +86,7 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib</key>
 		<data>
-		7n2r5bRomLXt6z6fhhhS1XXWE4s=
+		Ejr6Y6RNKYoYUe1Xnt3cB/rJ+ik=
 		</data>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
 		<data>
@@ -94,11 +94,11 @@
 		</data>
 		<key>CDVLaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib</key>
 		<data>
-		sDKEyYqqlmnZPwROD8L6xnBov1s=
+		QcpKFVH6GTwBGT8PLg9vl/SAQmk=
 		</data>
 		<key>Info.plist</key>
 		<data>
-		VAodvt+4R5vK15rEkG6TgtE5K+o=
+		2017OtrViAYvnb1V09IE0bZEus8=
 		</data>
 		<key>LaunchImage-568h@2x.png</key>
 		<data>
@@ -158,7 +158,7 @@
 		</data>
 		<key>MainViewController.nib</key>
 		<data>
-		RhVc3XkzPiJoJbEO2CeJb1JVFv8=
+		tN+PiJ6xGKx5+YFbBFoWAGo0re8=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -170,7 +170,7 @@
 		</data>
 		<key>config.xml</key>
 		<data>
-		4qzg+YAMG7aakz21qhUZOUlpW5Q=
+		wc7VK8IvfugvMFdE0xZfQJtzSE4=
 		</data>
 		<key>embedded.mobileprovision</key>
 		<data>
@@ -462,11 +462,11 @@
 		</data>
 		<key>www/build/main.js</key>
 		<data>
-		EkTFaO1TsKmt84nd8YMM6aLlHn4=
+		V/ICDLXeyR3F3KJpUodE2V+2c8o=
 		</data>
 		<key>www/build/main.js.map</key>
 		<data>
-		kYepQtQwYPiurVbkVn3YFfSo8Lk=
+		UpiIytkRZesvfCkNsy6eKn1QWxY=
 		</data>
 		<key>www/build/polyfills.js</key>
 		<data>
@@ -490,7 +490,7 @@
 		</data>
 		<key>www/cordova_plugins.js</key>
 		<data>
-		UnN6IinCTagWOAq2aDg9fryHetY=
+		1Js9+4fk34UnK10DxC+I2N/W9ss=
 		</data>
 		<key>www/index.html</key>
 		<data>
@@ -499,6 +499,10 @@
 		<key>www/manifest.json</key>
 		<data>
 		M7lIs0dSswtXjE6OFSZ3Ak0WDzg=
+		</data>
+		<key>www/plugins/cordova-plugin-calendar/www/Calendar.js</key>
+		<data>
+		gK8bQKOyTTj1vATh2cTAQqvX5UA=
 		</data>
 		<key>www/plugins/cordova-plugin-console/www/console-via-logger.js</key>
 		<data>
@@ -767,11 +771,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			7n2r5bRomLXt6z6fhhhS1XXWE4s=
+			Ejr6Y6RNKYoYUe1Xnt3cB/rJ+ik=
 			</data>
 			<key>hash2</key>
 			<data>
-			JFXMZnDBKzUfSYYo7QE7nUF6QcYxqyzVJo2LE2VW2Uc=
+			DFuyg0HA9k4sMpBbVhA7ka59sgKo2LRbtp6aTmDJBkA=
 			</data>
 		</dict>
 		<key>CDVLaunchScreen.storyboardc/Info.plist</key>
@@ -789,11 +793,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			sDKEyYqqlmnZPwROD8L6xnBov1s=
+			QcpKFVH6GTwBGT8PLg9vl/SAQmk=
 			</data>
 			<key>hash2</key>
 			<data>
-			kfgrlm+QZWHaSn6Hr7l2a/j2R9csJWm1Gu0xJvm1TLs=
+			eefEclzEOzlfjNEiALhEqulRfFg4+3WyTi6sBdzO7uE=
 			</data>
 		</dict>
 		<key>LaunchImage-568h@2x.png</key>
@@ -954,11 +958,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			RhVc3XkzPiJoJbEO2CeJb1JVFv8=
+			tN+PiJ6xGKx5+YFbBFoWAGo0re8=
 			</data>
 			<key>hash2</key>
 			<data>
-			GchmGWsDc2YqXmUQNkvXw821QNKRm4zpAyxO69jyS7k=
+			viP0J24FoYx99Qx2zjAe+1lG+2+XofWnzpZLJPxuLkU=
 			</data>
 		</dict>
 		<key>archived-expanded-entitlements.xcent</key>
@@ -976,11 +980,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			4qzg+YAMG7aakz21qhUZOUlpW5Q=
+			wc7VK8IvfugvMFdE0xZfQJtzSE4=
 			</data>
 			<key>hash2</key>
 			<data>
-			/apevdQQODWFw4Zt6K0oXRqL/XK7KOX4jb/cY2qmlxY=
+			tCiPMSdwu6LBDMsW3CGf90VohfX340YD7CeN9t24bPE=
 			</data>
 		</dict>
 		<key>embedded.mobileprovision</key>
@@ -1779,22 +1783,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			EkTFaO1TsKmt84nd8YMM6aLlHn4=
+			V/ICDLXeyR3F3KJpUodE2V+2c8o=
 			</data>
 			<key>hash2</key>
 			<data>
-			0bQg9NY7NN1moi1yqrmmMpE9eSmJd2qSVSHxoEw7r6M=
+			rSQ7CjxXvfI41JX79wUFBtNbtOHNvQDRWcD2SUDt4NY=
 			</data>
 		</dict>
 		<key>www/build/main.js.map</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			kYepQtQwYPiurVbkVn3YFfSo8Lk=
+			UpiIytkRZesvfCkNsy6eKn1QWxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			5Vgv5YZ9xb8n2DQcICa90KKen0JSd5ux2IgrNaz4wW8=
+			T84h9BrVQCbSGudMOpjqj4Y+c6QNcfJHRuy7wMaiBLY=
 			</data>
 		</dict>
 		<key>www/build/polyfills.js</key>
@@ -1856,11 +1860,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			UnN6IinCTagWOAq2aDg9fryHetY=
+			1Js9+4fk34UnK10DxC+I2N/W9ss=
 			</data>
 			<key>hash2</key>
 			<data>
-			pUzCZYXkkkAUcydrslBfxIJH/Lb1bBUnLFYVxZrM0eA=
+			WMHp5PoaDkUIJzzGQJsaODAqBCiXCIdR12XCqxEQcXI=
 			</data>
 		</dict>
 		<key>www/index.html</key>
@@ -1883,6 +1887,17 @@
 			<key>hash2</key>
 			<data>
 			Qh4ZmadEpBnwv4avVovFpiXjFc/8A6f0TmMUnufQT88=
+			</data>
+		</dict>
+		<key>www/plugins/cordova-plugin-calendar/www/Calendar.js</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			gK8bQKOyTTj1vATh2cTAQqvX5UA=
+			</data>
+			<key>hash2</key>
+			<data>
+			R5Z4y9e8Wt8n74hnolnMxNQcUThtiCJS5e03JXB3EHU=
 			</data>
 		</dict>
 		<key>www/plugins/cordova-plugin-console/www/console-via-logger.js</key>
