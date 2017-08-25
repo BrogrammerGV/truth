@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 import { AboutPage } from '../../about/about';
 import { MapPage } from '../../map/map';
 import { EntryPage } from '../../entry/entry';
 import { SelectPage } from '../../select/select';
+import { EventMainPage } from '../../event-info/event-main/event-main';
 /**
  * Generated class for the Search1Page page.
  *
@@ -27,7 +29,7 @@ export class Search1Page {
   tab2Root: any = Search1Page;
   tab4Root: any = AboutPage;
   mySelectedIndex: number;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
 
   ionViewDidLoad() {
@@ -62,7 +64,15 @@ export class Search1Page {
     this.noResults = !x.length;
   }
 
-  openEvent(item: any){
-    console.log(item);
-  }
+ openEvent(item:any)
+{
+ // set a key/value
+  this.storage.set('guid', item.eventID.S);
+//   var guidData = 
+//   {
+//     guid: item.eventID.S
+//   }
+// this.navCtrl.setRoot(EventMainPage, guidData)
+this.navCtrl.setRoot(EventMainPage)
+}
 }

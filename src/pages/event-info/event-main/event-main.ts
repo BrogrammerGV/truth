@@ -73,8 +73,13 @@ plannerLastName: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventMainPage');
-      var guid =  this.navParams.get('guid');
-            this.doSearch(guid);
+  
+  this.storage.get('guid').then((val) => {
+    console.log('Guid:', val);
+    this.doSearch(val);
+  });
+ 
+            
    
   }
 

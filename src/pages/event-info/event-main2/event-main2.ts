@@ -49,15 +49,19 @@ messageText: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventMainPage');
-        this.doSearch();
+    this.storage.get('guid').then((val) => {
+    console.log('Guid:', val);
+    this.doSearch(val);
+  });
+ 
    
   }
 
 
 
- doSearch(){
+ doSearch(guid:string){
    
-    performMetaGet({"eventID": "guidstuff3"
+    performMetaGet({"eventID": guid
     }).then(function(data: any){
  
       this.logItem(data);
