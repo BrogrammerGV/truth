@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import { EventInfoOnePage } from '../event-info-one/event-info-one';
-
-
+import { EventMainPage2 } from '../event-main2/event-main2';
+import { EventMainPage3 } from '../event-main3/event-main3';
 
 /**
  * Generated class for the EventMainPage page.
@@ -112,5 +112,15 @@ saveEditText()
   this.showEditScreen = false;
 }
 
+
+
+goToCare(){
+  this.navCtrl.setRoot(EventMainPage2);
+}
+
+goToFeed()
+{
+  this.navCtrl.setRoot(EventMainPage3);
+}
 
 }

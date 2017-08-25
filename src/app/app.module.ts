@@ -67,8 +67,8 @@ import { EventsPage } from '../pages/Home/events/events';
 
 import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
 import { EventMainPage } from '../pages/event-info/event-main/event-main';
-
-
+import { EventMainPage2 } from '../pages/event-info/event-main2/event-main2';
+import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
 
 @NgModule({
   declarations: [
@@ -121,7 +121,9 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     EventInfoOnePage,
     EventMainPage,
     Search2Page,
-    EventsPage
+    EventsPage, 
+    EventMainPage2,
+    EventMainPage3
   ],
   imports: [
     BrowserModule,
@@ -220,7 +222,9 @@ import { EventMainPage } from '../pages/event-info/event-main/event-main';
     EventInfoOnePage,
     EventMainPage,
     Search2Page,
-    EventsPage
+    EventsPage,
+    EventMainPage2,
+    EventMainPage3
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

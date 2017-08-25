@@ -22,6 +22,7 @@ import { CulturePage } from '../culture/culture';
 import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
 import { ConfirmPage } from '../confirm/confirm';
+import { TabsPage } from '../tabs/tabs';
 
 import { InfoNamePage } from '../info/info-name/info-name';
 import { InfoMilitaryPage } from '../info/info-military/info-military';
@@ -742,7 +743,13 @@ if(this.readyButtonText == 'Continue' && this.cultureFinished)
     
     this.navCtrl.push(CultureSpousePage);
   }
-  if(this.readyButtonText != 'Continue')
+
+  if(this.readyButtonText == "Submit")
+    {
+      this.navCtrl.setRoot(TabsPage);
+    }
+
+  if(this.readyButtonText != 'Continue' && this.readyButtonText != 'Submit')
 
  {
     this.navCtrl.push(InfoNamePage);
