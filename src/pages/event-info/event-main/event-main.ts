@@ -49,7 +49,7 @@ helperText: string;
 helperText2: string;
 greetingText: string;
 messageText: string;
-
+emailAddressSendInvite: string;
 
 
   constructor(
@@ -177,12 +177,37 @@ removeShareScreen()
 
     sendEmail()
     {
+              if(this.emailAddressSendInvite)
+              {
+              let alert = this.alrtCtrl.create({
+                              title: "Your email notification has been sent." ,
+                              buttons: [{
+                                text: 'Ok',
+                                handler: () => {
+                                  // user has clicked the alert button
+                                  // begin the alert's dismiss transition
+                                  let navTransition = alert.dismiss();
 
+                                  // start some async method
+                                  this.runMethod().then(() => {
+                                    // once the async operation has completed
+                                    // then run the next nav transition after the
 
+                                    navTransition.then(() => {
+                                      this.navCtrl.push(EventMainPage);
+                                    });
+                                  });
+                                  return false;
+                                }
+                              }]
+                            });
 
+                            alert.present();
+              }
+             else{
 
-let alert = this.alrtCtrl.create({
-  title: "Your email notification has been sent." ,
+              let alert = this.alrtCtrl.create({
+  title: "No email address(es) listed, please fill in the field." ,
   buttons: [{
     text: 'Ok',
     handler: () => {
@@ -196,7 +221,7 @@ let alert = this.alrtCtrl.create({
         // then run the next nav transition after the
 
         navTransition.then(() => {
-          this.navCtrl.push(EventMainPage);
+          //this.navCtrl.push(EventMainPage);
         });
       });
       return false;
@@ -205,6 +230,10 @@ let alert = this.alrtCtrl.create({
 });
 
 alert.present();
+ 
+             }
+
+
 
     }
 
