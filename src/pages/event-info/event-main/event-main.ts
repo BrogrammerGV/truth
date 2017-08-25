@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import { EventInfoOnePage } from '../event-info-one/event-info-one';
 import { EventMainPage2 } from '../event-main2/event-main2';
@@ -52,7 +52,14 @@ messageText: string;
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(
+    public navCtrl: NavController, 
+    public navParams: NavParams,
+    private storage: Storage, 
+    private alrtCtrl: AlertController
+
+
+   ) {
   }
 
   ionViewDidLoad() {
@@ -166,5 +173,45 @@ removeShareScreen()
     this.facebookClicked = false;
  
   }
+
+
+    sendEmail()
+    {
+
+
+
+
+let alert = this.alrtCtrl.create({
+  title: "Your're email notification invitation has been sent." ,
+  buttons: [{
+    text: 'Ok',
+    handler: () => {
+      // user has clicked the alert button
+      // begin the alert's dismiss transition
+      let navTransition = alert.dismiss();
+
+      // start some async method
+      this.runMethod().then(() => {
+        // once the async operation has completed
+        // then run the next nav transition after the
+
+        navTransition.then(() => {
+          this.navCtrl.push(EventMainPage);
+        });
+      });
+      return false;
+    }
+  }]
+});
+
+alert.present();
+
+    }
+
+
+async runMethod()
+{
+
+}
 
 }
