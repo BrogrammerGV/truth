@@ -265,6 +265,34 @@ if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
 
 
 
+sendText()
+{
+   let alert = this.alrtCtrl.create({
+                              title: "Your text notification has been sent." ,
+                              buttons: [{
+                                text: 'Ok',
+                                handler: () => {
+                                  // user has clicked the alert button
+                                  // begin the alert's dismiss transition
+                                  let navTransition = alert.dismiss();
+
+                                  // start some async method
+                                  this.runText().then(() => {
+                                    // once the async operation has completed
+                                    // then run the next nav transition after the
+
+                                    navTransition.then(() => {
+                                      this.navCtrl.push(EventMainPage);
+                                    });
+                                  });
+                                  return false;
+                                }
+                              }]
+                            });
+
+                            alert.present();
+}
+
 sendFacebook()
 {
    let alert = this.alrtCtrl.create({
@@ -294,7 +322,6 @@ sendFacebook()
 }
 
 
-
 async runEmailer()
 {
   var emailAdd:string; 
@@ -312,7 +339,7 @@ async runEmailer()
 
 }
 
-async runFaceBook()
+async runText()
 {
   this.socialSharing.shareViaSMS("Thank you for your thoughts and prayers following " 
   + this.deceasedFirstName + "'s passing. We appreciate your support during this difficult time and invite you to join us as we celebrate " + 
@@ -325,7 +352,17 @@ async runFaceBook()
 }
 
 
+async runFaceBook()
+{
+  this.socialSharing
+      .shareViaFacebook('message', null, 'http://coletestbucket.s3-website-us-east-1.amazonaws.com')
+      .then(function(result: any) {
+        // Success!
+      }).catch(function(data: any){
+        alert("Unable to open Facebook, is the app installed?");
+      });
 
+}
 
 
 async runMethodNull()

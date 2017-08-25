@@ -181,10 +181,11 @@ margin-top:-5%;
            <ion-input  class="inputField" placeholder="invitation@example.com, invitation2@example2.com ..." [(ngModel)]="emailAddressSendInvite"></ion-input>
           </ion-item>
 
-<button class="whiteButton" (click)="sendFacebook();" *ngIf="facebookClicked">
+<button class="whiteButton" (click)="sendText();" *ngIf="textClicked"> Send Text
   </button>
    
-           
+           <button class="whiteButton" (click)="sendFacebook();" *ngIf="facebookClicked"> Send Text
+  </button>
   
 </ion-list>
 

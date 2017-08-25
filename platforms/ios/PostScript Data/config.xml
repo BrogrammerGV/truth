@@ -115,4 +115,8 @@
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="orientation" value="default" />
+    <feature name="SocialSharing">
+        <param name="ios-package" value="SocialSharing" />
+        <param name="onload" value="true" />
+    </feature>
 </widget>

@@ -34,6 +34,12 @@
         },
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {
