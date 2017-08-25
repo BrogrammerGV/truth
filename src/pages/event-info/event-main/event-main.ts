@@ -265,69 +265,6 @@ if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
 
 
 
-sendText()
-{
-  //  let alert = this.alrtCtrl.create({
-  //                             title: "Your text notification has been sent." ,
-  //                             buttons: [{
-  //                               text: 'Ok',
-  //                               handler: () => {
-  //                                 // user has clicked the alert button
-  //                                 // begin the alert's dismiss transition
-  //                                 let navTransition = alert.dismiss();
-
-  //                                 // start some async method
-  //                                 this.runText().then(() => {
-  //                                   // once the async operation has completed
-  //                                   // then run the next nav transition after the
-
-  //                                   navTransition.then(() => {
-  //                                     this.navCtrl.push(EventMainPage);
-  //                                   });
-  //                                 });
-  //                                 return false;
-  //                               }
-  //                             }]
-  //                           });
-
-  //                           alert.present();
-
-  this.runText();
-}
-
-sendFacebook()
-{
-//    let alert = this.alrtCtrl.create({
-//                               title: "Your FaceBook notification has been sent." ,
-//                               buttons: [{
-//                                 text: 'Ok',
-//                                 handler: () => {
-//                                   // user has clicked the alert button
-//                                   // begin the alert's dismiss transition
-//                                   let navTransition = alert.dismiss();
-
-//                                   // start some async method
-//                                   this.runFaceBook().then(() => {
-//                                     // once the async operation has completed
-//                                     // then run the next nav transition after the
-
-//                                     navTransition.then(() => {
-//                                       this.navCtrl.push(EventMainPage);
-//                                     });
-//                                   });
-//                                   return false;
-//                                 }
-//                               }]
-//                             });
-
-//                             alert.present();
-// }
-
-this.runFaceBook();
-
-}
-
-
 async runEmailer()
 {
   var emailAdd:string; 
@@ -373,9 +310,75 @@ async runFaceBook()
 
 async runMethodNull()
 {
- 
+
+}
+
+
+sendText()
+{
+  this.runText();
+}
+
+sendFacebook()
+{
+  this.runFaceBook();
+}
+
+
+sendShareAny()
+{
+  if (this.textClicked)
+  {
+    this.sendText();
+  }
+    if (this.facebookClicked)
+  {
+    this.sendFacebook();
+  }
+    if (this.emailClicked)
+  {
+    this.sendEmail();
+  }
+
+if(!this.facebookClicked && !this.textClicked && !this.emailClicked)
+        {
+          this.showNoneAlert();
+        }
 
 
 }
 
+
+showNoneAlert()
+{
+   let alert = this.alrtCtrl.create({
+                              title: "You must select one" ,
+                              buttons: [{
+                                text: 'Ok',
+                                handler: () => {
+                                  // user has clicked the alert button
+                                  // begin the alert's dismiss transition
+                                  let navTransition = alert.dismiss();
+
+                                  // start some async method
+                                  this.runMethodNull().then(() => {
+                                    // once the async operation has completed
+                                    // then run the next nav transition after the
+
+                                    navTransition.then(() => {
+                                      //this.navCtrl.push(EventMainPage);
+                                    });
+                                  });
+                                  return false;
+                                }
+                              }]
+                            });
+
+                            alert.present();
 }
+// }
+}
+
+
+
+

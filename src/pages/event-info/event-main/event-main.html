@@ -180,13 +180,6 @@ margin-top:-5%;
          <ion-label stacked class="inputLabelText">Please enter email address(es) below:</ion-label>
            <ion-input  class="inputField" placeholder="invitation@example.com, invitation2@example2.com ..." [(ngModel)]="emailAddressSendInvite"></ion-input>
           </ion-item>
-
-<button class="whiteButton" (click)="sendText();" *ngIf="textClicked"> Send Notification
-  </button>
-   
-           <button class="whiteButton" (click)="sendFacebook();" *ngIf="facebookClicked"> Send Notification
-  </button>
-  
 </ion-list>
 
 
@@ -202,7 +195,7 @@ margin-top:-5%;
          <button  class="footerButtonWhite"  (click)="removeShareScreen()">Back</button>
     </ion-col>
 <ion-col style="padding: 0;">
- <button  class="footerButtonDouble"  (click)="sendEmail()">Next</button>
+ <button  class="footerButtonDouble"  (click)="sendShareAny()">Next</button>
 </ion-col>
 
 </ion-row>
