@@ -182,7 +182,7 @@ removeShareScreen()
 
 
 let alert = this.alrtCtrl.create({
-  title: "Your're email notification invitation has been sent." ,
+  title: "Your email notification has been sent." ,
   buttons: [{
     text: 'Ok',
     handler: () => {
