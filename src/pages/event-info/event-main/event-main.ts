@@ -286,7 +286,7 @@ async runText()
 {
   this.socialSharing.shareViaSMS("Thank you for your thoughts and prayers following " 
   + this.deceasedFirstName + "'s passing. We appreciate your support during this difficult time and invite you to join us as we celebrate " + 
-   this.deceasedFirstName + "'s life.\nhttps://s3.amazonaws.com/coletestbucket/index.html",'5158228102').then(() => {
+   this.deceasedFirstName + "'s life.\nhttps://s3.amazonaws.com/coletestbucket/index.html",'').then(() => {
         // Success!
       }).catch((err) => {
         alert(err);
