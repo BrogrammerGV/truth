@@ -4,6 +4,7 @@ import {Storage} from '@ionic/storage';
 import { EventInfoOnePage } from '../event-info-one/event-info-one';
 import { EventMainPage2 } from '../event-main2/event-main2';
 import { EventMainPage3 } from '../event-main3/event-main3';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the EventMainPage page.
@@ -52,11 +53,19 @@ messageText: string;
 emailAddressSendInvite: string;
 
 
+//Email Variables:
+deceasedFirstName: string;
+deceasedLastName: string;
+plannerFirstName: string;
+plannerLastName: string;
+
+
   constructor(
     public navCtrl: NavController, 
     public navParams: NavParams,
     private storage: Storage, 
-    private alrtCtrl: AlertController
+    private alrtCtrl: AlertController,
+    public http: Http
 
 
    ) {
@@ -92,11 +101,18 @@ console.log(x.Item.firstName);
    this.eventMonth = x.Item.eventMonth.S;
    this.firstName = x.Item.firstName.S;
 
+//email vars
+this.deceasedFirstName =  x.Item.firstName.S;
+this.deceasedLastName = x.Item.lastName.S;
+this.plannerFirstName = "Cole";
+this.plannerLastName = "McFarland";
+
    //Setting Variable Texr
         this.helperText = "A Message from "+ this.firstName + "'s Family";
         this.helperText2 = "Thank you for supporting our family during this difficult time We appreciate your condolences and invite you to join us as we celelbrate "  + this.firstName + ".";
         this.messageText = this.helperText2;
         this.greetingText = this.helperText;
+        
  
   }
   goNext()
@@ -191,7 +207,7 @@ removeShareScreen()
                                   let navTransition = alert.dismiss();
 
                                   // start some async method
-                                  this.runMethod().then(() => {
+                                  this.runEmailer().then(() => {
                                     // once the async operation has completed
                                     // then run the next nav transition after the
 
@@ -218,7 +234,7 @@ removeShareScreen()
       let navTransition = alert.dismiss();
 
       // start some async method
-      this.runMethod().then(() => {
+      this.runMethodNull().then(() => {
         // once the async operation has completed
         // then run the next nav transition after the
 
@@ -240,8 +256,27 @@ alert.present();
     }
 
 
-async runMethod()
+async runEmailer()
 {
+  var emailAdd:string; 
+  emailAdd = this.emailAddressSendInvite;
+    var link = 'http://dev.myhomesteaders.com/UIS/native.asmx/PostScriptShareEmail?toaddress=' +
+    emailAdd +
+    '&deceasedFirst=' + this.deceasedFirstName + 
+    '&deceasedLast=' + this.deceasedLastName + 
+    '&plannerFirst=' + this.plannerFirstName + 
+    '&plannerLast=' + this.plannerLastName + '&token=6352f04d-34e6-4bf8-8cc9-63593f35a96e';
+    this.http.get(link).map(res => res.json()).subscribe(data => {
+
+      console.log("Email sent to "+  emailAdd)
+});
+
+}
+
+async runMethodNull()
+{
+ 
+
 
 }
 
