@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { EventInfoOnePage } from '../event-info-one/event-info-one';
 import { EventMainPage2 } from '../event-main2/event-main2';
 import { EventMainPage3 } from '../event-main3/event-main3';
@@ -65,7 +66,8 @@ plannerLastName: string;
     public navParams: NavParams,
     private storage: Storage, 
     private alrtCtrl: AlertController,
-    public http: Http
+    public http: Http, 
+    public socialSharing: SocialSharing
 
 
    ) {
@@ -262,6 +264,37 @@ if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
     }
 
 
+
+sendFacebook()
+{
+   let alert = this.alrtCtrl.create({
+                              title: "Your FaceBook notification has been sent." ,
+                              buttons: [{
+                                text: 'Ok',
+                                handler: () => {
+                                  // user has clicked the alert button
+                                  // begin the alert's dismiss transition
+                                  let navTransition = alert.dismiss();
+
+                                  // start some async method
+                                  this.runFaceBook().then(() => {
+                                    // once the async operation has completed
+                                    // then run the next nav transition after the
+
+                                    navTransition.then(() => {
+                                      this.navCtrl.push(EventMainPage);
+                                    });
+                                  });
+                                  return false;
+                                }
+                              }]
+                            });
+
+                            alert.present();
+}
+
+
+
 async runEmailer()
 {
   var emailAdd:string; 
@@ -278,6 +311,22 @@ async runEmailer()
 });
 
 }
+
+async runFaceBook()
+{
+  this.socialSharing.shareViaSMS("Thank you for your thoughts and prayers following " 
+  + this.deceasedFirstName + "'s passing. We appreciate your support during this difficult time and invite you to join us as we celebrate " + 
+   this.deceasedFirstName + "'s life.\nhttps://s3.amazonaws.com/coletestbucket/index.html",'5158228102').then(() => {
+        // Success!
+      }).catch((err) => {
+        alert(err);
+      });
+
+}
+
+
+
+
 
 async runMethodNull()
 {
