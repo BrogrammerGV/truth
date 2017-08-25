@@ -38,10 +38,19 @@ firstName: string;
 
 //Bool Checks
 showEditScreen : boolean = false;
+showShareScreen : boolean = false;
+buttonClicked: boolean = false;
+facebookClicked: boolean = false;
+textClicked: boolean = false;
+emailClicked: boolean = false;
+
+//DataLoad Variables
 helperText: string;
 helperText2: string;
 greetingText: string;
 messageText: string;
+
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
@@ -89,18 +98,6 @@ this.navCtrl.push(EventInfoOnePage)
   }
 
 
-swapScreen()
-{
-
-this.showEditScreen = true;
-
-}
-
-removeEditScreen()
-{
-  this.showEditScreen=false;
-}
-
 saveEditText()
 {
   if(this.greetingText)
@@ -122,5 +119,52 @@ goToFeed()
 {
   this.navCtrl.setRoot(EventMainPage3);
 }
+
+
+
+
+//Modal Swaps On Main Page
+
+swapScreen()
+{
+this.showEditScreen = true;
+}
+
+swapShare()
+{
+  this.showShareScreen = true;
+}
+
+removeEditScreen()
+{
+  this.showEditScreen=false;
+}
+removeShareScreen()
+{
+  this.showShareScreen =false;
+}
+
+
+//Sharing GUI Logic
+  showFacebook(){
+    this.emailClicked = false;
+    this.textClicked = false;
+    this.facebookClicked = true;
+ 
+  }
+
+  showText(){
+    this.emailClicked = false;
+    this.textClicked = true;
+    this.facebookClicked = false;
+ 
+  }
+
+    showEmail(){
+    this.emailClicked = true;
+    this.textClicked = false;
+    this.facebookClicked = false;
+ 
+  }
 
 }

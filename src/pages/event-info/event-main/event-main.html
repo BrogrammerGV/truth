@@ -71,8 +71,9 @@
 
 <ion-content>
 
-  <div *ngIf="!showEditScreen" class="bgPane" style="padding-bottom: 30%;">
 
+
+  <div *ngIf="!showEditScreen && !showShareScreen" class="bgPane" style="padding-bottom: 30%;">
 <br />
 
 <div style="margin-left: 5%; margin-right: 5%; -text-align:left;">
@@ -102,11 +103,11 @@
 
 </div>
 <div class="center">
- <button style="width: 50%;" class="orangeSwitchButton" (click)="goNext()"> Share</button>
+ <button style="width: 50%;" class="orangeSwitchButton" (click)="swapShare()"> Share</button>
  </div>
 </div>
 
-
+<!--Event Edit Page-->
   <div *ngIf="showEditScreen" class="bgPane" style="padding-bottom: 30%;">
 <br />
 <div class="center">
@@ -124,7 +125,12 @@
          <ion-label style="margin-left:5%;" stacked class="inputLabelText">Message</ion-label>
            
   
-</ion-list><textarea style="margin-left: 5%; margin-top:-5%; margin-bottom: 4%; padding-bottom: 20% !important; width: 90%; border: solid 2px #33475c;" [(ngModel)]="messageText"></textarea>
+</ion-list>
+
+<textarea style="margin-left: 5%; 
+margin-top:-5%;
+ margin-bottom: 4%; padding-bottom:
+ 20% !important; width: 90%; border: solid 2px #33475c;" [(ngModel)]="messageText"></textarea>
 <br />
 
 <ion-footer>
@@ -140,8 +146,67 @@
 
 </ion-footer>
 </div>
+<!--Event Edit Page-->
 
 
+
+<!-- Event Share Page-->
+<div *ngIf="showShareScreen" class="bgPane" style="padding-bottom: 30%;">
+<br />
+<div class="center" style="margin-right: 5%; margin-left: 5%;" [ngClass]="{'hideAnimation' : buttonClicked}">
+      <div class="mainFont">How would you like to send the event details?</div>
+      <hr class="horizontalBreak" style="height: 2px" />
+
+    </div>
+    <div class="center">
+    <button style="width: 30%;" [ngClass]="{
+            'whiteButton' : !textClicked,
+            'orangeButton' : textClicked
+          }" (click)="showText()"><b>Text</b></button>
+    <button style="width: 30%;"  [ngClass]="{
+            'whiteButton' : !emailClicked,
+            'orangeButton' : emailClicked
+          }" (click)="showEmail()"><b>Email</b></button>
+    <button style="width: 30%;" [ngClass]="{
+            'whiteButton' : !facebookClicked,
+            'orangeButton' : facebookClicked
+          }" (click)="showFacebook()"><b>Facebook</b></button>
+
+
+
+
+<ion-list style="margin-right: 2%; margin-top: 5%;" no-lines>
+     <ion-item *ngIf="emailClicked">
+         <ion-label stacked class="inputLabelText">Please enter recipient's email:</ion-label>
+           <ion-input  class="inputField" placeholder="invitation@example.com" [(ngModel)]="emailAddressSendInvite"></ion-input>
+          </ion-item>
+
+   
+           
+  
+</ion-list>
+
+
+
+    </div>
+
+
+
+
+<ion-footer>
+  <ion-row>
+    <ion-col style="padding: 0;">
+         <button  class="footerButtonWhite"  (click)="removeShareScreen()">Back</button>
+    </ion-col>
+<ion-col style="padding: 0;">
+ <button  class="footerButtonDouble"  (click)="sendEmail()">Next</button>
+</ion-col>
+
+</ion-row>
+
+</ion-footer>
+</div>
+<!--Event Shre Page -->
 
 
 
