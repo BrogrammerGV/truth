@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 
+import { EventMainPage } from '../../event-info/event-main/event-main';
 /**
  * Generated class for the EventsPage page.
  *
@@ -50,4 +51,20 @@ export class EventsPage {
       }
     }.bind(this));
   }
+
+
+
+openEvent(item:any)
+{
+
+  var guidData = 
+  {
+    guid: item.eventID.S
+  }
+
+
+this.navCtrl.setRoot(EventMainPage, guidData)
+}
+
+
 }

@@ -73,15 +73,16 @@ plannerLastName: string;
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventMainPage');
-        this.doSearch();
+      var guid =  this.navParams.get('guid');
+            this.doSearch(guid);
    
   }
 
 
 
- doSearch(){
+ doSearch(guid:string){
    
-    performMetaGet({"eventID": "guidstuff3"
+    performMetaGet({"eventID": guid
     }).then(function(data: any){
  
       this.logItem(data);
