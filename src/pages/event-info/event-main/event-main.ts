@@ -177,7 +177,9 @@ removeShareScreen()
 
     sendEmail()
     {
-              if(this.emailAddressSendInvite)
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+              if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
               {
               let alert = this.alrtCtrl.create({
                               title: "Your email notification has been sent." ,
@@ -207,7 +209,7 @@ removeShareScreen()
              else{
 
               let alert = this.alrtCtrl.create({
-  title: "No email address(es) listed, please fill in the field." ,
+  title: "Please enter a valid email address." ,
   buttons: [{
     text: 'Ok',
     handler: () => {
