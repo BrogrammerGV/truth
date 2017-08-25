@@ -193,9 +193,9 @@ removeShareScreen()
 
     sendEmail()
     {
-      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      var re = /^[\W]*([\w+\-.%]+@[\w\-.]+\.[A-Za-z]{2,4}[\W]*,{1}[\W]*)*([\w+\-.%]+@[\w\-.]+\.[A-Za-z]{2,4})[\W]*$/;
 
-              if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
+if(this.emailAddressSendInvite && re.test(this.emailAddressSendInvite))
               {
               let alert = this.alrtCtrl.create({
                               title: "Your email notification has been sent." ,
@@ -224,32 +224,32 @@ removeShareScreen()
               }
              else{
 
-              let alert = this.alrtCtrl.create({
-  title: "Please enter a valid email address." ,
-  buttons: [{
-    text: 'Ok',
-    handler: () => {
-      // user has clicked the alert button
-      // begin the alert's dismiss transition
-      let navTransition = alert.dismiss();
+        let alert = this.alrtCtrl.create({
+                  title: "Please enter a valid email address." ,
+                  buttons: [{
+                    text: 'Ok',
+                    handler: () => {
+                      // user has clicked the alert button
+                      // begin the alert's dismiss transition
+                      let navTransition = alert.dismiss();
 
-      // start some async method
-      this.runMethodNull().then(() => {
-        // once the async operation has completed
-        // then run the next nav transition after the
+                      // start some async method
+                      this.runMethodNull().then(() => {
+                        // once the async operation has completed
+                        // then run the next nav transition after the
 
-        navTransition.then(() => {
-          //this.navCtrl.push(EventMainPage);
-        });
-      });
-      return false;
-    }
-  }]
-});
+                        navTransition.then(() => {
+                          //this.navCtrl.push(EventMainPage);
+                        });
+                      });
+                      return false;
+                    }
+                  }]
+                });
 
-alert.present();
- 
-             }
+                alert.present();
+                
+                            }
 
 
 
