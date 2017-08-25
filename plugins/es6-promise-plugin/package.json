@@ -1,19 +1,19 @@
 {
-  "_from": "es6-promise-plugin",
+  "_from": "es6-promise-plugin@4.1.0",
   "_id": "es6-promise-plugin@4.1.0",
   "_inBundle": false,
   "_integrity": "sha1-8GEHOZhEUJ6quo7QcHfSiKXKaX4=",
   "_location": "/es6-promise-plugin",
   "_phantomChildren": {},
   "_requested": {
-    "type": "tag",
+    "type": "version",
     "registry": true,
-    "raw": "es6-promise-plugin",
+    "raw": "es6-promise-plugin@4.1.0",
     "name": "es6-promise-plugin",
     "escapedName": "es6-promise-plugin",
-    "rawSpec": "",
+    "rawSpec": "4.1.0",
     "saveSpec": null,
-    "fetchSpec": "latest"
+    "fetchSpec": "4.1.0"
   },
   "_requiredBy": [
     "#USER",
@@ -21,8 +21,8 @@
   ],
   "_resolved": "https://registry.npmjs.org/es6-promise-plugin/-/es6-promise-plugin-4.1.0.tgz",
   "_shasum": "f06107399844509eaaba8ed07077d288a5ca697e",
-  "_spec": "es6-promise-plugin",
-  "_where": "/Users/iosdev/Source/eventapp/node_modules",
+  "_spec": "es6-promise-plugin@4.1.0",
+  "_where": "/Users/thebrogrammer/Source/eventOne/eventapp/node_modules",
   "author": "",
   "bugs": {
     "url": "https://github.com/vstirbu/PromisesPlugin/issues"

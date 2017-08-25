@@ -79,7 +79,6 @@
             "cordova-plugin-calendar": {
                 "CALENDAR_USAGE_DESCRIPTION": " "
             },
-            "es6-promise-plugin": {},
             "cordova-plugin-x-socialsharing": {}
         },
         "platforms": [
