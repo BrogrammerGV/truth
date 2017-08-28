@@ -39,13 +39,37 @@ firstName: string;
 
 //Bool Checks
 showEditScreen : boolean = false;
+hasSeenCare : boolean = false;
+careButtonText : string = "Get Started";
+
+//Vars
 helperText: string;
 helperText2: string;
 greetingText: string;
 messageText: string;
 
+
+
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
+
+
+
+
+
+
+ionViewCanEnter()
+  {
+    this.storage.get('hasSeenCare').then((val) => {
+                    if(val == "Y")
+                          this.hasSeenCare = true;
+                          this.careButtonText = "Add Care Item";
+                        });
+        
+  }
+
+
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad EventMainPage');
@@ -126,5 +150,16 @@ goToFeed()
 {
   this.navCtrl.setRoot(EventMainPage3);
 }
+
+
+
+
+getStarted()
+{
+ this.storage.set('hasSeenCare', "Y");
+ this.hasSeenCare = true;
+
+}
+
 
 }

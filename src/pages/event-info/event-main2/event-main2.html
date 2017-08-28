@@ -69,15 +69,38 @@
 
 <ion-content>
 
-<div style="height : 95%;" class="bgCard center">
 
 
-<h2> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
+<!-- Entry Card only seen once -->
+<div *ngIf="!hasSeenCare" style="height : 97%;" class="bgCard center">
 
-<h2> You <span class="friendlyName"> Care Registry </span> gives them simple specific ways to support you and your family in the days ahead. </h2>
+<div style="padding-left: 5%; padding-right: 5%; margin-top: 20%;">
+<h2 style="font-size: 1.5em;"> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
 
+<h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span> gives them simple specific ways to support you and your family in the days ahead. </h2>
+</div>
 </div>
 
 
-</ion-content>
+<!-- End of Registry of Care entry card that will only be seen once -->
 
+
+
+<!-- Entry Card Default-->
+<div *ngIf="hasSeenCare"   class="center">
+
+<div style="padding-left: 5%; padding-right: 5%; margin-top: 20%;">
+<h2 style="font-size: 1.5em;"> <b></b></h2>
+
+<h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span>  select will go here </h2>
+</div>
+</div>
+
+
+<!-- End Entry Card Default-->
+
+
+</ion-content>
+<ion-footer>
+  <button class="footerButton" type="submit" (click)="getStarted()">{{careButtonText}}</button>
+</ion-footer>
