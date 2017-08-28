@@ -41254,6 +41254,7 @@ page-mid-modal .orange {
   margin: auto;
   background: url("../assets/img/care/meals.png") 60% 80% no-repeat;
   background-size: 100%;
+  background-size: cover;
 }
 
 .tileCareTwo {
@@ -41262,6 +41263,7 @@ page-mid-modal .orange {
   margin: auto;
   background: url("../assets/img/care/transport.png") 50% 60% no-repeat;
   background-size: 100%;
+  background-size: cover;
 }
 
 .tileCareThree {
@@ -41270,6 +41272,7 @@ page-mid-modal .orange {
   margin: auto;
   background: url("../assets/img/care/houseitem.png") 50% 60% no-repeat;
   background-size: 100%;
+  background-size: cover;
 }
 
 .tileCareFour {
@@ -41278,6 +41281,7 @@ page-mid-modal .orange {
   margin: auto;
   background: url("../assets/img/care/support.png") 60% 80% no-repeat;
   background-size: 100%;
+  background-size: cover;
 }
 
 .tileText {
