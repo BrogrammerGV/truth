@@ -62,8 +62,12 @@ ionViewCanEnter()
   {
     this.storage.get('hasSeenCare').then((val) => {
                     if(val == "Y")
-                          this.hasSeenCare = true;
+                      {
+                           this.hasSeenCare = true;
                           this.careButtonText = "Add Care Item";
+
+                      }
+                         
                         });
         
   }
@@ -156,8 +160,20 @@ goToFeed()
 
 getStarted()
 {
- this.storage.set('hasSeenCare', "Y");
+
+  if(this.careButtonText == "Get Started")
+    {
+
+this.storage.set('hasSeenCare', "Y");
  this.hasSeenCare = true;
+ this.careButtonText = "Add Care Item"
+    }
+    else {
+      this.storage.set('hasSeenCare', "N");
+      this.careButtonText = "Get Started"
+      this.hasSeenCare = false;
+    }
+
 
 }
 

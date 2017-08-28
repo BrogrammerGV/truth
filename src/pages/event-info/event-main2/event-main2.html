@@ -72,12 +72,12 @@
 
 
 <!-- Entry Card only seen once -->
-<div *ngIf="!hasSeenCare" style="height : 97%;" class="bgCard center">
+<div *ngIf="!hasSeenCare" style="height : 97%; margin-top: 1%;" class="bgCard center">
 
 <div style="padding-left: 5%; padding-right: 5%; margin-top: 20%;">
 <h2 style="font-size: 1.5em;"> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
 
-<h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span> gives them simple specific ways to support you and your family in the days ahead. </h2>
+<h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span> gives them simple,  specific ways to support you and your family in the days ahead. </h2>
 </div>
 </div>
 
@@ -103,4 +103,5 @@
 </ion-content>
 <ion-footer>
   <button class="footerButton" type="submit" (click)="getStarted()">{{careButtonText}}</button>
+  
 </ion-footer>
