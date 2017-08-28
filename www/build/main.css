@@ -41253,6 +41253,7 @@ page-mid-modal .orange {
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/meals.png") 60% 80% no-repeat;
+  background-size: 100%;
 }
 
 .tileCareTwo {
@@ -41260,6 +41261,7 @@ page-mid-modal .orange {
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/transport.png") 50% 60% no-repeat;
+  background-size: 100%;
 }
 
 .tileCareThree {
@@ -41267,6 +41269,7 @@ page-mid-modal .orange {
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/houseitem.png") 50% 60% no-repeat;
+  background-size: 100%;
 }
 
 .tileCareFour {
@@ -41274,6 +41277,7 @@ page-mid-modal .orange {
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/support.png") 60% 80% no-repeat;
+  background-size: 100%;
 }
 
 .tileText {
@@ -41310,8 +41314,9 @@ page-mid-modal .orange {
 }
 
 .centAlignCare {
-  width: 95%;
+  width: 90%;
   margin: auto;
+  margin-top: 2%;
 }
 
 .checkOver {
