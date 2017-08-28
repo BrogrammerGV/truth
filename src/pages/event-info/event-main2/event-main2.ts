@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import {Storage} from '@ionic/storage';
 import { EventInfoOnePage } from '../event-info-one/event-info-one';
 import { EventMainPage } from '../event-main/event-main';
 import { EventMainPage3 } from '../event-main3/event-main3';
+import { CareModalPage } from '../care-modal/care-modal';
 
 
 /**
@@ -50,7 +51,11 @@ messageText: string;
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
+  constructor(public navCtrl: NavController, 
+  public navParams: NavParams, 
+  private storage: Storage, 
+  public modalCtrl: ModalController
+  ) {
   }
 
 
@@ -167,6 +172,9 @@ getStarted()
 this.storage.set('hasSeenCare', "Y");
  this.hasSeenCare = true;
  this.careButtonText = "Add Care Item"
+ this.openCareModal();
+
+
     }
     else {
       this.storage.set('hasSeenCare', "N");
@@ -177,5 +185,14 @@ this.storage.set('hasSeenCare', "Y");
 
 }
 
+
+
+
+        openCareModal()
+            {
+                    let myModal = this.modalCtrl.create(CareModalPage);
+                                
+                  myModal.present();
+            }
 
 }

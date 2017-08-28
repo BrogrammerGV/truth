@@ -93,7 +93,7 @@
 <div class="centAlignCare">
    <ion-row >
       <ion-col  col-6>
-         <!--Logic Will Need Reworked for next Pages-->
+         <!--Logic Will Need Reworked for next Pages
          <button (click)="goToAbout()" ion-button full class="tileCareOne">
 
            
@@ -104,45 +104,53 @@
 </div>
         
 
+         </button>-->
+                  <!--Logic Will Need Reworked for next Pages-->
+         <button (click)="goToAbout()" style="position:relative;" ion-button full class="tileCareOne">
+
+           
+          <h2 class="myProgressGlobalText"><b> Meals</b></h2>
+
+       
+            <div class="myProgressMeal"></div>
+            <div class="myProgressMealPercentage"> <h3>0%</h3> </div>
+
          </button>
       </ion-col>
       <ion-col col-6>
          <button  (click)="goToEdu()" ion-button full class="tileCareTwo">
-            <h2  class="tileTextTransport">
+            <h2  class="myProgressGlobalText">
               <b>
                 Transport
                 </b>
                 </h2>
-      <div id="myProgressTransport" style="z-index: -1;">
-   <div   id="myBarTransport"></div>
-</div>
-        
+         <div class="myProgressTransport"></div>
+         <div class="myProgressTransportPercentage"> <h3>0%</h3> </div>
          </button>
       </ion-col>
    </ion-row>
    <ion-row >
       <ion-col col-6>
          <button   (click)="goToCulture()" ion-button full class="tileCareThree">
-            <h2  class="tileTextHouseItem"> 
+            <h2  class="myProgressGlobalText"> 
             <b>Household <br /> Tasks </b>
             </h2>
            
-  <div id="myProgressHouseItem" style="z-index: -1;">
-   <div   id="myBarHouseItem"></div>
-</div>
-
+         <div class="myProgressHouseItem"></div>
+         <div class="myProgressHouseItemPercentage"> <h3>0%</h3> </div>
          </button>
       </ion-col>
       <ion-col col-6>
          <button   (click)="gotToServ()" ion-button full class="tileCareFour">
-            <h2  class="tileTextSupport">
+            <h2  class="myProgressGlobalText">
               
 
              <b> Misc<br />Support </b>
               </h2>
-  <div id="myProgressSupport" style="z-index: -1;">
-   <div   id="myBarSupport"></div>
-</div>
+        
+         <div class="myProgressSupport"></div>
+         <div class="myProgressSupportPercentage"> <h3>0%</h3> </div>
+
          </button>
       </ion-col>
    </ion-row>

@@ -129,72 +129,93 @@ $text-input-ios-margin-right: 0;
   border-radius: 7px;
 }/* Understanding your l: */
 
-#myProgressMeal {
-padding: 0;
-  width: 100%;
-  background-color: transparent;
+.myProgressMeal
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
 }
 
-#myBarMeal{
-    width: 10%;
-  padding: 0;
-  height: 7px;
-  background-color: #E6785A;
-    margin: auto;
-    margin-left: -4.5em;
-    margin-top: 9.9em;
-}/* Understanding your l: */
-
-#myProgressTransport {
-padding: 0;
-  width: 100%;
-  background-color: transparent;
+.myProgressTransport
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
 }
 
-#myBarTransport{
-    width: 20%;
-  padding: 0;
-  height: 7px;
-  background-color: #E6785A;
-    margin: auto;
-    margin-left: -7.1em;
-    margin-top: 9.9em;
+.myProgressHouseItem
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
 }
 
-#myProgressHouseItem {
-padding: 0;
-  width: 100%;
-  background-color: transparent;
+.myProgressSupport
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
 }
 
-#myBarHouseItem{
-    width: 40%;
-  padding: 0;
-  height: 7px;
-  background-color: #E6785A;
-    margin: auto;
-    margin-left: -8.4em;
-    margin-top: 9.9em;
+.myProgressGlobalText
+{
+    top: 5px; 
+    left: 5px;
+     margin: 0;
+      position: absolute;
+      text-align: left;
 }
 
-#myProgressSupport {
-padding: 0;
-  width: 100%;
-  background-color: transparent;
+.myProgressMealPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
+.myProgressTransportPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
 }
 
-#myBarSupport{
-    width: 20%;
-  padding: 0;
-  height: 7px;
-  background-color: #E6785A;
-    margin: auto;
-    margin-left: -6.0em;
-    margin-top: 9.9em;
+.myProgressHouseItemPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
 }
 
-
-
+.myProgressSupportPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
 
 
 //Custom CSS Styling for EventApp ProtoType

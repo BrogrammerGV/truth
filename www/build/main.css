@@ -3830,69 +3830,88 @@ ion-icon::before {
 }
 
 /* Understanding your l: */
-#myProgressMeal {
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-}
-
-#myBarMeal {
+.myProgressMeal {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #E6785A;
   width: 10%;
-  padding: 0;
-  height: 7px;
+  height: 10px;
+}
+
+.myProgressTransport {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
   background-color: #E6785A;
-  margin: auto;
-  margin-left: -4.5em;
-  margin-top: 9.9em;
+  width: 10%;
+  height: 10px;
 }
 
-/* Understanding your l: */
-#myProgressTransport {
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-}
-
-#myBarTransport {
-  width: 20%;
-  padding: 0;
-  height: 7px;
+.myProgressHouseItem {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
   background-color: #E6785A;
-  margin: auto;
-  margin-left: -7.1em;
-  margin-top: 9.9em;
+  width: 10%;
+  height: 10px;
 }
 
-#myProgressHouseItem {
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
-}
-
-#myBarHouseItem {
-  width: 40%;
-  padding: 0;
-  height: 7px;
+.myProgressSupport {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
   background-color: #E6785A;
-  margin: auto;
-  margin-left: -8.4em;
-  margin-top: 9.9em;
+  width: 10%;
+  height: 10px;
 }
 
-#myProgressSupport {
-  padding: 0;
-  width: 100%;
-  background-color: transparent;
+.myProgressGlobalText {
+  top: 5px;
+  left: 5px;
+  margin: 0;
+  position: absolute;
+  text-align: left;
 }
 
-#myBarSupport {
-  width: 20%;
-  padding: 0;
-  height: 7px;
-  background-color: #E6785A;
-  margin: auto;
-  margin-left: -6.0em;
-  margin-top: 9.9em;
+.myProgressMealPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressMealPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressTransportPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressTransportPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressHouseItemPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressHouseItemPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressSupportPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressSupportPercentage h3 {
+  font-weight: bold;
 }
 
 .bgCard {
@@ -40528,6 +40547,36 @@ page-schedule ion-item-sliding[track=documentation] ion-label {
 page-schedule ion-item-sliding[track=navigation] ion-label {
   border-left: 2px solid #6600CC;
   padding-left: 10px;
+}
+
+page-care-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+page-care-modal .fixedContent {
+  background-color: #ffffff !important;
+}
+
+page-care-modal ion-content {
+  height: 52%;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 40%;
+  margin-bottom: 40%;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border: 4px solid #7CADE4;
+  border-radius: 3px;
+}
+
+page-care-modal ion-content h2 {
+  text-align: center;
+}
+
+page-care-modal ion-content p {
+  font-weight: bold;
+  font-size: 1.3em;
+  color: #33475C;
 }
 
 page-event-info-one {
