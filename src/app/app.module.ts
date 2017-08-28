@@ -57,6 +57,9 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
 import { EventMainPage } from '../pages/event-info/event-main/event-main';
 import { EventMainPage2 } from '../pages/event-info/event-main2/event-main2';
 import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
+import { CareRegistryListPage } from '../pages/event-info/care-registry-list/care-registry-list';
+import { CareRegistryAddItemPage } from '../pages/event-info/care-registry-add-item/care-registry-add-item';
+import { CareRegistryFirstTimeModalPage } from '../pages/event-info/care-registry-first-time-modal/care-registry-first-time-modal';
 
 @NgModule({
   declarations: [
@@ -100,7 +103,10 @@ import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
     Search2Page,
     EventsPage, 
     EventMainPage2,
-    EventMainPage3
+    EventMainPage3,
+    CareRegistryListPage,
+    CareRegistryAddItemPage,
+    CareRegistryFirstTimeModalPage
   ],
   imports: [
     BrowserModule,
@@ -180,7 +186,10 @@ import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
     Search2Page,
     EventsPage,
     EventMainPage2,
-    EventMainPage3
+    EventMainPage3,
+    CareRegistryListPage,
+    CareRegistryAddItemPage,
+    CareRegistryFirstTimeModalPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

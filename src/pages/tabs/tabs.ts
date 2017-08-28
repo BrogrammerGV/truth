@@ -8,12 +8,17 @@ import { Search1Page } from '../Home/search1/search1';
 import { EventMainPage } from '../event-info/event-main/event-main';
 //import { FhPage } from '../fh/fh'
 
+//temporary
+import { CareRegistryListPage } from '../event-info/care-registry-list/care-registry-list';
+
 @Component({
   templateUrl: 'tabs.html'
 })
 export class TabsPage {
   // set the root pages for each tab
-  tab1Root: any = Home1Page;
+  public showModal: boolean = false;
+
+  tab1Root: any = CareRegistryListPage;
   tab2Root: any = Search1Page;
   tab3Root: any = EventsPage;
   tab4Root: any = EventMainPage;
