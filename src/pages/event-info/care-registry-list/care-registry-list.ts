@@ -38,7 +38,7 @@ export class CareRegistryListPage {
   }
 
   loadCareCategoryInformation() {
-    if(this.careCategory == ""){this.careCategory = "Meals"}
+    this.careCategory = this.navParams.get("careCategory");
     switch (this.careCategory) {
       case "Meals":
         this.careCategoryFriendlyName = "Meals";
