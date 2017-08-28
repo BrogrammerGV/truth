@@ -5,9 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Storage } from '@ionic/storage';
 
-import { AboutPage } from '../pages/about/about';
 import { TabsPage } from '../pages/tabs/tabs';
-import { TutorialPage } from '../pages/tutorial/tutorial';
 import { EntryPage } from '../pages/entry/entry';
 import { SelectPage } from '../pages/select/select';
 import { ConferenceData } from '../providers/conference-data';
@@ -41,14 +39,8 @@ export class ConferenceApp {
   // the left menu only works after login
   // the login page disables the left menu
   appPages: PageInterface[] = [
-    { title: 'Code Entry', name: 'TabsPage', component: TabsPage, tabComponent: EntryPage, index: 0, icon: 'calendar' },
-    { title: 'Collection', name: 'TabsPage', component: TabsPage, tabComponent: SelectPage, index: 2, icon: 'contacts' },
-    { title: 'About', name: 'TabsPage', component: TabsPage, tabComponent: AboutPage, index: 4, icon: 'information-circle' }
   ];
   loggedInPages: PageInterface[] = [
-    //{ title: 'Account', name: 'AccountPage', component: AccountPage, icon: 'person' },
-    // { title: 'Support', name: 'SupportPage', component: SupportPage, icon: 'help' },
-    // { title: 'Logout', name: 'TabsPage', component: TabsPage, icon: 'log-out', logsOut: true }
   ];
   loggedOutPages: PageInterface[] = [
     // { title: 'Login', name: 'LoginPage', component: LoginPage, icon: 'log-in' },
@@ -128,10 +120,6 @@ export class ConferenceApp {
       // Give the menu time to close before changing to logged out
       this.userData.logout();
     }
-  }
-
-  openTutorial() {
-    this.nav.setRoot(TutorialPage);
   }
 
   listenToLoginEvents() {

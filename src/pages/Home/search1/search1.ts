@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-import { AboutPage } from '../../about/about';
-import { MapPage } from '../../map/map';
 import { EntryPage } from '../../entry/entry';
 import { SelectPage } from '../../select/select';
 import { EventMainPage } from '../../event-info/event-main/event-main';
@@ -25,9 +23,6 @@ export class Search1Page {
   public searchResults: string[] = [];
   public searched: boolean = false;
   public noResults: boolean = false;
-  // set the root pages for each tab
-  tab2Root: any = Search1Page;
-  tab4Root: any = AboutPage;
   mySelectedIndex: number;
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
