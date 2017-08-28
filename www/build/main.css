@@ -3830,6 +3830,71 @@ ion-icon::before {
 }
 
 /* Understanding your l: */
+#myProgressMeal {
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarMeal {
+  width: 10%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+  margin: auto;
+  margin-left: -4.5em;
+  margin-top: 9.9em;
+}
+
+/* Understanding your l: */
+#myProgressTransport {
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarTransport {
+  width: 20%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+  margin: auto;
+  margin-left: -7.1em;
+  margin-top: 9.9em;
+}
+
+#myProgressHouseItem {
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarHouseItem {
+  width: 40%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+  margin: auto;
+  margin-left: -8.4em;
+  margin-top: 9.9em;
+}
+
+#myProgressSupport {
+  padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarSupport {
+  width: 20%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+  margin: auto;
+  margin-left: -6.0em;
+  margin-top: 9.9em;
+}
+
 .bgCard {
   background: #ffffff;
 }
@@ -41248,7 +41313,6 @@ page-mid-modal .orange {
 }
 
 .tileCareOne {
-  width: 100%;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/meals.png") 60% 80% no-repeat;
@@ -41257,7 +41321,6 @@ page-mid-modal .orange {
 }
 
 .tileCareTwo {
-  width: 100%;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/transport.png") 50% 60% no-repeat;
@@ -41266,7 +41329,6 @@ page-mid-modal .orange {
 }
 
 .tileCareThree {
-  width: 100%;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/houseitem.png") 50% 60% no-repeat;
@@ -41275,7 +41337,6 @@ page-mid-modal .orange {
 }
 
 .tileCareFour {
-  width: 100%;
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/care/support.png") 60% 80% no-repeat;
@@ -41308,6 +41369,33 @@ page-mid-modal .orange {
   position: relative;
   top: -30px;
   left: -15px;
+  text-align: left;
+}
+
+.tileTextMeals {
+  position: relative;
+  top: -2.5em;
+  padding-left: 4px;
+}
+
+.tileTextTransport {
+  position: relative;
+  top: -2.5em;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.tileTextHouseItem {
+  position: relative;
+  top: -2.0em;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.tileTextSupport {
+  position: relative;
+  top: -2.0em;
+  padding-left: 4px;
   text-align: left;
 }
 

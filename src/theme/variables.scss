@@ -129,10 +129,69 @@ $text-input-ios-margin-right: 0;
   border-radius: 7px;
 }/* Understanding your l: */
 
+#myProgressMeal {
+padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
 
+#myBarMeal{
+    width: 10%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+    margin: auto;
+    margin-left: -4.5em;
+    margin-top: 9.9em;
+}/* Understanding your l: */
 
+#myProgressTransport {
+padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
 
+#myBarTransport{
+    width: 20%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+    margin: auto;
+    margin-left: -7.1em;
+    margin-top: 9.9em;
+}
 
+#myProgressHouseItem {
+padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarHouseItem{
+    width: 40%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+    margin: auto;
+    margin-left: -8.4em;
+    margin-top: 9.9em;
+}
+
+#myProgressSupport {
+padding: 0;
+  width: 100%;
+  background-color: transparent;
+}
+
+#myBarSupport{
+    width: 20%;
+  padding: 0;
+  height: 7px;
+  background-color: #E6785A;
+    margin: auto;
+    margin-left: -6.0em;
+    margin-top: 9.9em;
+}
 
 
 

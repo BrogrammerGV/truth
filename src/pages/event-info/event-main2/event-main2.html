@@ -95,27 +95,54 @@
       <ion-col  col-6>
          <!--Logic Will Need Reworked for next Pages-->
          <button (click)="goToAbout()" ion-button full class="tileCareOne">
-            <h2   class="">Meals</h2>
+
+           
+            <h2   class="tileTextMeals"> <b> Meals</b></h2>
+
+      <div id="myProgressMeal" style="z-index: -1;">
+   <div   id="myBarMeal"></div>
+</div>
+        
+
          </button>
       </ion-col>
       <ion-col col-6>
          <button  (click)="goToEdu()" ion-button full class="tileCareTwo">
-            <h2  class="tileTextWork">Transport</h2>
-         
+            <h2  class="tileTextTransport">
+              <b>
+                Transport
+                </b>
+                </h2>
+      <div id="myProgressTransport" style="z-index: -1;">
+   <div   id="myBarTransport"></div>
+</div>
+        
          </button>
       </ion-col>
    </ion-row>
    <ion-row >
       <ion-col col-6>
          <button   (click)="goToCulture()" ion-button full class="tileCareThree">
-            <h2  class="tileTextLife"> Household <br /> Tasks</h2>
+            <h2  class="tileTextHouseItem"> 
+            <b>Household <br /> Tasks </b>
+            </h2>
            
+  <div id="myProgressHouseItem" style="z-index: -1;">
+   <div   id="myBarHouseItem"></div>
+</div>
+
          </button>
       </ion-col>
       <ion-col col-6>
          <button   (click)="gotToServ()" ion-button full class="tileCareFour">
-            <h2  class="tileText">Misc<br />Support </h2>
+            <h2  class="tileTextSupport">
+              
 
+             <b> Misc<br />Support </b>
+              </h2>
+  <div id="myProgressSupport" style="z-index: -1;">
+   <div   id="myBarSupport"></div>
+</div>
          </button>
       </ion-col>
    </ion-row>

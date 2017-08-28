@@ -246,7 +246,7 @@ background: url('../assets/img/info/tileFour.png') 60% 80% no-repeat ;
 //Care Registry Custom Tiles
 
 .tileCareOne {
-width: 100% ;
+
 
 padding: 45% 0 60% 0 !important;
 margin:auto;
@@ -257,7 +257,7 @@ background: url('../assets/img/care/meals.png') 60% 80% no-repeat ;
 
 
 .tileCareTwo {
-width: 100% ;
+
 
 padding: 45% 0 60% 0 !important;
 margin:auto;
@@ -268,7 +268,6 @@ background: url('../assets/img/care/transport.png') 50% 60% no-repeat ;
 
 
 .tileCareThree {
-width: 100% ;
 
 padding: 45% 0 60% 0 !important;
 margin:auto;
@@ -279,7 +278,7 @@ background: url('../assets/img/care/houseitem.png') 50% 60% no-repeat ;
 
 
 .tileCareFour {
-width: 100% ;
+
 
 padding: 45% 0 60% 0 !important;
 margin:auto;
@@ -323,6 +322,39 @@ background: url('../assets/img/care/support.png') 60% 80% no-repeat ;
   left: -15px;
   text-align:left;
 }
+
+
+
+.tileTextMeals
+{
+  position: relative;
+  top: -2.5em ;
+padding-left: 4px;
+
+}
+.tileTextTransport
+{
+  position: relative;
+ top: -2.5em;
+ padding-left: 4px;
+  text-align:left;
+}
+.tileTextHouseItem
+{
+  position: relative;
+  top: -2.0em;
+ padding-left: 4px;
+  text-align:left;
+}
+.tileTextSupport
+{
+  position: relative;
+  top: -2.0em;
+ padding-left: 4px;
+  text-align:left;
+}
+
+
 
 
 .centAlign 
