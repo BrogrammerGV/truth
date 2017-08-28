@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Storage } from '@ionic/storage';
-import { Home1Page } from '../../../pages/Home/home1/home1';
+import { TabsPage } from '../../../pages/tabs/tabs';
 /**
  * Generated class for the Welcome3Page page.
  *
@@ -29,7 +29,7 @@ export class Welcome3Page {
 
   nextPage(){
     this.storage.set('hasSeenTutorial', 'true');
-    this.navCtrl.push(Home1Page);
+    this.navCtrl.push(TabsPage);
   }
 
 }

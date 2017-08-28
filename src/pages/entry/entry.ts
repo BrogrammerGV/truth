@@ -13,6 +13,14 @@ import { UserData } from '../../providers/user-data';
 import {SelectPage} from '../select/select';
 import {ModalPage} from '../modal/modal';
 
+import { EventInfoOnePage } from '../event-info/event-info-one/event-info-one';
+import { EventMainPage } from '../event-info/event-main/event-main';
+
+//AWS Functions
+declare let performMetaGet: any;
+
+
+
 @Component({
   selector: 'page-schedule',
   templateUrl: 'entry.html'
@@ -33,6 +41,18 @@ export class EntryPage {
   confDate: string;
   code: any;
 
+//Variables for Data Load
+nameToUse: string;
+eventTime: string;
+eventDate: string;
+eventMonth: string;
+funeralHome: string;
+
+
+
+
+
+
   constructor(
     public alertCtrl: AlertController,
     public app: App,
@@ -46,7 +66,8 @@ export class EntryPage {
   ) {}
 
   ionViewDidLoad() {
-    this.app.setTitle('InfoMemories');
+    this.app.setTitle('PostScript');
+    this.doSearch();
    
   }
 
@@ -101,11 +122,54 @@ export class EntryPage {
 
 
           }
+
+
+ doSearch(){
+
+    performMetaGet({"eventID": "guidstuff3"
+    }).then(function(data: any){
+ 
+      this.logItem(data);
+
+    }.bind(this));
+
+  }
+
+
+goNext()
+{
+  //this.navCtrl.push(EventInfoOnePage);
+  this.navCtrl.push(EventMainPage);
+}
+
+
+logItem(ref: any){
+  
+    var x = JSON.parse(ref.Payload)
+console.log(x.Item.firstName);
+   this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
+   this.eventDate = x.Item.eventDate.S;
+   this.eventTime = x.Item.eventTime.S;
+   this.funeralHome = x.Item.funeralHome.S;
+   this.eventMonth = x.Item.eventMonth.S;
+
+   
+    // for (var i = 0; i < x.length; i++) {
+    //   console.log(x[i]);
+    // }
+ 
+  }
+
+
+
+
+
             
           clearFix()
           {
             this.code = "";
             
+
           }
 
             openSocial(network: string, fab: FabContainer) {

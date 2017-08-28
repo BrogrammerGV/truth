@@ -5,7 +5,9 @@ import { AlertController } from 'ionic-angular';
 
 import { LoginPage } from '../../../pages/login/login';
 import { Planning1Page } from '../../../pages/Home/planning1/planning1';
+import { Planning2Page } from '../../../pages/Home/planning2/planning2';
 import { Search1Page } from '../../../pages/Home/search1/search1';
+
 declare let registerCognito: any;
 /**
  * Generated class for the Home1Page page.
@@ -13,6 +15,7 @@ declare let registerCognito: any;
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+declare let cognitoHelper: any;
 @IonicPage()
 @Component({
   selector: 'page-home1',
@@ -50,23 +53,38 @@ export class Home1Page {
   }
 
   planning(){
-    this.buttonClicked = true;
-    this.planningClicked = true;
-    this.searchingClicked = false;
+    cognitoHelper("attr").then(function(data:any){
+      this.userInfo.first = data[2].Value;
+      this.navCtrl.setRoot(Planning2Page, {user: this.userInfo});
+    }.bind(this))
+    .catch(function(data:any){
+      this.buttonClicked = true;
+      this.planningClicked = true;
+      this.searchingClicked = false;
+      this.buttonText = "Next";
+    }.bind(this));
   }
 
   searching(){
     this.buttonClicked = true;
     this.planningClicked = false;
     this.searchingClicked = true;
+    this.buttonText = "Search";
   }
   
   login(){
-      this.navCtrl.push(LoginPage);
+      this.navCtrl.push(LoginPage, {searchingClicked: this.searchingClicked, planningClicked: this.planningClicked});
   }
 
   onSubmit(){
     var message: string = "";
+
+    if(this.buttonText == "Search"){
+      this.doSearch();
+    }else if (this.buttonText == "Login"){
+      this.login();
+    }else{
+      
 
     let alert = this.alertCtrl.create({
       title: 'Required',
@@ -90,7 +108,6 @@ export class Home1Page {
       alert.setSubTitle(message);
       alert.present();
     }else{
-      var that: any = this;
       registerCognito({
         ClientId: '4qedlf7cu5lo5r670tk6d90d19', /* required */
         Password: this.userInfo.password, /* required */
@@ -112,12 +129,13 @@ export class Home1Page {
         ]
 
       }).then(function(data: any){
-        that.navCtrl.setRoot(Planning1Page, {user: that.userInfo});
-      }).catch(function(err: any){
+        this.navCtrl.setRoot(Planning1Page, {user: this.userInfo});
+      }.bind(this)).catch(function(err: any){
         alert.setMessage(err.message);
         alert.present();
       });
     }
+  }
     
   }
 

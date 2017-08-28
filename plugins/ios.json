@@ -7,33 +7,44 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "CALENDAR_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "cordova-plugin-console": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-crosswalk-webview": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-device": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-inappbrowser": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-splashscreen": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-statusbar": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-whitelist": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-wkwebview-engine": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
-        "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
-    "dependent_plugins": {}
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        }
+    }
 }

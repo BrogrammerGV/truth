@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { ConferenceApp } from './app.component';
 import { AboutPage } from '../pages/about/about';
 import { PopoverPage } from '../pages/about-popover/about-popover';
@@ -13,6 +14,7 @@ import { LoginPage } from '../pages/login/login';
 import { MapPage } from '../pages/map/map';
 //import { SessionDetailPage } from '../pages/session-detail/session-detail';
 import { SignupPage } from '../pages/signup/signup';
+import { Calendar } from '@ionic-native/calendar';
 
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
@@ -60,6 +62,13 @@ import { Home1Page } from '../pages/Home/home1/home1';
 import { Planning1Page } from '../pages/Home/planning1/planning1';
 import { Planning2Page } from '../pages/Home/planning2/planning2';
 import { Search1Page } from '../pages/Home/search1/search1';
+import { Search2Page } from '../pages/Home/search2/search2';
+import { EventsPage } from '../pages/Home/events/events';
+
+import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-one';
+import { EventMainPage } from '../pages/event-info/event-main/event-main';
+import { EventMainPage2 } from '../pages/event-info/event-main2/event-main2';
+import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
 
 @NgModule({
   declarations: [
@@ -108,7 +117,13 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventInfoOnePage,
+    EventMainPage,
+    Search2Page,
+    EventsPage, 
+    EventMainPage2,
+    EventMainPage3
   ],
   imports: [
     BrowserModule,
@@ -203,14 +218,22 @@ import { Search1Page } from '../pages/Home/search1/search1';
     Home1Page,
     Planning1Page,
     Planning2Page,
-    Search1Page
+    Search1Page,
+    EventInfoOnePage,
+    EventMainPage,
+    Search2Page,
+    EventsPage,
+    EventMainPage2,
+    EventMainPage3
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ConferenceData,
     UserData,
     InAppBrowser,
-    SplashScreen
+    SplashScreen,
+    Calendar,
+    SocialSharing
   ]
 })
 export class AppModule { }
