@@ -7,6 +7,10 @@
         "files": {}
     },
     "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "CALENDAR_USAGE_DESCRIPTION": " ",
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "cordova-plugin-console": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
@@ -31,21 +35,14 @@
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
-        "ionic-plugin-keyboard": {
-<<<<<<< HEAD
-            "PACKAGE_NAME": "io.ionic.conferenceapp"
-        },
-        "cordova-plugin-calendar": {
-            "CALENDAR_USAGE_DESCRIPTION": " ",
-=======
-            "PACKAGE_NAME": "com.Homesteaders.PostScript"
-        },
         "cordova-plugin-x-socialsharing": {
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "es6-promise-plugin": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }

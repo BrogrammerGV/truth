@@ -81,6 +81,7 @@ $text-input-ios-margin-bottom: 0;
 $text-input-ios-margin-left: 0;
 $text-input-ios-margin-right: 0;
 
+
 // App Windows Variables
 // --------------------------------------------------
 // Windows only Sass variables can go here
@@ -199,6 +200,12 @@ padding: 10px, 10px;;
     .whyModal
     {
         margin: 60%;
+        color: #7CADE4;
+        font-size: 9px;
+    }
+     .whyModal2
+    {
+        margin: 40%;
         color: #7CADE4;
         font-size: 9px;
     }
@@ -349,6 +356,50 @@ opacity: 1.0;
     }
 }
 
+
+ 
+
+.customEventMedHeaderClass{
+    background-image: url("../assets/img/eventheader.png");
+        background-size: 107%;
+background-repeat: no-repeat;
+    border-bottom: solid 0.5px #979797;
+    font-family: Roboto;
+	font-size: 1.5em;
+    text-align: center;
+    vertical-align: center;
+    color: #ffffff;
+    opacity: 1;
+    position: relative;
+    /* Mask: */
+box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+/* 555799527: */
+/* Sketch doesnt export pattern fills at this point */
+/* Rectangle: */
+.frontLayer
+{ padding-top: 10px;
+    height: 100%;
+    background-color: rgba(51, 71, 92, 0.7
+    );
+opacity: 1;
+
+}
+/* StatusBar: */
+    img{
+        height: 1.3em;
+         margin-top: -20px;
+    }
+    .date
+    { text-align: left;
+    margin-left: 5%;
+    margin-bottom: -5%;
+        span{
+    
+font-size: 3.8em;
+opacity: 1.0;
+        }
+    }
+}
 
 
 //Event Elongated Header
@@ -636,3 +687,124 @@ opacity: 1.0;
     color: #7cade4; 
     margin-top: 10px
 }
+
+
+
+//EventTabs Styling Refactoring TODO
+
+.eventTabsMain{
+
+    background-color: #ffffff;
+     margin-top: 10px;
+
+.tabSelected
+{
+    border-bottom-color: #E6785A;
+     border-bottom-width:4px;
+     width: 100%;
+     border-bottom-style: solid;
+}
+
+.ml10
+{
+    margin-left: 10%;
+}
+.eventTabs
+{
+    color: #E6785A;
+     font-size: 1.3em;
+     div{
+        font-size: .4em; 
+        border-bottom-width:2px;
+        text-align: center;
+     }
+}
+
+}
+
+
+
+
+
+
+.eventHeaderDiv
+{
+    position:absolute; 
+    width: 30%;
+     margin-left: -5px;
+}
+.eventHeaderMonth
+{
+    font-size:1.2em!important; 
+    opacity: 1!important;
+     margin-left: 15px;
+      margin-bottom: -10px;
+      letter-spacing: 0.1px;
+}
+
+.eventHeaderDate
+{
+    position: relative; 
+    top: -12px; opacity: 1; 
+     margin-left: 15px;
+}
+
+.eventHeaderMainText{
+    margin-left: 30%;
+     text-align:left;
+
+     .em1{
+        font-size: 1em; opacity: 1;
+     }
+
+     .em08{
+        font-size: .8em; 
+        opacity: 1;
+     }
+}
+.scheduleList
+{
+    margin-left: 5%; 
+    margin-right: 5%; 
+    margin-top: 6px; 
+    text-align:left;
+
+    .scheduleHeader{
+        font-size: 1.3em;
+        color: #686C71
+    }
+    ul{
+        list-style-type: square;
+        li{
+             color: #E6785A;
+     margin-top:3px;
+     
+                span{
+                    font-size: 1.3em;  
+                    color: #686C71;
+          }
+}
+         }
+    }
+   
+     
+    .headerOverride
+    {
+        position: absolute !important;;
+         width: 30% !important;
+          margin-left: -5px !important;
+    }
+
+
+
+   textarea
+   {
+       
+            .text-input-ios
+       {
+padding-bottom: 10% !important;
+       }
+      
+      
+   }
+ 

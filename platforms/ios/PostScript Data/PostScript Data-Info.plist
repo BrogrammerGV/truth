@@ -45,18 +45,6 @@
       <string>UIInterfaceOrientationLandscapeLeft</string>
       <string>UIInterfaceOrientationLandscapeRight</string>
     </array>
-<<<<<<< HEAD
-    <key>CFBundleLocalizations</key>
-    <array>
-      <string>en</string>
-      <string>de</string>
-      <string>nl</string>
-      <string>fr</string>
-      <string>it</string>
-    </array>
-    <key>NSCalendarsUsageDescription</key>
-    <string/>
-=======
     <key>UIRequiresFullScreen</key>
     <true/>
     <key>NSAppTransportSecurity</key>
@@ -72,6 +60,15 @@
       <key>NSAllowsArbitraryLoads</key>
       <true/>
     </dict>
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
+    <key>CFBundleLocalizations</key>
+    <array>
+      <string>en</string>
+      <string>de</string>
+      <string>nl</string>
+      <string>fr</string>
+      <string>it</string>
+    </array>
+    <key>NSCalendarsUsageDescription</key>
+    <string/>
   </dict>
 </plist>

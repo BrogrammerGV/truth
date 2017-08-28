@@ -1,6 +1,14 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
+        "id": "cordova-plugin-calendar.Calendar",
+        "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
+        "pluginId": "cordova-plugin-calendar",
+        "clobbers": [
+            "Calendar"
+        ]
+    },
+    {
         "id": "cordova-plugin-console.console",
         "file": "plugins/cordova-plugin-console/www/console-via-logger.js",
         "pluginId": "cordova-plugin-console",
@@ -58,22 +66,6 @@ module.exports = [
         ]
     },
     {
-        "id": "ionic-plugin-keyboard.keyboard",
-        "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
-        "pluginId": "ionic-plugin-keyboard",
-        "clobbers": [
-            "cordova.plugins.Keyboard"
-        ],
-        "runs": true
-    },
-    {
-<<<<<<< HEAD
-        "id": "cordova-plugin-calendar.Calendar",
-        "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
-        "pluginId": "cordova-plugin-calendar",
-        "clobbers": [
-            "Calendar"
-=======
         "id": "es6-promise-plugin.Promise",
         "file": "plugins/es6-promise-plugin/www/promise.js",
         "pluginId": "es6-promise-plugin",
@@ -85,13 +77,14 @@ module.exports = [
         "pluginId": "cordova-plugin-x-socialsharing",
         "clobbers": [
             "window.plugins.socialsharing"
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
         ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
+    "cordova-plugin-calendar": "4.6.0",
+    "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-crosswalk-webview": "2.2.0",
     "cordova-plugin-device": "1.1.4",
@@ -100,13 +93,8 @@ module.exports.metadata =
     "cordova-plugin-statusbar": "2.2.1",
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
-    "ionic-plugin-keyboard": "2.2.1",
-<<<<<<< HEAD
-    "cordova-plugin-calendar": "4.6.0"
-=======
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8"
->>>>>>> 11125d7a5904ddc5121ba354c9cc5b1dd8c71168
 };
 // BOTTOM OF METADATA
 });
