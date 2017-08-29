@@ -17,6 +17,16 @@ import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-
 })
 export class CareRegistryListPage {
 
+
+//GUI Bool Logic
+breakfastClicked: boolean = false;
+lunchClicked: boolean = false;
+dinnerClicked: boolean = false;
+
+//intra-page nav variables
+showAddItem: boolean = false;
+
+
   public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
@@ -29,11 +39,22 @@ export class CareRegistryListPage {
   }
 
   ionViewDidLoad() {
+let x: string = this.navParams.get('pageBool');
+
+if( x == 'Y')
+{
+  this.showAddItem = true;
+}else{
     let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
 
     myModal.present();
-    this.loadCareCategoryInformation();
+  
+}
+  this.loadCareCategoryInformation();
     console.log('ionViewDidLoad CareRegistryListPage');
+    
+
+  
   }
 
   addItem() {
@@ -72,4 +93,31 @@ export class CareRegistryListPage {
   goBack(){
     this.navCtrl.pop();
   }
+
+
+
+
+//Sharing GUI Logic
+  showBreakfast(){
+    this.breakfastClicked = true;
+    this.lunchClicked = false;
+    this.dinnerClicked = false;
+ 
+  }
+
+  showLunch(){
+       this.breakfastClicked = false;
+    this.lunchClicked = true;
+    this.dinnerClicked = false;
+ 
+  }
+
+    showDinner(){
+     this.breakfastClicked = false;
+    this.lunchClicked = false;
+    this.dinnerClicked = true;
+ 
+  }
+
+
 }

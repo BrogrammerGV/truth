@@ -199,7 +199,11 @@ export class EventMainPage2 {
   }
 
 
-
+goBack()
+{
+  this.showAddItem = false;
+  this.careButtonText = "Add Care Item"
+}
 
   openCareModal() {
     let myModal = this.modalCtrl.create(CareModalPage);
@@ -211,10 +215,22 @@ export class EventMainPage2 {
 
 goToCareItemList()
 {
+  let dataPass;
 
+  if(this.careCategory)
+  {
+     dataPass = {
+        pageBool : "Y"
+     }
+  }
+  else{
+     dataPass = {
+        pageBool : "N"
+     }
 
-console.log(this.eventGuid + " " + this.careCategory);
-  this.navCtrl.push(CareRegistryListPage);
+  }
+    console.log(this.eventGuid + " " + this.careCategory);
+    this.navCtrl.push(CareRegistryListPage, dataPass);
 }
 
 
