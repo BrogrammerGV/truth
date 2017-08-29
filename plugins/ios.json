@@ -37,6 +37,9 @@
         },
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {

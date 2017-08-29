@@ -1,10 +1,14 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 import { Storage } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { CallNumber } from '@ionic-native/call-number';
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
+
+
 /**
  * Generated class for the CareRegistryListPage page.
  *
@@ -30,9 +34,7 @@ export class CareRegistryListPage {
   public eventClicked: boolean = false;
   public event: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage) {
-
-
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage, public callNumber: CallNumber, public socialSharing: SocialSharing, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -112,7 +114,7 @@ export class CareRegistryListPage {
     if(this.event.claimed.BOOL){
       this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
     }else{
-      this.secondaryButtonText = "Edit";
+      this.secondaryButtonText = "Edit Item";
     }
 
     this.eventClicked = true;
@@ -121,5 +123,73 @@ export class CareRegistryListPage {
   goBack(){
     this.eventClicked = false;
     //this.navCtrl.pop();
+  }
+
+  secondaryButton(){
+    if(this.secondaryButtonText == "Edit Item"){
+      this.navCtrl.push(CareRegistryAddItemPage);
+    }else{
+      this.contact();
+    }
+  }
+
+  contact(){
+    let alert = this.alertCtrl.create({
+      title: 'Contact ' + this.event.claimedByFirst.S,
+      message: 'How do you want to contact ' + this.event.claimedByFirst.S + '?',
+      buttons: [
+        {
+          text: 'Call',
+          handler: () => {
+            this.call();
+          }
+        },
+        {
+          text: 'Text',
+          handler: () => {
+            this.text();
+          }
+        },
+        {
+          text: 'Email',
+          handler: () => {
+            this.email();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: "cancel",
+          handler: () => {
+            console.log('Buy clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  call(){
+    this.callNumber.callNumber(this.event.claimedByPhone.S, true)
+  }
+
+  text(){
+    //alert(this.event.claimedByPhone.S);
+    var number: string = this.event.claimedByPhone.S;
+    this.socialSharing.shareViaSMS("",number).then(() => {
+          // Success!
+        }).catch((err) => {
+          alert(err);
+        });
+  }
+
+  email(){
+    this.socialSharing.canShareViaEmail().then(function(){
+      this.socialSharing.shareViaEmail('','',this.event.claimedByEmail.S,'','',null).then(function(){
+      }).catch(function(err:any){
+        alert(err);
+      });
+    }.bind(this)).catch(function(){
+      alert("Unable to open email client.");
+    });
   }
 }

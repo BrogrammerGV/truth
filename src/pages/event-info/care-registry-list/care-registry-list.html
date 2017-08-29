@@ -99,6 +99,6 @@
 <ion-footer>
   <div [ngClass]="{'showAnimation' : eventClicked, 'hideAnimation': !eventClicked}">
       <button class="footerButton" (click)="addItem()" >Add Item</button>
-      <button class="footerButton" (click)="editItem()" style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;" >{{secondaryButtonText}}</button>
+      <button class="footerButton" (click)="secondaryButton()" style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;" >{{secondaryButtonText}}</button>
   </div>
 </ion-footer>
