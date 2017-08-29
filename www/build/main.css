@@ -3830,6 +3830,90 @@ ion-icon::before {
 }
 
 /* Understanding your l: */
+.myProgressMeal {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #E6785A;
+  width: 10%;
+  height: 10px;
+}
+
+.myProgressTransport {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #E6785A;
+  width: 10%;
+  height: 10px;
+}
+
+.myProgressHouseItem {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #E6785A;
+  width: 10%;
+  height: 10px;
+}
+
+.myProgressSupport {
+  bottom: 0px;
+  left: 0px;
+  position: absolute;
+  background-color: #E6785A;
+  width: 10%;
+  height: 10px;
+}
+
+.myProgressGlobalText {
+  top: 5px;
+  left: 5px;
+  margin: 0;
+  position: absolute;
+  text-align: left;
+}
+
+.myProgressMealPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressMealPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressTransportPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressTransportPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressHouseItemPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressHouseItemPercentage h3 {
+  font-weight: bold;
+}
+
+.myProgressSupportPercentage {
+  bottom: 5px;
+  right: 5px;
+  position: absolute;
+}
+
+.myProgressSupportPercentage h3 {
+  font-weight: bold;
+}
+
 .bgCard {
   background: #ffffff;
 }
@@ -4430,6 +4514,10 @@ ion-icon::before {
 
 textarea .text-input-ios {
   padding-bottom: 10% !important;
+}
+
+.no-scroll .scroll-content {
+  overflow: hidden;
 }
 
 ion-action-sheet {
@@ -40360,6 +40448,36 @@ page-schedule ion-item-sliding[track=navigation] ion-label {
   padding-left: 10px;
 }
 
+page-care-modal {
+  background-color: rgba(79, 86, 92, 0.71);
+}
+
+page-care-modal ion-content {
+  position: absolute;
+  top: 20%;
+  bottom: 20%;
+  left: 30px;
+  right: 30px;
+  width: auto;
+  height: auto;
+  /* Rectangle 28: */
+  background-color: #FFFFFF;
+  border-radius: 3px;
+  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.33);
+}
+
+page-care-modal .scroll-content {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
+}
+
 page-care-registry-first-time-modal {
   background-color: rgba(79, 86, 92, 0.71);
 }
@@ -41043,7 +41161,7 @@ page-user .list {
   background: url("../assets/img/info/Tile.png") 60% 80% no-repeat;
 }
 
-.tile2 {
+.tileTwo {
   width: 100%;
   padding: 45% 0 60% 0 !important;
   margin: auto;
@@ -41062,6 +41180,38 @@ page-user .list {
   padding: 45% 0 60% 0 !important;
   margin: auto;
   background: url("../assets/img/info/tileFour.png") 60% 80% no-repeat;
+}
+
+.tileCareOne {
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("../assets/img/care/meals.png") 60% 80% no-repeat;
+  background-size: 100%;
+  background-size: cover;
+}
+
+.tileCareTwo {
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("../assets/img/care/transport.png") 50% 60% no-repeat;
+  background-size: 100%;
+  background-size: cover;
+}
+
+.tileCareThree {
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("../assets/img/care/houseitem.png") 50% 60% no-repeat;
+  background-size: 100%;
+  background-size: cover;
+}
+
+.tileCareFour {
+  padding: 45% 0 60% 0 !important;
+  margin: auto;
+  background: url("../assets/img/care/support.png") 60% 80% no-repeat;
+  background-size: 100%;
+  background-size: cover;
 }
 
 .tileText {
@@ -41092,9 +41242,42 @@ page-user .list {
   text-align: left;
 }
 
+.tileTextMeals {
+  position: relative;
+  top: -2.5em;
+  padding-left: 4px;
+}
+
+.tileTextTransport {
+  position: relative;
+  top: -2.5em;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.tileTextHouseItem {
+  position: relative;
+  top: -2.0em;
+  padding-left: 4px;
+  text-align: left;
+}
+
+.tileTextSupport {
+  position: relative;
+  top: -2.0em;
+  padding-left: 4px;
+  text-align: left;
+}
+
 .centAlign {
   width: 85%;
   margin: auto;
+}
+
+.centAlignCare {
+  width: 86%;
+  margin: auto;
+  margin-top: 2%;
 }
 
 .checkOver {

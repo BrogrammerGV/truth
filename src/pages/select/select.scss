@@ -214,7 +214,7 @@ background: url('../assets/img/info/Tile.png') 60% 80% no-repeat ;
 }
 
 
-.tile2 {
+.tileTwo {
 width: 100% ;
 
 padding: 45% 0 60% 0 !important;
@@ -239,6 +239,62 @@ padding: 45% 0 60% 0 !important;
 margin:auto;
 background: url('../assets/img/info/tileFour.png') 60% 80% no-repeat ;
 }
+
+
+
+
+//Care Registry Custom Tiles
+
+.tileCareOne {
+
+
+padding: 45% 0 60% 0 !important;
+margin:auto;
+background: url('../assets/img/care/meals.png') 60% 80% no-repeat ;
+background-size: 100%;
+background-size:cover
+
+
+
+}
+
+
+.tileCareTwo {
+
+
+padding: 45% 0 60% 0 !important;
+margin:auto;
+background: url('../assets/img/care/transport.png') 50% 60% no-repeat ;
+  background-size: 100%;
+  background-size:cover
+}
+
+
+.tileCareThree {
+
+padding: 45% 0 60% 0 !important;
+margin:auto;
+background: url('../assets/img/care/houseitem.png') 50% 60% no-repeat ;
+  background-size: 100%;
+  background-size:cover
+}
+
+
+.tileCareFour {
+
+
+padding: 45% 0 60% 0 !important;
+margin:auto;
+background: url('../assets/img/care/support.png') 60% 80% no-repeat ;
+  background-size: 100%;
+  background-size:cover
+}
+
+
+
+
+
+
 
 
 .tileText
@@ -271,11 +327,54 @@ background: url('../assets/img/info/tileFour.png') 60% 80% no-repeat ;
 }
 
 
+
+.tileTextMeals
+{
+  position: relative;
+  top: -2.5em ;
+padding-left: 4px;
+
+
+}
+.tileTextTransport
+{
+  position: relative;
+ top: -2.5em;
+ padding-left: 4px;
+  text-align:left;
+}
+.tileTextHouseItem
+{
+  position: relative;
+  top: -2.0em;
+ padding-left: 4px;
+  text-align:left;
+}
+.tileTextSupport
+{
+  position: relative;
+  top: -2.0em;
+ padding-left: 4px;
+  text-align:left;
+}
+
+
+
+
 .centAlign 
 { 
 width: 85%;
   margin:auto;
 }
+
+
+.centAlignCare 
+{ 
+width: 86%;
+  margin:auto;
+  margin-top: 2%;
+}
+
 
 .checkOver
 {

@@ -57,6 +57,7 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
 import { EventMainPage } from '../pages/event-info/event-main/event-main';
 import { EventMainPage2 } from '../pages/event-info/event-main2/event-main2';
 import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
+import { CareModalPage } from '../pages/event-info/care-modal/care-modal';
 import { CareRegistryListPage } from '../pages/event-info/care-registry-list/care-registry-list';
 import { CareRegistryAddItemPage } from '../pages/event-info/care-registry-add-item/care-registry-add-item';
 import { CareRegistryFirstTimeModalPage } from '../pages/event-info/care-registry-first-time-modal/care-registry-first-time-modal';
@@ -104,6 +105,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     Search2Page,
     EventsPage, 
     EventMainPage2,
+    EventMainPage3, 
+    CareModalPage,
     EventMainPage3,
     CareRegistryListPage,
     CareRegistryAddItemPage,
@@ -188,6 +191,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     Search2Page,
     EventsPage,
     EventMainPage2,
+    EventMainPage3, 
+    CareModalPage,
     EventMainPage3,
     CareRegistryListPage,
     CareRegistryAddItemPage,

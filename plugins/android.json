@@ -39,10 +39,10 @@
         "cordova-plugin-wkwebview-engine": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
-        "ionic-plugin-keyboard": {
+        "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
-        "cordova-plugin-x-socialsharing": {
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },

@@ -129,13 +129,93 @@ $text-input-ios-margin-right: 0;
   border-radius: 7px;
 }/* Understanding your l: */
 
+.myProgressMeal
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
+}
 
+.myProgressTransport
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
+}
 
+.myProgressHouseItem
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
+}
 
+.myProgressSupport
+{
+     bottom: 0px;
+     left: 0px; 
+     position: absolute; 
+     background-color: #E6785A ; 
+     width: 10%; height: 10px
+}
 
+.myProgressGlobalText
+{
+    top: 5px; 
+    left: 5px;
+     margin: 0;
+      position: absolute;
+      text-align: left;
+}
 
+.myProgressMealPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
+.myProgressTransportPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
 
+.myProgressHouseItemPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
 
+.myProgressSupportPercentage
+{
+     bottom: 5px;
+     right: 5px; 
+     position: absolute;   
+     h3{
+        font-weight: bold; 
+     } 
+     
+}
 
 
 //Custom CSS Styling for EventApp ProtoType
@@ -808,4 +888,13 @@ padding-bottom: 10% !important;
       
       
    }
+ 
+.no-scroll .scroll-content{
+     overflow: hidden;
+}
+
+
+
+
+ //Cole's newly found ionic overrides for stupid shit
  

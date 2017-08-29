@@ -2,82 +2,185 @@
   <div class="headerBarBumpTwo"></div>
   <div class="customEventMedHeaderClass">
 
-    
-  
-<div  class="frontLayer">
-
-<!--Start of Custom Tab Header: CJM -->
 
 
+    <div class="frontLayer">
+
+      <!--Start of Custom Tab Header: CJM -->
 
 
-<div  class="date headerOverride">
-    <span class="eventHeaderMonth"><b> {{eventMonth}}</b></span> 
-    <span class="eventHeaderDate"> <b>{{eventDate}}</b> </span>
+
+
+      <div class="date headerOverride">
+        <span class="eventHeaderMonth"><b> {{eventMonth}}</b></span>
+        <span class="eventHeaderDate"> <b>{{eventDate}}</b> </span>
+      </div>
+      <div class="eventHeaderMainText">
+        <img src="assets/img/menu.png" class="menuIcon" />
+        <span class="em08"> Remebering</span>
+        <br />
+        <span class="em1"> <b>{{nameToUse}}</b> </span>
+        <br />
+        <span class="em08"> {{funeralHome}}</span>
+        <br />
+        <span class="em08"> {{eventTime}} | {{eventMonth}}. {{eventDate}}</span>
+      </div>
+
+
+
+      <div class="row eventTabsMain">
+
+        <div (click)="goToEvents()" class="col">
+          <ion-icon class="eventTabs" ios="ios-calendar-outline" md="md-calendar">
+            <div>
+              Event
+            </div>
+          </ion-icon>
+
+        </div>
+
+        <div (click)="goToCare()" class="col ml10 tabSelected">
+          <ion-icon class="eventTabs" name="heart-outline">
+            <div>
+              Registry of <br /> Care
+            </div>
+          </ion-icon>
+
+        </div>
+
+        <div (click)="goToFeed()" class="col ml10">
+          <ion-icon class="eventTabs" ios="ios-paper-outline" md="md-paper">
+            <div>
+              Condolence <br /> Feed
+            </div>
+          </ion-icon>
+        </div>
+
+      </div>
+
+
     </div>
-            <div class="eventHeaderMainText">
-                <img  src="assets/img/menu.png" class="menuIcon" />
-                  <span class="em08"> Remebering</span>
-              <br />
-                  <span class="em1"> <b>{{nameToUse}}</b> </span>
-              <br />     
-                  <span class="em08"> {{funeralHome}}</span>
-              <br /> 
-                  <span class="em08"> {{eventTime}} | {{eventMonth}}. {{eventDate}}</span>
-   </div>
-
-
-
-<div class="row eventTabsMain">
-    
-                <div (click)="goToEvents()" class="col">
-                    <ion-icon class="eventTabs" ios="ios-calendar-outline" md="md-calendar">
-                      <div>
-                    Event
-                    </div>
-                    </ion-icon>
-                
-                </div>
-                
-                <div (click)="goToCare()"  class="col ml10 tabSelected">
-                <ion-icon  class="eventTabs" name="heart-outline">
-                  <div >
-                  Registry of <br /> Care
-                  </div>
-                </ion-icon>
-
-              </div>
-              
-              <div (click)="goToFeed()" class="col ml10">
-                <ion-icon class="eventTabs" ios="ios-paper-outline" md="md-paper">
-              <div>
-                  Condolence <br /> Feed 
-                  </div>
-                </ion-icon>
-              </div>
-              
-    </div>
-    
-
-</div>
 
   </div>
-<!--End of Custom Tab Header: CJM -->
+  <!--End of Custom Tab Header: CJM -->
 
 </ion-header>
 
 
-<ion-content>
-
-<div style="height : 95%;" class="bgCard center">
+<ion-content class="no-scroll">
 
 
-<h2> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
 
-<h2> You <span class="friendlyName"> Care Registry </span> gives them simple specific ways to support you and your family in the days ahead. </h2>
+  <!-- Entry Card only seen once -->
+  <div *ngIf="!hasSeenCare" style="height : 97%; margin-top: 1%;" class="bgCard center">
 
-</div>
+    <div style="padding-left: 5%; padding-right: 5%; margin-top: 20%;">
+      <h2 style="font-size: 1.5em;"> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
+
+      <h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span> gives them simple, specific ways to support you and your family
+        in the days ahead. </h2>
+    </div>
+  </div>
+
+
+  <!-- End of Registry of Care entry card that will only be seen once -->
+
+
+
+  <!-- Entry Card Default-->
+  <div *ngIf="hasSeenCare && !showAddItem" class="center">
+
+    <div>
+      <div class="centAlignCare">
+        <ion-row>
+          <ion-col col-6>
+            <button (click)="goToAbout()" style="position:relative;" ion-button full class="tileCareOne">
+
+           
+          <h2 class="myProgressGlobalText"><b> Meals</b></h2>
+
+       
+            <div class="myProgressMeal"></div>
+            <div class="myProgressMealPercentage"> <h3>0%</h3> </div>
+
+         </button>
+          </ion-col>
+          <ion-col col-6>
+            <button (click)="goToEdu()" ion-button full class="tileCareTwo">
+            <h2  class="myProgressGlobalText">
+              <b>
+                Transport
+                </b>
+                </h2>
+         <div class="myProgressTransport"></div>
+         <div class="myProgressTransportPercentage"> <h3>0%</h3> </div>
+         </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-6>
+            <button (click)="goToCulture()" ion-button full class="tileCareThree">
+            <h2  class="myProgressGlobalText"> 
+            <b>Household <br /> Tasks </b>
+            </h2>
+           
+         <div class="myProgressHouseItem"></div>
+         <div class="myProgressHouseItemPercentage"> <h3>0%</h3> </div>
+         </button>
+          </ion-col>
+          <ion-col col-6>
+            <button (click)="gotToServ()" ion-button full class="tileCareFour">
+            <h2  class="myProgressGlobalText">
+              
+
+             <b> Misc.<br />Support </b>
+              </h2>
+        
+         <div class="myProgressSupport"></div>
+         <div class="myProgressSupportPercentage"> <h3>0%</h3> </div>
+
+         </button>
+          </ion-col>
+        </ion-row>
+      </div>
+    </div>
+
+
+  </div>
+  <!-- End Entry Card Default-->
+
+
+
+  <!-- Entry Card only seen once -->
+  <div *ngIf="showAddItem" style="height : 97%; margin-top: 1%;" class="bgCard center">
+
+    <div style="padding-left: 5%; padding-right: 5%; margin-top: 7%;">
+<span  style="font-size: 1.6em; font-weight: bold;">Select Care Category</span>
+<hr class="horizontalBreak" style="height: 2px; margin-top: .5em; margin-bottom: .5em">
+       <ion-item>
+     
+        <ion-label stacked class="inputLabelText"> Care Categories</ion-label>
+        <ion-select placeholder="Select Item" class="inputField" [(ngModel)]="careCategory">
+          <ion-option value="meals">Meals</ion-option>
+          <ion-option value="transportation">Transportation</ion-option>
+          <ion-option value="household">Household Tasks</ion-option>
+          <ion-option value="misc">Misc. Support</ion-option>
+        </ion-select>
+         </ion-item>
+    </div>
+  </div>
+
+
+  <!-- End of Registry of Care entry card that will only be seen once -->
+
+
 
 
 </ion-content>
 
+
+
+<ion-footer>
+  <button class="footerButton" type="submit" (click)="getStarted()">{{careButtonText}}</button>
+
+</ion-footer>
