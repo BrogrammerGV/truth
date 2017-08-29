@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
+import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
 /**
  * Generated class for the CareRegistryListPage page.
  *
@@ -19,6 +20,8 @@ export class CareRegistryListPage {
   public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
+  public noResultsClaimed: boolean = false;
+  public noResultsAvailable: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
 
@@ -27,7 +30,7 @@ export class CareRegistryListPage {
 
   ionViewDidLoad() {
     let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
-    
+
     myModal.present();
     this.loadCareCategoryInformation();
     console.log('ionViewDidLoad CareRegistryListPage');
@@ -39,7 +42,7 @@ export class CareRegistryListPage {
 
   loadCareCategoryInformation() {
     //this.careCategory = this.navParams.get("careCategory");
-    if(!this.careCategory){
+    if (!this.careCategory) {
       this.careCategory = "Meals";
     }
     switch (this.careCategory) {
@@ -62,16 +65,11 @@ export class CareRegistryListPage {
     }
   }
 
-  loadNewItem(){
-    if(this.careCategory == "Meals"){this.careCategory = "Transportation";}
-    else if(this.careCategory == "Transportation"){this.careCategory = "Household";}
-    else if(this.careCategory == "Household"){this.careCategory = "Misc";}
-    else if(this.careCategory == "Misc"){this.careCategory = "Meals";}
+  openItem(parm: string){
+    this.navCtrl.push(CareRegistryItemDetailsPage, {itemID: parm});
+  }
 
-    this.loadCareCategoryInformation();
-
-
-    let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage,{careCategory: this.careCategory});
-    myModal.present({})
+  goBack(){
+    this.navCtrl.pop();
   }
 }
