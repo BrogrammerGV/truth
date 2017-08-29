@@ -44,6 +44,9 @@
         },
         "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {

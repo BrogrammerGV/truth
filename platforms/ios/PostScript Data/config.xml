@@ -119,4 +119,7 @@
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
     <preference name="orientation" value="default" />
+    <feature name="DatePicker">
+        <param name="ios-package" value="DatePicker" />
+    </feature>
 </widget>

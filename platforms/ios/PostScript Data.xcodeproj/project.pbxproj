@@ -44,6 +44,8 @@
 		D606AEBC0C96434898A8CC4D /* GCDWebServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 679DD2CFAA52403683C47747 /* GCDWebServer.m */; };
 		E64F9FC2F3B54173B5E27587 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57F04CBA358F42689724FE6E /* MessageUI.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		F4C9C2DFEFB548B094B41FB9 /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = F0DB4F8B45C54BD9857B1BB6 /* CDVLogger.m */; };
+		58BB300C0AC34BBDADE5B2A6 /* DatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B83D0AE79FA4136845C081C /* DatePicker.m */; };
+		75D19D09988E4FDB9519215A /* DatePicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4D5AAC52FDE1470EAABBF2A6 /* DatePicker.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +151,9 @@
 		F87562D2F4354B38A3F9E885 /* GCDWebServerURLEncodedFormRequest.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = GCDWebServerURLEncodedFormRequest.m; path = "cordova-plugin-wkwebview-engine/GCDWebServerURLEncodedFormRequest.m"; sourceTree = "<group>"; };
 		FB9F73C4CD5B4351BD23453E /* CDVSplashScreen.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = CDVSplashScreen.m; path = "cordova-plugin-splashscreen/CDVSplashScreen.m"; sourceTree = "<group>"; };
 		FF33AC7D411C46ECB8C1774A /* NSString+SSURLEncoding.m */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = sourcecode.c.objc; name = "NSString+SSURLEncoding.m"; path = "cordova-plugin-x-socialsharing/NSString+SSURLEncoding.m"; sourceTree = "<group>"; };
+		8B83D0AE79FA4136845C081C /* DatePicker.m */ = {isa = PBXFileReference; name = "DatePicker.m"; path = "cordova-plugin-datepicker/DatePicker.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		20089BE1927844CBAEC38222 /* DatePicker.h */ = {isa = PBXFileReference; name = "DatePicker.h"; path = "cordova-plugin-datepicker/DatePicker.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		4D5AAC52FDE1470EAABBF2A6 /* DatePicker.xib */ = {isa = PBXFileReference; name = "DatePicker.xib"; path = "DatePicker.xib"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = file.xib; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +230,7 @@
 				3047A50E1AB8057F00498E2A /* config */,
 				8D1107310486CEB800E47090 /* PostScript Data-Info.plist */,
 				6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */,
+				4D5AAC52FDE1470EAABBF2A6 /* DatePicker.xib */,
 			);
 			name = Resources;
 			path = "PostScript Data/Resources";
@@ -317,6 +323,8 @@
 				843CA2D594D94B5F8BCAC22D /* SocialSharing.m */,
 				6CFBB318AC9249C3B466D709 /* NSString+SSURLEncoding.h */,
 				893C1344E6164F14AFFE9DF2 /* SocialSharing.h */,
+				8B83D0AE79FA4136845C081C /* DatePicker.m */,
+				20089BE1927844CBAEC38222 /* DatePicker.h */,
 			);
 			name = Plugins;
 			path = "PostScript Data/Plugins";
@@ -413,6 +421,7 @@
 				302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */,
+				75D19D09988E4FDB9519215A /* DatePicker.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +478,7 @@
 				8DE9FF6444C84F25A8C6F968 /* GCDWebServerStreamedResponse.m in Sources */,
 				4F8E06FC2B0D4BB0A71D7158 /* NSString+SSURLEncoding.m in Sources */,
 				B6CB0B08C74D411E8777DCD8 /* SocialSharing.m in Sources */,
+				58BB300C0AC34BBDADE5B2A6 /* DatePicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

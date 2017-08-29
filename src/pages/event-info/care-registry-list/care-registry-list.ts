@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { DatePicker } from '@ionic-native/date-picker';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
+import { EventMainPage2 } from '../event-main2/event-main2';
+
 /**
  * Generated class for the CareRegistryListPage page.
  *
@@ -18,13 +21,17 @@ import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-
 export class CareRegistryListPage {
 
 
-//GUI Bool Logic
-breakfastClicked: boolean = false;
-lunchClicked: boolean = false;
-dinnerClicked: boolean = false;
+  //GUI Bool Logic
+  breakfastClicked: boolean = false;
+  lunchClicked: boolean = false;
+  dinnerClicked: boolean = false;
 
-//intra-page nav variables
-showAddItem: boolean = false;
+  //intra-page nav variables
+  showAddItem: boolean = false;
+
+  footerButtonText: string = "Add Item";
+
+
 
 
   public careCategory: string = "";
@@ -33,28 +40,28 @@ showAddItem: boolean = false;
   public noResultsClaimed: boolean = false;
   public noResultsAvailable: boolean = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
+private datePicker: DatePicker) {
 
 
   }
 
   ionViewDidLoad() {
-let x: string = this.navParams.get('pageBool');
 
-if( x == 'Y')
-{
-  this.showAddItem = true;
-}else{
-    let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+    let x: string = this.navParams.get('pageBool');
 
-    myModal.present();
-  
-}
-  this.loadCareCategoryInformation();
+    if (x == 'Y') {
+      this.showAddItem = true;
+      this.footerButtonText = "Next";
+    } else {
+      let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+      myModal.present();
+    }
+    this.loadCareCategoryInformation();
     console.log('ionViewDidLoad CareRegistryListPage');
-    
 
-  
+
+
   }
 
   addItem() {
@@ -86,38 +93,52 @@ if( x == 'Y')
     }
   }
 
-  openItem(parm: string){
-    this.navCtrl.push(CareRegistryItemDetailsPage, {itemID: parm});
+  openItem(parm: string) {
+    this.navCtrl.push(CareRegistryItemDetailsPage, { itemID: parm });
   }
 
-  goBack(){
+  goBack() {
     this.navCtrl.pop();
   }
 
 
 
 
-//Sharing GUI Logic
-  showBreakfast(){
+  //Sharing GUI Logic
+  showBreakfast() {
     this.breakfastClicked = true;
     this.lunchClicked = false;
     this.dinnerClicked = false;
- 
+
   }
 
-  showLunch(){
-       this.breakfastClicked = false;
+  showLunch() {
+    this.breakfastClicked = false;
     this.lunchClicked = true;
     this.dinnerClicked = false;
- 
+
   }
 
-    showDinner(){
-     this.breakfastClicked = false;
+  showDinner() {
+    this.breakfastClicked = false;
     this.lunchClicked = false;
     this.dinnerClicked = true;
- 
+
   }
+
+
+
+openDatePicker()
+{
+  this.datePicker.show({
+  date: new Date(),
+  mode: 'date',
+  androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
+}).then(
+  date => console.log('Got date: ', date),
+  err => console.log('Error occurred while getting date: ', err)
+);
+}
 
 
 }

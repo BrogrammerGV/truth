@@ -77,11 +77,20 @@ export class EventMainPage2 {
 
 
   ionViewCanEnter() {
+
     this.storage.get('hasSeenCare').then((val) => {
       if (val == "Y") {
         this.hasSeenCare = true;
         this.careButtonText = "Add Care Item";
+      }
 
+    });
+
+        this.storage.get('straightToAddItem').then((val) => {
+      if (val == "Y") {
+        this.hasSeenCare = true;
+        this.showAddItem=true;
+        this.careButtonText = "Add Item";
       }
 
     });
@@ -203,6 +212,8 @@ goBack()
 {
   this.showAddItem = false;
   this.careButtonText = "Add Care Item"
+  this.storage.set('straightToAddItem', "N");
+  this.careCategory = undefined;
 }
 
   openCareModal() {
@@ -222,12 +233,13 @@ goToCareItemList()
      dataPass = {
         pageBool : "Y"
      }
+      this.storage.set('straightToAddItem', "Y");
   }
   else{
      dataPass = {
         pageBool : "N"
      }
-
+      this.storage.set('straightToAddItem', "N");
   }
     console.log(this.eventGuid + " " + this.careCategory);
     this.navCtrl.push(CareRegistryListPage, dataPass);

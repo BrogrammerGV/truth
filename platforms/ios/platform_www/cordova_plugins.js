@@ -78,6 +78,14 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+        "pluginId": "cordova-plugin-datepicker",
+        "clobbers": [
+            "datePicker"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -94,7 +102,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.1.8"
+    "cordova-plugin-x-socialsharing": "5.1.8",
+    "cordova-plugin-datepicker": "0.9.3"
 };
 // BOTTOM OF METADATA
 });

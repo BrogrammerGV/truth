@@ -10,6 +10,7 @@ import { ConferenceApp } from './app.component';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { Calendar } from '@ionic-native/calendar';
+import { DatePicker } from '@ionic-native/date-picker';
 
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
@@ -206,7 +207,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     InAppBrowser,
     SplashScreen,
     Calendar,
-    SocialSharing
+    SocialSharing, 
+    DatePicker
   ]
 })
 export class AppModule { }
