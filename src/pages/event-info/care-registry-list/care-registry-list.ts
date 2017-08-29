@@ -33,6 +33,7 @@ export class CareRegistryListPage {
   public claimedItems: string[] = [];
   public eventClicked: boolean = false;
   public event: any;
+  public isPlanner: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage, public callNumber: CallNumber, public socialSharing: SocialSharing, public alertCtrl: AlertController) {
   }
@@ -111,13 +112,15 @@ export class CareRegistryListPage {
 
   openItem(parm: any){
     this.event = parm;
-    if(this.event.claimed.BOOL){
-      this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
-    }else{
-      this.secondaryButtonText = "Edit Item";
+    if(!this.event.claimed.BOOL || this.isPlanner){
+      if(this.event.claimed.BOOL){
+        this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
+      }else{
+        this.secondaryButtonText = "Edit Item";
+      }
+  
+      this.eventClicked = true;
     }
-
-    this.eventClicked = true;
   }
 
   goBack(){
