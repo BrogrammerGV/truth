@@ -6,6 +6,8 @@ import { EventMainPage } from '../event-main/event-main';
 import { EventMainPage3 } from '../event-main3/event-main3';
 import { CareModalPage } from '../care-modal/care-modal';
 
+//CareRegistryBuilding Pages:
+import { CareRegistryListPage } from '../care-registry-list/care-registry-list';
 
 /**
  * Generated class for the EventMainPage page.
@@ -36,7 +38,7 @@ export class EventMainPage2 {
   eventMonth: string;
   funeralHome: string;
   firstName: string;
-  careCategory: string;
+  
 
 
   //Bool Checks
@@ -50,6 +52,15 @@ export class EventMainPage2 {
   helperText2: string;
   greetingText: string;
   messageText: string;
+
+
+
+  //CareRegistry Add Item Variables:
+  careCategory: any;
+  eventGuid: string;
+
+
+
 
 
 
@@ -85,6 +96,7 @@ export class EventMainPage2 {
     this.storage.get('guid').then((val) => {
       console.log('Guid:', val);
       this.doSearch(val);
+      this.eventGuid = val;
     });
 
 
@@ -107,7 +119,7 @@ export class EventMainPage2 {
   logItem(ref: any) {
 
     var x = JSON.parse(ref.Payload)
-    console.log(x.Item.firstName);
+
     this.nameToUse = x.Item.firstName.S + " " + x.Item.lastName.S;
     this.eventDate = x.Item.eventDate.S;
     this.eventTime = x.Item.eventTime.S;
@@ -115,7 +127,7 @@ export class EventMainPage2 {
     this.eventMonth = x.Item.eventMonth.S;
     this.firstName = x.Item.firstName.S;
 
-    //Setting Variable Texr
+    //Setting Variable Text
     this.helperText = "A Message from " + this.firstName + "'s Family";
     this.helperText2 = "Thank you for supporting our family during this difficult time We appreciate your condolences and invite you to join us as we celelbrate " + this.firstName + ".";
     this.messageText = this.helperText2;
@@ -176,15 +188,10 @@ export class EventMainPage2 {
     }
     else {
 
-      if(!this.careCategory){
-          this.storage.set('hasSeenCare', "N");
-      this.careButtonText = "Get Started"
-      this.hasSeenCare = false;
+      if(this.careCategory){
+       this.goToCareItemList();
     }
-    else 
-    {
-      console.log(this.careCategory)
-    }
+  
     
     }
 
@@ -199,5 +206,16 @@ export class EventMainPage2 {
 
     myModal.present();
   }
+
+
+
+goToCareItemList()
+{
+
+
+console.log(this.eventGuid + " " + this.careCategory);
+  this.navCtrl.push(CareRegistryListPage);
+}
+
 
 }
