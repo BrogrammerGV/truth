@@ -91,21 +91,22 @@
         </div>
         <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
 
-
+<br />
         <div class="center">
-          <button style="width: 32%;" [ngClass]="{
+
+      
+          <button style="width: 32%; font-size: .8em" [ngClass]="{
             'whiteButton' : !breakfastClicked,
             'orangeButton' : breakfastClicked
           }" (click)="showBreakfast()"><b>Breakfast</b></button>
-          <button style="width: 32%;" [ngClass]="{
+          <button style="width: 32%; font-size: .8em" [ngClass]="{
             'whiteButton' : !lunchClicked,
             'orangeButton' : lunchClicked
           }" (click)="showLunch()"><b>Lunch</b></button>
-          <button style="width: 32%;" [ngClass]="{
+          <button style="width: 32%; font-size: .8em" [ngClass]="{
             'whiteButton' : !dinnerClicked,
             'orangeButton' : dinnerClicked
           }" (click)="showDinner()"><b>Dinner</b></button>
-
 
 
 

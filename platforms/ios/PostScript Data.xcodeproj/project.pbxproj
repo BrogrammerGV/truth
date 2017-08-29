@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		003326FEF35B425CB88CB902 /* GCDWebServerDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C34081E70354B458EC6486C /* GCDWebServerDataRequest.m */; };
 		0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0207DA571B56EA530066E2B4 /* Images.xcassets */; };
