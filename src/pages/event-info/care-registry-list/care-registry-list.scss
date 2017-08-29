@@ -2,4 +2,16 @@ page-care-registry-list {
     .header-md::after, .tabs-md[tabsPlacement="top"] > .tabbar::after, .footer-md::before, .tabs-md[tabsPlacement="bottom"] > .tabbar::before{
         content: none;
     }
+
+
+    .showAnimation{
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        transition: 0.2s linear;
+    }
+    .hideAnimation{
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        transition: 0.2s linear;
+    }
 }

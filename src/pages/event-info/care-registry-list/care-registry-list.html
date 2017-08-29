@@ -14,57 +14,82 @@
 </ion-header>
 
 
-<ion-content padding>
-  <div class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
-    <div style="position: relative; width: 100%; height: 100%">
-      <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()" />
-      <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
-        <div class="blueText mainFont">
-          Available
-        </div>
-        <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
-        <div class="subFont" style="font-size: 1em" *ngIf="noResultsAvailable">
-          There isn't anything here yet, hit add item to request meals.
-        </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Deliver at 12:30 p.m.</span>
-        </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Deliver at 12:30 p.m.</span>
-        </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Deliver at 12:30 p.m.</span>
-        </div>
+<ion-content>
+  <div [ngClass]="{'showAnimation' : eventClicked, 'hideAnimation': !eventClicked}" style="    height: 100%;
+    width: 100%;
+    position: relative;">
+    <div class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+      <div style="position: relative; width: 100%; height: 100%">
+        <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
+        />
+        <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
+          <div class="blueText mainFont">
+            Available
+          </div>
+          <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
+          <div class="subFont" style="font-size: 1em" *ngIf="noResultsAvailable">
+            There isn't anything here yet, hit add item to request meals.
+          </div>
+          <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em" *ngFor="let availableItem of availableItems"
+            class="mainFont" (click)="openItem(availableItem)">
+            <span>{{availableItem.itemName.S}}
+                <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br
+            />
+            <span style="font-weight: normal; font-size: 0.7em">{{availableItem.shortDescription.S}}</span>
+          </div>
 
-        <br /><br />
+          <br /><br />
 
-        <div class="blueText mainFont">
-          Claimed
+          <div class="blueText mainFont">
+            Claimed
+          </div>
+          <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
+          <div class="subFont" style="font-size: 1em" *ngIf="noResultsClaimed">
+            There isn't anything here yet. Share the app to let your friends and family know how they can help.
+          </div>
+          <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em; opacity: 0.3" class="mainFont"
+            *ngFor="let claimedItem of claimedItems" (click)="openItem(claimedItem)">
+            <span>{{claimedItem.itemName.S}}
+                <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br
+            />
+            <span style="font-weight: normal; font-size: 0.7em">Claimed by {{claimedItem.claimedBy.S}}</span>
+          </div>
         </div>
-        <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
-        <div class="subFont" style="font-size: 1em" *ngIf="noResultsClaimed">
-          There isn't anything here yet. Share the app to let your friends and family know how they can help.
+      </div>
+    </div>
+
+
+    <div class="cardStyle" style="position: absolute; top: 10px; left: 100%; right: -100%; bottom: 10px; margin-left: 10px; margin-right: 10px">
+      <div style="position: relative; width: 100%; height: 100%">
+        <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
+        />
+        <div style="overflow: auto; height: 100%; text-align: center; margin-left: 1em; margin-right: 0em; padding-right: 1em" class="mainFont" *ngIf="event">
+          <div class="blueText">
+            {{event.itemName.S}}
+          </div>
+            <div style="font-weight: normal; font-size: 0.7em">
+            {{event.shortDescription.S}}
+          </div>
+          <br />
+          <div style="font-weight: normal; font-size: 0.7em; text-align: left">
+          <div style="font-weight: bold; margin-bottom: 10px">
+            Drop-off Location:
+          </div>
+          <div style="margin-left: 10px">
+            <span [innerHtml]="event.dropOffLocation.S"></span>
+          </div>
+          <br />
+          <div style="font-weight: bold; margin-bottom: 10px">
+            Additional Instructions:
+          </div>
+          <div style="margin-left: 10px">
+              {{event.additionalInstructions.S}}
+          </div>
+          <br /><br />
         </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em; opacity: 0.3" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Claimed by Sara J.</span>
+        <div style="font-weight: bold; text-align: center" *ngIf="event.claimed.BOOL">
+          This item has been claimed by {{event.claimedByFirst.S}} {{event.claimedByLast.S}}.
         </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em; opacity: 0.3" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Claimed by Sara J.</span>
-        </div>
-        <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em; opacity: 0.3" class="mainFont" (click)="openItem('this')">
-          <span>Lunch for 8/23
-              <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br />
-          <span style="font-weight: normal; font-size: 0.7em">Claimed by Sara J.</span>
         </div>
       </div>
     </div>
@@ -72,5 +97,8 @@
 </ion-content>
 
 <ion-footer>
-  <button class="footerButton" (click)="addItem()">Add Item</button>
+  <div [ngClass]="{'showAnimation' : eventClicked, 'hideAnimation': !eventClicked}">
+      <button class="footerButton" (click)="addItem()" >Add Item</button>
+      <button class="footerButton" (click)="editItem()" style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;" >{{secondaryButtonText}}</button>
+  </div>
 </ion-footer>

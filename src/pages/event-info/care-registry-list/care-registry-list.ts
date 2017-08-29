@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
+import { Storage } from '@ionic/storage';
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
@@ -10,6 +11,7 @@ import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+declare let lambda: any;
 @IonicPage()
 @Component({
   selector: 'page-care-registry-list',
@@ -20,20 +22,64 @@ export class CareRegistryListPage {
   public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
+  public secondaryButtonText: string = "Edit";
   public noResultsClaimed: boolean = false;
   public noResultsAvailable: boolean = false;
+  public availableItems: string[] = [];
+  public claimedItems: string[] = [];
+  public eventClicked: boolean = false;
+  public event: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage) {
 
 
   }
 
   ionViewDidLoad() {
-    let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+    this.careCategory = this.navParams.get("careCategory");
+    if (!this.careCategory) {
+      this.careCategory = "Meals";
+    }
 
-    myModal.present();
+    this.storage.get(this.careCategory + "Shown").then((val) => {
+      if(!(val == "shown")){
+        let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+        myModal.present();
+        this.storage.set(this.careCategory + "Shown","shown");
+      }
+    });
+    
+
     this.loadCareCategoryInformation();
-    console.log('ionViewDidLoad CareRegistryListPage');
+
+    this.getData();
+  }
+
+  getData(){
+    var event: string = this.navParams.get("eventID");
+    if (!event){event = "guidstuff";}
+
+    lambda("GetPostScriptCareRegistry",{eventID: event, careCategory: this.careCategory})
+    .then(function(data: any){
+      //console.log(this);
+      this.showItems(data);
+    }.bind(this));
+  }
+
+  showItems(ref: any){
+    this.availableItems = [];
+    this.claimedItems = [];
+
+    for (var i = 0; i < ref.length; i++) {
+      if(ref[i].claimed.BOOL){
+        this.claimedItems.push(ref[i]);
+      }else{
+        this.availableItems.push(ref[i]);
+      }
+    }
+
+    this.noResultsClaimed = !this.claimedItems.length;
+    this.noResultsAvailable = !this.availableItems.length;
   }
 
   addItem() {
@@ -41,10 +87,6 @@ export class CareRegistryListPage {
   }
 
   loadCareCategoryInformation() {
-    //this.careCategory = this.navParams.get("careCategory");
-    if (!this.careCategory) {
-      this.careCategory = "Meals";
-    }
     switch (this.careCategory) {
       case "Meals":
         this.careCategoryFriendlyName = "Meals";
@@ -65,11 +107,19 @@ export class CareRegistryListPage {
     }
   }
 
-  openItem(parm: string){
-    this.navCtrl.push(CareRegistryItemDetailsPage, {itemID: parm});
+  openItem(parm: any){
+    this.event = parm;
+    if(this.event.claimed.BOOL){
+      this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
+    }else{
+      this.secondaryButtonText = "Edit";
+    }
+
+    this.eventClicked = true;
   }
 
   goBack(){
-    this.navCtrl.pop();
+    this.eventClicked = false;
+    //this.navCtrl.pop();
   }
 }
