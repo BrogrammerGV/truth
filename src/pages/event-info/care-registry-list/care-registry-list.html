@@ -87,7 +87,7 @@
       />
       <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
         <div class="blueText mainFont">
-          Available
+          Add Meal
         </div>
         <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
 
@@ -95,15 +95,15 @@
         <div class="center">
 
       
-          <button style="width: 32%; font-size: .8em" [ngClass]="{
+          <button style="width: 32%; font-size: .9em; height: 2.3em; line-height:0;  border-width: 2px;" [ngClass]="{
             'whiteButton' : !breakfastClicked,
             'orangeButton' : breakfastClicked
           }" (click)="showBreakfast()"><b>Breakfast</b></button>
-          <button style="width: 32%; font-size: .8em" [ngClass]="{
+          <button style="width: 32%; font-size: .9em; height: 2.3em; line-height:0;  border-width: 2px;" [ngClass]="{
             'whiteButton' : !lunchClicked,
             'orangeButton' : lunchClicked
           }" (click)="showLunch()"><b>Lunch</b></button>
-          <button style="width: 32%; font-size: .8em" [ngClass]="{
+          <button style="width: 32%; font-size: .9em; height: 2.3em; line-height:0; border-width: 2px;" [ngClass]="{
             'whiteButton' : !dinnerClicked,
             'orangeButton' : dinnerClicked
           }" (click)="showDinner()"><b>Dinner</b></button>
@@ -116,7 +116,7 @@
               <ion-input class="inputField" placeholder="Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
             </ion-item>
              <ion-item>
-              <ion-label stacked class="inputLabelText">Date Needed</ion-label>
+              <ion-label stacked class="inputLabelText">Time Needed</ion-label>
               <ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTypeNeeded"></ion-input>
             </ion-item>
           </ion-list>
