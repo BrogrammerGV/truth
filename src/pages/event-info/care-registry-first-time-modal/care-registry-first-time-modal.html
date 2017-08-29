@@ -7,11 +7,10 @@
 
 
 <ion-content (click)="closeModal()">
-  <div style="text-align: center">
-    Meals
-    <hr class="horizontalBreak" />
-    Keeping up with household tasks like cleaning, laundry, and grocery shopping can be a challenge.<br /><br />
-    Organizing a list of these needs gives your support system tangible ways to help you and your family.<br />
-    <button class="orangeButton">Get Started</button>
+  <div style="text-align: center; margin: 20px">
+    <span class="blueText" style="font-size: 1.6em; font-weight: bold;">{{careCategoryFriendlyName}}</span>
+    <hr class="horizontalBreak" style="margin-top: 1.2em; margin-bottom: 1.2em" />
+    <span class="subFont" style="font-size: 1.3em">{{careCategoryDescription1}}<br /><br />{{careCategoryDescription2}}<br/><br/></span>
+    <button class="footerButton">Get Started</button>
   </div>
 </ion-content>

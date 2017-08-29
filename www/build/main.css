@@ -4243,6 +4243,7 @@ ion-icon::before {
   width: 4em;
   margin-top: 2em;
   margin-bottom: 2em;
+  height: 2px !important;
 }
 
 .container {
@@ -40360,18 +40361,33 @@ page-schedule ion-item-sliding[track=navigation] ion-label {
 }
 
 page-care-registry-first-time-modal {
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(79, 86, 92, 0.71);
 }
 
 page-care-registry-first-time-modal ion-content {
   position: absolute;
-  top: 30px;
-  bottom: 30px;
+  top: 20%;
+  bottom: 20%;
   left: 30px;
   right: 30px;
+  width: auto;
+  height: auto;
   /* Rectangle 28: */
   background-color: #FFFFFF;
   border-radius: 3px;
+  -webkit-box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.33);
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.33);
+}
+
+page-care-registry-first-time-modal .scroll-content {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center !important;
+  -webkit-align-items: center !important;
+  -ms-flex-align: center !important;
+  align-items: center !important;
 }
 
 page-care-registry-list .header-md::after, page-care-registry-list .tabs-md[tabsPlacement="top"] > .tabbar::after, page-care-registry-list .footer-md::before, page-care-registry-list .tabs-md[tabsPlacement="bottom"] > .tabbar::before {

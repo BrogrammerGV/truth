@@ -38,7 +38,10 @@ export class CareRegistryListPage {
   }
 
   loadCareCategoryInformation() {
-    this.careCategory = this.navParams.get("careCategory");
+    //this.careCategory = this.navParams.get("careCategory");
+    if(!this.careCategory){
+      this.careCategory = "Meals";
+    }
     switch (this.careCategory) {
       case "Meals":
         this.careCategoryFriendlyName = "Meals";
@@ -66,5 +69,9 @@ export class CareRegistryListPage {
     else if(this.careCategory == "Misc"){this.careCategory = "Meals";}
 
     this.loadCareCategoryInformation();
+
+
+    let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage,{careCategory: this.careCategory});
+    myModal.present({})
   }
 }
