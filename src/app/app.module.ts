@@ -10,7 +10,9 @@ import { ConferenceApp } from './app.component';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { Calendar } from '@ionic-native/calendar';
-import { DatePicker } from '@ionic-native/date-picker';
+
+import { DatePickerModule } from 'datepicker-ionic2';
+import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
 
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
@@ -112,7 +114,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+     DatePicker,
   ],
   imports: [
     BrowserModule,
@@ -198,7 +201,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+     DatePicker,
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -208,7 +212,7 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     SplashScreen,
     Calendar,
     SocialSharing, 
-    DatePicker
+    DatePickerModule
   ]
 })
 export class AppModule { }

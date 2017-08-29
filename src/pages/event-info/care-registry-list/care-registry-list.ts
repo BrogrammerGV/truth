@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { DatePicker } from '@ionic-native/date-picker';
+
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
+
+import { DatePickerModule } from 'datepicker-ionic2';
+import { DatePickerDirective } from 'datepicker-ionic2';
+import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
+
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
@@ -13,11 +18,20 @@ import { EventMainPage2 } from '../event-main2/event-main2';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
+
+
+
 @IonicPage()
+
 @Component({
   selector: 'page-care-registry-list',
   templateUrl: 'care-registry-list.html',
+  providers: [ DatePicker ]
+  
 })
+
+
+
 export class CareRegistryListPage {
 
 
@@ -41,10 +55,11 @@ export class CareRegistryListPage {
   public noResultsAvailable: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
-private datePicker: DatePicker) {
+public datePicker: DatePicker) {
 
 
-  }
+}
+
 
   ionViewDidLoad() {
 
@@ -123,22 +138,22 @@ private datePicker: DatePicker) {
     this.breakfastClicked = false;
     this.lunchClicked = false;
     this.dinnerClicked = true;
-
+this.showCalendar();
   }
 
 
 
 openDatePicker()
 {
-  this.datePicker.show({
-  date: new Date(),
-  mode: 'date',
-  androidTheme: this.datePicker.ANDROID_THEMES.THEME_HOLO_DARK
-}).then(
-  date => console.log('Got date: ', date),
-  err => console.log('Error occurred while getting date: ', err)
-);
-}
+  this.datePicker.onDateSelected.subscribe( 
+      (date:string) => {
+        console.log(date);
+    });
+  }
+
+  showCalendar(){
+    this.datePicker.showCalendar();
+  }
 
 
 }

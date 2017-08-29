@@ -111,7 +111,7 @@
 
 
           <ion-list style="margin-right: 2%; margin-top: 5%;" no-lines>
-            <ion-item (click)="openDatePicker()">
+            <ion-item (click)="showCalendar()">
               <ion-label stacked class="inputLabelText">Date Needed</ion-label>
               <ion-input [disabled]="true" class="inputField" placeholder="Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
             </ion-item>
@@ -120,6 +120,7 @@
               <ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTypeNeeded"></ion-input>
             </ion-item>
           </ion-list>
+
 
 
 
