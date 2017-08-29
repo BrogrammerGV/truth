@@ -13,11 +13,8 @@ import {
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { ConferenceData } from '../../providers/conference-data';
 
-import { AboutModal } from '../aboutmodal/aboutmodal';
 import { EntryPage } from '../entry/entry';
 import { Storage } from '@ionic/storage';
-import { ModalPage } from '../modal/modal';
-import { MidModalPage } from '../mid-modal/mid-modal';
 import { CulturePage } from '../culture/culture';
 import { FhPage } from '../fh/fh';
 import { AboutPage } from '../about/about';
@@ -340,20 +337,6 @@ this.storage.get('servicesFinCheck').then((val) => {
         //             this.checkForFinal()
         // }); 
         //    myModal.present();
-      }
-
-
-//Intro Modal and Initial Name Collection
-openIntroModal()
-      {
-          let myModal = this.modalCtrl.create(ModalPage);
-          myModal.present();
-          myModal.onDidDismiss(data => { 
-                    this.storage.set('firstName', data.first);
-                    this.storage.set('lastName', data.last);
-                    this.storage.set('middleName', data.middle);
-                    this.namePass = data.first;
-          });
       }
 
 
