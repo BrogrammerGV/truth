@@ -131,13 +131,13 @@
 
   <ion-list *ngIf="timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
             <ion-item >
-              <ion-label stacked class="inputLabelText">Drop Off Location</ion-label>
-              <ion-input  class="inputField" placeholder="Street Address, City, State" [(ngModel)]="dropOfLocation"></ion-input>
+              <ion-label stacked class="inputLabelText">Drop-off Location</ion-label>
+              <ion-input  class="inputField" placeholder="Address, City, State" [(ngModel)]="dropOfLocation"></ion-input>
             </ion-item>
              <ion-item>
               <ion-label  stacked class="inputLabelText">Additional Instructions</ion-label>
               <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
-          <ion-datetime  pickerFormat="h:mm:a" class="inputField" placeholder="Tap for Time" [(ngModel)]="additionalInstructions"></ion-datetime>
+          <ion-input  pickerFormat="h:mm:a" class="inputField" placeholder="Tap for Time" [(ngModel)]="additionalInstructions"></ion-input>
             </ion-item>
           </ion-list>
  

@@ -40730,6 +40730,10 @@ page-care-registry-list .header-md::after, page-care-registry-list .tabs-md[tabs
   content: none;
 }
 
+.text-input[disabled] {
+  opacity: 1;
+}
+
 page-event-info-one {
   background-color: white;
 }
