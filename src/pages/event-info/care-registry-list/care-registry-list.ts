@@ -57,6 +57,10 @@ export class CareRegistryListPage {
     additionalInstructions: string;
     dropOfLocation: string;
 
+    careItemName: string;
+    careItemShort: string;
+    careItemDate: string;
+
 
 
     public careCategory: string = "";
@@ -105,11 +109,24 @@ export class CareRegistryListPage {
 
 
 
-        if (this.showConfirm) {
+
+        if (this.showConfirm && (this.showAddItem || this.showAddItemAll)) {
             this.showConfirm = false;
             this.showAddItem = false;
+            this.showAddItemAll = false;
             this.navCtrl.push(EventMainPage2);
+            return;
         }
+
+        if(this.careItemName && this.careItemShort && this.careItemDate)
+        {
+                    this.showConfirm = true;
+                    this.footerButtonText = "Add Another Item"
+        }
+
+
+
+
 
         if (this.timeFilledOut) {
 
@@ -131,6 +148,9 @@ export class CareRegistryListPage {
             }
 
         }
+
+
+        
         else {
 
             if (this.breakfastClicked || this.lunchClicked || this.dinnerClicked) {
@@ -145,7 +165,9 @@ export class CareRegistryListPage {
                 }
 
             }
+          
             else {
+              if(this.careCategory == 'Meals')
                 this.presentAlert();
             }
 
@@ -249,7 +271,7 @@ export class CareRegistryListPage {
             (date: string) => {
                 console.log(date);
                 var x = date.toString();
-                this.itemDate = x.slice(4, 7) + '.' + x.slice(7, 10)
+                this.careItemDate = x.slice(4, 7) + '.' + x.slice(7, 10)
             });
     }
 //End of Custom Date Pickers
