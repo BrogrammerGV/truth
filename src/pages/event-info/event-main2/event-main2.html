@@ -94,7 +94,7 @@
       <div class="centAlignCare">
         <ion-row>
           <ion-col col-6>
-            <button (click)="goToAbout()" style="position:relative;" ion-button full class="tileCareOne">
+            <button (click)="goToCareItemList()" style="position:relative;" ion-button full class="tileCareOne">
 
            
           <h2 class="myProgressGlobalText"><b> Meals</b></h2>
@@ -106,7 +106,7 @@
          </button>
           </ion-col>
           <ion-col col-6>
-            <button (click)="goToEdu()" ion-button full class="tileCareTwo">
+            <button (click)="goToCareItemList()" ion-button full class="tileCareTwo">
             <h2  class="myProgressGlobalText">
               <b>
                 Transport
@@ -119,7 +119,7 @@
         </ion-row>
         <ion-row>
           <ion-col col-6>
-            <button (click)="goToCulture()" ion-button full class="tileCareThree">
+            <button (click)="goToCareItemList()" ion-button full class="tileCareThree">
             <h2  class="myProgressGlobalText"> 
             <b>Household <br /> Tasks </b>
             </h2>
@@ -129,7 +129,7 @@
          </button>
           </ion-col>
           <ion-col col-6>
-            <button (click)="gotToServ()" ion-button full class="tileCareFour">
+            <button (click)="goToCareItemList()" ion-button full class="tileCareFour">
             <h2  class="myProgressGlobalText">
               
 
@@ -153,18 +153,18 @@
 
   <!-- Entry Card only seen once -->
   <div *ngIf="showAddItem" style="height : 97%; margin-top: 1%;" class="bgCard center">
-
-    <div style="padding-left: 5%; padding-right: 5%; margin-top: 7%;">
+ <img src="assets/img/back.png" style="top:10px; left:5px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()" />
+    <div style="padding-left: 5%; padding-right: 5%; padding-top:7%;">
 <span  style="font-size: 1.6em; font-weight: bold;">Select Care Category</span>
 <hr class="horizontalBreak" style="height: 2px; margin-top: .5em; margin-bottom: .5em">
        <ion-item>
      
         <ion-label stacked class="inputLabelText"> Care Categories</ion-label>
         <ion-select placeholder="Select Item" class="inputField" [(ngModel)]="careCategory">
-          <ion-option value="meals">Meals</ion-option>
-          <ion-option value="transportation">Transportation</ion-option>
-          <ion-option value="household">Household Tasks</ion-option>
-          <ion-option value="misc">Misc. Support</ion-option>
+          <ion-option value="Meals">Meals</ion-option>
+          <ion-option value="Transportation">Transportation</ion-option>
+          <ion-option value="Household">Household Tasks</ion-option>
+          <ion-option value="Misc">Misc. Support</ion-option>
         </ion-select>
          </ion-item>
     </div>

@@ -18,7 +18,7 @@ export class TabsPage {
   // set the root pages for each tab
   public showModal: boolean = false;
 
-  tab1Root: any = CareRegistryListPage;
+  tab1Root: any = Home1Page;
   tab2Root: any = Search1Page;
   tab3Root: any = EventsPage;
   tab4Root: any = EventMainPage;

@@ -11,6 +11,9 @@ import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { Calendar } from '@ionic-native/calendar';
 
+import { DatePickerModule } from 'datepicker-ionic2';
+import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
+
 //Custom Pages: CJM 08/03/2017
 import { EntryPage } from '../pages/entry/entry';
 import { SelectPage } from '../pages/select/select';
@@ -111,7 +114,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+     DatePicker,
   ],
   imports: [
     BrowserModule,
@@ -197,7 +201,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+     DatePicker,
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -206,7 +211,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     InAppBrowser,
     SplashScreen,
     Calendar,
-    SocialSharing
+    SocialSharing, 
+    DatePickerModule
   ]
 })
 export class AppModule { }
