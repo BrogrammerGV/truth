@@ -110,11 +110,8 @@ module.exports.metadata =
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
-<<<<<<< HEAD
-    "cordova-plugin-datepicker": "0.9.3"
-=======
+    "cordova-plugin-datepicker": "0.9.3",
     "mx.ferreyra.callnumber": "0.0.2"
->>>>>>> a2b54040eecbc1039fcab2eb8328a636ec7af4b6
 };
 // BOTTOM OF METADATA
 });

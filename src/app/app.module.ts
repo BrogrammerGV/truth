@@ -119,12 +119,9 @@ import { LoginComponentPage } from '../pages/login-component/login-component';
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
     CareRegistryItemDetailsPage,
-<<<<<<< HEAD
-     DatePicker,
-=======
     RegisterPage,
-    LoginComponentPage
->>>>>>> a2b54040eecbc1039fcab2eb8328a636ec7af4b6
+    LoginComponentPage,
+    DatePicker
   ],
   imports: [
     BrowserModule,

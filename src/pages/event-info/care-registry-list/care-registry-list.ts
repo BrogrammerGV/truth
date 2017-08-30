@@ -6,8 +6,6 @@ import { Storage } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { CallNumber } from '@ionic-native/call-number';
 
-import { DatePickerModule } from 'datepicker-ionic2';
-import { DatePickerDirective } from 'datepicker-ionic2';
 import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
 
 
