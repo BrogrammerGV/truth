@@ -129,8 +129,7 @@
 
 
 
-          <hr *ngIf="timeFilledOut" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
-          <div *ngIf="timeFilledOut" class="mainFont">
+          <div *ngIf="timeFilledOut" style="margin-top: 4%;;" class="mainFont">
             {{mealDate}} | {{ mealTime}}
           </div>
 
@@ -176,12 +175,12 @@
 
           <ion-list *ngIf="!timeFilledOut && !showConfirm" style="" no-lines>
             <ion-item>
-              <ion-label stacked class="inputLabelText">Date Needed</ion-label>
+              <ion-label stacked class="inputLabelText">Item Name</ion-label>
               <ion-input  class="inputField" placeholder="Feed cat, mow etc." [(ngModel)]="careItemName"></ion-input>
             </ion-item>
             <ion-item>
               <ion-label stacked class="inputLabelText">Short Description</ion-label>
-       <ion-input class="inputField" placeholder="Task details, time etc." [(ngModel)]="careItemShort"></ion-input>
+       <ion-input class="inputField" placeholder="Details, time, location etc." [(ngModel)]="careItemShort"></ion-input>
             </ion-item>
            <ion-item (click)="showCalendarAll()">
               <ion-label stacked class="inputLabelText">Date Needed</ion-label>
