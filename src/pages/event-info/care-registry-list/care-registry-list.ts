@@ -27,10 +27,10 @@ export class CareRegistryListPage {
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
   public secondaryButtonText: string = "Edit";
-  public noResultsClaimed: boolean = false;
-  public noResultsAvailable: boolean = false;
-  public availableItems: string[] = [];
-  public claimedItems: string[] = [];
+  public noResultsClaimed: boolean = true;
+  public noResultsAvailable: boolean = true;
+  public availableItems: any[] = [];
+  public claimedItems: any[] = [];
   public eventClicked: boolean = false;
   public event: any;
   public isPlanner: boolean = false;
@@ -41,7 +41,7 @@ export class CareRegistryListPage {
   ionViewDidLoad() {
     this.careCategory = this.navParams.get("careCategory");
     if (!this.careCategory) {
-      this.careCategory = "Meals";
+      this.careCategory = "Transportation";
     }
 
     this.storage.get(this.careCategory + "Shown").then((val) => {
@@ -80,6 +80,13 @@ export class CareRegistryListPage {
         this.availableItems.push(ref[i]);
       }
     }
+
+    this.claimedItems.sort(function(a, b) {
+      return new Date(b.dateNeeded).getTime() - new Date(a.dateNeeded).getTime();
+    });
+    this.availableItems.sort(function(a, b) {
+      return new Date(b.dateNeeded).getTime() - new Date(a.dateNeeded).getTime();
+    });
 
     this.noResultsClaimed = !this.claimedItems.length;
     this.noResultsAvailable = !this.availableItems.length;

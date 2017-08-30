@@ -31,7 +31,7 @@
             There isn't anything here yet, hit add item to request meals.
           </div>
           <div class="subFont" style="font-size: 1em" *ngIf="noResultsAvailable && !isPlanner">
-            All items in this category have been claimed. Care items may still be available in other categories.
+            There are no unclaimed items in this category. Care items may be available in other categories.
           </div>
           <div style="border-bottom: 1px solid; text-align: left; padding-bottom: 5px; margin-bottom: 0.7em" *ngFor="let availableItem of availableItems"
             class="mainFont" (click)="openItem(availableItem)">
