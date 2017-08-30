@@ -231,13 +231,15 @@ goToCareItemList()
   if(this.careCategory)
   {
      dataPass = {
-        pageBool : "Y"
+        pageBool : "Y", 
+        careCategory: this.careCategory
      }
       this.storage.set('straightToAddItem', "Y");
   }
   else{
      dataPass = {
-        pageBool : "N"
+        pageBool : "N",
+        careCategory: this.careCategory
      }
       this.storage.set('straightToAddItem', "N");
   }

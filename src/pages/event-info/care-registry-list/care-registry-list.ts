@@ -41,6 +41,7 @@ export class CareRegistryListPage {
     dinnerClicked: boolean = false;
     timeFilledOut: boolean = false;
     showAddItem: boolean = false;
+    showAddItemAll:boolean = false;
     showConfirm: boolean = false;
 
 
@@ -48,6 +49,8 @@ export class CareRegistryListPage {
     mealDate: string;
     mealTime: any;
     footerButtonText: string = "Add Item";
+
+    itemDate: string;
 
 
     //AWS Variables
@@ -72,11 +75,22 @@ export class CareRegistryListPage {
     ionViewDidLoad() {
 
         let x: string = this.navParams.get('pageBool');
+        let y: string = this.navParams.get('careCategory');
 
         if (x == 'Y') {
-            this.showAddItem = true;
-            this.footerButtonText = "Next";
-        } else {
+
+                  if(y == 'Meals'){
+                      this.showAddItem = true;
+                      this.footerButtonText = "Next";
+                  }
+                  else{
+                    this.showAddItemAll = true;
+                    this.footerButtonText = "Add Item";
+                  }
+
+        } 
+        
+        else {
             let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
             myModal.present();
         }
@@ -151,25 +165,8 @@ export class CareRegistryListPage {
     }
 
 
-    coleConvert(time: any) {
-        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-        if (time.length > 1) {
-            time = time.slice(1);
-            time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
-            time[0] = +time[0] % 12 || 12;
-            if (time[2] == "00") {
-                time[1] = "";
-                time[2] = "";
-            }
-        }
-        return time.join('');
-    }
-
-
-
-
     loadCareCategoryInformation() {
-        //this.careCategory = this.navParams.get("careCategory");
+        this.careCategory = this.navParams.get("careCategory");
         if (!this.careCategory) {
             this.careCategory = "Meals";
         }
@@ -233,20 +230,49 @@ export class CareRegistryListPage {
     showCalendar() {
         this.datePicker.showCalendar();
         this.openDatePicker()
-
     }
     openDatePicker() {
         this.datePicker.onDateSelected.subscribe(
             (date: string) => {
-
                 console.log(date);
                 var x = date.toString();
-                this.mealDate = x.slice(4, 10);
-
-
                 this.mealDate = x.slice(4, 7) + '.' + x.slice(7, 10)
             });
     }
+
+    showCalendarAll() {
+        this.datePicker.showCalendar();
+        this.openDatePickerAll()
+    }
+    openDatePickerAll() {
+        this.datePicker.onDateSelected.subscribe(
+            (date: string) => {
+                console.log(date);
+                var x = date.toString();
+                this.itemDate = x.slice(4, 7) + '.' + x.slice(7, 10)
+            });
+    }
+//End of Custom Date Pickers
+
+
+
+
+    coleConvert(time: any) {
+        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+        if (time.length > 1) {
+            time = time.slice(1);
+            time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
+            time[0] = +time[0] % 12 || 12;
+            if (time[2] == "00") {
+                time[1] = "";
+                time[2] = "";
+            }
+        }
+        return time.join('');
+    }
+
+
+
 
     presentAlert() {
         let alert = this.alertCtrl.create({

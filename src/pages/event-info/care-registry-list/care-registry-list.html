@@ -16,7 +16,7 @@
 
 <ion-content padding>
 
-  <div *ngIf="!showAddItem" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+  <div *ngIf="!showAddItem && !showAddItemAll" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
     <div style="position: relative; width: 100%; height: 100%">
       <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
       />
@@ -81,6 +81,7 @@
     </div>
   </div>
 
+<!-- bool: showAddItem result: shows the Add Meal Item Page -->
   <div *ngIf="showAddItem" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
     <div style="position: relative; width: 100%; height: 100%">
       
@@ -158,9 +159,52 @@
 
 
 
+<!-- bool: showAddItem result: shows the Add Meal Item Page -->
+  <div *ngIf="showAddItemAll" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+    <div style="position: relative; width: 100%; height: 100%">
+      
+      
+      <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"/>
+      <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
+        <div class="blueText mainFont">
+          Add Item
+        </div>
+        <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.2em;" />
+
+        <br />
+        <div class="center">
+
+          <ion-list *ngIf="!timeFilledOut && !showConfirm" style="" no-lines>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Date Needed</ion-label>
+              <ion-input  class="inputField" placeholder="Feed cat, mow etc." [(ngModel)]="careItemName"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Short Description</ion-label>
+       <ion-input class="inputField" placeholder="Task details, time etc." [(ngModel)]="careItemShort"></ion-input>
+            </ion-item>
+           <ion-item (click)="showCalendarAll()">
+              <ion-label stacked class="inputLabelText">Date Needed</ion-label>
+              <ion-input [disabled]="true" readonly class="inputField" placeholder="Double Tap for Calendar" [(ngModel)]="itemDate"></ion-input>
+            </ion-item>
+          </ion-list>
 
 
 
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+<!-- bool: showConfirm result: shows the Confirm  Item Page -->
 <div *ngIf="showConfirm" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
     <div style="position: relative; width: 100%; padding-top: 25%;">
       
