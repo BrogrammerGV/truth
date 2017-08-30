@@ -84,7 +84,15 @@ module.exports = [
         "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
         "pluginId": "cordova-plugin-datepicker",
         "clobbers": [
-            "datePicker"
+            "datePicker"]
+
+    },
+    {
+        "id": "mx.ferreyra.callnumber.CallNumber",
+        "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
+        "pluginId": "mx.ferreyra.callnumber",
+        "clobbers": [
+            "call"
         ]
     }
 ];
@@ -103,7 +111,8 @@ module.exports.metadata =
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
-    "cordova-plugin-datepicker": "0.9.3"
+    "cordova-plugin-datepicker": "0.9.3",
+    "mx.ferreyra.callnumber": "0.0.2"
 };
 // BOTTOM OF METADATA
 });

@@ -1,7 +1,10 @@
-import { Component } from '@angular/core';
 
-import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController, Slides, Events } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
+import { Storage } from '@ionic/storage';
+import { SocialSharing } from '@ionic-native/social-sharing';
+import { CallNumber } from '@ionic-native/call-number';
 
 import { DatePickerModule } from 'datepicker-ionic2';
 import { DatePickerDirective } from 'datepicker-ionic2';
@@ -11,6 +14,9 @@ import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
 import { EventMainPage2 } from '../event-main2/event-main2';
+import { RegisterPage } from '../../register/register';
+import { LoginComponentPage } from '../../login-component/login-component';
+
 
 /**
  * Generated class for the CareRegistryListPage page.
@@ -18,9 +24,8 @@ import { EventMainPage2 } from '../event-main2/event-main2';
  * See http://ionicframework.com/docs/components/#navigation for more info
  * on Ionic pages and navigation.
  */
-
-
-
+declare let lambda: any;
+declare let cognitoHelper: any;
 @IonicPage()
 
 @Component({
@@ -34,6 +39,9 @@ import { EventMainPage2 } from '../event-main2/event-main2';
 
 export class CareRegistryListPage {
 
+  
+  @ViewChild(Slides) slides: Slides;
+  @ViewChild('footerSlides') footerSlide: Slides;
 
     //GUI Bool Logic
     breakfastClicked: boolean = false;
@@ -62,28 +70,38 @@ export class CareRegistryListPage {
     careItemDate: string;
 
 
-
-    public careCategory: string = "";
-    public careCategoryFriendlyName: string = "";
-    public careCategoryDescription: string = "";
-    public noResultsClaimed: boolean = false;
-    public noResultsAvailable: boolean = false;
+public careCategory: string = "";
+  public careCategoryFriendlyName: string = "";
+  public careCategoryDescription: string = "";
+  public secondaryButtonText: string = "Edit";
+  public noResultsClaimed: boolean = true;
+  public noResultsAvailable: boolean = true;
+  public availableItems: any[] = [];
+  public claimedItems: any[] = [];
+  public eventClicked: boolean = false;
+  public event: any;
+  public eventID: string = "";
+  public isPlanner: boolean = false;
+  public comment: string = "";
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
-        public datePicker: DatePicker, public alertCtrl: AlertController) {
+        public datePicker: DatePicker, public alertCtrl: AlertController,public callNumber: CallNumber, public socialSharing: SocialSharing, public eventHandler: Events, public storage: Storage) {
 
 
     }
 
 
     ionViewDidLoad() {
-
+        
+        this.slides.lockSwipes(true);
+        this.footerSlide.lockSwipes(true);
         let x: string = this.navParams.get('pageBool');
-        let y: string = this.navParams.get('careCategory');
+      this.careCategory = this.navParams.get("careCategory");
+      
 
         if (x == 'Y') {
 
-            if (y == 'Meals') {
+            if (this.careCategory == 'Meals') {
                 this.showAddItem = true;
                 this.footerButtonText = "Next";
             }
@@ -93,11 +111,21 @@ export class CareRegistryListPage {
             }
         }
         else {
-            let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
-            myModal.present();
+          this.storage.get(this.careCategory + "Shown").then((val) => {
+      if(!(val == "shown")){
+        let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+        myModal.present();
+        this.storage.set(this.careCategory + "Shown","shown");
+      }
+    });
         }
-        this.loadCareCategoryInformation();
-        console.log('ionViewDidLoad CareRegistryListPage');
+
+
+       this.loadCareCategoryInformation();
+        this.getData();
+        this.eventHandler.subscribe("goToLogin",(data:any)=>{this.moveSlides(4);});
+        this.eventHandler.subscribe("registered",(data:any)=>{this.moveSlides(3);});
+        this.eventHandler.subscribe("loggedIn",(data:any)=>{this.moveSlides(5);});
     }
 
     addItem() {
@@ -177,15 +205,47 @@ export class CareRegistryListPage {
         }
     }
 
-    openItem(parm: string) {
-        this.navCtrl.push(CareRegistryItemDetailsPage, { itemID: parm });
-    }
+   // openItem(parm: string) {
+      //  this.navCtrl.push(CareRegistryItemDetailsPage, { itemID: parm });
+  ///  }
 
     goBack() {
         this.navCtrl.pop();
     }
 
+  getData(){
+    var event: string = this.navParams.get("eventID");
+    if (!event){event = "guidstuff";}
+    this.eventID = event;
+    lambda("GetPostScriptCareRegistry",{eventID: event, careCategory: this.careCategory})
+    .then(function(data: any){
+      //console.log(this);
+      this.showItems(data);
+    }.bind(this));
+  }
 
+  showItems(ref: any){
+    this.availableItems = [];
+    this.claimedItems = [];
+
+    for (var i = 0; i < ref.length; i++) {
+      if(ref[i].claimed.BOOL){
+        this.claimedItems.push(ref[i]);
+      }else{
+        this.availableItems.push(ref[i]);
+      }
+    }
+
+    this.claimedItems.sort(function(a, b) {
+      return new Date(b.dateNeeded).getTime() - new Date(a.dateNeeded).getTime();
+    });
+    this.availableItems.sort(function(a, b) {
+      return new Date(b.dateNeeded).getTime() - new Date(a.dateNeeded).getTime();
+    });
+
+    this.noResultsClaimed = !this.claimedItems.length;
+    this.noResultsAvailable = !this.availableItems.length;
+  }
 
 
     //Sharing GUI Logic
@@ -271,4 +331,125 @@ export class CareRegistryListPage {
     }
 
 
+
+  openItem(parm: any){
+    this.event = parm;
+    if(!this.event.claimed.BOOL || this.isPlanner){
+      if(this.event.claimed.BOOL){
+        this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
+      }else{
+        if(this.isPlanner){
+          this.secondaryButtonText = "Edit Item";
+        }else{
+          this.secondaryButtonText = "Claim Task";
+        }
+      }
+      this.moveSlides(1);
+    }
+  }
+
+
+  secondaryButton(){
+    if(this.secondaryButtonText == "Edit Item"){
+      this.navCtrl.push(CareRegistryAddItemPage);
+    }else{
+      this.contact();
+    }
+  }
+
+  contact(){
+    let alert = this.alertCtrl.create({
+      title: 'Contact ' + this.event.claimedByFirst.S,
+      message: 'How do you want to contact ' + this.event.claimedByFirst.S + '?',
+      buttons: [
+        {
+          text: 'Call',
+          handler: () => {
+            this.call();
+          }
+        },
+        {
+          text: 'Text',
+          handler: () => {
+            this.text();
+          }
+        },
+        {
+          text: 'Email',
+          handler: () => {
+            this.email();
+          }
+        },
+        {
+          text: 'Cancel',
+          role: "cancel",
+          handler: () => {
+            console.log('Buy clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+  call(){
+    this.callNumber.callNumber(this.event.claimedByPhone.S, true)
+  }
+
+  text(){
+    //alert(this.event.claimedByPhone.S);
+    var number: string = this.event.claimedByPhone.S;
+    this.socialSharing.shareViaSMS("",number).then(() => {
+          // Success!
+        }).catch((err) => {
+          alert(err);
+        });
+  }
+
+  email(){
+    this.socialSharing.canShareViaEmail().then(function(){
+      this.socialSharing.shareViaEmail('','',this.event.claimedByEmail.S,'','',null).then(function(){
+      }).catch(function(err:any){
+        alert(err);
+      });
+    }.bind(this)).catch(function(){
+      alert("Unable to open email client.");
+    });
+  }
+
+  claimTask(){
+    cognitoHelper("attr").then((data:any)=>{
+      this.moveSlides(5);
+    }).catch((err: any)=>{
+      this.moveSlides(2);
+    })    
+  /*
+    lambda("ClaimCareRegistryTask",{eventID: this.eventID, careID: this.event.careID.S, firstName: "Danielle", lastName: "Burmeister", email: "dburmeister@homesteaderslife.com",phone:"515-822-8103"})
+    .then(function(data: any){
+      console.log(data);
+      if(data){
+        alert(data.errorMessage);
+      }else{
+        alert("Thank you for claiming this task.");
+      }
+      this.getData();
+      this.goBack();
+    }.bind(this))
+    .catch(function(data:any){
+      alert("An error has occurred, please try again later.");
+      this.getData();
+      this.goBack();
+    }.bind(this));
+    */
+  }
+
+  moveSlides(slideNum: number){
+    this.slides.lockSwipes(false);
+    this.slides.slideTo(slideNum);
+    this.slides.lockSwipes(true);
+
+    this.footerSlide.lockSwipes(false);
+    this.footerSlide.slideTo(slideNum);
+    this.footerSlide.lockSwipes(true);
+  }
 }

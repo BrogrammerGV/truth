@@ -10,6 +10,8 @@ import { ConferenceApp } from './app.component';
 import { AccountPage } from '../pages/account/account';
 import { LoginPage } from '../pages/login/login';
 import { Calendar } from '@ionic-native/calendar';
+import { CallNumber } from '@ionic-native/call-number';
+
 
 import { DatePickerModule } from 'datepicker-ionic2';
 import { DatePicker } from 'ionic2-date-picker/ionic2-date-picker';
@@ -65,6 +67,8 @@ import { CareRegistryListPage } from '../pages/event-info/care-registry-list/car
 import { CareRegistryAddItemPage } from '../pages/event-info/care-registry-add-item/care-registry-add-item';
 import { CareRegistryFirstTimeModalPage } from '../pages/event-info/care-registry-first-time-modal/care-registry-first-time-modal';
 import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-item-details/care-registry-item-details';
+import { RegisterPage } from '../pages/register/register';
+import { LoginComponentPage } from '../pages/login-component/login-component';
 
 @NgModule({
   declarations: [
@@ -115,7 +119,12 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
     CareRegistryItemDetailsPage,
+<<<<<<< HEAD
      DatePicker,
+=======
+    RegisterPage,
+    LoginComponentPage
+>>>>>>> a2b54040eecbc1039fcab2eb8328a636ec7af4b6
   ],
   imports: [
     BrowserModule,
@@ -203,6 +212,8 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryFirstTimeModalPage,
     CareRegistryItemDetailsPage,
      DatePicker,
+    RegisterPage,
+    LoginComponentPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
@@ -212,7 +223,9 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     SplashScreen,
     Calendar,
     SocialSharing, 
-    DatePickerModule
+    DatePickerModule,
+    SocialSharing,
+    CallNumber
   ]
 })
 export class AppModule { }

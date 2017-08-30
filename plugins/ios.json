@@ -40,6 +40,9 @@
         },
         "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {
