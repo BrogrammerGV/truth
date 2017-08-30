@@ -94,11 +94,7 @@ export class CareRegistryListPage {
         if (this.showConfirm) {
             this.showConfirm = false;
             this.showAddItem = false;
-
             this.navCtrl.push(EventMainPage2);
-
-
-
         }
 
         if (this.timeFilledOut) {
@@ -255,7 +251,7 @@ export class CareRegistryListPage {
     presentAlert() {
         let alert = this.alertCtrl.create({
 
-            subTitle: 'Please complete all the required information',
+            subTitle: 'Please complete all the required information.',
             buttons: ['Dismiss']
         });
         alert.present();
