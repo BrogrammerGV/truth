@@ -83,15 +83,16 @@
 
   <div *ngIf="showAddItem" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
     <div style="position: relative; width: 100%; height: 100%">
-      <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
-      />
+      
+      
+      <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"/>
       <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
         <div class="blueText mainFont">
           Add Meal
         </div>
         <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
 
-<br />
+        <br />
         <div class="center">
 
           <button style="width: 32%; font-size: .9em; height: 2.3em; line-height:0;  border-width: 2px;" [ngClass]="{
@@ -109,38 +110,41 @@
 
 
 
-          <ion-list *ngIf="!timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
-            <ion-item  (click)="showCalendar()">
+          <ion-list *ngIf="!timeFilledOut && !showConfirm" style="margin-right: 2%; margin-top: 5%;" no-lines>
+            <ion-item (click)="showCalendar()">
               <ion-label stacked class="inputLabelText">Date Needed</ion-label>
-              <ion-input  [disabled]="true" readonly class="inputField" placeholder="Double Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
+              <ion-input [disabled]="true" readonly class="inputField" placeholder="Double Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
             </ion-item>
-             <ion-item>
-              <ion-label  stacked class="inputLabelText">Time Needed</ion-label>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Time Needed</ion-label>
               <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
-          <ion-datetime  class="inputField" displayFormat="hh:mm a" pickerFormat="hh:mm a" placeholder="Tap for Time" [(ngModel)]="mealTime"></ion-datetime>
+              <ion-datetime class="inputField" displayFormat="hh:mm a" pickerFormat="hh:mm a" placeholder="Tap for Time" [(ngModel)]="mealTime"></ion-datetime>
             </ion-item>
           </ion-list>
- 
 
 
- <hr *ngIf="timeFilledOut"  class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
-      <div *ngIf="timeFilledOut" class="mainFont">
-         {{mealDate}} | {{ mealTime}} 
-        </div>
 
 
-  <ion-list *ngIf="timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
-            <ion-item >
+
+
+
+          <hr *ngIf="timeFilledOut" class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
+          <div *ngIf="timeFilledOut" class="mainFont">
+            {{mealDate}} | {{ mealTime}}
+          </div>
+
+
+          <ion-list *ngIf="timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
+            <ion-item>
               <ion-label stacked class="inputLabelText">Drop-off Location</ion-label>
-              <ion-input  class="inputField" placeholder="Address, City, State" [(ngModel)]="dropOfLocation"></ion-input>
+              <ion-input class="inputField" placeholder="Address, City, State" [(ngModel)]="dropOfLocation"></ion-input>
             </ion-item>
-             <ion-item>
-              <ion-label  stacked class="inputLabelText">Additional Instructions</ion-label>
+            <ion-item>
+              <ion-label stacked class="inputLabelText">Additional Instructions</ion-label>
               <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
-          <ion-input  pickerFormat="h:mm:a" class="inputField" placeholder="Food Allergies, Restrictions..." [(ngModel)]="additionalInstructions"></ion-input>
+              <ion-input pickerFormat="h:mm:a" class="inputField" placeholder="Food Allergies etc..." [(ngModel)]="additionalInstructions"></ion-input>
             </ion-item>
           </ion-list>
- 
 
 
 
@@ -151,6 +155,42 @@
       </div>
     </div>
   </div>
+
+
+
+
+
+
+<div *ngIf="showConfirm" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+    <div style="position: relative; width: 100%; padding-top: 25%;">
+      
+      
+      <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
+
+ <div  class="welcomeCenter">
+      <img src="assets/img/checkmark.png" class="welcomeImage" />
+      <br /><br />
+      <div class="mainFont">A confirmation email is on its way. In the meantime, let's get started.</div>
+    </div>
+
+
+
+
+
+
+
+        </div>
+
+
+    </div>
+  </div>
+
+
+
+
+       
+
+
 
 </ion-content>
 

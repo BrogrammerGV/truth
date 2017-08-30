@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 
 import { DatePickerModule } from 'datepicker-ionic2';
@@ -40,12 +40,17 @@ export class CareRegistryListPage {
   lunchClicked: boolean = false;
   dinnerClicked: boolean = false;
   timeFilledOut: boolean = false;
+  showAddItem: boolean = false;
+  showConfirm: boolean = false;
+
 
   //intra-page nav variables
-  showAddItem: boolean = false;
   mealDate: string;
-mealTime:any;
+  mealTime:any;
   footerButtonText: string = "Add Item";
+
+
+//AWS Variables
 
 
 
@@ -57,7 +62,7 @@ mealTime:any;
   public noResultsAvailable: boolean = false;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
-public datePicker: DatePicker) {
+public datePicker: DatePicker, public alertCtrl: AlertController) {
 
 
 }
@@ -85,25 +90,51 @@ public datePicker: DatePicker) {
 
 
 
+if(this.showConfirm)
+{
+  this.showConfirm = false;
+  this.showAddItem = false;
+
+  this.navCtrl.push(EventMainPage2);
+
+
+
+}
+
 if(this.timeFilledOut)
 {
 
       if(this.breakfastClicked || this.lunchClicked || this.dinnerClicked)
       {
 
+        this.timeFilledOut = false;
+        this.showConfirm = true;
+        this.footerButtonText = "Add Another Item"
+
+      }
+      else
+      {
+        this.presentAlert();
       }
 
 }
+else
 
+{
 
-
-        if((this.mealDate && this.mealTime) && !this.timeFilledOut)
+    if((this.mealDate && this.mealTime) && !this.timeFilledOut)
         {
           this.mealTime= this.coleConvert(this.mealTime);
           this.timeFilledOut = true;
           this.footerButtonText = "Add Care Item"
         }
 
+
+}
+
+
+
+    
 
 
 
@@ -185,13 +216,13 @@ if(this.timeFilledOut)
     this.breakfastClicked = false;
     this.lunchClicked = false;
     this.dinnerClicked = true;
-//this.showCalendar();
+
   }
 
 
 
 
-
+//Custom View Controller/Provider for calendar popup
   showCalendar(){
     this.datePicker.showCalendar();
     this.openDatePicker()
@@ -209,5 +240,15 @@ openDatePicker()
 
         this.mealDate = x.slice(4,7) + '.' + x.slice(7,10)    });
   }
+
+  presentAlert() {
+  let alert = this.alertCtrl.create({
+    title: 'Missing Information',
+    subTitle: 'You Must Select',
+    buttons: ['Dismiss']
+  });
+  alert.present();
+}
+
 
 }
