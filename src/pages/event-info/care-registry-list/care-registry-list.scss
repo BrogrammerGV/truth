@@ -3,15 +3,7 @@ page-care-registry-list {
         content: none;
     }
 
-
-    .showAnimation{
-        transform: translateX(-100%);
-        -webkit-transform: translateX(-100%);
-        transition: 0.2s linear;
-    }
-    .hideAnimation{
-        transform: translateX(0%);
-        -webkit-transform: translateX(0%);
-        transition: 0.2s linear;
+    .swiper-slide{
+        font-size: 14px;
     }
 }

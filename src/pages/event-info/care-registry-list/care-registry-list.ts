@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ModalController, AlertController } from 'ionic-angular';
+import { Component, ViewChild } from '@angular/core';
+import { IonicPage, NavController, NavParams, ModalController, AlertController, Slides, Events } from 'ionic-angular';
 import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 import { Storage } from '@ionic/storage';
 import { SocialSharing } from '@ionic-native/social-sharing';
@@ -7,6 +7,8 @@ import { CallNumber } from '@ionic-native/call-number';
 
 import { CareRegistryAddItemPage } from '../care-registry-add-item/care-registry-add-item';
 import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-registry-item-details';
+import { RegisterPage } from '../../register/register';
+import { LoginComponentPage } from '../../login-component/login-component';
 
 
 /**
@@ -16,6 +18,7 @@ import { CareRegistryItemDetailsPage } from '../care-registry-item-details/care-
  * on Ionic pages and navigation.
  */
 declare let lambda: any;
+declare let cognitoHelper: any;
 @IonicPage()
 @Component({
   selector: 'page-care-registry-list',
@@ -23,6 +26,8 @@ declare let lambda: any;
 })
 export class CareRegistryListPage {
 
+  @ViewChild(Slides) slides: Slides;
+  @ViewChild('footerSlides') footerSlide: Slides;
   public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
@@ -37,10 +42,14 @@ export class CareRegistryListPage {
   public isPlanner: boolean = false;
   public comment: string = "";
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage, public callNumber: CallNumber, public socialSharing: SocialSharing, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage, public callNumber: CallNumber, public socialSharing: SocialSharing, public alertCtrl: AlertController, public eventHandler: Events) {
+
   }
 
   ionViewDidLoad() {
+    this.slides.lockSwipes(true);
+    this.footerSlide.lockSwipes(true);
+    console.log(this.slides);
     this.careCategory = this.navParams.get("careCategory");
     if (!this.careCategory) {
       this.careCategory = "Meals";
@@ -53,11 +62,14 @@ export class CareRegistryListPage {
         this.storage.set(this.careCategory + "Shown","shown");
       }
     });
-    
 
     this.loadCareCategoryInformation();
 
     this.getData();
+
+    this.eventHandler.subscribe("goToLogin",(data:any)=>{this.moveSlides(4);});
+    this.eventHandler.subscribe("registered",(data:any)=>{this.moveSlides(3);});
+    this.eventHandler.subscribe("loggedIn",(data:any)=>{this.moveSlides(5);});
   }
 
   getData(){
@@ -131,14 +143,11 @@ export class CareRegistryListPage {
           this.secondaryButtonText = "Claim Task";
         }
       }
-  
-      this.eventClicked = true;
+      this.moveSlides(1);
     }
   }
 
   goBack(){
-    this.eventClicked = false;
-    //this.navCtrl.pop();
   }
 
   secondaryButton(){
@@ -210,6 +219,12 @@ export class CareRegistryListPage {
   }
 
   claimTask(){
+    cognitoHelper("attr").then((data:any)=>{
+      this.moveSlides(5);
+    }).catch((err: any)=>{
+      this.moveSlides(2);
+    })    
+  /*
     lambda("ClaimCareRegistryTask",{eventID: this.eventID, careID: this.event.careID.S, firstName: "Danielle", lastName: "Burmeister", email: "dburmeister@homesteaderslife.com",phone:"515-822-8103"})
     .then(function(data: any){
       console.log(data);
@@ -226,5 +241,16 @@ export class CareRegistryListPage {
       this.getData();
       this.goBack();
     }.bind(this));
+    */
+  }
+
+  moveSlides(slideNum: number){
+    this.slides.lockSwipes(false);
+    this.slides.slideTo(slideNum);
+    this.slides.lockSwipes(true);
+
+    this.footerSlide.lockSwipes(false);
+    this.footerSlide.slideTo(slideNum);
+    this.footerSlide.lockSwipes(true);
   }
 }

@@ -40394,18 +40394,8 @@ page-care-registry-list .header-md::after, page-care-registry-list .tabs-md[tabs
   content: none;
 }
 
-page-care-registry-list .showAnimation {
-  transform: translateX(-100%);
-  -webkit-transform: translateX(-100%);
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
-}
-
-page-care-registry-list .hideAnimation {
-  transform: translateX(0%);
-  -webkit-transform: translateX(0%);
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
+page-care-registry-list .swiper-slide {
+  font-size: 14px;
 }
 
 page-event-info-one {

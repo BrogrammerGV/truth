@@ -63,6 +63,8 @@ import { CareRegistryListPage } from '../pages/event-info/care-registry-list/car
 import { CareRegistryAddItemPage } from '../pages/event-info/care-registry-add-item/care-registry-add-item';
 import { CareRegistryFirstTimeModalPage } from '../pages/event-info/care-registry-first-time-modal/care-registry-first-time-modal';
 import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-item-details/care-registry-item-details';
+import { RegisterPage } from '../pages/register/register';
+import { LoginComponentPage } from '../pages/login-component/login-component';
 
 @NgModule({
   declarations: [
@@ -110,7 +112,9 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+    RegisterPage,
+    LoginComponentPage
   ],
   imports: [
     BrowserModule,
@@ -194,7 +198,9 @@ import { CareRegistryItemDetailsPage } from '../pages/event-info/care-registry-i
     CareRegistryListPage,
     CareRegistryAddItemPage,
     CareRegistryFirstTimeModalPage,
-    CareRegistryItemDetailsPage
+    CareRegistryItemDetailsPage,
+    RegisterPage,
+    LoginComponentPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
