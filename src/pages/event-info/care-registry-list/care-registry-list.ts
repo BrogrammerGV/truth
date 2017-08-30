@@ -39,10 +39,12 @@ export class CareRegistryListPage {
   breakfastClicked: boolean = false;
   lunchClicked: boolean = false;
   dinnerClicked: boolean = false;
+  timeFilledOut: boolean = false;
 
   //intra-page nav variables
   showAddItem: boolean = false;
-
+  mealDate: string;
+mealTime:any;
   footerButtonText: string = "Add Item";
 
 
@@ -80,8 +82,48 @@ public datePicker: DatePicker) {
   }
 
   addItem() {
-    this.navCtrl.push(CareRegistryAddItemPage);
+
+
+
+if(this.timeFilledOut)
+{
+
+      if(this.breakfastClicked || this.lunchClicked || this.dinnerClicked)
+      {
+        
+      }
+
+}
+
+
+
+        if((this.mealDate && this.mealTime) && !this.timeFilledOut)
+        {
+          this.mealTime= this.coleConvert(this.mealTime);
+          this.timeFilledOut = true;
+          this.footerButtonText = "Add Care Item"
+        }
+
+
+
+
+
+
   }
+
+
+ coleConvert(time:any) {
+  time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  if (time.length > 1) { 
+    time = time.slice (1);  
+    time[5] = +time[0] < 12 ? 'AM' : 'PM'; 
+    time[0] = +time[0] % 12 || 12; 
+  }
+  return time.join (''); 
+}
+
+
+
 
   loadCareCategoryInformation() {
     //this.careCategory = this.navParams.get("careCategory");
@@ -143,17 +185,22 @@ this.showCalendar();
 
 
 
+
+
+  showCalendar(){
+    this.datePicker.showCalendar();
+    this.openDatePicker()
+
+  }
 openDatePicker()
 {
   this.datePicker.onDateSelected.subscribe( 
       (date:string) => {
+        
         console.log(date);
+        var x = date.toString();
+        this.mealDate = x.slice(0,15);
     });
   }
-
-  showCalendar(){
-    this.datePicker.showCalendar();
-  }
-
 
 }

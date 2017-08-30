@@ -94,7 +94,6 @@
 <br />
         <div class="center">
 
-      
           <button style="width: 32%; font-size: .9em; height: 2.3em; line-height:0;  border-width: 2px;" [ngClass]="{
             'whiteButton' : !breakfastClicked,
             'orangeButton' : breakfastClicked
@@ -110,16 +109,38 @@
 
 
 
-          <ion-list style="margin-right: 2%; margin-top: 5%;" no-lines>
-            <ion-item (click)="showCalendar()">
+          <ion-list *ngIf="!timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
+            <ion-item >
               <ion-label stacked class="inputLabelText">Date Needed</ion-label>
-              <ion-input [disabled]="true" class="inputField" placeholder="Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
+              <ion-input (click)="showCalendar()" class="inputField" placeholder="Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
             </ion-item>
              <ion-item>
-              <ion-label stacked class="inputLabelText">Time Needed</ion-label>
-              <ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTypeNeeded"></ion-input>
+              <ion-label  stacked class="inputLabelText">Time Needed</ion-label>
+              <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
+          <ion-datetime  class="inputField" displayFormat="hh:mm a" pickerFormat="hh:mm a" placeholder="Tap for Time" [(ngModel)]="mealTime"></ion-datetime>
             </ion-item>
           </ion-list>
+ 
+
+
+ <hr *ngIf="timeFilledOut"  class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" />
+      <div *ngIf="timeFilledOut" class="mainFont">
+         {{mealDate}} | {{ mealTime}} 
+        </div>
+
+
+  <ion-list *ngIf="timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
+            <ion-item >
+              <ion-label stacked class="inputLabelText">Drop Off Location</ion-label>
+              <ion-input  class="inputField" placeholder="Street Address, City, State" [(ngModel)]="dropOfLocation"></ion-input>
+            </ion-item>
+             <ion-item>
+              <ion-label  stacked class="inputLabelText">Additional Instructions</ion-label>
+              <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
+          <ion-datetime  pickerFormat="h:mm:a" class="inputField" placeholder="Tap for Time" [(ngModel)]="additionalInstructions"></ion-datetime>
+            </ion-item>
+          </ion-list>
+ 
 
 
 
