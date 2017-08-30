@@ -41,7 +41,7 @@ export class CareRegistryListPage {
     dinnerClicked: boolean = false;
     timeFilledOut: boolean = false;
     showAddItem: boolean = false;
-    showAddItemAll:boolean = false;
+    showAddItemAll: boolean = false;
     showConfirm: boolean = false;
 
 
@@ -83,32 +83,24 @@ export class CareRegistryListPage {
 
         if (x == 'Y') {
 
-                  if(y == 'Meals'){
-                      this.showAddItem = true;
-                      this.footerButtonText = "Next";
-                  }
-                  else{
-                    this.showAddItemAll = true;
-                    this.footerButtonText = "Add Item";
-                  }
-
-        } 
-        
+            if (y == 'Meals') {
+                this.showAddItem = true;
+                this.footerButtonText = "Next";
+            }
+            else {
+                this.showAddItemAll = true;
+                this.footerButtonText = "Add Item";
+            }
+        }
         else {
             let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
             myModal.present();
         }
         this.loadCareCategoryInformation();
         console.log('ionViewDidLoad CareRegistryListPage');
-
-
-
     }
 
     addItem() {
-
-
-
 
         if (this.showConfirm && (this.showAddItem || this.showAddItemAll)) {
             this.showConfirm = false;
@@ -117,17 +109,10 @@ export class CareRegistryListPage {
             this.navCtrl.push(EventMainPage2);
             return;
         }
-
-        if(this.careItemName && this.careItemShort && this.careItemDate)
-        {
-                    this.showConfirm = true;
-                    this.footerButtonText = "Add Another Item"
+        if (this.careItemName && this.careItemShort && this.careItemDate) {
+            this.showConfirm = true;
+            this.footerButtonText = "Add Another Item"
         }
-
-
-
-
-
         if (this.timeFilledOut) {
 
             if (this.breakfastClicked || this.lunchClicked || this.dinnerClicked) {
@@ -141,18 +126,12 @@ export class CareRegistryListPage {
                     this.presentAlert();
                 }
 
-
             }
             else {
                 this.presentAlert();
             }
-
         }
-
-
-        
         else {
-
             if (this.breakfastClicked || this.lunchClicked || this.dinnerClicked) {
 
                 if ((this.mealDate && this.mealTime) && !this.timeFilledOut) {
@@ -165,25 +144,11 @@ export class CareRegistryListPage {
                 }
 
             }
-          
             else {
-              if(this.careCategory == 'Meals')
-                this.presentAlert();
+                if (this.careCategory == 'Meals')
+                    this.presentAlert();
             }
-
-
-
-
         }
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -274,7 +239,7 @@ export class CareRegistryListPage {
                 this.careItemDate = x.slice(4, 7) + '.' + x.slice(7, 10)
             });
     }
-//End of Custom Date Pickers
+    //End of Custom Date Pickers
 
 
 
