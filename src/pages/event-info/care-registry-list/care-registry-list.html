@@ -110,9 +110,9 @@
 
 
           <ion-list *ngIf="!timeFilledOut" style="margin-right: 2%; margin-top: 5%;" no-lines>
-            <ion-item (click)="showCalendar()">
+            <ion-item  (click)="showCalendar()">
               <ion-label stacked class="inputLabelText">Date Needed</ion-label>
-              <ion-input [disabled]="true" class="inputField" placeholder="Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
+              <ion-input  [disabled]="true" readonly class="inputField" placeholder="Double Tap for Calendar" [(ngModel)]="mealDate"></ion-input>
             </ion-item>
              <ion-item>
               <ion-label  stacked class="inputLabelText">Time Needed</ion-label>
@@ -137,7 +137,7 @@
              <ion-item>
               <ion-label  stacked class="inputLabelText">Additional Instructions</ion-label>
               <!--<ion-input class="inputField" placeholder="Type Here" [(ngModel)]="mealTime"></ion-input>-->
-          <ion-input  pickerFormat="h:mm:a" class="inputField" placeholder="Tap for Time" [(ngModel)]="additionalInstructions"></ion-input>
+          <ion-input  pickerFormat="h:mm:a" class="inputField" placeholder="Food Allergies, Restrictions..." [(ngModel)]="additionalInstructions"></ion-input>
             </ion-item>
           </ion-list>
  

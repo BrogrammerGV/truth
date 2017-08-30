@@ -116,7 +116,7 @@ if(this.timeFilledOut)
   time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
   if (time.length > 1) { 
     time = time.slice (1);  
-    time[5] = +time[0] < 12 ?  'a.m.' : ' p.m.'; 
+    time[5] = +time[0] < 12 ?  ' a.m.' : ' p.m.'; 
     time[0] = +time[0] % 12 || 12; 
         if(time[2] == "00")
         {
@@ -185,7 +185,7 @@ if(this.timeFilledOut)
     this.breakfastClicked = false;
     this.lunchClicked = false;
     this.dinnerClicked = true;
-this.showCalendar();
+//this.showCalendar();
   }
 
 
