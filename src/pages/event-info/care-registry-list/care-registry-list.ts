@@ -24,10 +24,10 @@ import { EventMainPage2 } from '../event-main2/event-main2';
 @IonicPage()
 
 @Component({
-  selector: 'page-care-registry-list',
-  templateUrl: 'care-registry-list.html',
-  providers: [ DatePicker ]
-  
+    selector: 'page-care-registry-list',
+    templateUrl: 'care-registry-list.html',
+    providers: [DatePicker]
+
 })
 
 
@@ -35,220 +35,231 @@ import { EventMainPage2 } from '../event-main2/event-main2';
 export class CareRegistryListPage {
 
 
-  //GUI Bool Logic
-  breakfastClicked: boolean = false;
-  lunchClicked: boolean = false;
-  dinnerClicked: boolean = false;
-  timeFilledOut: boolean = false;
-  showAddItem: boolean = false;
-  showConfirm: boolean = false;
+    //GUI Bool Logic
+    breakfastClicked: boolean = false;
+    lunchClicked: boolean = false;
+    dinnerClicked: boolean = false;
+    timeFilledOut: boolean = false;
+    showAddItem: boolean = false;
+    showConfirm: boolean = false;
 
 
-  //intra-page nav variables
-  mealDate: string;
-  mealTime:any;
-  footerButtonText: string = "Add Item";
+    //intra-page nav variables
+    mealDate: string;
+    mealTime: any;
+    footerButtonText: string = "Add Item";
 
 
-//AWS Variables
+    //AWS Variables
+    additionalInstructions: string;
+    dropOfLocation: string;
 
 
 
+    public careCategory: string = "";
+    public careCategoryFriendlyName: string = "";
+    public careCategoryDescription: string = "";
+    public noResultsClaimed: boolean = false;
+    public noResultsAvailable: boolean = false;
 
-  public careCategory: string = "";
-  public careCategoryFriendlyName: string = "";
-  public careCategoryDescription: string = "";
-  public noResultsClaimed: boolean = false;
-  public noResultsAvailable: boolean = false;
-
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, 
-public datePicker: DatePicker, public alertCtrl: AlertController) {
-
-
-}
+    constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
+        public datePicker: DatePicker, public alertCtrl: AlertController) {
 
 
-  ionViewDidLoad() {
-
-    let x: string = this.navParams.get('pageBool');
-
-    if (x == 'Y') {
-      this.showAddItem = true;
-      this.footerButtonText = "Next";
-    } else {
-      let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
-      myModal.present();
     }
-    this.loadCareCategoryInformation();
-    console.log('ionViewDidLoad CareRegistryListPage');
+
+
+    ionViewDidLoad() {
+
+        let x: string = this.navParams.get('pageBool');
+
+        if (x == 'Y') {
+            this.showAddItem = true;
+            this.footerButtonText = "Next";
+        } else {
+            let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+            myModal.present();
+        }
+        this.loadCareCategoryInformation();
+        console.log('ionViewDidLoad CareRegistryListPage');
 
 
 
-  }
+    }
 
-  addItem() {
-
-
-
-if(this.showConfirm)
-{
-  this.showConfirm = false;
-  this.showAddItem = false;
-
-  this.navCtrl.push(EventMainPage2);
+    addItem() {
 
 
 
-}
+        if (this.showConfirm) {
+            this.showConfirm = false;
+            this.showAddItem = false;
 
-if(this.timeFilledOut)
-{
+            this.navCtrl.push(EventMainPage2);
 
-      if(this.breakfastClicked || this.lunchClicked || this.dinnerClicked)
-      {
 
-        this.timeFilledOut = false;
-        this.showConfirm = true;
-        this.footerButtonText = "Add Another Item"
 
-      }
-      else
-      {
-        this.presentAlert();
-      }
+        }
 
-}
-else
+        if (this.timeFilledOut) {
 
-{
+            if (this.breakfastClicked || this.lunchClicked || this.dinnerClicked) {
 
-    if((this.mealDate && this.mealTime) && !this.timeFilledOut)
-        {
-          this.mealTime= this.coleConvert(this.mealTime);
-          this.timeFilledOut = true;
-          this.footerButtonText = "Add Care Item"
+                if (this.dropOfLocation && this.additionalInstructions) {
+                    this.timeFilledOut = false;
+                    this.showConfirm = true;
+                    this.footerButtonText = "Add Another Item"
+                }
+                else {
+                    this.presentAlert();
+                }
+
+
+            }
+            else {
+                this.presentAlert();
+            }
+
+        }
+        else {
+
+            if (this.breakfastClicked || this.lunchClicked || this.dinnerClicked) {
+
+                if ((this.mealDate && this.mealTime) && !this.timeFilledOut) {
+                    this.mealTime = this.coleConvert(this.mealTime);
+                    this.timeFilledOut = true;
+                    this.footerButtonText = "Add Care Item"
+                }
+                else {
+                    this.presentAlert();
+                }
+
+            }
+            else {
+                this.presentAlert();
+            }
+
+
+
+
         }
 
 
-}
-
-
-
-    
 
 
 
 
 
-  }
 
 
- coleConvert(time:any) {
-  time = time.toString ().match (/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-  if (time.length > 1) { 
-    time = time.slice (1);  
-    time[5] = +time[0] < 12 ?  ' a.m.' : ' p.m.'; 
-    time[0] = +time[0] % 12 || 12; 
-        if(time[2] == "00")
-        {
-          time[1] = "";
-          time[2] = "";
+    }
+
+
+    coleConvert(time: any) {
+        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+        if (time.length > 1) {
+            time = time.slice(1);
+            time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
+            time[0] = +time[0] % 12 || 12;
+            if (time[2] == "00") {
+                time[1] = "";
+                time[2] = "";
+            }
         }
-  }
-  return time.join (''); 
-}
-
-
-
-
-  loadCareCategoryInformation() {
-    //this.careCategory = this.navParams.get("careCategory");
-    if (!this.careCategory) {
-      this.careCategory = "Meals";
+        return time.join('');
     }
-    switch (this.careCategory) {
-      case "Meals":
-        this.careCategoryFriendlyName = "Meals";
-        this.careCategoryDescription = "Bringing food is an easy and comfortable way for loved ones to help.";
-        break;
-      case "Transportation":
-        this.careCategoryFriendlyName = "Transportation";
-        this.careCategoryDescription = "Let your loved ones know when they can help provide transportation.";
-        break;
-      case "Household":
-        this.careCategoryFriendlyName = "Household Tasks";
-        this.careCategoryDescription = "Let loved ones assist with basic household tasks like laundry, shopping, cleaning, etc.";
-        break;
-      case "Misc":
-        this.careCategoryFriendlyName = "Misc. Support";
-        this.careCategoryDescription = "What other tasks can loved ones help with? Pet care? Childcare? Lawn care?";
-        break;
+
+
+
+
+    loadCareCategoryInformation() {
+        //this.careCategory = this.navParams.get("careCategory");
+        if (!this.careCategory) {
+            this.careCategory = "Meals";
+        }
+        switch (this.careCategory) {
+            case "Meals":
+                this.careCategoryFriendlyName = "Meals";
+                this.careCategoryDescription = "Bringing food is an easy and comfortable way for loved ones to help.";
+                break;
+            case "Transportation":
+                this.careCategoryFriendlyName = "Transportation";
+                this.careCategoryDescription = "Let your loved ones know when they can help provide transportation.";
+                break;
+            case "Household":
+                this.careCategoryFriendlyName = "Household Tasks";
+                this.careCategoryDescription = "Let loved ones assist with basic household tasks like laundry, shopping, cleaning, etc.";
+                break;
+            case "Misc":
+                this.careCategoryFriendlyName = "Misc. Support";
+                this.careCategoryDescription = "What other tasks can loved ones help with? Pet care? Childcare? Lawn care?";
+                break;
+        }
     }
-  }
 
-  openItem(parm: string) {
-    this.navCtrl.push(CareRegistryItemDetailsPage, { itemID: parm });
-  }
+    openItem(parm: string) {
+        this.navCtrl.push(CareRegistryItemDetailsPage, { itemID: parm });
+    }
 
-  goBack() {
-    this.navCtrl.pop();
-  }
-
-
-
-
-  //Sharing GUI Logic
-  showBreakfast() {
-    this.breakfastClicked = true;
-    this.lunchClicked = false;
-    this.dinnerClicked = false;
-
-  }
-
-  showLunch() {
-    this.breakfastClicked = false;
-    this.lunchClicked = true;
-    this.dinnerClicked = false;
-
-  }
-
-  showDinner() {
-    this.breakfastClicked = false;
-    this.lunchClicked = false;
-    this.dinnerClicked = true;
-
-  }
+    goBack() {
+        this.navCtrl.pop();
+    }
 
 
 
 
-//Custom View Controller/Provider for calendar popup
-  showCalendar(){
-    this.datePicker.showCalendar();
-    this.openDatePicker()
+    //Sharing GUI Logic
+    showBreakfast() {
+        this.breakfastClicked = true;
+        this.lunchClicked = false;
+        this.dinnerClicked = false;
 
-  }
-openDatePicker()
-{
-  this.datePicker.onDateSelected.subscribe( 
-      (date:string) => {
-        
-        console.log(date);
-        var x = date.toString();
-        this.mealDate = x.slice(4,10);
+    }
+
+    showLunch() {
+        this.breakfastClicked = false;
+        this.lunchClicked = true;
+        this.dinnerClicked = false;
+
+    }
+
+    showDinner() {
+        this.breakfastClicked = false;
+        this.lunchClicked = false;
+        this.dinnerClicked = true;
+
+    }
 
 
-        this.mealDate = x.slice(4,7) + '.' + x.slice(7,10)    });
-  }
 
-  presentAlert() {
-  let alert = this.alertCtrl.create({
-    title: 'Missing Information',
-    subTitle: 'You Must Select',
-    buttons: ['Dismiss']
-  });
-  alert.present();
-}
+
+    //Custom View Controller/Provider for calendar popup
+    showCalendar() {
+        this.datePicker.showCalendar();
+        this.openDatePicker()
+
+    }
+    openDatePicker() {
+        this.datePicker.onDateSelected.subscribe(
+            (date: string) => {
+
+                console.log(date);
+                var x = date.toString();
+                this.mealDate = x.slice(4, 10);
+
+
+                this.mealDate = x.slice(4, 7) + '.' + x.slice(7, 10)
+            });
+    }
+
+    presentAlert() {
+        let alert = this.alertCtrl.create({
+
+            subTitle: 'Please complete all the required information',
+            buttons: ['Dismiss']
+        });
+        alert.present();
+    }
 
 
 }
