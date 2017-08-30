@@ -21,7 +21,7 @@
     <div class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
       <div style="position: relative; width: 100%; height: 100%">
         <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
-        />
+          *ngIf="isPlanner" />
         <div style="overflow: auto; height: 100%; text-align: center; margin-left: 2em; margin-right: 0em; padding-right: 1em">
           <div class="blueText mainFont">
             Available
@@ -38,7 +38,7 @@
             <span>{{availableItem.itemName.S}}
                 <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px" /></span><br
             />
-            <span style="font-weight: normal; font-size: 0.7em">{{availableItem.shortDescription.S}}</span>
+            <span style="font-weight: normal; font-size: 0.7em">{{availableItem.itemSubName.S}}</span>
           </div>
 
           <br /><br />
@@ -64,35 +64,47 @@
     <div class="cardStyle" style="position: absolute; top: 10px; left: 100%; right: -100%; bottom: 10px; margin-left: 10px; margin-right: 10px">
       <div style="position: relative; width: 100%; height: 100%">
         <img src="assets/img/back.png" style="top:5px; left:0px; height: 1.5em; width: 1.5em; position: absolute; float: left" (click)="goBack()"
-        />
+          *ngIf="isPlanner" />
         <div style="overflow: auto; height: 100%; text-align: center; margin-left: 1em; margin-right: 0em; padding-right: 1em" class="mainFont"
           *ngIf="event">
           <div class="blueText">
             {{event.itemName.S}}
           </div>
           <div style="font-weight: normal; font-size: 0.7em">
-            {{event.shortDescription.S}}
+            {{event.itemSubName.S}}
           </div>
           <br />
           <div style="font-weight: normal; font-size: 0.7em; text-align: left">
-            <div style="font-weight: bold; margin-bottom: 10px">
-              Drop-off Location:
-            </div>
-            <div style="margin-left: 10px">
-              <span [innerHtml]="event.dropOffLocation.S"></span>
-            </div>
+              <div *ngIf="careCategory == 'Meals'">
+                <div style="font-weight: bold; margin-bottom: 10px">
+                  Drop-off Location:
+                </div>
+                <div style="margin-left: 10px">
+                  <span [innerHtml]="event.dropOffLocation.S"></span>
+                </div>
+                <br />
+                <div style="font-weight: bold; margin-bottom: 10px">
+                  Additional Instructions:
+                </div>
+                <div style="margin-left: 10px">
+                  {{event.additionalInstructions.S}}
+                </div>
+              </div>
+              <div *ngIf="careCategory != 'Meals'">
+                <div style="font-weight: bold; margin-bottom: 10px">
+                  Short Description:
+                </div>
+                <div style="margin-left: 10px">
+                  {{event.shortDescription.S}}
+                </div>
+              </div>
             <br />
-            <div style="font-weight: bold; margin-bottom: 10px">
-              Additional Instructions:
-            </div>
-            <div style="margin-left: 10px">
-              {{event.additionalInstructions.S}}
-            </div>
-            <br /><br />
           </div>
+          <br />
           <div style="font-weight: bold; text-align: center" *ngIf="event.claimed.BOOL">
             This item has been claimed by {{event.claimedByFirst.S}} {{event.claimedByLast.S}}.
           </div>
+          <br />
         </div>
       </div>
     </div>
@@ -100,8 +112,17 @@
 </ion-content>
 
 <ion-footer>
-  <div [ngClass]="{'showAnimation' : eventClicked, 'hideAnimation': !eventClicked}" *ngIf="isPlanner">
-    <button class="footerButton" (click)="addItem()">Add Item</button>
-    <button class="footerButton" (click)="secondaryButton()" style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;">{{secondaryButtonText}}</button>
+  <div [ngClass]="{'showAnimation' : eventClicked, 'hideAnimation': !eventClicked}">
+    <button class="footerButton" (click)="addItem()" *ngIf="isPlanner">Add Item</button>
+    <button class="footerButton" (click)="secondaryButton()" *ngIf="isPlanner" style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;">{{secondaryButtonText}}</button>
+    <button class="footerButton" (click)="goBack()" *ngIf="!isPlanner">Back</button>
+    <ion-row style="position: absolute; top: 0; left: 100%; right: -100%; bottom: 0;" *ngIf="!isPlanner">
+      <ion-col style="padding: 0;">
+        <button class="footerButtonWhite" (click)="goBack()">Back</button>
+      </ion-col>
+      <ion-col style="padding: 0;">
+        <button class="footerButtonDouble" (click)="claimTask()">Claim Task</button>
+      </ion-col>
+    </ion-row>
   </div>
 </ion-footer>

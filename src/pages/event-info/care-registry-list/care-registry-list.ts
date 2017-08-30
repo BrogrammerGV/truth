@@ -33,7 +33,9 @@ export class CareRegistryListPage {
   public claimedItems: any[] = [];
   public eventClicked: boolean = false;
   public event: any;
+  public eventID: string = "";
   public isPlanner: boolean = false;
+  public comment: string = "";
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController, public storage: Storage, public callNumber: CallNumber, public socialSharing: SocialSharing, public alertCtrl: AlertController) {
   }
@@ -41,7 +43,7 @@ export class CareRegistryListPage {
   ionViewDidLoad() {
     this.careCategory = this.navParams.get("careCategory");
     if (!this.careCategory) {
-      this.careCategory = "Transportation";
+      this.careCategory = "Meals";
     }
 
     this.storage.get(this.careCategory + "Shown").then((val) => {
@@ -61,7 +63,7 @@ export class CareRegistryListPage {
   getData(){
     var event: string = this.navParams.get("eventID");
     if (!event){event = "guidstuff";}
-
+    this.eventID = event;
     lambda("GetPostScriptCareRegistry",{eventID: event, careCategory: this.careCategory})
     .then(function(data: any){
       //console.log(this);
@@ -123,7 +125,11 @@ export class CareRegistryListPage {
       if(this.event.claimed.BOOL){
         this.secondaryButtonText = "Contact " + this.event.claimedByFirst.S;
       }else{
-        this.secondaryButtonText = "Edit Item";
+        if(this.isPlanner){
+          this.secondaryButtonText = "Edit Item";
+        }else{
+          this.secondaryButtonText = "Claim Task";
+        }
       }
   
       this.eventClicked = true;
@@ -201,5 +207,24 @@ export class CareRegistryListPage {
     }.bind(this)).catch(function(){
       alert("Unable to open email client.");
     });
+  }
+
+  claimTask(){
+    lambda("ClaimCareRegistryTask",{eventID: this.eventID, careID: this.event.careID.S, firstName: "Danielle", lastName: "Burmeister", email: "dburmeister@homesteaderslife.com",phone:"515-822-8103"})
+    .then(function(data: any){
+      console.log(data);
+      if(data){
+        alert(data.errorMessage);
+      }else{
+        alert("Thank you for claiming this task.");
+      }
+      this.getData();
+      this.goBack();
+    }.bind(this))
+    .catch(function(data:any){
+      alert("An error has occurred, please try again later.");
+      this.getData();
+      this.goBack();
+    }.bind(this));
   }
 }
