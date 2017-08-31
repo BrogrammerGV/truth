@@ -109,7 +109,7 @@
       </div>
     </ion-slide>
     <ion-slide>
-        <div class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+        <div class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; ">
             <div style="position: relative; width: 100%; height: 100%">
               <page-register textCopy="To claim this task, please sign up for an account."></page-register>
             </div>
@@ -149,7 +149,7 @@
 
 
 <!-- bool: showAddItem result: shows the Add Meal Item Page -->
-  <div *ngIf="showAddItem" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+  <div *ngIf="showAddItem" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; z-index:10;">
     <div style="position: relative; width: 100%; height: 100%">
       
       
@@ -226,7 +226,7 @@
 
 
 <!-- bool: showAddItem result: shows the Add Meal Item Page -->
-  <div *ngIf="showAddItemAll" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+  <div *ngIf="showAddItemAll" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; z-index:10;">
     <div style="position: relative; width: 100%; height: 100%">
       
       
@@ -271,7 +271,7 @@
 
 
 <!-- bool: showConfirm result: shows the Confirm  Item Page -->
-<div *ngIf="showConfirm" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px;">
+<div *ngIf="showConfirm" class="cardStyle" style="position: absolute; top: 10px; left: 10px; right: 10px; bottom: 10px; z-index: 10;">
     <div style="position: relative; width: 100%; padding-top: 25%;">
       
       
@@ -313,12 +313,13 @@
   <!-- Item list -->
   <ion-slides id="footerSlides" #footerSlides>
     <ion-slide>
-      <button class="footerButton" (click)="addItem()" *ngIf="isPlanner">{{footerButtonText}}</button>
+  <button class="footerButton" (click)="addItem()" *ngIf="isPlanner && !showAddItem && !showAddItemAll && !showConfirm">Add Item</button> 
       <button class="footerButton" (click)="goBack()" *ngIf="!isPlanner">Back</button>
+      <button class="footerButton" (click)="addItem()" *ngIf="isPlanner && (showAddItem || showAddItemAll)">{{footerButtonText}}</button>
     </ion-slide>
     <ion-slide>
   <!-- Item detail -->
-      <button class="footerButton" (click)="secondaryButton()" *ngIf="isPlanner">{{secondaryButtonText}}</button>
+    <button class="footerButton" (click)="secondaryButton()" *ngIf="isPlanner && !showAddItem && !showAddItemAll && !showConfirm">{{secondaryButtonText}}</button> 
       <ion-row *ngIf="!isPlanner">
         <ion-col style="padding: 0;">
           <button class="footerButtonWhite" (click)="moveSlides(0)">Back</button>
@@ -345,7 +346,7 @@
     </ion-slide>
     <ion-slide>
   <!-- Login -->
-      <ion-row *ngIf="!isPlanner">
+      <ion-row *ngIf="!isPlanner ">
           <ion-col style="padding: 0;">
             <button class="footerButtonWhite" (click)="moveSlides(2); this.eventHandler.publish('loginBack')">Back</button>
           </ion-col>

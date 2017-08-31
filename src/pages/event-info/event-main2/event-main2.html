@@ -73,14 +73,17 @@
 
   <!-- Entry Card only seen once -->
   <div *ngIf="!hasSeenCare" style="height : 97%; margin-top: 1%;" class="bgCard center">
-
-    <div style="padding-left: 5%; padding-right: 5%; margin-top: 20%;">
-      <h2 style="font-size: 1.5em;"> <b>Your loved ones want to help. Unfortunately, they don't always know what you need.</b></h2>
-
-      <h2 style="font-size: 1.5em;"> Your <span class="friendlyName"> Care Registry </span> gives them simple, specific ways to support you and your family
-        in the days ahead. </h2>
-    </div>
+ <div style="text-align: center; margin: 20px">
+    <span class="blueText" style="font-size: 1.6em; font-weight: bold;">Setting Up Your <br />Care Registry</span>
+ <hr class="horizontalBreak" style="height: 2px; margin-top: .5em; margin-bottom: .5em">
+    <span class="subFont" style="font-size: 1.3em">  Your loved ones want to help. Unfortunately, they don't always know what you need. <br />
+      
+            Your Care Registry  gives them simple, specific ways to support you and your family
+              in the days ahead.</span>
   </div>
+
+</div>
+
 
 
   <!-- End of Registry of Care entry card that will only be seen once -->
@@ -94,7 +97,7 @@
       <div class="centAlignCare">
         <ion-row>
           <ion-col col-6>
-            <button (click)="goToCareItemList()" style="position:relative;" ion-button full class="tileCareOne">
+            <button (click)="goToEvents()" style="position:relative;" ion-button full class="tileCareOne">
 
            
           <h2 class="myProgressGlobalText"><b> Meals</b></h2>
@@ -106,7 +109,7 @@
          </button>
           </ion-col>
           <ion-col col-6>
-            <button (click)="goToCareItemList()" ion-button full class="tileCareTwo">
+            <button (click)="goToTransportation()" ion-button full class="tileCareTwo">
             <h2  class="myProgressGlobalText">
               <b>
                 Transport
@@ -119,7 +122,7 @@
         </ion-row>
         <ion-row>
           <ion-col col-6>
-            <button (click)="goToCareItemList()" ion-button full class="tileCareThree">
+            <button (click)="goToHousehold()" ion-button full class="tileCareThree">
             <h2  class="myProgressGlobalText"> 
             <b>Household <br /> Tasks </b>
             </h2>
@@ -129,7 +132,7 @@
          </button>
           </ion-col>
           <ion-col col-6>
-            <button (click)="goToCareItemList()" ion-button full class="tileCareFour">
+            <button (click)="goToMisc()" ion-button full class="tileCareFour">
             <h2  class="myProgressGlobalText">
               
 

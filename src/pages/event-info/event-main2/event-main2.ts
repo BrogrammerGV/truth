@@ -101,7 +101,7 @@ export class EventMainPage2 {
 
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventMainPage');
+    console.log('ionViewDidLoad EventMainPage2');
     this.storage.get('guid').then((val) => {
       console.log('Guid:', val);
       this.doSearch(val);
@@ -169,11 +169,67 @@ export class EventMainPage2 {
   }
 
   goToEvents() {
-    this.navCtrl.setRoot(EventMainPage);
+    let dataPass;   
+  dataPass = {
+     eventGuid : this.eventGuid,
+      pageBool : "N",
+      careCategory: 'Meals'
+   }
+    this.storage.set('straightToAddItem', "N");
+this.careCategory ="Meals"
+  console.log(this.eventGuid + " " + this.careCategory);
+
+
+    this.navCtrl.push(CareRegistryListPage,dataPass );
   }
 
   goToFeed() {
     this.navCtrl.setRoot(EventMainPage3);
+  }
+
+  goToTransportation() {
+    let dataPass;   
+  dataPass = {
+     eventGuid : this.eventGuid,
+      pageBool : "N",
+      careCategory: 'Transportation'
+   }
+    this.storage.set('straightToAddItem', "N");
+this.careCategory ="Transportation"
+  console.log(this.eventGuid + " " + this.careCategory);
+
+
+    this.navCtrl.push(CareRegistryListPage,dataPass );
+  }
+
+  goToHousehold() {
+    let dataPass;   
+  dataPass = {
+     eventGuid : this.eventGuid,
+      pageBool : "N",
+      careCategory: 'Household'
+   }
+    this.storage.set('straightToAddItem', "N");
+this.careCategory ="Household"
+  console.log(this.eventGuid + " " + this.careCategory);
+
+
+    this.navCtrl.push(CareRegistryListPage,dataPass );
+  }
+
+  goToMisc() {
+    let dataPass;   
+  dataPass = {
+     eventGuid : this.eventGuid,
+      pageBool : "N",
+      careCategory: 'Misc'
+   }
+    this.storage.set('straightToAddItem', "N");
+this.careCategory = "Misc"
+  console.log(this.eventGuid + " " + this.careCategory);
+
+
+    this.navCtrl.push(CareRegistryListPage,dataPass );
   }
 
 
@@ -231,6 +287,7 @@ goToCareItemList()
   if(this.careCategory)
   {
      dataPass = {
+      eventGuid : this.eventGuid,
         pageBool : "Y", 
         careCategory: this.careCategory
      }
@@ -238,8 +295,9 @@ goToCareItemList()
   }
   else{
      dataPass = {
+      eventGuid : this.eventGuid,
         pageBool : "N",
-        careCategory: this.careCategory
+        careCategory: "Meals"
      }
       this.storage.set('straightToAddItem', "N");
   }

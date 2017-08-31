@@ -90,7 +90,7 @@ public careCategory: string = "";
 
 
     ionViewDidLoad() {
-        
+       this.isPlanner=true;
         this.slides.lockSwipes(true);
         this.footerSlide.lockSwipes(true);
         let x: string = this.navParams.get('pageBool');
@@ -111,7 +111,7 @@ public careCategory: string = "";
         else {
           this.storage.get(this.careCategory + "Shown").then((val) => {
       if(!(val == "shown")){
-        let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage);
+        let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage, {careCategory: this.careCategory});
         myModal.present();
         this.storage.set(this.careCategory + "Shown","shown");
       }
@@ -128,15 +128,16 @@ public careCategory: string = "";
 
     addItem() {
 
-        if (this.showConfirm && (this.showAddItem || this.showAddItemAll)) {
+        if (this.showConfirm) {
             this.showConfirm = false;
             this.showAddItem = false;
             this.showAddItemAll = false;
+            console.log(1);
             this.navCtrl.push(EventMainPage2);
             return;
         }
         if (this.careItemName && this.careItemShort && this.careItemDate) {
-            this.showConfirm = true;
+            this.showConfirm = true;console.log(2);
             this.footerButtonText = "Add Another Item"
         }
         if (this.timeFilledOut) {
@@ -146,7 +147,8 @@ public careCategory: string = "";
                 if (this.dropOfLocation && this.additionalInstructions) {
                     this.timeFilledOut = false;
                     this.showConfirm = true;
-                    this.footerButtonText = "Add Another Item"
+                    this.footerButtonText = "Add Another Item";
+                    console.log("3" + this.showConfirm);
                 }
                 else {
                     this.presentAlert();
@@ -163,7 +165,7 @@ public careCategory: string = "";
                 if ((this.mealDate && this.mealTime) && !this.timeFilledOut) {
                     this.mealTime = this.coleConvert(this.mealTime);
                     this.timeFilledOut = true;
-                    this.footerButtonText = "Add Care Item"
+                    this.footerButtonText = "Add Care Item";console.log(4);
                 }
                 else {
                     this.presentAlert();
@@ -171,8 +173,17 @@ public careCategory: string = "";
 
             }
             else {
-                if (this.careCategory == 'Meals')
-                    this.presentAlert();
+                if (this.careCategory == 'Meals'){
+                     this.showAddItem = true;
+                    this.footerButtonText = "Next";
+                }
+                else{
+                  this.showAddItemAll = true;
+                  this.footerButtonText = "Add Item";
+                }
+                  
+
+                this.footerButtonText == "Add Another Item"
             }
         }
     }
@@ -253,14 +264,11 @@ public careCategory: string = "";
         this.dinnerClicked = false;
 
     }
-
     showLunch() {
         this.breakfastClicked = false;
         this.lunchClicked = true;
         this.dinnerClicked = false;
-
     }
-
     showDinner() {
         this.breakfastClicked = false;
         this.lunchClicked = false;
@@ -298,35 +306,6 @@ public careCategory: string = "";
             });
     }
     //End of Custom Date Pickers
-
-
-
-
-    coleConvert(time: any) {
-        time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
-        if (time.length > 1) {
-            time = time.slice(1);
-            time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
-            time[0] = +time[0] % 12 || 12;
-            if (time[2] == "00") {
-                time[1] = "";
-                time[2] = "";
-            }
-        }
-        return time.join('');
-    }
-
-
-
-
-    presentAlert() {
-        let alert = this.alertCtrl.create({
-
-            subTitle: 'Please complete all the required information.',
-            buttons: ['Dismiss']
-        });
-        alert.present();
-    }
 
 
 
@@ -441,6 +420,9 @@ public careCategory: string = "";
     */
   }
 
+//Helper Functions
+
+
   moveSlides(slideNum: number){
     this.slides.lockSwipes(false);
     this.slides.slideTo(slideNum);
@@ -450,4 +432,27 @@ public careCategory: string = "";
     this.footerSlide.slideTo(slideNum);
     this.footerSlide.lockSwipes(true);
   }
+
+  coleConvert(time: any) {
+    time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+    if (time.length > 1) {
+        time = time.slice(1);
+        time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
+        time[0] = +time[0] % 12 || 12;
+        if (time[2] == "00") {
+            time[1] = "";
+            time[2] = "";
+        }
+    }
+    return time.join('');
+}
+
+presentAlert() {
+    let alert = this.alertCtrl.create({
+        subTitle: 'Please complete all the required information.',
+        buttons: ['Dismiss']
+    });
+    alert.present();
+}
+
 }
