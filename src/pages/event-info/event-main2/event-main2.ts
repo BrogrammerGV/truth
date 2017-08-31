@@ -306,4 +306,9 @@ goToCareItemList()
 }
 
 
+goEventNav()
+{
+  this.navCtrl.setRoot(EventMainPage);
+}
+
 }
