@@ -89,7 +89,7 @@ console.log("NavigationCheck:" + this.isPlanner)
       if(!(val == "shown")){
         let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage, {careCategory: this.careCategorySecondary});
         myModal.present();
-        this.storage.set(this.careCategorySecondary + "Shown","not");
+        this.storage.set(this.careCategorySecondary + "Shown","shown");
         console.log("Showm");
       }
     });

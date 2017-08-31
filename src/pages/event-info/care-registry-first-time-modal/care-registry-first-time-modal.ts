@@ -63,8 +63,8 @@ export class CareRegistryFirstTimeModalPage {
         this.careCategoryDescription2 = "Your Care Registry gives them simple, specific ways to support you and your family in the days ahead.";
         break;  
        case "Participant":
-        this.careCategoryFriendlyName = "What is a Care Registry";
-        this.careCategoryDescription1 = "A Care Registry offers simple, spefic ways to support friends and family in the days, weeks and months following the loss of a loved one."
+        this.careCategoryFriendlyName = "What is a Care Registry?";
+        this.careCategoryDescription1 = "A Care Registry offers simple, specific ways to support friends and family in the days, weeks and months following the loss of a loved one."
         this.careCategoryDescription2 = "Simply click on a category to view and claim care items.";
         break;  
     }

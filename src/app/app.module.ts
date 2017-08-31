@@ -62,6 +62,7 @@ import { EventInfoOnePage } from '../pages/event-info/event-info-one/event-info-
 import { EventMainPage } from '../pages/event-info/event-main/event-main';
 import { EventMainPage2 } from '../pages/event-info/event-main2/event-main2';
 import { EventMainPage3 } from '../pages/event-info/event-main3/event-main3';
+import { GlobalCarePage } from '../pages/event-info/global-care/global-care';
 import { CareModalPage } from '../pages/event-info/care-modal/care-modal';
 import { CareRegistryListPage } from '../pages/event-info/care-registry-list/care-registry-list';
 import { CareRegistryAddItemPage } from '../pages/event-info/care-registry-add-item/care-registry-add-item';
@@ -121,7 +122,8 @@ import { LoginComponentPage } from '../pages/login-component/login-component';
     CareRegistryItemDetailsPage,
     RegisterPage,
     LoginComponentPage,
-    DatePicker
+    DatePicker, 
+    GlobalCarePage
   ],
   imports: [
     BrowserModule,
@@ -210,7 +212,8 @@ import { LoginComponentPage } from '../pages/login-component/login-component';
     CareRegistryItemDetailsPage,
      DatePicker,
     RegisterPage,
-    LoginComponentPage
+    LoginComponentPage, 
+    GlobalCarePage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },
