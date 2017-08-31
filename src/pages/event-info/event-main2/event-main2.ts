@@ -5,7 +5,7 @@ import { EventInfoOnePage } from '../event-info-one/event-info-one';
 import { EventMainPage } from '../event-main/event-main';
 import { EventMainPage3 } from '../event-main3/event-main3';
 import { CareModalPage } from '../care-modal/care-modal';
-
+import { CareRegistryFirstTimeModalPage } from '../care-registry-first-time-modal/care-registry-first-time-modal';
 //CareRegistryBuilding Pages:
 import { CareRegistryListPage } from '../care-registry-list/care-registry-list';
 
@@ -38,7 +38,7 @@ export class EventMainPage2 {
   eventMonth: string;
   funeralHome: string;
   firstName: string;
-  
+
 
 
   //Bool Checks
@@ -57,9 +57,12 @@ export class EventMainPage2 {
 
   //CareRegistry Add Item Variables:
   careCategory: any;
+  careCategorySecondary: any;
   eventGuid: string;
 
 
+
+  public isPlanner: boolean = false;
 
 
 
@@ -78,6 +81,21 @@ export class EventMainPage2 {
 
   ionViewCanEnter() {
 
+this.careCategorySecondary = "Participant";
+console.log("NavigationCheck:" + this.isPlanner)
+
+       this.storage.get(this.careCategorySecondary + "Shown").then((val) => {
+         console.log(val)
+      if(!(val == "shown")){
+        let myModal = this.modalCtrl.create(CareRegistryFirstTimeModalPage, {careCategory: this.careCategorySecondary});
+        myModal.present();
+        this.storage.set(this.careCategorySecondary + "Shown","not");
+        console.log("Showm");
+      }
+    });
+
+
+
     this.storage.get('hasSeenCare').then((val) => {
       if (val == "Y") {
         this.hasSeenCare = true;
@@ -85,16 +103,14 @@ export class EventMainPage2 {
       }
 
     });
+    //     this.storage.get('straightToAddItem').then((val) => {
+    //   if (val == "Y") {
+    //     this.hasSeenCare = true;
+    //     this.showAddItem=true;
+    //     this.careButtonText = "Add Item";
+    //   }
 
-        this.storage.get('straightToAddItem').then((val) => {
-      if (val == "Y") {
-        this.hasSeenCare = true;
-        this.showAddItem=true;
-        this.careButtonText = "Add Item";
-      }
-
-    });
-
+    // });
   }
 
 
@@ -169,18 +185,18 @@ export class EventMainPage2 {
   }
 
   goToEvents() {
-    let dataPass;   
-  dataPass = {
-     eventGuid : this.eventGuid,
-      pageBool : "N",
+    let dataPass;
+    dataPass = {
+      eventGuid: this.eventGuid,
+      pageBool: "N",
       careCategory: 'Meals'
-   }
+    }
     this.storage.set('straightToAddItem', "N");
-this.careCategory ="Meals"
-  console.log(this.eventGuid + " " + this.careCategory);
+    this.careCategory = "Meals"
+    console.log(this.eventGuid + " " + this.careCategory);
 
 
-    this.navCtrl.push(CareRegistryListPage,dataPass );
+    this.navCtrl.push(CareRegistryListPage, dataPass);
   }
 
   goToFeed() {
@@ -188,48 +204,48 @@ this.careCategory ="Meals"
   }
 
   goToTransportation() {
-    let dataPass;   
-  dataPass = {
-     eventGuid : this.eventGuid,
-      pageBool : "N",
+    let dataPass;
+    dataPass = {
+      eventGuid: this.eventGuid,
+      pageBool: "N",
       careCategory: 'Transportation'
-   }
+    }
     this.storage.set('straightToAddItem', "N");
-this.careCategory ="Transportation"
-  console.log(this.eventGuid + " " + this.careCategory);
+    this.careCategory = "Transportation"
+    console.log(this.eventGuid + " " + this.careCategory);
 
 
-    this.navCtrl.push(CareRegistryListPage,dataPass );
+    this.navCtrl.push(CareRegistryListPage, dataPass);
   }
 
   goToHousehold() {
-    let dataPass;   
-  dataPass = {
-     eventGuid : this.eventGuid,
-      pageBool : "N",
+    let dataPass;
+    dataPass = {
+      eventGuid: this.eventGuid,
+      pageBool: "N",
       careCategory: 'Household'
-   }
+    }
     this.storage.set('straightToAddItem', "N");
-this.careCategory ="Household"
-  console.log(this.eventGuid + " " + this.careCategory);
+    this.careCategory = "Household"
+    console.log(this.eventGuid + " " + this.careCategory);
 
 
-    this.navCtrl.push(CareRegistryListPage,dataPass );
+    this.navCtrl.push(CareRegistryListPage, dataPass);
   }
 
   goToMisc() {
-    let dataPass;   
-  dataPass = {
-     eventGuid : this.eventGuid,
-      pageBool : "N",
+    let dataPass;
+    dataPass = {
+      eventGuid: this.eventGuid,
+      pageBool: "N",
       careCategory: 'Misc'
-   }
+    }
     this.storage.set('straightToAddItem', "N");
-this.careCategory = "Misc"
-  console.log(this.eventGuid + " " + this.careCategory);
+    this.careCategory = "Misc"
+    console.log(this.eventGuid + " " + this.careCategory);
 
 
-    this.navCtrl.push(CareRegistryListPage,dataPass );
+    this.navCtrl.push(CareRegistryListPage, dataPass);
   }
 
 
@@ -242,35 +258,33 @@ this.careCategory = "Misc"
       this.storage.set('hasSeenCare', "Y");
       this.hasSeenCare = true;
       this.careButtonText = "Add Care Item"
-      this.openCareModal();
+      //this.openCareModal();
 
 
     }
-    if(this.careButtonText=="Add Care Item")
-    {
-       this.showAddItem = true;
-       this.careButtonText = "Add Item"
+    if (this.careButtonText == "Add Care Item") {
+      this.showAddItem = true;
+      this.careButtonText = "Add Item"
     }
     else {
 
-      if(this.careCategory){
-       this.goToCareItemList();
-    }
-  
-    
+      if (this.careCategory) {
+        this.goToCareItemList();
+      }
+
+
     }
 
 
   }
 
 
-goBack()
-{
-  this.showAddItem = false;
-  this.careButtonText = "Add Care Item"
-  this.storage.set('straightToAddItem', "N");
-  this.careCategory = undefined;
-}
+  goBack() {
+    this.showAddItem = false;
+    this.careButtonText = "Add Care Item"
+    this.storage.set('straightToAddItem', "N");
+    this.careCategory = undefined;
+  }
 
   openCareModal() {
     let myModal = this.modalCtrl.create(CareModalPage);
@@ -280,35 +294,32 @@ goBack()
 
 
 
-goToCareItemList()
-{
-  let dataPass;
+  goToCareItemList() {
+    let dataPass;
 
-  if(this.careCategory)
-  {
-     dataPass = {
-      eventGuid : this.eventGuid,
-        pageBool : "Y", 
+    if (this.careCategory) {
+      dataPass = {
+        eventGuid: this.eventGuid,
+        pageBool: "Y",
         careCategory: this.careCategory
-     }
+      }
       this.storage.set('straightToAddItem', "Y");
-  }
-  else{
-     dataPass = {
-      eventGuid : this.eventGuid,
-        pageBool : "N",
+    }
+    else {
+      dataPass = {
+        eventGuid: this.eventGuid,
+        pageBool: "N",
         careCategory: "Meals"
-     }
+      }
       this.storage.set('straightToAddItem', "N");
-  }
+    }
     console.log(this.eventGuid + " " + this.careCategory);
     this.navCtrl.push(CareRegistryListPage, dataPass);
-}
+  }
 
 
-goEventNav()
-{
-  this.navCtrl.setRoot(EventMainPage);
-}
+  goEventNav() {
+    this.navCtrl.setRoot(EventMainPage);
+  }
 
 }

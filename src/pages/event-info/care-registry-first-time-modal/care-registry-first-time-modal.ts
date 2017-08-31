@@ -57,6 +57,16 @@ export class CareRegistryFirstTimeModalPage {
         this.careCategoryDescription1 = "In addition to the most common needs, we want you to be able to add items that uniquely benefit you and your family."
         this.careCategoryDescription2 = "This includes anything from pet care and snow removal to nursing home visits and babysitting.";
         break;
+      case "Planner":
+        this.careCategoryFriendlyName = "Setting Up Your Care Registry";
+        this.careCategoryDescription1 = "Your loved ones want to help. Unfortunately, they don't always know what you need."
+        this.careCategoryDescription2 = "Your Care Registry gives them simple, specific ways to support you and your family in the days ahead.";
+        break;  
+       case "Participant":
+        this.careCategoryFriendlyName = "What is a Care Registry";
+        this.careCategoryDescription1 = "A Care Registry offers simple, spefic ways to support friends and family in the days, weeks and months following the loss of a loved one."
+        this.careCategoryDescription2 = "Simply click on a category to view and claim care items.";
+        break;  
     }
   }
 }

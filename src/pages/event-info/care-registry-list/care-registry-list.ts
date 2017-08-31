@@ -90,7 +90,11 @@ public careCategory: string = "";
 
 
     ionViewDidLoad() {
-       this.isPlanner=true;
+    
+    this.isPlanner = true;
+
+console.log("NavigationCheck:" + this.isPlanner)
+
         this.slides.lockSwipes(true);
         this.footerSlide.lockSwipes(true);
         let x: string = this.navParams.get('pageBool');
@@ -139,6 +143,7 @@ public careCategory: string = "";
         if (this.careItemName && this.careItemShort && this.careItemDate) {
             this.showConfirm = true;console.log(2);
             this.footerButtonText = "Add Another Item"
+            return;
         }
         if (this.timeFilledOut) {
 
@@ -180,10 +185,11 @@ public careCategory: string = "";
                 else{
                   this.showAddItemAll = true;
                   this.footerButtonText = "Add Item";
+                
                 }
                   
 
-                this.footerButtonText == "Add Another Item"
+                // this.footerButtonText == "Add Another Item"
             }
         }
     }
