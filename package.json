@@ -91,6 +91,8 @@
             "mx.ferreyra.callnumber": {},
             "call-number": {}
         },
-        "platforms": []
+        "platforms": [
+            "android"
+        ]
     }
 }
