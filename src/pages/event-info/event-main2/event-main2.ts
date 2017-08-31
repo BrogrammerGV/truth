@@ -163,6 +163,10 @@ console.log("NavigationCheck:" + this.isPlanner)
     this.navCtrl.push(EventInfoOnePage)
   }
 
+goBackParticipant()
+{
+  this.navCtrl.setRoot(EventInfoOnePage);
+}
 
   swapScreen() {
 
@@ -319,7 +323,10 @@ console.log("NavigationCheck:" + this.isPlanner)
 
 
   goEventNav() {
+    if(this.isPlanner)
     this.navCtrl.setRoot(EventMainPage);
+    else
+    this.navCtrl.setRoot(EventInfoOnePage);
   }
 
 }

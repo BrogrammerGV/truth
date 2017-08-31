@@ -68,7 +68,7 @@ export class CareRegistryListPage {
     careItemDate: string;
 
 
-public careCategory: string = "";
+  public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
   public secondaryButtonText: string = "Edit";
@@ -91,7 +91,7 @@ public careCategory: string = "";
 
     ionViewDidLoad() {
     
-    this.isPlanner = true;
+    this.isPlanner = false;
 
 console.log("NavigationCheck:" + this.isPlanner)
 

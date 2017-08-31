@@ -10,7 +10,6 @@
 
 
 
-
       <div class="date headerOverride">
         <span class="eventHeaderMonth"><b> {{eventMonth}}</b></span>
         <span class="eventHeaderDate"> <b>{{eventDate}}</b> </span>
@@ -70,7 +69,7 @@
 <ion-content class="no-scroll">
 
   <!-- Entry Card only seen once -->
-  <div *ngIf="!hasSeenCare" style="height : 97%; margin-top: 1%;" class="bgCard center">
+  <!--<div *ngIf="!hasSeenCare" style="height : 97%; margin-top: 1%;" class="bgCard center">
     <div style="text-align: center; margin: 20px">
       <span class="blueText" style="font-size: 1.6em; font-weight: bold;">Setting Up Your <br />Care Registry</span>
       <hr class="horizontalBreak" style="height: 2px; margin-top: .5em; margin-bottom: .5em">
@@ -79,13 +78,13 @@
             Your Care Registry  gives them simple, specific ways to support you and your family
               in the days ahead.</span>
     </div>
-  </div>
+  </div>-->
   <!-- End of Registry of Care entry card that will only be seen once -->
 
 
 
   <!-- Entry Card Default-->
-  <div *ngIf="hasSeenCare && !showAddItem" class="center">
+  <div *ngIf="!showAddItem" class="center">
 
     <div>
       <div class="centAlignCare">
@@ -180,6 +179,6 @@
 
 <ion-footer>
   <button *ngIf="isPlanner" class="footerButton" type="submit" (click)="getStarted()">{{careButtonText}}</button>
-  <button *ngIf="!isPlanner" class="footerButton" type="submit" (click)="goBack()">Back</button>
+  <button *ngIf="!isPlanner" class="footerButton" type="submit" (click)="goBackParticipant()">Back</button>
 
 </ion-footer>
