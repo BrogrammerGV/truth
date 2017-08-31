@@ -9,11 +9,19 @@
                 "parents": {
                     "/*": [
                         {
+                            "xml": "<feature name=\"CallNumber\"><param name=\"ios-package\" value=\"CFCallNumber\" /></feature>",
+                            "count": 1
+                        },
+                        {
                             "xml": "<feature name=\"Calendar\"><param name=\"ios-package\" value=\"Calendar\" /></feature>",
                             "count": 1
                         },
                         {
                             "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
                             "count": 1
                         },
                         {
@@ -57,11 +65,7 @@
                             "count": 1
                         },
                         {
-<<<<<<< HEAD
-                            "xml": "<feature name=\"DatePicker\"><param name=\"ios-package\" value=\"DatePicker\" /></feature>",
-=======
-                            "xml": "<feature name=\"CallNumber\"><param name=\"ios-package\" value=\"CFCallNumber\" /></feature>",
->>>>>>> a2b54040eecbc1039fcab2eb8328a636ec7af4b6
+                            "xml": "<feature name=\"Keyboard\"><param name=\"ios-package\" onload=\"true\" value=\"IonicKeyboard\" /></feature>",
                             "count": 1
                         }
                     ]
@@ -86,6 +90,9 @@
         }
     },
     "installed_plugins": {
+        "call-number": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
@@ -97,6 +104,9 @@
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-device": {
@@ -123,16 +133,20 @@
         "cordova-plugin-x-socialsharing": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
-<<<<<<< HEAD
-        "cordova-plugin-datepicker": {
-=======
-        "mx.ferreyra.callnumber": {
->>>>>>> a2b54040eecbc1039fcab2eb8328a636ec7af4b6
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
     "dependent_plugins": {},
     "modules": [
+        {
+            "id": "call-number.CallNumber",
+            "file": "plugins/call-number/www/CallNumber.js",
+            "pluginId": "call-number",
+            "clobbers": [
+                "call"
+            ]
+        },
         {
             "id": "cordova-plugin-calendar.Calendar",
             "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
@@ -155,6 +169,14 @@
             "pluginId": "cordova-plugin-console",
             "clobbers": [
                 "cordova.logger"
+            ]
+        },
+        {
+            "id": "cordova-plugin-datepicker.DatePicker",
+            "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+            "pluginId": "cordova-plugin-datepicker",
+            "clobbers": [
+                "datePicker"
             ]
         },
         {
@@ -213,24 +235,22 @@
             ]
         },
         {
-            "id": "cordova-plugin-datepicker.DatePicker",
-            "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
-            "pluginId": "cordova-plugin-datepicker",
+            "id": "ionic-plugin-keyboard.keyboard",
+            "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+            "pluginId": "ionic-plugin-keyboard",
             "clobbers": [
-                "datePicker"],
-            "id": "mx.ferreyra.callnumber.CallNumber",
-            "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
-            "pluginId": "mx.ferreyra.callnumber",
-            "clobbers": [
-                "call"
-            ]
+                "cordova.plugins.Keyboard"
+            ],
+            "runs": true
         }
     ],
     "plugin_metadata": {
+        "call-number": "0.0.2",
         "cordova-plugin-calendar": "4.6.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-console": "1.0.5",
         "cordova-plugin-crosswalk-webview": "2.2.0",
+        "cordova-plugin-datepicker": "0.9.3",
         "cordova-plugin-device": "1.1.4",
         "cordova-plugin-inappbrowser": "1.4.0",
         "cordova-plugin-splashscreen": "4.0.3",
@@ -239,7 +259,6 @@
         "cordova-plugin-wkwebview-engine": "1.1.4-dev",
         "es6-promise-plugin": "4.1.0",
         "cordova-plugin-x-socialsharing": "5.1.8",
-        "cordova-plugin-datepicker": "0.9.3",
-        "mx.ferreyra.callnumber": "0.0.2"
+        "ionic-plugin-keyboard": "2.2.1"
     }
 }

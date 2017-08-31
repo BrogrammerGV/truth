@@ -113,14 +113,22 @@
         "source": {
             "type": "registry",
             "id": "cordova-plugin-datepicker"
-              },
+        },
         "is_top_level": true,
         "variables": {}
     },
     "mx.ferreyra.callnumber": {
         "source": {
             "type": "registry",
-            "id": "call-number"
+            "id": "mx.ferreyra.callnumber@~0.0.2"
+        },
+        "is_top_level": true,
+        "variables": {}
+    },
+    "call-number": {
+        "source": {
+            "type": "registry",
+            "id": "@ionic-native/call-number@^4.2.0"
         },
         "is_top_level": true,
         "variables": {}
