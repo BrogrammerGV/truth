@@ -79,7 +79,7 @@ export class CareRegistryListPage {
   public eventClicked: boolean = false;
   public event: any;
   public eventID: string = "";
-  public isPlanner: boolean = false;
+  public isPlanner: boolean = true;
   public comment: string = "";
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,
@@ -91,7 +91,7 @@ export class CareRegistryListPage {
 
     ionViewDidLoad() {
     
-    this.isPlanner = false;
+
 
 console.log("NavigationCheck:" + this.isPlanner)
 
@@ -283,8 +283,6 @@ console.log("NavigationCheck:" + this.isPlanner)
     }
 
 
-
-
     //Custom View Controller/Provider for calendar popup
     showCalendar() {
         this.datePicker.showCalendar();
@@ -331,10 +329,18 @@ console.log("NavigationCheck:" + this.isPlanner)
     }
   }
 
-
   secondaryButton(){
     if(this.secondaryButtonText == "Edit Item"){
-      this.navCtrl.push(CareRegistryAddItemPage);
+      if(this.careCategory == "Meals")
+      {
+        this.mealDate = this.event.itemName.S;
+        this.mealTime = this.event.itemSubName.S
+        this.showAddItem = true;
+      }
+      
+      else
+      this.showAddItemAll = true;
+      //this.navCtrl.push(CareRegistryAddItemPage);
     }else{
       this.contact();
     }

@@ -17,29 +17,35 @@
 
 
   <div *ngIf="hasClaimed && !hasNone" style="height: 100%;" class="cardStyle">
-    <div  style="top: 1%; text-align: left;" class="welcomeCenter">
-      <div style="font-size: 1.4em;border-bottom-width:2px; border-bottom-color:#E6785A; border-bottom-style: solid; width:92%;"
-        class="mainFont">
-        <div style="padding-bottom: 3px;">Upcoming Care Registry Tasks:</div>
-      </div><br />
+    <div style="top: 1%;" class="welcomeCenter">
+      <div style="padding-bottom: 5%;" class="blueText mainFont">
+        Upcoming Care <br /> Registry Tasks:
+      </div>
+      <hr class="horizontalBreak" style="margin-top: 0.5em; margin-bottom: 0.5em;" /><br />
     </div>
-<div style="margin-left:-5%;" class="scheduleList">
-    <ul *ngFor="let claimedItem of claimedItems" (click)="openItem(claimedItem)">
-      <li>
-            <span style="font-size: 1.1em"> <b> {{claimedItem.dateNeeded.S | date:'MM/dd' }} </b>| {{claimedItem.itemName.S}}
+    <div style="margin-left:-5%;" class="scheduleList">
+      <ul *ngFor="let claimedItem of claimedItems" (click)="openItem(claimedItem)">
+        <li style="padding-top: 5px;">
+          <span style="font-size: 1.1em"> <b> {{claimedItem.dateNeeded.S | date:'MM/dd' }} </b>| {{claimedItem.itemName.S}}
     <img src="assets/img/arrow.png" style="float: right; height: 1em; padding-top: 5px">
     </span></li>
-    </ul>
-</div>
+      </ul>
+    </div>
+    <!--
     <div  (click)="showNone()" class="center">
       <b style="color: #E6785A"> More </b>
     </div>
+
+    <div  (click)="showNone()" class="center">
+      <b style="color: #E6785A"> More </b>
+    </div>-->
+
+
   </div>
 
- <div *ngIf="hasNone" style="height: 100%;" class="cardStyle">
-    <div  style="top: 15%; text-align: left;" class="welcomeCenter">
-      <div style="font-size: 1.4em;border-bottom-width:2px;"
-        class="mainFont">
+  <div *ngIf="hasNone" style="height: 100%;" class="cardStyle">
+    <div style="top: 15%; text-align: left;" class="welcomeCenter">
+      <div style="font-size: 1.4em;border-bottom-width:2px;" class="mainFont">
         <div class="center" style="padding-bottom: 3px; opacity:.3;"><i>You are not assigned to any upcoming Care Registry Tasks</i></div>
       </div><br />
     </div>
@@ -50,47 +56,45 @@
 
 
   <div *ngIf="!hasClaimed && !hasNone" style="height: 100%;" class="cardStyle">
-    <div  style="top: 1%; text-align: left;" class="welcomeCenter">
+    <div style="top: 1%; text-align: left;" class="welcomeCenter">
+
+      <div class="date headerOverride">
+        <span class="eventHeaderMonth" style="color:#4a4a4a; font-family: Roboto;"><b> {{careDate | date :"MMM"}}</b></span>
+        <span class="eventHeaderDate" style="font-size: 4.3em; color:#4a4a4a; font-family: Roboto;"> <b>{{careDate | date :"dd"}}</b> </span>
+      </div>
+      <div class="eventHeaderMainText" style="padding-bottom: 12%;">
+        <img src="assets/img/menu.png" class="menuIcon" />
+        <span style="font-size:1.0em; color:#4a4a4a; font-family: Roboto;" class="em08"> Remebering</span>
+        <br />
+        <span style="font-size:1.2em;color:#4a4a4a; font-family: Roboto;" class="em1"> <b>{{nameToUse}}</b> </span>
+        <br />
+        <span style="font-size:1.0em;color:#4a4a4a; font-family: Roboto;" class="em08"> {{dropOfLocation}} </span>
+        <br />
+        <span style="font-size:1.0em;color:#4a4a4a; font-family: Roboto;" class="em08"> {{careDate | date: "hh:a"}} | {{careDate | date :"MMM"}}. {{careDate | date :"dd"}}</span>
+      </div>
 
 
 
-<div  style="position:absolute; width: 30%; margin-left: -5px;" class="date">
-    <span style="font-size:1.2em; opacity: 1; margin-left: 15px; margin-bottom: -10px;letter-spacing: 0.1px;"><b> {{eventMonth}}</b></span> 
-    <span style="position: relative; top: -12px; opacity: 1;  margin-left: 15px;"> <b>{{eventDate}}</b> </span>
-    </div>
+      <div style="text-align:left;">
 
-<div style="margin-left: 30%; text-align:left;">
-
-  <img style="margin-top: -17%;" src="assets/img/menu.png" class="menuIcon" />
-
-    <span style="font-size: .8em; opacity: 1;"> Funeral Service for</span>
-<br />
-     <span style	="font-size: 1em; opacity: 1;"> <b>{{nameToUse}}</b> </span>
-<br />     
-    <span style=" font-size: .8em; opacity: 1;"> {{funeralHome}}</span>
-<br /> 
-    <span style="font-size: .8em; opacity: 1;"> {{eventTime}} | {{eventMonth}}. {{eventDate}}</span>
-
-</div>
-
-<div style="text-align:left;">
-
-<div class="row" style="margin-right: 8px; margin-left: 8px;border-bottom: thin solid #E6785A; width:100%; padding-bottom: 3px;">
- <span style="font-size: 1.0em; color:#686C71"> A Life Worth Celebrating</span>
-  </div>
-  <div class="row" style="margin-right: 8px; margin-left: 8px; width:100%; padding-top: 3px; ">
- <span style="font-size: 1.0em; color:#686C71"> Tony, age 43 passed away on Sunday July, 9, 2017, at his home surrounded 
-   <a>...Read More
-      
-   </a>
+        <div class="row" style="margin-right: 8px; margin-left: 8px;border-bottom: thin solid #E6785A; width:80%; padding-bottom: 3px;">
+          <span style="font-size: 1.0em; color:#686C71"> Instructions from <a>Gregory's</a> family:</span>
+        </div>
+        <div class="row" style="margin-right: 8px; margin-left: 8px; width:100%; padding-top: 3px; ">
+          <span style="font-size: 1.0em; color:#686C71"> Tony, age 43 passed away on Sunday July, 9, 2017, at his home surrounded 
+ 
    </span>
 
-  </div>
- <br /> 
-  
-</div>
+        </div>
+        <br />
 
+      </div>
 
+      <div class="center" style="padding-top: 12%;">
+        <button (click)="calendarUpdate()" style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Add to Calendar</b></button>
+
+        <button style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Directions</b></button>
+      </div>
     </div>
 
 
@@ -105,6 +109,6 @@
 
 </ion-content>
 <ion-footer>
-        <button class="footerButton" (click)="goBack()" *ngIf="!hasClaimed && !hasNone">Back</button>
-        <button class="footerButton" (click)="showNone()" *ngIf="hasNone">My Event</button>
-  </ion-footer>
+  <button class="footerButton" (click)="goBack()" *ngIf="!hasClaimed && !hasNone">Back</button>
+  <button class="footerButton" (click)="showClaim()" *ngIf="hasNone">My Event</button>
+</ion-footer>
