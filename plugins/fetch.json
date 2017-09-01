@@ -72,7 +72,7 @@
     "ionic-plugin-keyboard": {
         "source": {
             "type": "registry",
-            "id": "ionic-plugin-keyboard@~2.2.1"
+            "id": "ionic-plugin-keyboard@^2.2.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -83,7 +83,9 @@
             "id": "cordova-plugin-calendar"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "CALENDAR_USAGE_DESCRIPTION": " "
+        }
     },
     "cordova-plugin-compat": {
         "source": {
@@ -112,7 +114,7 @@
     "cordova-plugin-datepicker": {
         "source": {
             "type": "registry",
-            "id": "cordova-plugin-datepicker"
+            "id": "cordova-plugin-datepicker@^0.9.3"
         },
         "is_top_level": true,
         "variables": {}
@@ -128,7 +130,7 @@
     "call-number": {
         "source": {
             "type": "registry",
-            "id": "@ionic-native/call-number@^4.2.0"
+            "id": "call-number@git+https://github.com/Rohfosho/CordovaCallNumberPlugin.git"
         },
         "is_top_level": true,
         "variables": {}

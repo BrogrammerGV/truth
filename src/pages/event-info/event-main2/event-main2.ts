@@ -62,7 +62,7 @@ export class EventMainPage2 {
 
 
 
-  public isPlanner: boolean = true;
+  public isPlanner: boolean = false;
 
 
 

@@ -27,7 +27,7 @@
         "@ionic-native/core": "3.12.1",
         "@ionic-native/date-picker": "^4.2.0",
         "@ionic-native/in-app-browser": "3.12.1",
-        "@ionic-native/keyboard": "^4.1.0",
+        "@ionic-native/keyboard": "^4.2.1",
         "@ionic-native/social-sharing": "^4.1.0",
         "@ionic-native/splash-screen": "3.12.1",
         "@ionic-native/status-bar": "3.12.1",
@@ -55,7 +55,6 @@
         "ionic2-date-picker": "^1.0.6",
         "ionicons": "3.0.0",
         "iphone": "0.0.1",
-        "mx.ferreyra.callnumber": "~0.0.2",
         "rxjs": "5.4.0",
         "sw-toolbox": "3.4.0",
         "zone.js": "0.8.12"
@@ -88,11 +87,10 @@
             },
             "cordova-plugin-x-socialsharing": {},
             "cordova-plugin-datepicker": {},
-            "mx.ferreyra.callnumber": {},
             "call-number": {}
         },
         "platforms": [
-            "android"
+            "ios"
         ]
     }
 }

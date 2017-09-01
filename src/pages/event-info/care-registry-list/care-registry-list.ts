@@ -79,7 +79,7 @@ export class CareRegistryListPage {
   public eventClicked: boolean = false;
   public event: any;
   public eventID: string = "";
-  public isPlanner: boolean = true;
+  public isPlanner: boolean = false;
   public comment: string = "";
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public modalCtrl: ModalController,

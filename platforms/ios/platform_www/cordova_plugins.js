@@ -1,14 +1,6 @@
 cordova.define('cordova/plugin_list', function(require, exports, module) {
 module.exports = [
     {
-        "id": "call-number.CallNumber",
-        "file": "plugins/call-number/www/CallNumber.js",
-        "pluginId": "call-number",
-        "clobbers": [
-            "call"
-        ]
-    },
-    {
         "id": "cordova-plugin-calendar.Calendar",
         "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
         "pluginId": "cordova-plugin-calendar",
@@ -30,14 +22,6 @@ module.exports = [
         "pluginId": "cordova-plugin-console",
         "clobbers": [
             "cordova.logger"
-        ]
-    },
-    {
-        "id": "cordova-plugin-datepicker.DatePicker",
-        "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
-        "pluginId": "cordova-plugin-datepicker",
-        "clobbers": [
-            "datePicker"
         ]
     },
     {
@@ -103,17 +87,31 @@ module.exports = [
             "cordova.plugins.Keyboard"
         ],
         "runs": true
+    },
+    {
+        "id": "call-number.CallNumber",
+        "file": "plugins/call-number/www/CallNumber.js",
+        "pluginId": "call-number",
+        "clobbers": [
+            "call"
+        ]
+    },
+    {
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+        "pluginId": "cordova-plugin-datepicker",
+        "clobbers": [
+            "datePicker"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "call-number": "0.0.2",
     "cordova-plugin-calendar": "4.6.0",
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-crosswalk-webview": "2.2.0",
-    "cordova-plugin-datepicker": "0.9.3",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-inappbrowser": "1.4.0",
     "cordova-plugin-splashscreen": "4.0.3",
@@ -122,7 +120,9 @@ module.exports.metadata =
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "es6-promise-plugin": "4.1.0",
     "cordova-plugin-x-socialsharing": "5.1.8",
-    "ionic-plugin-keyboard": "2.2.1"
+    "ionic-plugin-keyboard": "2.2.1",
+    "call-number": "0.0.2",
+    "cordova-plugin-datepicker": "0.9.3"
 };
 // BOTTOM OF METADATA
 });
