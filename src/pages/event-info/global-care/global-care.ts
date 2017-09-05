@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
+import { InAppBrowser } from '@ionic-native/in-app-browser';
 /**
  * Generated class for the GlobalCarePage page.
  *
@@ -36,6 +37,7 @@ export class GlobalCarePage {
   dropOfLocation: string;
   claimedItemName: string;
   additionalInstructions: string;
+  googleSearch: string;
 
 
   public careCategory: string = "";
@@ -59,7 +61,7 @@ export class GlobalCarePage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public calendar: Calendar) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public calendar: Calendar, public platform: Platform, public iab: InAppBrowser) {
   }
 
   ionViewDidLoad() {
@@ -106,6 +108,7 @@ export class GlobalCarePage {
     this.careDate = this.event.dateNeeded.S;
     this.careTime = this.event.timeNeeded.S;
     this.dropOfLocation = this.event.dropOffLocation.S;
+    this.googleSearch = this.event.dropOffLocation.S.replace(' ', '+');
     this.claimedItemName = this.event.itemName.S
     this.additionalInstructions = this.event.additionalInstructions.S
     console.log(this.careDate + " " + this.careTime + " " + this.dropOfLocation)
@@ -160,15 +163,34 @@ export class GlobalCarePage {
 
 
   calendarUpdate() {
+
+    var dd = new Date(this.careDate).getDate();
+    var mm = new Date(this.careDate).getMonth() + 1;
+    var yy = new Date(this.careDate).getFullYear();
+    var hh = new Date(this.careTime).getHours();
+    var ms = new Date(this.careTime).getMinutes();
+    var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
+    var finalDate = new Date(x);
+
     var startDate = new Date("August 23, 2016 7:00:00");
-    var endDate = new Date("August 23, 2016 9:00:00");
     var eventDetails = this.firstName + "'s ";
 
-    this.calendar.createEventInteractivelyWithOptions(this.claimedItemName, this.dropOfLocation,
-      "We are testing this functionality", startDate, endDate, { calendarName: "Home" })
+    // this.calendar.createEventInteractivelyWithOptions(this.claimedItemName, this.dropOfLocation,
+    //   "We are testing this functionality", startDate, endDate, { calendarName: "Home" })
 
-      .then(function (data: any) {
-      }.bind(this));
+    //   .then(function (data: any) {
+    //   }.bind(this));
+
+
+    this.calendar.createEvent(this.claimedItemName, this.dropOfLocation, "Created by: PostScript:" + eventDetails , finalDate, finalDate)
+
+
+  }
+
+  openMaps() {
+
+    let addr = this.dropOfLocation;
+    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=' + addr);
   }
 
 
