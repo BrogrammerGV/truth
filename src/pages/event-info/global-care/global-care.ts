@@ -31,7 +31,7 @@ export class GlobalCarePage {
   //Variables for Data Load
   firstName: string;
   nameToUse: string;
-  careTime: string;
+  careTime: any;
   careDate: Date;
   careMonth: string;
   dropOfLocation: string;
@@ -112,7 +112,7 @@ export class GlobalCarePage {
     this.claimedItemName = this.event.itemName.S
     this.additionalInstructions = this.event.additionalInstructions.S
     console.log(this.careDate + " " + this.careTime + " " + this.dropOfLocation)
-
+this.careTime = this.coleConvert(this.careTime.substring(0, 5));
 
   }
 
@@ -164,24 +164,25 @@ export class GlobalCarePage {
 
   calendarUpdate() {
 
-    var dd = new Date(this.careDate).getDate();
-    var mm = new Date(this.careDate).getMonth() + 1;
-    var yy = new Date(this.careDate).getFullYear();
-    var hh = new Date(this.careTime).getHours();
-    var ms = new Date(this.careTime).getMinutes();
-    var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
-    var finalDate = new Date(x);
 
-    var startDate = new Date(this.careDate);
     
-    var eventDetails = this.firstName + "'s ";
+    var startDate = new Date(this.careDate);
+    var finalDate = startDate;
+    startDate.setHours(0,0);
+    finalDate.setHours(11, 30);
 
+    var eventDetails = this.firstName + "'s ";
     this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation,
-      "We are testing this functionality", startDate, startDate)
+      "We are testing this functionality", startDate, finalDate)
 
       .then( 
       (msg) =>   {this.presentAlert(); },
-      (err) =>   { console.log(err);}
+      (err) =>   { 
+      
+        console.log(finalDate)
+        console.log(err);
+      
+      }
 
       ); 
 
@@ -205,4 +206,21 @@ presentAlert() {
   });
   alert.present();
 }
+
+
+
+coleConvert(time: any) {
+  time = time.toString().match(/^([01]\d|2[0-3])(:)([0-5]\d)(:[0-5]\d)?$/) || [time];
+  if (time.length > 1) {
+      time = time.slice(1);
+      time[5] = +time[0] < 12 ? ' a.m.' : ' p.m.';
+      time[0] = +time[0] % 12 || 12;
+      if (time[2] == "00") {
+          time[1] = "";
+          time[2] = "";
+      }
+  }
+  return time.join('');
+}
+
 }
