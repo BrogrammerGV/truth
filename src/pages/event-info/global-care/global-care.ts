@@ -172,17 +172,17 @@ export class GlobalCarePage {
     var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
     var finalDate = new Date(x);
 
-    var startDate = new Date("August 23, 2016 7:00:00");
+    var startDate = this.careDate;
     var eventDetails = this.firstName + "'s ";
 
-    // this.calendar.createEventInteractivelyWithOptions(this.claimedItemName, this.dropOfLocation,
-    //   "We are testing this functionality", startDate, endDate, { calendarName: "Home" })
+    this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation,
+      "We are testing this functionality", this.careDate, startDate)
 
-    //   .then(function (data: any) {
-    //   }.bind(this));
+      .then(function (data: any) {
+      }.bind(this));
 
 
-    this.calendar.createEvent(this.claimedItemName, this.dropOfLocation, "Created by: PostScript:" + eventDetails , finalDate, finalDate)
+    // this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation, "Created by: PostScript:" + eventDetails , finalDate, finalDate)
 
 
   }
@@ -190,7 +190,7 @@ export class GlobalCarePage {
   openMaps() {
 
     let addr = this.dropOfLocation;
-    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=' + addr);
+    const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=' + addr, '_blank');
   }
 
 
