@@ -63,7 +63,7 @@
         <span class="eventHeaderDate" style="font-size: 4.3em; color:#4a4a4a; font-family: Roboto;"> <b>{{careDate | date :"dd"}}</b> </span>
       </div>
       <div class="eventHeaderMainText" style="padding-bottom: 12%;">
-        <span style="font-size:1.0em; color:#4a4a4a; font-family: Roboto;" class="em08"> Remebering</span>
+        <span style="font-size:1.0em; color:#4a4a4a; font-family: Roboto;" class="em08">{{claimedItemName}}</span>
         <br />
         <span style="font-size:1.2em;color:#4a4a4a; font-family: Roboto;" class="em1"> <b>{{nameToUse}}</b> </span>
         <br />
@@ -92,7 +92,9 @@
       <div class="center" style="padding-top: 12%;">
         <button (click)="calendarUpdate()" style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Add to Calendar</b></button>
 
-        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&485+Gray+Ave', '_blank', 'location=yes'); return false;"
+
+
+        <button (click)="openMaps();"
         style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Directions</b></button>
       </div>
     </div>
