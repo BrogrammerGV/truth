@@ -34,7 +34,10 @@ export class GlobalCarePage {
   careDate: Date;
   careMonth: string;
   dropOfLocation: string;
-claimedItemName: string;
+  claimedItemName: string;
+  additionalInstructions: string;
+
+
   public careCategory: string = "";
   public careCategoryFriendlyName: string = "";
   public careCategoryDescription: string = "";
@@ -98,13 +101,14 @@ claimedItemName: string;
 
   openItem(parm: any) {
 
-     this.event = parm;
+    this.event = parm;
     this.hasClaimed = false;
-     this.careDate = this.event.dateNeeded.S;
-      this.careTime = this.event.timeNeeded.S;
-      this.dropOfLocation = this.event.dropOffLocation.S;
-this.claimedItemName = this.event.itemName.S
-      console.log(this.careDate + " " + this.careTime + " " + this.dropOfLocation)
+    this.careDate = this.event.dateNeeded.S;
+    this.careTime = this.event.timeNeeded.S;
+    this.dropOfLocation = this.event.dropOffLocation.S;
+    this.claimedItemName = this.event.itemName.S
+    this.additionalInstructions = this.event.additionalInstructions.S
+    console.log(this.careDate + " " + this.careTime + " " + this.dropOfLocation)
 
 
   }
@@ -155,16 +159,16 @@ this.claimedItemName = this.event.itemName.S
 
 
 
-calendarUpdate() {
+  calendarUpdate() {
     var startDate = new Date("August 23, 2016 7:00:00");
     var endDate = new Date("August 23, 2016 9:00:00");
     var eventDetails = this.firstName + "'s ";
 
-    this.calendar.createEventInteractivelyWithOptions(this.claimedItemName + "Private Family Viewing", this.dropOfLocation,
-      "We are testing this functionality", startDate, endDate,{calendarName: "Home"})
+    this.calendar.createEventInteractivelyWithOptions(this.claimedItemName, this.dropOfLocation,
+      "We are testing this functionality", startDate, endDate, { calendarName: "Home" })
 
       .then(function (data: any) {
-      }.bind(this)); 
+      }.bind(this));
   }
 
 

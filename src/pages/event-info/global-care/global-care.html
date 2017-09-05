@@ -63,7 +63,6 @@
         <span class="eventHeaderDate" style="font-size: 4.3em; color:#4a4a4a; font-family: Roboto;"> <b>{{careDate | date :"dd"}}</b> </span>
       </div>
       <div class="eventHeaderMainText" style="padding-bottom: 12%;">
-        <img src="assets/img/menu.png" class="menuIcon" />
         <span style="font-size:1.0em; color:#4a4a4a; font-family: Roboto;" class="em08"> Remebering</span>
         <br />
         <span style="font-size:1.2em;color:#4a4a4a; font-family: Roboto;" class="em1"> <b>{{nameToUse}}</b> </span>
@@ -78,10 +77,10 @@
       <div style="text-align:left;">
 
         <div class="row" style="margin-right: 8px; margin-left: 8px;border-bottom: thin solid #E6785A; width:80%; padding-bottom: 3px;">
-          <span style="font-size: 1.0em; color:#686C71"> Instructions from <a>Gregory's</a> family:</span>
+          <span style="font-size: 1.0em; color:#686C71"> Instructions from <a>{{firstName}}'s</a> family:</span>
         </div>
         <div class="row" style="margin-right: 8px; margin-left: 8px; width:100%; padding-top: 3px; ">
-          <span style="font-size: 1.0em; color:#686C71"> Tony, age 43 passed away on Sunday July, 9, 2017, at his home surrounded 
+          <span style="font-size: 1.0em; color:#686C71"> {{additionalInstructions}}
  
    </span>
 
@@ -93,7 +92,8 @@
       <div class="center" style="padding-top: 12%;">
         <button (click)="calendarUpdate()" style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Add to Calendar</b></button>
 
-        <button style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Directions</b></button>
+        <button onclick="window.open('https://www.google.com/maps/dir/?api=1&485+Gray+Ave', '_blank', 'location=yes'); return false;"
+        style="width: 60%; margin-bottom: 3%;" class="footerButton"><b>Directions</b></button>
       </div>
     </div>
 
