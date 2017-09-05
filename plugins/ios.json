@@ -7,6 +7,9 @@
         "files": {}
     },
     "installed_plugins": {
+        "call-number": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
@@ -15,6 +18,9 @@
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-crosswalk-webview": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-device": {
@@ -39,12 +45,6 @@
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "ionic-plugin-keyboard": {
-            "PACKAGE_NAME": "com.Homesteaders.PostScript"
-        },
-        "call-number": {
-            "PACKAGE_NAME": "com.Homesteaders.PostScript"
-        },
-        "cordova-plugin-datepicker": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },
