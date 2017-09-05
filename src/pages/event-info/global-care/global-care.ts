@@ -171,12 +171,12 @@ export class GlobalCarePage {
     var ms = new Date(this.careTime).getMinutes();
     var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
     var finalDate = new Date(x);
-
+console.log(finalDate);
     var startDate = this.careDate;
     var eventDetails = this.firstName + "'s ";
 
     this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation,
-      "We are testing this functionality", this.careDate, startDate)
+      "We are testing this functionality", this.careDate, this.careDate)
 
       .then(function (data: any) {
       }.bind(this));
