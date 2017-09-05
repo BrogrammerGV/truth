@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Calendar } from '@ionic-native/calendar';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 /**
@@ -61,7 +61,7 @@ export class GlobalCarePage {
 
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public calendar: Calendar, public platform: Platform, public iab: InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public calendar: Calendar, public iab: InAppBrowser, public alertCtrl: AlertController) {
   }
 
   ionViewDidLoad() {
@@ -171,15 +171,19 @@ export class GlobalCarePage {
     var ms = new Date(this.careTime).getMinutes();
     var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
     var finalDate = new Date(x);
-console.log(finalDate);
-    var startDate = this.careDate;
+
+    var startDate = new Date(this.careDate);
+    
     var eventDetails = this.firstName + "'s ";
 
     this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation,
-      "We are testing this functionality", this.careDate, this.careDate)
+      "We are testing this functionality", startDate, startDate)
 
-      .then(function (data: any) {
-      }.bind(this));
+      .then( 
+      (msg) =>   {this.presentAlert(); },
+      (err) =>   { console.log(err);}
+
+      ); 
 
 
     // this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation, "Created by: PostScript:" + eventDetails , finalDate, finalDate)
@@ -193,5 +197,12 @@ console.log(finalDate);
     const browser = this.iab.create('https://www.google.com/maps/dir/?api=1&destination=' + addr, '_blank');
   }
 
-
+presentAlert() {
+  let alert = this.alertCtrl.create({
+    title: 'Calendar Updated',
+    subTitle: 'A reminder has been added to your calendar.',
+    buttons: ['Dismiss']
+  });
+  alert.present();
+}
 }

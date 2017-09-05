@@ -19,6 +19,7 @@
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
     <platform name="android">
+        <access origin="*" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -90,7 +91,6 @@
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
     <engine name="ios" spec="^4.4.0" />
-    <plugin name="call-number" spec="git+https://github.com/Rohfosho/CordovaCallNumberPlugin.git" />
     <plugin name="cordova-plugin-calendar" spec="^4.6.0">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value=" " />
     </plugin>

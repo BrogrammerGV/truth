@@ -9,10 +9,6 @@
                 "parents": {
                     "/*": [
                         {
-                            "xml": "<feature name=\"CallNumber\"><param name=\"ios-package\" value=\"CFCallNumber\" /></feature>",
-                            "count": 1
-                        },
-                        {
                             "xml": "<feature name=\"Calendar\"><param name=\"ios-package\" value=\"Calendar\" /></feature>",
                             "count": 1
                         },
@@ -90,9 +86,6 @@
         }
     },
     "installed_plugins": {
-        "call-number": {
-            "PACKAGE_NAME": "com.Homesteaders.PostScript"
-        },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
@@ -139,14 +132,6 @@
     },
     "dependent_plugins": {},
     "modules": [
-        {
-            "id": "call-number.CallNumber",
-            "file": "plugins/call-number/www/CallNumber.js",
-            "pluginId": "call-number",
-            "clobbers": [
-                "call"
-            ]
-        },
         {
             "id": "cordova-plugin-calendar.Calendar",
             "file": "plugins/cordova-plugin-calendar/www/Calendar.js",
@@ -245,7 +230,6 @@
         }
     ],
     "plugin_metadata": {
-        "call-number": "0.0.2",
         "cordova-plugin-calendar": "4.6.0",
         "cordova-plugin-compat": "1.1.0",
         "cordova-plugin-console": "1.0.5",

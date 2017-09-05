@@ -7,9 +7,6 @@
         "files": {}
     },
     "installed_plugins": {
-        "call-number": {
-            "PACKAGE_NAME": "com.Homesteaders.PostScript"
-        },
         "cordova-plugin-calendar": {
             "CALENDAR_USAGE_DESCRIPTION": " ",
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
