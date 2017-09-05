@@ -171,7 +171,7 @@ export class GlobalCarePage {
     var ms = new Date(this.careTime).getMinutes();
     var x = yy + ',' + mm + ',' + dd + ' ' + hh + ':' + ms;
     var finalDate = new Date(x);
-
+console.log(finalDate);
     var startDate = this.careDate;
     var eventDetails = this.firstName + "'s ";
 
