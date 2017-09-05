@@ -1,0 +1,63 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-calendar": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-crosswalk-webview": {
+            "XWALK_VERSION": "22+",
+            "XWALK_LITEVERSION": "xwalk_core_library_canary:17+",
+            "XWALK_COMMANDLINE": "--disable-pull-to-refresh-effect",
+            "XWALK_MODE": "embedded",
+            "XWALK_MULTIPLEAPK": "true",
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-wkwebview-engine": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "ionic-plugin-keyboard": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "mx.ferreyra.callnumber": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "es6-promise-plugin": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        }
+    }
+}
