@@ -176,7 +176,7 @@ export class GlobalCarePage {
     var eventDetails = this.firstName + "'s ";
 
     this.calendar.createEventInteractively(this.claimedItemName, this.dropOfLocation,
-      "We are testing this functionality", this.careDate, startDate)
+      "We are testing this functionality", this.careDate, this.careDate)
 
       .then(function (data: any) {
       }.bind(this));
