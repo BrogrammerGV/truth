@@ -19,6 +19,7 @@
     <allow-navigation href="tel:*" />
     <allow-navigation href="mailto:*" />
     <platform name="android">
+        <access origin="*" />
         <allow-intent href="market:*" />
         <icon density="ldpi" src="resources/android/icon/drawable-ldpi-icon.png" />
         <icon density="mdpi" src="resources/android/icon/drawable-mdpi-icon.png" />
@@ -89,7 +90,6 @@
     <preference name="AutoHideSplashScreen" value="false" />
     <preference name="CordovaWebViewEngine" value="CDVWKWebViewEngine" />
     <preference name="SplashScreenDelay" value="3000" />
-    <engine name="android" spec="^6.2.3" />
     <engine name="ios" spec="^4.4.0" />
     <plugin name="cordova-plugin-calendar" spec="^4.6.0">
         <variable name="CALENDAR_USAGE_DESCRIPTION" value=" " />
@@ -102,6 +102,7 @@
         <variable name="XWALK_MODE" value="embedded" />
         <variable name="XWALK_MULTIPLEAPK" value="true" />
     </plugin>
+    <plugin name="cordova-plugin-datepicker" spec="^0.9.3" />
     <plugin name="cordova-plugin-device" spec="^1.1.4" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.4.0" />
     <plugin name="cordova-plugin-splashscreen" spec="^4.0.3" />

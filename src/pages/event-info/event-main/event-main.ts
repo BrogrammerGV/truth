@@ -269,7 +269,7 @@ async runEmailer()
 {
   var emailAdd:string; 
   emailAdd = this.emailAddressSendInvite;
-    var link = 'http://dev.myhomesteaders.com/UIS/native.asmx/PostScriptShareEmail?toaddress=' +
+    var link = 'https://www.myhomesteaders.com/UIS/native.asmx/PostScriptShareEmail?toaddress=' +
     emailAdd +
     '&deceasedFirst=' + this.deceasedFirstName + 
     '&deceasedLast=' + this.deceasedLastName + 
@@ -286,7 +286,7 @@ async runText()
 {
   this.socialSharing.shareViaSMS("Thank you for your thoughts and prayers following " 
   + this.deceasedFirstName + "'s passing. We appreciate your support during this difficult time and invite you to join us as we celebrate " + 
-   this.deceasedFirstName + "'s life.\nhttps://s3.amazonaws.com/coletestbucket/index.html",'').then(() => {
+   this.deceasedFirstName + "'s life.\nhttps://www.myhomesteaders.com/UIS/PostScript.aspx?firstName=" + this.deceasedFirstName + "&lastName=" + this.deceasedLastName,'').then(() => {
         // Success!
       }).catch((err) => {
         alert(err);
@@ -298,7 +298,7 @@ async runText()
 async runFaceBook()
 {
   this.socialSharing
-      .shareViaFacebook('message', null, 'http://coletestbucket.s3-website-us-east-1.amazonaws.com')
+      .shareViaFacebook('message', null, "https://www.myhomesteaders.com/UIS/PostScript.aspx?firstName=" + this.deceasedFirstName + "&lastName=" + this.deceasedLastName)
       .then(function(result: any) {
         // Success!
       }).catch(function(data: any){
@@ -378,7 +378,5 @@ showNoneAlert()
 }
 // }
 }
-
-
 
 

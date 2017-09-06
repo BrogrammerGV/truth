@@ -17,6 +17,9 @@
         "cordova-plugin-crosswalk-webview": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
+        "cordova-plugin-datepicker": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
         "cordova-plugin-device": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
@@ -36,6 +39,9 @@
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         },
         "cordova-plugin-x-socialsharing": {
+            "PACKAGE_NAME": "com.Homesteaders.PostScript"
+        },
+        "ionic-plugin-keyboard": {
             "PACKAGE_NAME": "com.Homesteaders.PostScript"
         }
     },

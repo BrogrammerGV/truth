@@ -72,7 +72,7 @@
     "ionic-plugin-keyboard": {
         "source": {
             "type": "registry",
-            "id": "ionic-plugin-keyboard@~2.2.1"
+            "id": "ionic-plugin-keyboard@^2.2.1"
         },
         "is_top_level": true,
         "variables": {}
@@ -83,12 +83,22 @@
             "id": "cordova-plugin-calendar"
         },
         "is_top_level": true,
-        "variables": {}
+        "variables": {
+            "CALENDAR_USAGE_DESCRIPTION": " "
+        }
     },
     "cordova-plugin-compat": {
         "source": {
             "type": "registry",
             "id": "cordova-plugin-compat@^1.0.0"
+        },
+        "is_top_level": false,
+        "variables": {}
+    },
+    "es6-promise-plugin": {
+        "source": {
+            "type": "registry",
+            "id": "es6-promise-plugin@4.1.0"
         },
         "is_top_level": false,
         "variables": {}
@@ -101,12 +111,13 @@
         "is_top_level": true,
         "variables": {}
     },
-    "es6-promise-plugin": {
+    "cordova-plugin-datepicker": {
         "source": {
             "type": "registry",
-            "id": "es6-promise-plugin@4.1.0"
+            "id": "cordova-plugin-datepicker@^0.9.3"
         },
-        "is_top_level": false,
+        "is_top_level": true,
         "variables": {}
     }
+
 }

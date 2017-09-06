@@ -115,7 +115,11 @@ export class EventInfoOnePage {
   }
 
   goToObit() {
-    this.navCtrl.pop();
+   
+  }
+
+  goToCare(){
+    
   }
 
 

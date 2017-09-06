@@ -25,6 +25,14 @@ module.exports = [
         ]
     },
     {
+        "id": "cordova-plugin-datepicker.DatePicker",
+        "file": "plugins/cordova-plugin-datepicker/www/ios/DatePicker.js",
+        "pluginId": "cordova-plugin-datepicker",
+        "clobbers": [
+            "datePicker"
+        ]
+    },
+    {
         "id": "cordova-plugin-device.device",
         "file": "plugins/cordova-plugin-device/www/device.js",
         "pluginId": "cordova-plugin-device",
@@ -78,6 +86,15 @@ module.exports = [
         "clobbers": [
             "window.plugins.socialsharing"
         ]
+    },
+    {
+        "id": "ionic-plugin-keyboard.keyboard",
+        "file": "plugins/ionic-plugin-keyboard/www/ios/keyboard.js",
+        "pluginId": "ionic-plugin-keyboard",
+        "clobbers": [
+            "cordova.plugins.Keyboard"
+        ],
+        "runs": true
     }
 ];
 module.exports.metadata = 
@@ -87,6 +104,7 @@ module.exports.metadata =
     "cordova-plugin-compat": "1.1.0",
     "cordova-plugin-console": "1.0.5",
     "cordova-plugin-crosswalk-webview": "2.2.0",
+    "cordova-plugin-datepicker": "0.9.3",
     "cordova-plugin-device": "1.1.4",
     "cordova-plugin-inappbrowser": "1.4.0",
     "cordova-plugin-splashscreen": "4.0.3",
@@ -94,7 +112,8 @@ module.exports.metadata =
     "cordova-plugin-whitelist": "1.3.1",
     "cordova-plugin-wkwebview-engine": "1.1.4-dev",
     "es6-promise-plugin": "4.1.0",
-    "cordova-plugin-x-socialsharing": "5.1.8"
+    "cordova-plugin-x-socialsharing": "5.1.8",
+    "ionic-plugin-keyboard": "2.2.1"
 };
 // BOTTOM OF METADATA
 });

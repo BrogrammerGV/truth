@@ -11,7 +11,6 @@ import { AlertController, App, FabContainer, ItemSliding, List, ModalController,
 import { ConferenceData } from '../../providers/conference-data';
 import { UserData } from '../../providers/user-data';
 import {SelectPage} from '../select/select';
-import {ModalPage} from '../modal/modal';
 
 import { EventInfoOnePage } from '../event-info/event-info-one/event-info-one';
 import { EventMainPage } from '../event-info/event-main/event-main';
@@ -70,29 +69,6 @@ funeralHome: string;
     this.doSearch();
    
   }
-
-
-  /*  ionViewCanLeave()
-    {
-        this.storage.get('loggedIn').then((val) => {
-        if(val == "Yes")
-            {  
-            
-            }
-      });
-    }**/
-
-      openIntroModal()
-      {
-        let myModal = this.modalCtrl.create(ModalPage);
-        myModal.present();
-        myModal.onDidDismiss(data => { 
-                  this.storage.set('firstName', data.first);
-                  this.storage.set('lastName', data.last);
-        });
-              
-
-      }
 
     
         goToCollector()
